@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Free Pancake</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 60%);
+            animation: pulse 6s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #8b949e;
+            position: relative;
+        }
+
+        .pancake {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #6366f1;
+        }
+
+        .card h3 {
+            color: #6366f1;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: #8b949e;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            color: #8b949e;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #484f58;
+            border-top: 1px solid #21262d;
+        }
+
+        footer a {
+            color: #6366f1;
+            text-decoration: none;
+        }
+
+        footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <header>
+        <span class="pancake">&#x1F95E;</span>
+        <h1>Bug Free Pancake</h1>
+        <p>A delightfully bug-free project</p>
+    </header>
+
+    <main>
+        <h2 class="section-title">Welcome</h2>
+        <p class="section-subtitle">This site is served fresh from GitHub Pages.</p>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Zero Bugs</h3>
+                <p>Like a perfectly flipped pancake, this project aims for flawless execution every time.</p>
+            </div>
+            <div class="card">
+                <h3>Open Source</h3>
+                <p>Built in the open. Fork it, remix it, make it your own. The batter is free.</p>
+            </div>
+            <div class="card">
+                <h3>GitHub Pages</h3>
+                <p>Hosted for free on GitHub Pages &mdash; no servers, no fuss, just static goodness.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Built with care &mdash; <a href="https://github.com/SteveJoy1/bug-free-pancake">View on GitHub</a></p>
+    </footer>
+</body>
+</html>

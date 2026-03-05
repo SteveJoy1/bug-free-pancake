@@ -473,7 +473,7 @@
     <div id="shareModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:100; display:none; align-items:center; justify-content:center;">
         <div style="background:#161b22; border:1px solid #30363d; border-radius:16px; padding:2rem; max-width:500px; width:90%; text-align:center;">
             <h3 style="color:#fb923c; margin-bottom:0.75rem;">Share This Page</h3>
-            <p style="color:#8b949e; font-size:0.9rem; margin-bottom:1rem;">Copy this link to share with the photo included:</p>
+            <p style="color:#8b949e; font-size:0.9rem; margin-bottom:1rem;">Copy this link to share with the photo included (<span id="urlLength"></span>):</p>
             <textarea id="shareUrl" readonly style="width:100%; height:80px; background:#0d1117; color:#e6edf3; border:1px solid #30363d; border-radius:8px; padding:0.75rem; font-size:0.8rem; resize:none; font-family:monospace;"></textarea>
             <div style="margin-top:1rem; display:flex; gap:0.75rem; justify-content:center;">
                 <button onclick="copyShareUrl()" style="background:#fb923c; color:#0d1117; border:none; padding:0.6rem 1.5rem; border-radius:8px; cursor:pointer; font-weight:600; font-size:0.95rem;">Copy Link</button>
@@ -484,10 +484,14 @@
     </div>
 
     <script>
+        // LZ-String compression (URI-safe variant) - minified
+        var LZString=function(){var r="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-$",o={};function n(r,n,e){var t,i,s,u={},a={},p="",c="",l="",f=2,d=3,h=2,g=[],v=0,m=0;for(s=0;s<r.length;s+=1)if(p=r.charAt(s),Object.prototype.hasOwnProperty.call(u,p)||(u[p]=d++,a[p]=!0),c=l+p,Object.prototype.hasOwnProperty.call(u,c))l=c;else{if(Object.prototype.hasOwnProperty.call(a,l)){if(l.charCodeAt(0)<256){for(t=0;t<h;t++)v<<=1,15==m?(m=0,g.push(n(v)),v=0):m++;for(i=l.charCodeAt(0),t=0;t<8;t++)v=v<<1|1&i,15==m?(m=0,g.push(n(v)),v=0):m++,i>>=1}else{for(i=1,t=0;t<h;t++)v=v<<1|i,15==m?(m=0,g.push(n(v)),v=0):m++,i=0;for(i=l.charCodeAt(0),t=0;t<16;t++)v=v<<1|1&i,15==m?(m=0,g.push(n(v)),v=0):m++,i>>=1}0==--f&&(f=Math.pow(2,h),h++),delete a[l]}else for(i=u[l],t=0;t<h;t++)v=v<<1|1&i,15==m?(m=0,g.push(n(v)),v=0):m++,i>>=1;0==--f&&(f=Math.pow(2,h),h++),u[c]=d++,l=String(p)}if(""!==l){if(Object.prototype.hasOwnProperty.call(a,l)){if(l.charCodeAt(0)<256){for(t=0;t<h;t++)v<<=1,15==m?(m=0,g.push(n(v)),v=0):m++;for(i=l.charCodeAt(0),t=0;t<8;t++)v=v<<1|1&i,15==m?(m=0,g.push(n(v)),v=0):m++,i>>=1}else{for(i=1,t=0;t<h;t++)v=v<<1|i,15==m?(m=0,g.push(n(v)),v=0):m++,i=0;for(i=l.charCodeAt(0),t=0;t<16;t++)v=v<<1|1&i,15==m?(m=0,g.push(n(v)),v=0):m++,i>>=1}0==--f&&(f=Math.pow(2,h),h++),delete a[l]}else for(i=u[l],t=0;t<h;t++)v=v<<1|1&i,15==m?(m=0,g.push(n(v)),v=0):m++,i>>=1}for(i=2,t=0;t<h;t++)v=v<<1|1&i,15==m?(m=0,g.push(n(v)),v=0):m++,i>>=1;for(;;){if(v<<=1,15==m){g.push(n(v));break}m++}return g.join("")}function e(r){return null==r?"":""==r?null:function(r,n){var e,t,i,s,u,a,p,c=[],l=4,f=4,d=3,h="",g=[],v={val:n(0),position:r,index:1};for(e=0;e<3;e+=1)c[e]=e;for(i=0,u=Math.pow(2,2),a=1;a!=u;)s=v.val&v.position,v.position>>=1,0==v.position&&(v.position=r,v.val=n(v.index++)),i|=(s>0?1:0)*a,a<<=1;switch(i){case 0:for(i=0,u=Math.pow(2,8),a=1;a!=u;)s=v.val&v.position,v.position>>=1,0==v.position&&(v.position=r,v.val=n(v.index++)),i|=(s>0?1:0)*a,a<<=1;p=String.fromCharCode(i);break;case 1:for(i=0,u=Math.pow(2,16),a=1;a!=u;)s=v.val&v.position,v.position>>=1,0==v.position&&(v.position=r,v.val=n(v.index++)),i|=(s>0?1:0)*a,a<<=1;p=String.fromCharCode(i);break;case 2:return""}for(c[3]=p,t=p,g.push(p);;){if(v.index>n.length)return"";for(i=0,u=Math.pow(2,d),a=1;a!=u;)s=v.val&v.position,v.position>>=1,0==v.position&&(v.position=r,v.val=n(v.index++)),i|=(s>0?1:0)*a,a<<=1;switch(p=i){case 0:for(i=0,u=Math.pow(2,8),a=1;a!=u;)s=v.val&v.position,v.position>>=1,0==v.position&&(v.position=r,v.val=n(v.index++)),i|=(s>0?1:0)*a,a<<=1;c[f++]=String.fromCharCode(i),p=f-1,l--;break;case 1:for(i=0,u=Math.pow(2,16),a=1;a!=u;)s=v.val&v.position,v.position>>=1,0==v.position&&(v.position=r,v.val=n(v.index++)),i|=(s>0?1:0)*a,a<<=1;c[f++]=String.fromCharCode(i),p=f-1,l--;break;case 2:return g.join("")}if(0==l&&(l=Math.pow(2,d),d++),c[p])h=c[p];else{if(p!==f)return null;h=t+t.charAt(0)}g.push(h),c[f++]=t+h.charAt(0),t=h,0==--l&&(l=Math.pow(2,d),d++)}}(32768,function(n){return r.charAt(n)})}return{compressToEncodedURIComponent:function(r){return null==r?"":n(r,6,function(n){return"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-$".charAt(n)})},decompressFromEncodedURIComponent:function(n){return null==n?"":""==n?null:(n=n.replace(/ /g,"+"),e(n))}}}();
+
         const input = document.getElementById('photoInput');
         const img = document.getElementById('heroImg');
         const placeholder = document.getElementById('placeholder');
         const modal = document.getElementById('shareModal');
+        const urlLen = document.getElementById('urlLength');
 
         function showPhoto(src) {
             img.src = src;
@@ -495,17 +499,17 @@
             placeholder.style.display = 'none';
         }
 
-        // Check URL hash for shared photo data
+        // Check URL hash for compressed photo data
         if (window.location.hash.length > 1) {
             try {
-                const data = decodeURIComponent(window.location.hash.substring(1));
-                if (data.startsWith('data:image')) {
+                const compressed = window.location.hash.substring(1);
+                const data = LZString.decompressFromEncodedURIComponent(compressed);
+                if (data && data.startsWith('data:image')) {
                     showPhoto(data);
                     try { localStorage.setItem('heroPhoto', data); } catch(e) {}
                 }
             } catch(e) {}
         } else {
-            // Fall back to localStorage
             const saved = localStorage.getItem('heroPhoto');
             if (saved) showPhoto(saved);
         }
@@ -514,25 +518,29 @@
             const file = e.target.files[0];
             if (!file) return;
 
-            // Resize image to keep URL manageable
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
             const tmpImg = new Image();
             tmpImg.onload = function() {
-                const maxSize = 600;
+                // Shrink to tiny thumbnail for short URL
+                const maxSize = 120;
                 let w = tmpImg.width, h = tmpImg.height;
                 if (w > h) { if (w > maxSize) { h *= maxSize / w; w = maxSize; } }
                 else { if (h > maxSize) { w *= maxSize / h; h = maxSize; } }
-                canvas.width = w;
-                canvas.height = h;
-                ctx.drawImage(tmpImg, 0, 0, w, h);
-                const dataUrl = canvas.toDataURL('image/jpeg', 0.7);
+                canvas.width = Math.round(w);
+                canvas.height = Math.round(h);
+                ctx.drawImage(tmpImg, 0, 0, canvas.width, canvas.height);
+
+                // Very aggressive JPEG compression
+                const dataUrl = canvas.toDataURL('image/jpeg', 0.3);
                 showPhoto(dataUrl);
                 try { localStorage.setItem('heroPhoto', dataUrl); } catch(err) {}
 
-                // Show share modal
-                const shareUrl = window.location.origin + window.location.pathname + '#' + encodeURIComponent(dataUrl);
+                // LZ-compress and build share URL
+                const compressed = LZString.compressToEncodedURIComponent(dataUrl);
+                const shareUrl = window.location.origin + window.location.pathname + '#' + compressed;
                 document.getElementById('shareUrl').value = shareUrl;
+                document.getElementById('urlLength').textContent = shareUrl.length.toLocaleString() + ' characters';
                 modal.style.display = 'flex';
             };
             tmpImg.src = URL.createObjectURL(file);

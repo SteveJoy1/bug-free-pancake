@@ -515,35 +515,44 @@
         }
 
         input.addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (!file) return;
+            try {
+                var file = e.target.files[0];
+                if (!file) return;
 
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            const tmpImg = new Image();
-            tmpImg.onload = function() {
-                // Shrink to tiny thumbnail for short URL
-                const maxSize = 120;
-                let w = tmpImg.width, h = tmpImg.height;
-                if (w > h) { if (w > maxSize) { h *= maxSize / w; w = maxSize; } }
-                else { if (h > maxSize) { w *= maxSize / h; h = maxSize; } }
-                canvas.width = Math.round(w);
-                canvas.height = Math.round(h);
-                ctx.drawImage(tmpImg, 0, 0, canvas.width, canvas.height);
+                var reader = new FileReader();
+                reader.onload = function(ev) {
+                    try {
+                        var tmpImg = new Image();
+                        tmpImg.onload = function() {
+                            try {
+                                var canvas = document.createElement('canvas');
+                                var ctx = canvas.getContext('2d');
+                                var maxSize = 120;
+                                var w = tmpImg.width, h = tmpImg.height;
+                                if (w > h) { if (w > maxSize) { h *= maxSize / w; w = maxSize; } }
+                                else { if (h > maxSize) { w *= maxSize / h; h = maxSize; } }
+                                canvas.width = Math.round(w);
+                                canvas.height = Math.round(h);
+                                ctx.drawImage(tmpImg, 0, 0, canvas.width, canvas.height);
 
-                // Very aggressive JPEG compression
-                const dataUrl = canvas.toDataURL('image/jpeg', 0.3);
-                showPhoto(dataUrl);
-                try { localStorage.setItem('heroPhoto', dataUrl); } catch(err) {}
+                                var dataUrl = canvas.toDataURL('image/jpeg', 0.3);
+                                showPhoto(dataUrl);
+                                try { localStorage.setItem('heroPhoto', dataUrl); } catch(err) {}
 
-                // LZ-compress and build share URL
-                const compressed = LZString.compressToEncodedURIComponent(dataUrl);
-                const shareUrl = window.location.origin + window.location.pathname + '#' + compressed;
-                document.getElementById('shareUrl').value = shareUrl;
-                document.getElementById('urlLength').textContent = shareUrl.length.toLocaleString() + ' characters';
-                modal.style.display = 'flex';
-            };
-            tmpImg.src = URL.createObjectURL(file);
+                                var compressed = LZString.compressToEncodedURIComponent(dataUrl);
+                                var shareUrl = window.location.origin + window.location.pathname + '#' + compressed;
+                                document.getElementById('shareUrl').value = shareUrl;
+                                document.getElementById('urlLength').textContent = shareUrl.length.toLocaleString() + ' characters';
+                                modal.style.display = 'flex';
+                            } catch(err) { alert('Error compressing: ' + err.message); }
+                        };
+                        tmpImg.onerror = function() { alert('Error loading image'); };
+                        tmpImg.src = ev.target.result;
+                    } catch(err) { alert('Error processing: ' + err.message); }
+                };
+                reader.onerror = function() { alert('Error reading file'); };
+                reader.readAsDataURL(file);
+            } catch(err) { alert('Error: ' + err.message); }
         });
 
         function copyShareUrl() {

@@ -36,70 +36,16 @@
             50% { transform: scale(1.1); opacity: 1; }
         }
 
-        .photo-wrapper {
+        .hero-photo {
             width: 220px;
             height: 220px;
             border-radius: 50%;
+            object-fit: cover;
             border: 4px solid #fb923c;
             margin: 0 auto 1.5rem;
+            display: block;
             position: relative;
             box-shadow: 0 0 40px rgba(251, 146, 60, 0.3);
-            cursor: pointer;
-            overflow: hidden;
-            background: #161b22;
-        }
-
-        .photo-wrapper:hover .upload-overlay {
-            opacity: 1;
-        }
-
-        .hero-photo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .upload-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.2s;
-            border-radius: 50%;
-        }
-
-        .upload-overlay .camera {
-            font-size: 2rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .upload-overlay span:last-child {
-            font-size: 0.75rem;
-            color: #ccc;
-        }
-
-        .placeholder-icon {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: #8b949e;
-        }
-
-        .placeholder-icon .cam {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .placeholder-icon span:last-child {
-            font-size: 0.8rem;
         }
 
         header h1 {
@@ -315,40 +261,29 @@
             header h1 { font-size: 1.8rem; }
             .intro .big-number { font-size: 3rem; }
             .stat-row { grid-template-columns: repeat(2, 1fr); }
-            .photo-wrapper { width: 160px; height: 160px; }
+            .hero-photo { width: 160px; height: 160px; }
         }
     </style>
 </head>
 <body>
     <header>
-        <input type="file" id="photoInput" accept="image/*" hidden>
-        <div class="photo-wrapper" id="photoWrapper" onclick="document.getElementById('photoInput').click()">
-            <div class="placeholder-icon" id="placeholder">
-                <span class="cam">&#x1F4F7;</span>
-                <span>Tap to add photo</span>
-            </div>
-            <img id="heroImg" class="hero-photo" alt="The boys" style="display:none;">
-            <div class="upload-overlay">
-                <span class="camera">&#x1F4F7;</span>
-                <span>Change photo</span>
-            </div>
-        </div>
+        <img src="boys.jpg" alt="The boys" class="hero-photo">
         <h1>Two Boys. <span>One Hungry Year.</span></h1>
-        <p>Just how much fuel does it take to power a 7-year-old and a 9-year-old for an entire year? Buckle up.</p>
+        <p>Just how much fuel does it take to power an 8-year-old and a 10-year-old for an entire year? Buckle up.</p>
     </header>
 
     <main>
         <div class="intro">
-            <div class="big-number">1,204,500</div>
+            <div class="big-number">1,314,000</div>
             <div class="big-label">combined calories these two will consume this year</div>
         </div>
 
         <h2 class="section-title">The Annual Grocery Bill, By the Numbers</h2>
-        <p class="section-subtitle">A 7-year-old needs ~1,500 cal/day. A 9-year-old needs ~1,800. Here's what that adds up to.</p>
+        <p class="section-subtitle">An 8-year-old needs ~1,600 cal/day. A 10-year-old needs ~2,000. Here's what that adds up to.</p>
 
         <div class="stat-row">
             <div class="stat-box">
-                <div class="num">730+</div>
+                <div class="num">800+</div>
                 <div class="label">pounds of food</div>
             </div>
             <div class="stat-box">
@@ -356,15 +291,15 @@
                 <div class="label">snacks</div>
             </div>
             <div class="stat-box">
-                <div class="num">900</div>
+                <div class="num">1,000</div>
                 <div class="label">PB&amp;J sandwiches worth</div>
             </div>
             <div class="stat-box">
-                <div class="num">600</div>
+                <div class="num">650</div>
                 <div class="label">bananas</div>
             </div>
             <div class="stat-box">
-                <div class="num">500</div>
+                <div class="num">550</div>
                 <div class="label">glasses of milk</div>
             </div>
             <div class="stat-box">
@@ -377,28 +312,28 @@
             <div class="card">
                 <span class="icon">&#x1F969;</span>
                 <h3>The Protein Machine</h3>
-                <p>They'll eat roughly <span class="highlight">80 pounds of meat</span> this year &mdash; that's an entire Great Dane's worth of chicken nuggets, burgers, and hot dogs.</p>
+                <p>They'll eat roughly <span class="highlight">90 pounds of meat</span> this year &mdash; that's an entire Great Dane's worth of chicken nuggets, burgers, and hot dogs.</p>
             </div>
             <div class="card">
                 <span class="icon">&#x1F34E;</span>
                 <h3>Fruit Annihilators</h3>
-                <p>About <span class="highlight">250 lbs of fruits and veggies</span>. If stacked as apples, that tower would be taller than a 2-story building.</p>
+                <p>About <span class="highlight">275 lbs of fruits and veggies</span>. If stacked as apples, that tower would be taller than a 2-story building.</p>
             </div>
             <div class="card">
                 <span class="icon">&#x1F35E;</span>
                 <h3>Carb Loading Champions</h3>
-                <p>Around <span class="highlight">180 loaves of bread</span> worth of grains &mdash; pasta, rice, cereal, and the crusts they definitely won't eat.</p>
+                <p>Around <span class="highlight">200 loaves of bread</span> worth of grains &mdash; pasta, rice, cereal, and the crusts they definitely won't eat.</p>
             </div>
         </div>
 
         <div class="comparison-section">
             <h2 class="section-title">But What Else Could That Energy Do?</h2>
-            <p class="section-subtitle">1,204,500 calories = roughly 5 billion joules. That's enough energy to...</p>
+            <p class="section-subtitle">1,314,000 calories = roughly 5.5 billion joules. That's enough energy to...</p>
 
             <div class="comparison-bar">
                 <span class="icon">&#x1F4A1;</span>
                 <div class="text">
-                    <strong>Power a lightbulb for 2.7 years straight</strong>
+                    <strong>Power a lightbulb for 3 years straight</strong>
                     <p>A single 60-watt bulb burning 24/7 &mdash; fueled entirely by goldfish crackers and juice boxes.</p>
                 </div>
             </div>
@@ -407,22 +342,22 @@
                 <span class="icon">&#x1F697;</span>
                 <div class="text">
                     <strong>Drive a car from New York to Los Angeles &mdash; and halfway back</strong>
-                    <p>That's about 3,800 miles of road trip powered by mac &amp; cheese alone.</p>
+                    <p>That's about 4,100 miles of road trip powered by mac &amp; cheese alone.</p>
                 </div>
             </div>
 
             <div class="comparison-bar">
                 <span class="icon">&#x1F3C8;</span>
                 <div class="text">
-                    <strong>Throw a football 190,000 times</strong>
-                    <p>One throw every 3 minutes, 24/7, for over a year. These boys could out-pass the entire NFL season... times 30.</p>
+                    <strong>Throw a football 210,000 times</strong>
+                    <p>One throw every 3 minutes, 24/7, for over a year. These boys could out-pass the entire NFL season... times 33.</p>
                 </div>
             </div>
 
             <div class="comparison-bar">
                 <span class="icon">&#x1F30B;</span>
                 <div class="text">
-                    <strong>Heat 12,000 bathtubs of water from cold to steaming</strong>
+                    <strong>Heat 13,000 bathtubs of water from cold to steaming</strong>
                     <p>That's every bathtub on an entire city block, heated by nothing but PB&amp;J energy.</p>
                 </div>
             </div>
@@ -430,7 +365,7 @@
             <div class="comparison-bar">
                 <span class="icon">&#x1F680;</span>
                 <div class="text">
-                    <strong>Launch a bowling ball 60 miles straight up</strong>
+                    <strong>Launch a bowling ball 65 miles straight up</strong>
                     <p>Past airplanes, past weather balloons, into the upper stratosphere. Powered by pizza and chicken tenders.</p>
                 </div>
             </div>
@@ -438,7 +373,7 @@
             <div class="comparison-bar">
                 <span class="icon">&#x1F50B;</span>
                 <div class="text">
-                    <strong>Fully charge an iPhone 460,000 times</strong>
+                    <strong>Fully charge an iPhone 500,000 times</strong>
                     <p>That's charging a new phone every single minute for nearly a year without stopping.</p>
                 </div>
             </div>
@@ -446,7 +381,7 @@
             <div class="comparison-bar">
                 <span class="icon">&#x1F3E0;</span>
                 <div class="text">
-                    <strong>Power an average home for 50 days</strong>
+                    <strong>Power an average home for 55 days</strong>
                     <p>Lights, AC, fridge, TV, video games &mdash; all running on boy fuel for almost two months.</p>
                 </div>
             </div>
@@ -454,7 +389,7 @@
             <div class="comparison-bar">
                 <span class="icon">&#x26F0;&#xFE0F;</span>
                 <div class="text">
-                    <strong>Climb Mount Everest 8 times</strong>
+                    <strong>Climb Mount Everest 9 times</strong>
                     <p>From base camp to summit, each climb burns ~150,000 calories. These two eat Everest for breakfast. Literally.</p>
                 </div>
             </div>
@@ -470,103 +405,5 @@
     <footer>
         <p>Built with love (and snacks) &mdash; <a href="https://github.com/SteveJoy1/bug-free-pancake">View on GitHub</a></p>
     </footer>
-    <div id="shareModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:100; align-items:center; justify-content:center;">
-        <div style="background:#161b22; border:1px solid #30363d; border-radius:16px; padding:2rem; max-width:500px; width:90%; text-align:center;">
-            <h3 style="color:#fb923c; margin-bottom:0.75rem;">Share This Page</h3>
-            <p style="color:#8b949e; font-size:0.9rem; margin-bottom:1rem;">Copy this link to share with the photo included (<span id="urlLength"></span>):</p>
-            <textarea id="shareUrl" readonly style="width:100%; height:80px; background:#0d1117; color:#e6edf3; border:1px solid #30363d; border-radius:8px; padding:0.75rem; font-size:0.8rem; resize:none; font-family:monospace;"></textarea>
-            <div style="margin-top:1rem; display:flex; gap:0.75rem; justify-content:center;">
-                <button onclick="copyShareUrl()" style="background:#fb923c; color:#0d1117; border:none; padding:0.6rem 1.5rem; border-radius:8px; cursor:pointer; font-weight:600; font-size:0.95rem;">Copy Link</button>
-                <button onclick="closeModal()" style="background:#30363d; color:#e6edf3; border:none; padding:0.6rem 1.5rem; border-radius:8px; cursor:pointer; font-size:0.95rem;">Close</button>
-            </div>
-            <p id="copyConfirm" style="color:#4ade80; font-size:0.85rem; margin-top:0.75rem; display:none;">Copied!</p>
-        </div>
-    </div>
-
-    <script>
-        // LZ-String v1.5.0 (MIT) - https://github.com/pieroxy/lz-string
-        var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",n="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-$",e={};function t(r,o){if(!e[r]){e[r]={};for(var n=0;n<r.length;n++)e[r][r.charAt(n)]=n}return e[r][o]}var i={compressToBase64:function(r){if(null==r)return"";var n=i._compress(r,6,function(r){return o.charAt(r)});switch(n.length%4){default:case 0:return n;case 1:return n+"===";case 2:return n+"==";case 3:return n+"="}},decompressFromBase64:function(r){return null==r?"":""==r?null:i._decompress(r.length,32,function(n){return t(o,r.charAt(n))})},compressToUTF16:function(o){return null==o?"":i._compress(o,15,function(o){return r(o+32)})+" "},decompressFromUTF16:function(r){return null==r?"":""==r?null:i._decompress(r.length,16384,function(o){return r.charCodeAt(o)-32})},compressToUint8Array:function(r){for(var o=i.compress(r),n=new Uint8Array(2*o.length),e=0,t=o.length;e<t;e++){var s=o.charCodeAt(e);n[2*e]=s>>>8,n[2*e+1]=s%256}return n},decompressFromUint8Array:function(o){if(null==o)return i.decompress(o);for(var n=new Array(o.length/2),e=0,t=n.length;e<t;e++)n[e]=256*o[2*e]+o[2*e+1];var s=[];return n.forEach(function(o){s.push(r(o))}),i.decompress(s.join(""))},compressToEncodedURIComponent:function(r){return null==r?"":i._compress(r,6,function(r){return n.charAt(r)})},decompressFromEncodedURIComponent:function(r){return null==r?"":""==r?null:(r=r.replace(/ /g,"+"),i._decompress(r.length,32,function(o){return t(n,r.charAt(o))}))},compress:function(o){return i._compress(o,16,function(o){return r(o)})},_compress:function(r,o,n){if(null==r)return"";var e,t,i,s={},u={},a="",p="",c="",l=2,f=3,h=2,d=[],m=0,v=0;for(i=0;i<r.length;i+=1)if(a=r.charAt(i),Object.prototype.hasOwnProperty.call(s,a)||(s[a]=f++,u[a]=!0),p=c+a,Object.prototype.hasOwnProperty.call(s,p))c=p;else{if(Object.prototype.hasOwnProperty.call(u,c)){if(c.charCodeAt(0)<256){for(e=0;e<h;e++)m<<=1,v==o-1?(v=0,d.push(n(m)),m=0):v++;for(t=c.charCodeAt(0),e=0;e<8;e++)m=m<<1|1&t,v==o-1?(v=0,d.push(n(m)),m=0):v++,t>>=1}else{for(t=1,e=0;e<h;e++)m=m<<1|t,v==o-1?(v=0,d.push(n(m)),m=0):v++,t=0;for(t=c.charCodeAt(0),e=0;e<16;e++)m=m<<1|1&t,v==o-1?(v=0,d.push(n(m)),m=0):v++,t>>=1}0==--l&&(l=Math.pow(2,h),h++),delete u[c]}else for(t=s[c],e=0;e<h;e++)m=m<<1|1&t,v==o-1?(v=0,d.push(n(m)),m=0):v++,t>>=1;0==--l&&(l=Math.pow(2,h),h++),s[p]=f++,c=String(a)}if(""!==c){if(Object.prototype.hasOwnProperty.call(u,c)){if(c.charCodeAt(0)<256){for(e=0;e<h;e++)m<<=1,v==o-1?(v=0,d.push(n(m)),m=0):v++;for(t=c.charCodeAt(0),e=0;e<8;e++)m=m<<1|1&t,v==o-1?(v=0,d.push(n(m)),m=0):v++,t>>=1}else{for(t=1,e=0;e<h;e++)m=m<<1|t,v==o-1?(v=0,d.push(n(m)),m=0):v++,t=0;for(t=c.charCodeAt(0),e=0;e<16;e++)m=m<<1|1&t,v==o-1?(v=0,d.push(n(m)),m=0):v++,t>>=1}0==--l&&(l=Math.pow(2,h),h++),delete u[c]}else for(t=s[c],e=0;e<h;e++)m=m<<1|1&t,v==o-1?(v=0,d.push(n(m)),m=0):v++,t>>=1;0==--l&&(l=Math.pow(2,h),h++)}for(t=2,e=0;e<h;e++)m=m<<1|1&t,v==o-1?(v=0,d.push(n(m)),m=0):v++,t>>=1;for(;;){if(m<<=1,v==o-1){d.push(n(m));break}v++}return d.join("")},decompress:function(r){return null==r?"":""==r?null:i._decompress(r.length,32768,function(o){return r.charCodeAt(o)})},_decompress:function(o,n,e){var t,i,s,u,a,p,c,l=[],f=4,h=4,d=3,m="",v=[],g={val:e(0),position:n,index:1};for(t=0;t<3;t+=1)l[t]=t;for(s=0,a=Math.pow(2,2),p=1;p!=a;)u=g.val&g.position,g.position>>=1,0==g.position&&(g.position=n,g.val=e(g.index++)),s|=(u>0?1:0)*p,p<<=1;switch(s){case 0:for(s=0,a=Math.pow(2,8),p=1;p!=a;)u=g.val&g.position,g.position>>=1,0==g.position&&(g.position=n,g.val=e(g.index++)),s|=(u>0?1:0)*p,p<<=1;c=r(s);break;case 1:for(s=0,a=Math.pow(2,16),p=1;p!=a;)u=g.val&g.position,g.position>>=1,0==g.position&&(g.position=n,g.val=e(g.index++)),s|=(u>0?1:0)*p,p<<=1;c=r(s);break;case 2:return""}for(l[3]=c,i=c,v.push(c);;){if(g.index>o)return"";for(s=0,a=Math.pow(2,d),p=1;p!=a;)u=g.val&g.position,g.position>>=1,0==g.position&&(g.position=n,g.val=e(g.index++)),s|=(u>0?1:0)*p,p<<=1;switch(c=s){case 0:for(s=0,a=Math.pow(2,8),p=1;p!=a;)u=g.val&g.position,g.position>>=1,0==g.position&&(g.position=n,g.val=e(g.index++)),s|=(u>0?1:0)*p,p<<=1;l[h++]=r(s),c=h-1,f--;break;case 1:for(s=0,a=Math.pow(2,16),p=1;p!=a;)u=g.val&g.position,g.position>>=1,0==g.position&&(g.position=n,g.val=e(g.index++)),s|=(u>0?1:0)*p,p<<=1;l[h++]=r(s),c=h-1,f--;break;case 2:return v.join("")}if(0==f&&(f=Math.pow(2,d),d++),l[c])m=l[c];else{if(c!==h)return null;m=i+i.charAt(0)}v.push(m),l[h++]=i+m.charAt(0),i=m,0==--f&&(f=Math.pow(2,d),d++)}}};return i}();
-
-        const input = document.getElementById('photoInput');
-        const img = document.getElementById('heroImg');
-        const placeholder = document.getElementById('placeholder');
-        const modal = document.getElementById('shareModal');
-        const urlLen = document.getElementById('urlLength');
-
-        function showPhoto(src) {
-            img.src = src;
-            img.style.display = 'block';
-            placeholder.style.display = 'none';
-        }
-
-        // Check URL hash for compressed photo data
-        if (window.location.hash.length > 1) {
-            try {
-                const compressed = window.location.hash.substring(1);
-                const data = LZString.decompressFromEncodedURIComponent(compressed);
-                if (data && data.startsWith('data:image')) {
-                    showPhoto(data);
-                    try { localStorage.setItem('heroPhoto', data); } catch(e) {}
-                }
-            } catch(e) {}
-        } else {
-            const saved = localStorage.getItem('heroPhoto');
-            if (saved) showPhoto(saved);
-        }
-
-        input.addEventListener('change', function(e) {
-            try {
-                var file = e.target.files[0];
-                if (!file) return;
-
-                var reader = new FileReader();
-                reader.onload = function(ev) {
-                    try {
-                        var tmpImg = new Image();
-                        tmpImg.onload = function() {
-                            try {
-                                var canvas = document.createElement('canvas');
-                                var ctx = canvas.getContext('2d');
-                                var maxSize = 120;
-                                var w = tmpImg.width, h = tmpImg.height;
-                                if (w > h) { if (w > maxSize) { h *= maxSize / w; w = maxSize; } }
-                                else { if (h > maxSize) { w *= maxSize / h; h = maxSize; } }
-                                canvas.width = Math.round(w);
-                                canvas.height = Math.round(h);
-                                ctx.drawImage(tmpImg, 0, 0, canvas.width, canvas.height);
-
-                                var dataUrl = canvas.toDataURL('image/jpeg', 0.3);
-                                showPhoto(dataUrl);
-                                try { localStorage.setItem('heroPhoto', dataUrl); } catch(err) {}
-
-                                var compressed = LZString.compressToEncodedURIComponent(dataUrl);
-                                var shareUrl = window.location.origin + window.location.pathname + '#' + compressed;
-                                document.getElementById('shareUrl').value = shareUrl;
-                                document.getElementById('urlLength').textContent = shareUrl.length.toLocaleString() + ' characters';
-                                modal.style.display = 'flex';
-                            } catch(err) { alert('Error compressing: ' + err.message); }
-                        };
-                        tmpImg.onerror = function() { alert('Error loading image'); };
-                        tmpImg.src = ev.target.result;
-                    } catch(err) { alert('Error processing: ' + err.message); }
-                };
-                reader.onerror = function() { alert('Error reading file'); };
-                reader.readAsDataURL(file);
-            } catch(err) { alert('Error: ' + err.message); }
-        });
-
-        function copyShareUrl() {
-            const textarea = document.getElementById('shareUrl');
-            textarea.select();
-            navigator.clipboard.writeText(textarea.value).then(function() {
-                document.getElementById('copyConfirm').style.display = 'block';
-                setTimeout(function() { document.getElementById('copyConfirm').style.display = 'none'; }, 2000);
-            });
-        }
-
-        function closeModal() {
-            modal.style.display = 'none';
-        }
-    </script>
 </body>
 </html>

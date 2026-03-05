@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bug Free Pancake</title>
+    <title>The Hungry Year Ahead</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -16,7 +16,7 @@
 
         header {
             background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-            padding: 4rem 2rem;
+            padding: 3rem 2rem 4rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -27,7 +27,7 @@
             position: absolute;
             top: -50%; left: -50%;
             width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 60%);
+            background: radial-gradient(circle, rgba(251, 146, 60, 0.1) 0%, transparent 60%);
             animation: pulse 6s ease-in-out infinite;
         }
 
@@ -36,23 +36,35 @@
             50% { transform: scale(1.1); opacity: 1; }
         }
 
+        .hero-photo {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fb923c;
+            margin: 0 auto 1.5rem;
+            display: block;
+            position: relative;
+            box-shadow: 0 0 40px rgba(251, 146, 60, 0.3);
+        }
+
         header h1 {
-            font-size: 3rem;
+            font-size: 2.6rem;
             margin-bottom: 0.5rem;
             position: relative;
+            line-height: 1.2;
+        }
+
+        header h1 span {
+            color: #fb923c;
         }
 
         header p {
             font-size: 1.2rem;
             color: #8b949e;
             position: relative;
-        }
-
-        .pancake {
-            font-size: 4rem;
-            display: block;
-            margin-bottom: 1rem;
-            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         main {
@@ -61,11 +73,71 @@
             padding: 3rem 2rem;
         }
 
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 16px;
+        }
+
+        .intro .big-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #fb923c;
+            line-height: 1;
+        }
+
+        .intro .big-label {
+            font-size: 1.1rem;
+            color: #8b949e;
+            margin-top: 0.5rem;
+        }
+
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 1.25rem 0.75rem;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+        }
+
+        .stat-box .num {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fb923c;
+        }
+
+        .stat-box .label {
+            font-size: 0.85rem;
+            color: #8b949e;
+            margin-top: 0.25rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            color: #8b949e;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
 
         .card {
@@ -78,13 +150,19 @@
 
         .card:hover {
             transform: translateY(-4px);
-            border-color: #6366f1;
+            border-color: #fb923c;
+        }
+
+        .card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+            display: block;
         }
 
         .card h3 {
-            color: #6366f1;
+            color: #fb923c;
             margin-bottom: 0.75rem;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
         }
 
         .card p {
@@ -92,14 +170,76 @@
             line-height: 1.6;
         }
 
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
+        .card .highlight {
+            color: #e6edf3;
+            font-weight: 600;
         }
 
-        .section-subtitle {
+        .comparison-section {
+            margin-top: 4rem;
+        }
+
+        .comparison-bar {
+            margin: 1.25rem 0;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        .comparison-bar:hover {
+            border-color: #fb923c;
+        }
+
+        .comparison-bar .icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .comparison-bar .text {
+            flex: 1;
+        }
+
+        .comparison-bar .text strong {
+            color: #fb923c;
+        }
+
+        .comparison-bar .text p {
             color: #8b949e;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .fun-fact {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border: 1px solid #30363d;
+            border-radius: 16px;
+        }
+
+        .fun-fact .emoji {
+            font-size: 3rem;
             margin-bottom: 1rem;
+            display: block;
+        }
+
+        .fun-fact h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            color: #fb923c;
+        }
+
+        .fun-fact p {
+            color: #8b949e;
+            max-width: 550px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
 
         footer {
@@ -107,45 +247,163 @@
             padding: 2rem;
             color: #484f58;
             border-top: 1px solid #21262d;
+            margin-top: 2rem;
         }
 
         footer a {
-            color: #6366f1;
+            color: #fb923c;
             text-decoration: none;
         }
 
         footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .intro .big-number { font-size: 3rem; }
+            .stat-row { grid-template-columns: repeat(2, 1fr); }
+            .hero-photo { width: 160px; height: 160px; }
+        }
     </style>
 </head>
 <body>
     <header>
-        <span class="pancake">&#x1F95E;</span>
-        <h1>Bug Free Pancake</h1>
-        <p>A delightfully bug-free project</p>
+        <img src="boys.jpg" alt="The boys" class="hero-photo">
+        <h1>Two Boys. <span>One Hungry Year.</span></h1>
+        <p>Just how much fuel does it take to power a 7-year-old and a 9-year-old for an entire year? Buckle up.</p>
     </header>
 
     <main>
-        <h2 class="section-title">Welcome</h2>
-        <p class="section-subtitle">This site is served fresh from GitHub Pages.</p>
+        <div class="intro">
+            <div class="big-number">1,204,500</div>
+            <div class="big-label">combined calories these two will consume this year</div>
+        </div>
+
+        <h2 class="section-title">The Annual Grocery Bill, By the Numbers</h2>
+        <p class="section-subtitle">A 7-year-old needs ~1,500 cal/day. A 9-year-old needs ~1,800. Here's what that adds up to.</p>
+
+        <div class="stat-row">
+            <div class="stat-box">
+                <div class="num">730+</div>
+                <div class="label">pounds of food</div>
+            </div>
+            <div class="stat-box">
+                <div class="num">1,500</div>
+                <div class="label">snacks</div>
+            </div>
+            <div class="stat-box">
+                <div class="num">900</div>
+                <div class="label">PB&amp;J sandwiches worth</div>
+            </div>
+            <div class="stat-box">
+                <div class="num">600</div>
+                <div class="label">bananas</div>
+            </div>
+            <div class="stat-box">
+                <div class="num">500</div>
+                <div class="label">glasses of milk</div>
+            </div>
+            <div class="stat-box">
+                <div class="num">1,095</div>
+                <div class="label">meals cooked</div>
+            </div>
+        </div>
 
         <div class="cards">
             <div class="card">
-                <h3>Zero Bugs</h3>
-                <p>Like a perfectly flipped pancake, this project aims for flawless execution every time.</p>
+                <span class="icon">&#x1F969;</span>
+                <h3>The Protein Machine</h3>
+                <p>They'll eat roughly <span class="highlight">80 pounds of meat</span> this year &mdash; that's an entire Great Dane's worth of chicken nuggets, burgers, and hot dogs.</p>
             </div>
             <div class="card">
-                <h3>Open Source</h3>
-                <p>Built in the open. Fork it, remix it, make it your own. The batter is free.</p>
+                <span class="icon">&#x1F34E;</span>
+                <h3>Fruit Annihilators</h3>
+                <p>About <span class="highlight">250 lbs of fruits and veggies</span>. If stacked as apples, that tower would be taller than a 2-story building.</p>
             </div>
             <div class="card">
-                <h3>GitHub Pages</h3>
-                <p>Hosted for free on GitHub Pages &mdash; no servers, no fuss, just static goodness.</p>
+                <span class="icon">&#x1F35E;</span>
+                <h3>Carb Loading Champions</h3>
+                <p>Around <span class="highlight">180 loaves of bread</span> worth of grains &mdash; pasta, rice, cereal, and the crusts they definitely won't eat.</p>
             </div>
+        </div>
+
+        <div class="comparison-section">
+            <h2 class="section-title">But What Else Could That Energy Do?</h2>
+            <p class="section-subtitle">1,204,500 calories = roughly 5 billion joules. That's enough energy to...</p>
+
+            <div class="comparison-bar">
+                <span class="icon">&#x1F4A1;</span>
+                <div class="text">
+                    <strong>Power a lightbulb for 2.7 years straight</strong>
+                    <p>A single 60-watt bulb burning 24/7 &mdash; fueled entirely by goldfish crackers and juice boxes.</p>
+                </div>
+            </div>
+
+            <div class="comparison-bar">
+                <span class="icon">&#x1F697;</span>
+                <div class="text">
+                    <strong>Drive a car from New York to Los Angeles &mdash; and halfway back</strong>
+                    <p>That's about 3,800 miles of road trip powered by mac &amp; cheese alone.</p>
+                </div>
+            </div>
+
+            <div class="comparison-bar">
+                <span class="icon">&#x1F3C8;</span>
+                <div class="text">
+                    <strong>Throw a football 190,000 times</strong>
+                    <p>One throw every 3 minutes, 24/7, for over a year. These boys could out-pass the entire NFL season... times 30.</p>
+                </div>
+            </div>
+
+            <div class="comparison-bar">
+                <span class="icon">&#x1F30B;</span>
+                <div class="text">
+                    <strong>Heat 12,000 bathtubs of water from cold to steaming</strong>
+                    <p>That's every bathtub on an entire city block, heated by nothing but PB&amp;J energy.</p>
+                </div>
+            </div>
+
+            <div class="comparison-bar">
+                <span class="icon">&#x1F680;</span>
+                <div class="text">
+                    <strong>Launch a bowling ball 60 miles straight up</strong>
+                    <p>Past airplanes, past weather balloons, into the upper stratosphere. Powered by pizza and chicken tenders.</p>
+                </div>
+            </div>
+
+            <div class="comparison-bar">
+                <span class="icon">&#x1F50B;</span>
+                <div class="text">
+                    <strong>Fully charge an iPhone 460,000 times</strong>
+                    <p>That's charging a new phone every single minute for nearly a year without stopping.</p>
+                </div>
+            </div>
+
+            <div class="comparison-bar">
+                <span class="icon">&#x1F3E0;</span>
+                <div class="text">
+                    <strong>Power an average home for 50 days</strong>
+                    <p>Lights, AC, fridge, TV, video games &mdash; all running on boy fuel for almost two months.</p>
+                </div>
+            </div>
+
+            <div class="comparison-bar">
+                <span class="icon">&#x26F0;&#xFE0F;</span>
+                <div class="text">
+                    <strong>Climb Mount Everest 8 times</strong>
+                    <p>From base camp to summit, each climb burns ~150,000 calories. These two eat Everest for breakfast. Literally.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="fun-fact">
+            <span class="emoji">&#x1F92F;</span>
+            <h3>The Bottomless Pit Paradox</h3>
+            <p>Despite consuming over a million calories, both boys will claim they're "starving" approximately 15 minutes after every single meal. Science cannot explain this phenomenon.</p>
         </div>
     </main>
 
     <footer>
-        <p>Built with care &mdash; <a href="https://github.com/SteveJoy1/bug-free-pancake">View on GitHub</a></p>
+        <p>Built with love (and snacks) &mdash; <a href="https://github.com/SteveJoy1/bug-free-pancake">View on GitHub</a></p>
     </footer>
 </body>
 </html>

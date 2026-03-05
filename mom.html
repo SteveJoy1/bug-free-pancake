@@ -280,6 +280,8 @@
             text-decoration: none;
         }
 
+        #nav-toggle { display: none; }
+
         .hamburger {
             background: none;
             border: none;
@@ -288,6 +290,7 @@
             display: flex;
             flex-direction: column;
             gap: 5px;
+            z-index: 300;
         }
 
         .hamburger span {
@@ -299,9 +302,9 @@
             transition: transform 0.3s, opacity 0.3s;
         }
 
-        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-        .hamburger.open span:nth-child(2) { opacity: 0; }
-        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        #nav-toggle:checked ~ nav .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        #nav-toggle:checked ~ nav .hamburger span:nth-child(2) { opacity: 0; }
+        #nav-toggle:checked ~ nav .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
         .nav-menu {
             display: none;
@@ -313,9 +316,10 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid #30363d;
             padding: 1rem 0;
+            z-index: 199;
         }
 
-        .nav-menu.open { display: block; }
+        #nav-toggle:checked ~ .nav-menu { display: block; }
 
         .nav-menu a {
             display: block;
@@ -342,13 +346,14 @@
     </style>
 </head>
 <body>
+    <input type="checkbox" id="nav-toggle">
     <nav>
         <a href="index.html" class="brand">The Hungry Family</a>
-        <button class="hamburger" onclick="this.classList.toggle('open');document.getElementById('navMenu').classList.toggle('open')">
+        <label for="nav-toggle" class="hamburger">
             <span></span><span></span><span></span>
-        </button>
+        </label>
     </nav>
-    <div id="navMenu" class="nav-menu">
+    <div class="nav-menu">
         <a href="index.html">The Boys</a>
         <a href="mom.html" class="active">Mom</a>
     </div>

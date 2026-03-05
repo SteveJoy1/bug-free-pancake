@@ -36,16 +36,70 @@
             50% { transform: scale(1.1); opacity: 1; }
         }
 
-        .hero-photo {
+        .photo-wrapper {
             width: 220px;
             height: 220px;
             border-radius: 50%;
-            object-fit: cover;
             border: 4px solid #fb923c;
             margin: 0 auto 1.5rem;
-            display: block;
             position: relative;
             box-shadow: 0 0 40px rgba(251, 146, 60, 0.3);
+            cursor: pointer;
+            overflow: hidden;
+            background: #161b22;
+        }
+
+        .photo-wrapper:hover .upload-overlay {
+            opacity: 1;
+        }
+
+        .hero-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .upload-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.2s;
+            border-radius: 50%;
+        }
+
+        .upload-overlay .camera {
+            font-size: 2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .upload-overlay span:last-child {
+            font-size: 0.75rem;
+            color: #ccc;
+        }
+
+        .placeholder-icon {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #8b949e;
+        }
+
+        .placeholder-icon .cam {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .placeholder-icon span:last-child {
+            font-size: 0.8rem;
         }
 
         header h1 {
@@ -261,13 +315,24 @@
             header h1 { font-size: 1.8rem; }
             .intro .big-number { font-size: 3rem; }
             .stat-row { grid-template-columns: repeat(2, 1fr); }
-            .hero-photo { width: 160px; height: 160px; }
+            .photo-wrapper { width: 160px; height: 160px; }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="boys.jpg" alt="The boys" class="hero-photo">
+        <input type="file" id="photoInput" accept="image/*" hidden>
+        <div class="photo-wrapper" id="photoWrapper" onclick="document.getElementById('photoInput').click()">
+            <div class="placeholder-icon" id="placeholder">
+                <span class="cam">&#x1F4F7;</span>
+                <span>Tap to add photo</span>
+            </div>
+            <img id="heroImg" class="hero-photo" alt="The boys" style="display:none;">
+            <div class="upload-overlay">
+                <span class="camera">&#x1F4F7;</span>
+                <span>Change photo</span>
+            </div>
+        </div>
         <h1>Two Boys. <span>One Hungry Year.</span></h1>
         <p>Just how much fuel does it take to power a 7-year-old and a 9-year-old for an entire year? Buckle up.</p>
     </header>
@@ -405,5 +470,32 @@
     <footer>
         <p>Built with love (and snacks) &mdash; <a href="https://github.com/SteveJoy1/bug-free-pancake">View on GitHub</a></p>
     </footer>
+    <script>
+        const input = document.getElementById('photoInput');
+        const img = document.getElementById('heroImg');
+        const placeholder = document.getElementById('placeholder');
+
+        function showPhoto(src) {
+            img.src = src;
+            img.style.display = 'block';
+            placeholder.style.display = 'none';
+        }
+
+        // Load saved photo
+        const saved = localStorage.getItem('heroPhoto');
+        if (saved) showPhoto(saved);
+
+        input.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(ev) {
+                const dataUrl = ev.target.result;
+                showPhoto(dataUrl);
+                try { localStorage.setItem('heroPhoto', dataUrl); } catch(err) {}
+            };
+            reader.readAsDataURL(file);
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,57 @@
+# The 10 Parts of Propaedia (Encyclopædia Britannica 15th ed., 1974).
+# These Part titles are stable across editions and are reproduced as the
+# top-level skeleton of this reference.
+#
+# Source: Adler, M. J. (ed.), Propaedia: Outline of Knowledge and Guide
+#         to the Britannica (1974). See sources.yaml.
+
+parts:
+  - id: "01"
+    slug: matter-and-energy
+    title: Matter and Energy
+    blurb: The physical universe at every scale — particles, forces, fields, cosmology.
+
+  - id: "02"
+    slug: earth
+    title: The Earth
+    blurb: Properties and history of our planet — geology, oceans, atmosphere, climate.
+
+  - id: "03"
+    slug: life-on-earth
+    title: Life on Earth
+    blurb: Biology — molecular, organismal, ecological, evolutionary.
+
+  - id: "04"
+    slug: human-life
+    title: Human Life
+    blurb: The human organism — anatomy, physiology, psychology, behavior.
+
+  - id: "05"
+    slug: human-society
+    title: Human Society
+    blurb: Social structures — family, economy, politics, law, education.
+
+  - id: "06"
+    slug: art
+    title: Art
+    blurb: Human expression — literature, music, visual arts, theater, film.
+
+  - id: "07"
+    slug: technology
+    title: Technology
+    blurb: Applied knowledge — engineering, medicine, agriculture, computing.
+
+  - id: "08"
+    slug: religion
+    title: Religion
+    blurb: Religious traditions, doctrines, practices, and their histories.
+
+  - id: "09"
+    slug: history
+    title: The History of Mankind
+    blurb: Human history — prehistory to the present, across regions and themes.
+
+  - id: "10"
+    slug: branches-of-knowledge
+    title: The Branches of Knowledge
+    blurb: Meta-level — logic, mathematics, science-as-practice, philosophy, scholarship itself.

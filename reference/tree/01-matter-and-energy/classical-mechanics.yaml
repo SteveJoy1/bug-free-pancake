@@ -1,0 +1,138 @@
+# Classical mechanics — Propaedia Part 01, PhySH concept "Classical Mechanics".
+#
+# Worked example demonstrating the leaf schema. Leaves chosen to cover the
+# standard introductory-through-intermediate mechanics curriculum.
+#
+# Wikidata IDs are intentionally omitted from this first pass — they must be
+# verified against wikidata.org before being added. Add them in a follow-up.
+
+area:
+  slug: classical-mechanics
+  title: Classical Mechanics
+  source: physh:classical-mechanics
+  parent: 01-matter-and-energy
+
+leaves:
+  - slug: newtons-laws-of-motion
+    title: Newton's Laws of Motion
+    summary: Three foundational laws relating force, mass, and motion.
+    difficulty: 1
+    see_also: [force, mass, acceleration, momentum]
+
+  - slug: force
+    title: Force
+    summary: An influence that changes an object's motion; a vector with magnitude and direction.
+    difficulty: 1
+
+  - slug: mass
+    title: Mass
+    summary: A measure of an object's resistance to acceleration (inertial mass) and its gravitational coupling (gravitational mass).
+    difficulty: 1
+
+  - slug: acceleration
+    title: Acceleration
+    summary: The rate of change of velocity with respect to time.
+    difficulty: 1
+    see_also: [velocity]
+
+  - slug: velocity
+    title: Velocity
+    summary: Rate of change of position with time; a vector quantity.
+    difficulty: 1
+
+  - slug: momentum
+    title: Momentum
+    summary: Product of mass and velocity; conserved in closed systems.
+    difficulty: 2
+    see_also: [conservation-of-momentum]
+
+  - slug: conservation-of-momentum
+    title: Conservation of Momentum
+    summary: The total momentum of an isolated system is constant.
+    difficulty: 2
+
+  - slug: kinetic-energy
+    title: Kinetic Energy
+    summary: Energy of motion; (1/2)mv² in the non-relativistic limit.
+    difficulty: 2
+
+  - slug: potential-energy
+    title: Potential Energy
+    summary: Stored energy associated with position in a force field (gravitational, elastic, etc.).
+    difficulty: 2
+
+  - slug: conservation-of-energy
+    title: Conservation of Energy
+    summary: Total energy in a closed system is constant; energy transforms but is not created or destroyed.
+    difficulty: 2
+
+  - slug: work-physics
+    title: Work (Physics)
+    summary: Energy transferred by a force acting through a distance; W = F·d for constant force along displacement.
+    difficulty: 2
+    aliases: [work]
+
+  - slug: power-physics
+    title: Power (Physics)
+    summary: Rate of energy transfer or work done per unit time.
+    difficulty: 2
+    aliases: [power]
+
+  - slug: friction
+    title: Friction
+    summary: Force opposing relative motion between surfaces in contact.
+    difficulty: 1
+
+  - slug: gravitation
+    title: Gravitation
+    summary: Mutual attractive force between masses; Newton's law of universal gravitation at non-relativistic scales.
+    difficulty: 2
+    see_also: [gravitational-potential-energy]
+
+  - slug: angular-momentum
+    title: Angular Momentum
+    summary: Rotational analog of linear momentum; conserved in systems with no external torque.
+    difficulty: 3
+    see_also: [torque]
+
+  - slug: torque
+    title: Torque
+    summary: Rotational analog of force; produces angular acceleration.
+    difficulty: 2
+
+  - slug: moment-of-inertia
+    title: Moment of Inertia
+    summary: Rotational analog of mass; depends on mass distribution about the axis of rotation.
+    difficulty: 3
+
+  - slug: simple-harmonic-motion
+    title: Simple Harmonic Motion
+    summary: Oscillation where restoring force is proportional to displacement; pendulums and mass-spring systems are canonical examples.
+    difficulty: 2
+
+  - slug: rigid-body-dynamics
+    title: Rigid Body Dynamics
+    summary: Motion of non-deformable bodies including translation and rotation about axes.
+    difficulty: 3
+
+  - slug: centripetal-force
+    title: Centripetal Force
+    summary: Net inward force required to keep an object moving along a circular path.
+    difficulty: 2
+
+  - slug: lagrangian-mechanics
+    title: Lagrangian Mechanics
+    summary: Reformulation of classical mechanics using the Lagrangian (L = T − V) and the principle of stationary action.
+    difficulty: 4
+    see_also: [hamiltonian-mechanics]
+
+  - slug: hamiltonian-mechanics
+    title: Hamiltonian Mechanics
+    summary: Reformulation using the Hamiltonian (total energy) and generalized coordinates/momenta; foundation for quantum mechanics.
+    difficulty: 4
+
+  - slug: noethers-theorem
+    title: Noether's Theorem
+    summary: Every differentiable symmetry of a physical system's action corresponds to a conservation law.
+    difficulty: 4
+    see_also: [conservation-of-energy, conservation-of-momentum, angular-momentum]

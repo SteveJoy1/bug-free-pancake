@@ -1,0 +1,68 @@
+# Provenance for the reference tree. Every branch must cite a source.
+# If a subtree has no source, it doesn't belong here.
+
+skeleton:
+  id: propaedia
+  title: Propaedia — Outline of Knowledge and Guide to the Britannica
+  editor: Mortimer J. Adler
+  publisher: Encyclopædia Britannica
+  year: 1974
+  edition: "15th"
+  url: https://en.wikipedia.org/wiki/Propædia
+  scope: >
+    The 10 top-level Parts. Divisions and Sections from 1974 are consulted
+    where still accurate; superseded where a modern domain canon exists.
+
+grafts:
+  - id: physh
+    title: Physics Subject Headings
+    publisher: American Institute of Physics / American Physical Society
+    url: https://physh.org/
+    year: 2016
+    scope: Divisions and leaves under Part 01 (Matter and Energy). Replaces PACS.
+
+  - id: msc
+    title: Mathematics Subject Classification (MSC 2020)
+    publisher: American Mathematical Society / zbMATH
+    url: https://msc2020.org/
+    year: 2020
+    scope: Mathematics subtree under Part 10 (Branches of Knowledge).
+
+  - id: mesh
+    title: Medical Subject Headings
+    publisher: US National Library of Medicine
+    url: https://www.nlm.nih.gov/mesh/
+    scope: Medicine and health subtrees under Part 04 (Human Life) and Part 07 (Technology).
+
+  - id: acm-ccs
+    title: ACM Computing Classification System
+    publisher: Association for Computing Machinery
+    url: https://dl.acm.org/ccs
+    year: 2012
+    scope: Computing subtree under Part 07 (Technology).
+
+  - id: jel
+    title: JEL Classification Codes
+    publisher: American Economic Association
+    url: https://www.aeaweb.org/jel/guide/jel.php
+    scope: Economics subtree under Part 05 (Human Society).
+
+  - id: wikidata
+    title: Wikidata
+    publisher: Wikimedia Foundation
+    url: https://www.wikidata.org/
+    scope: Stable machine-readable identifiers for individual leaves across all Parts.
+
+  - id: khan-academy
+    title: Khan Academy topic tree
+    publisher: Khan Academy
+    url: https://www.khanacademy.org/
+    scope: Pedagogical ordering for leaves where a learning progression matters.
+
+conventions:
+  - Every leaf must cite at least one source (skeleton placement or graft).
+  - Wikidata IDs are encouraged but require verification against wikidata.org before trusting.
+  - Contemporary fields (ML, climate science, genomics, quantum computing) are grafted
+    onto the nearest 1974 Propaedia parent. If no 1974 parent fits, create a new
+    Division under the closest Part and document it here.
+  - Do not invent sources. A placeholder ("source: TODO") is better than a fabricated one.

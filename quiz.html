@@ -292,6 +292,38 @@
 
         .hidden { display: none; }
 
+        .status {
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        .status.success {
+            background: rgba(46, 160, 67, 0.12);
+            border: 1px solid rgba(46, 160, 67, 0.4);
+            color: #3fb950;
+        }
+        .status.pending {
+            background: rgba(210, 153, 34, 0.12);
+            border: 1px solid rgba(210, 153, 34, 0.4);
+            color: #d29922;
+        }
+        .status a { color: inherit; text-decoration: underline; }
+
+        .input-row {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .input-row input { flex: 1; }
+
+        code {
+            background: #21262d;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: #e6edf3;
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
@@ -315,6 +347,7 @@
         <a href="quiz.html" class="brand">Mirror<span>/quiz</span></a>
         <div class="links">
             <a href="quiz.html" class="active">Quiz</a>
+            <a href="#" id="nav-settings">Settings</a>
             <a href="https://github.com/SteveJoy1/bug-free-pancake" target="_blank">GitHub</a>
         </div>
     </nav>
@@ -324,6 +357,26 @@
         <p class="subtitle">Probe your knowledge against the reference tree. Responses are stored locally; export them for grading in a later session.</p>
 
         <div id="error-panel" class="error hidden"></div>
+
+        <!-- Settings -->
+        <section id="settings-panel" class="panel hidden">
+            <h2>GitHub settings</h2>
+            <p class="helper" style="margin-bottom: 1rem;">Store a fine-scoped Personal Access Token so the quiz can commit session JSON directly to <code>mirror/sessions/</code> on <code>main</code>. The token stays in your browser's localStorage — it never leaves your device except to call the GitHub API.</p>
+
+            <label for="token-input">Personal Access Token</label>
+            <div class="input-row">
+                <input type="password" id="token-input" placeholder="github_pat_...">
+                <button id="token-show-btn" class="secondary" type="button" title="Show/hide">👁</button>
+            </div>
+            <p class="helper">Create at <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" style="color:#fb923c;">github.com/settings/personal-access-tokens/new</a> — fine-grained, single repo: <code>SteveJoy1/bug-free-pancake</code>, Contents: <strong>Read and write</strong>. No other permissions needed.</p>
+
+            <div class="row">
+                <button id="token-save-btn">Save &amp; test</button>
+                <button id="token-clear-btn" class="secondary">Clear token</button>
+                <button id="settings-close-btn" class="secondary" style="margin-left:auto;">Close</button>
+            </div>
+            <div id="token-status" class="status hidden"></div>
+        </section>
 
         <!-- Setup -->
         <section id="setup" class="panel hidden">
@@ -410,10 +463,12 @@
             <div class="response-list" id="response-list"></div>
 
             <div class="row">
-                <button id="export-btn">Download session JSON</button>
-                <button id="new-session-btn" class="secondary">New session</button>
+                <button id="upload-btn">Commit to repo</button>
+                <button id="export-btn" class="secondary">Download JSON</button>
+                <button id="new-session-btn" class="secondary" style="margin-left:auto;">New session</button>
             </div>
-            <p class="helper">Drop the exported JSON into a Claude session to grade answers and update <code>mirror/notes/</code>.</p>
+            <div id="upload-status" class="status hidden"></div>
+            <p class="helper">Commit writes <code>mirror/sessions/&lt;timestamp&gt;.json</code> to <code>main</code>. A future Claude session reads unprocessed files from that folder, grades them against the rubrics, and updates <code>mirror/notes/</code>. If you don't have a token set, use Download and paste into a Claude session.</p>
         </section>
     </main>
 
@@ -437,9 +492,18 @@
         }
       ];
 
+      // --- Repo config ----------------------------------------------------
+      const REPO_OWNER = 'SteveJoy1';
+      const REPO_NAME = 'bug-free-pancake';
+      const REPO_BRANCH = 'main';
+      const SESSIONS_DIR = 'mirror/sessions';
+
+      const LS_TOKEN_KEY = 'mirror.quiz.github_token.v1';
+
       // --- DOM refs -------------------------------------------------------
       const $ = (id) => document.getElementById(id);
       const errorPanel = $('error-panel');
+      const settingsPanel = $('settings-panel');
       const setupPanel = $('setup');
       const questionPanel = $('question-panel');
       const summaryPanel = $('summary-panel');
@@ -451,6 +515,8 @@
       const skipBtn = $('skip-btn');
       const endBtn = $('end-btn');
       const exportBtn = $('export-btn');
+      const uploadBtn = $('upload-btn');
+      const uploadStatus = $('upload-status');
       const newSessionBtn = $('new-session-btn');
       const answerText = $('answer-text');
       const promptText = $('prompt-text');
@@ -459,6 +525,13 @@
       const progressText = $('progress-text');
       const progressFill = $('progress-fill');
       const areaLabel = $('area-label');
+      const navSettings = $('nav-settings');
+      const tokenInput = $('token-input');
+      const tokenShowBtn = $('token-show-btn');
+      const tokenSaveBtn = $('token-save-btn');
+      const tokenClearBtn = $('token-clear-btn');
+      const settingsCloseBtn = $('settings-close-btn');
+      const tokenStatus = $('token-status');
 
       // --- State ----------------------------------------------------------
       const LS_KEY = 'mirror.quiz.session.v1';
@@ -474,10 +547,147 @@
       }
 
       function show(panel) {
+        settingsPanel.classList.add('hidden');
         setupPanel.classList.add('hidden');
         questionPanel.classList.add('hidden');
         summaryPanel.classList.add('hidden');
         panel.classList.remove('hidden');
+      }
+
+      function showStatus(el, kind, html) {
+        el.className = `status ${kind}`;
+        el.innerHTML = html;
+      }
+      function hideStatus(el) {
+        el.className = 'status hidden';
+        el.innerHTML = '';
+      }
+
+      // --- GitHub token management ---------------------------------------
+      function getToken() {
+        try { return localStorage.getItem(LS_TOKEN_KEY) || ''; }
+        catch (e) { return ''; }
+      }
+      function setToken(v) {
+        try {
+          if (v) localStorage.setItem(LS_TOKEN_KEY, v);
+          else localStorage.removeItem(LS_TOKEN_KEY);
+        } catch (e) {}
+      }
+      function hasToken() { return !!getToken(); }
+
+      async function testToken(token) {
+        // Validate the token has the required repo access.
+        const resp = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}`, {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Accept': 'application/vnd.github+json',
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        if (resp.status === 401) throw new Error('Token invalid or expired.');
+        if (resp.status === 403) throw new Error('Token lacks access to the repo. Check fine-grained permissions.');
+        if (resp.status === 404) throw new Error('Repo not found or token has no access.');
+        if (!resp.ok) throw new Error(`GitHub API returned ${resp.status}.`);
+        const data = await resp.json();
+        return data;
+      }
+
+      async function commitSession(sessionData) {
+        const token = getToken();
+        if (!token) throw new Error('No GitHub token configured. Open Settings to add one.');
+
+        const ts = sessionData.session_id.replace(/[:.]/g, '-');
+        const path = `${SESSIONS_DIR}/${ts}--${sessionData.area}.json`;
+
+        const content = JSON.stringify(sessionData, null, 2);
+        // Base64 encode with UTF-8 safety
+        const b64 = btoa(unescape(encodeURIComponent(content)));
+
+        const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${path}`;
+        const body = {
+          message: `Add quiz session: ${sessionData.area_title} (${sessionData.response_count} responses)`,
+          content: b64,
+          branch: REPO_BRANCH
+        };
+
+        const resp = await fetch(url, {
+          method: 'PUT',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Accept': 'application/vnd.github+json',
+            'Content-Type': 'application/json',
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          body: JSON.stringify(body)
+        });
+
+        if (!resp.ok) {
+          let detail = `HTTP ${resp.status}`;
+          try {
+            const err = await resp.json();
+            if (err.message) detail = err.message;
+          } catch (e) {}
+          throw new Error(`Commit failed: ${detail}`);
+        }
+        const data = await resp.json();
+        return {
+          path: path,
+          sha: data.content && data.content.sha,
+          commit_sha: data.commit && data.commit.sha,
+          html_url: data.content && data.content.html_url
+        };
+      }
+
+      function openSettings() {
+        hideStatus(tokenStatus);
+        tokenInput.value = getToken();
+        tokenInput.type = 'password';
+        tokenShowBtn.textContent = '👁';
+        show(settingsPanel);
+      }
+      function closeSettings() {
+        hideStatus(tokenStatus);
+        // If there's an in-progress session, go back to question view; else setup.
+        if (session && !session.completed_at && session.index < session.queue.length) {
+          show(questionPanel);
+        } else if (session && session.completed_at) {
+          show(summaryPanel);
+        } else {
+          show(setupPanel);
+          maybeOfferResume();
+        }
+      }
+      function onTokenShow() {
+        if (tokenInput.type === 'password') {
+          tokenInput.type = 'text';
+          tokenShowBtn.textContent = '🙈';
+        } else {
+          tokenInput.type = 'password';
+          tokenShowBtn.textContent = '👁';
+        }
+      }
+      async function onTokenSave() {
+        hideStatus(tokenStatus);
+        const val = tokenInput.value.trim();
+        if (!val) { showStatus(tokenStatus, 'pending', 'Paste a token first.'); return; }
+        tokenSaveBtn.disabled = true;
+        tokenSaveBtn.textContent = 'Testing…';
+        try {
+          const info = await testToken(val);
+          setToken(val);
+          showStatus(tokenStatus, 'success', `Connected to <strong>${info.full_name}</strong>. Token saved.`);
+        } catch (e) {
+          showStatus(tokenStatus, 'pending', `Test failed: ${e.message}`);
+        } finally {
+          tokenSaveBtn.disabled = false;
+          tokenSaveBtn.textContent = 'Save & test';
+        }
+      }
+      function onTokenClear() {
+        setToken('');
+        tokenInput.value = '';
+        showStatus(tokenStatus, 'pending', 'Token cleared.');
       }
 
       function populateTopics() {
@@ -684,9 +894,8 @@
         return d.innerHTML;
       }
 
-      function exportSession() {
-        if (!session) return;
-        const exportData = {
+      function buildExportData() {
+        return {
           session_id: session.session_id,
           area: session.area,
           area_title: session.area_title,
@@ -705,6 +914,11 @@
             timestamp: r.timestamp
           }))
         };
+      }
+
+      function exportSession() {
+        if (!session) return;
+        const exportData = buildExportData();
         const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
@@ -715,6 +929,32 @@
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
+      }
+
+      async function uploadSession() {
+        if (!session) return;
+        hideStatus(uploadStatus);
+        if (!hasToken()) {
+          showStatus(uploadStatus, 'pending', 'No GitHub token set. <a href="#" id="goto-settings">Open Settings</a> to add one, or use Download.');
+          const link = $('goto-settings');
+          if (link) link.addEventListener('click', (e) => { e.preventDefault(); openSettings(); });
+          return;
+        }
+        uploadBtn.disabled = true;
+        uploadBtn.textContent = 'Committing…';
+        try {
+          const exportData = buildExportData();
+          const result = await commitSession(exportData);
+          const url = result.html_url || `https://github.com/${REPO_OWNER}/${REPO_NAME}/blob/${REPO_BRANCH}/${result.path}`;
+          const shortSha = (result.commit_sha || '').slice(0, 7);
+          showStatus(uploadStatus, 'success',
+            `Committed <code>${escapeHtml(result.path)}</code>${shortSha ? ` (${shortSha})` : ''} — <a href="${url}" target="_blank">view on GitHub</a>.`);
+        } catch (e) {
+          showStatus(uploadStatus, 'pending', `Upload failed: ${escapeHtml(e.message)}. You can still use Download.`);
+        } finally {
+          uploadBtn.disabled = false;
+          uploadBtn.textContent = 'Commit to repo';
+        }
       }
 
       async function onStart() {
@@ -791,7 +1031,13 @@
       skipBtn.addEventListener('click', onSkip);
       endBtn.addEventListener('click', onEndSession);
       exportBtn.addEventListener('click', exportSession);
+      uploadBtn.addEventListener('click', uploadSession);
       newSessionBtn.addEventListener('click', onNewSession);
+      navSettings.addEventListener('click', (e) => { e.preventDefault(); openSettings(); });
+      tokenShowBtn.addEventListener('click', onTokenShow);
+      tokenSaveBtn.addEventListener('click', onTokenSave);
+      tokenClearBtn.addEventListener('click', onTokenClear);
+      settingsCloseBtn.addEventListener('click', closeSettings);
 
       // Keyboard shortcuts during question view
       document.addEventListener('keydown', (e) => {

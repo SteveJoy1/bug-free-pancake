@@ -61,8 +61,10 @@ Target mix: 1 question at recall/comprehension, 1 at application, 1 at analysis 
 1. User opens `quiz.html`, picks a topic and session length.
 2. Questions are served from this bank. User types a free-text answer and self-rates confidence 1–5.
 3. Responses are held in `localStorage` so refresh/close/reopen resumes mid-session.
-4. At the end, user downloads a session JSON (format below).
-5. In a later Claude session, the JSON is read, answers are graded against the rubric, and `../../mirror/notes/<slug>.md` is created or updated.
+4. At the end:
+   - **Preferred**: *Commit to repo* — writes a session JSON directly to `../../mirror/sessions/` on `main` via the GitHub Contents API using a fine-scoped PAT stored in the browser.
+   - **Fallback**: *Download JSON* — for when no token is set, or the API call fails.
+5. A later Claude session reads unprocessed session files, grades answers against the rubric, and creates or updates `../../mirror/notes/<slug>.md`.
 
 ## Session export schema
 
@@ -94,19 +96,24 @@ The exported JSON is self-contained — it includes the prompt text, so a gradin
 
 ## Grading protocol (for future Claude sessions)
 
-When the user brings a session JSON:
+Trigger: user says something like "grade my quiz sessions."
 
-1. Load this directory to get rubrics: `reference/questions/**/*.questions.yaml`.
-2. Load any existing mirror notes: `mirror/notes/<slug>.md`.
-3. For each non-skipped response:
-   - Match `question_id` to its rubric.
-   - Grade user's `answer` against rubric. Note what was covered, what was missed, and any detected gaps.
-   - Compare against user's `self_rating` — overconfidence and underconfidence are both signals.
-4. For each `slug` touched:
-   - Create or update `mirror/notes/<slug>.md`.
-   - Frontmatter: `confidence` (weighted from graded answers + self-rating), `gaps` (from uncovered rubric points), `updated` (today).
-   - Body: user's own words from their answers, cleaned up. Keep it in their voice.
-5. Commit with a clear message citing the session id.
+1. List `mirror/sessions/*.json` and read `mirror/sessions/.processed` (the already-graded log; may be empty).
+2. For each file NOT in `.processed`, oldest first:
+   a. Load rubrics from `reference/questions/**/*.questions.yaml`.
+   b. Load any existing mirror notes: `mirror/notes/<slug>.md`.
+   c. For each non-skipped response:
+      - Match `question_id` to its rubric.
+      - Grade user's `answer` against rubric. Note what was covered, what was missed.
+      - Compare against user's `self_rating` — overconfidence and underconfidence are both signals.
+   d. For each `slug` touched:
+      - Create or update `mirror/notes/<slug>.md`.
+      - Frontmatter: `confidence` (weighted from graded answers + self-rating), `gaps` (uncovered rubric points), `updated` (today).
+      - Body: user's own words from their answers, lightly cleaned. Keep in their voice; don't rewrite into your own phrasing.
+   e. Append the session filename to `mirror/sessions/.processed`.
+3. Commit — one per session or a batch, as appropriate.
+
+See `../../mirror/sessions/README.md` for the full lifecycle model.
 
 ## Adding new question banks
 

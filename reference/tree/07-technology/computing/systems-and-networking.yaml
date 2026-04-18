@@ -1,0 +1,179 @@
+# Computer systems and networking.
+# Source: ACM CCS "Computer systems organization" and "Networks";
+# standard OS and networking textbooks (Tanenbaum, Silberschatz, Kurose-Ross).
+
+area:
+  slug: systems-and-networking
+  title: Systems and Networking
+  source: acm-ccs:computer-systems-organization
+  parent: 07-technology/computing
+
+leaves:
+  # Operating systems
+  - slug: operating-system
+    title: Operating System
+    summary: Software managing hardware resources and providing services to applications.
+    difficulty: 1
+
+  - slug: process
+    title: Process
+    summary: Running instance of a program with its own memory space.
+    difficulty: 1
+
+  - slug: thread
+    title: Thread
+    summary: Unit of execution within a process; threads share memory with other threads in the same process.
+    difficulty: 2
+
+  - slug: virtual-memory
+    title: Virtual Memory
+    summary: Abstraction giving each process its own contiguous address space, mapped to physical memory via page tables.
+    difficulty: 3
+
+  - slug: system-call
+    title: System Call
+    summary: Controlled entry point for user programs to request services from the kernel.
+    difficulty: 2
+
+  - slug: scheduling
+    title: Scheduling (OS)
+    summary: OS decision about which process/thread runs next on a CPU; strategies include round-robin, priority, CFS.
+    difficulty: 3
+
+  - slug: concurrency
+    title: Concurrency
+    summary: Ability of a system to make progress on multiple tasks; distinct from parallelism (simultaneous execution).
+    difficulty: 3
+
+  - slug: race-condition
+    title: Race Condition
+    summary: Bug where the outcome depends on unpredictable timing of concurrent operations.
+    difficulty: 3
+
+  - slug: mutex
+    title: Mutex
+    summary: Mutual-exclusion lock ensuring only one thread accesses a resource at a time.
+    difficulty: 2
+
+  # Networking fundamentals
+  - slug: tcp-ip
+    title: TCP/IP
+    summary: Foundational protocol suite of the internet; TCP provides reliable streams, IP handles addressing and routing.
+    difficulty: 2
+
+  - slug: osi-model
+    title: OSI Model
+    summary: Seven-layer conceptual model for network protocols (Physical, Data Link, Network, Transport, Session, Presentation, Application).
+    difficulty: 2
+
+  - slug: tcp-vs-udp
+    title: TCP vs. UDP
+    summary: TCP is reliable and ordered with connection setup; UDP is connectionless and best-effort, used where speed matters more than reliability.
+    difficulty: 2
+
+  - slug: http
+    title: HTTP
+    summary: Application-layer request-response protocol; foundation of the web.
+    difficulty: 2
+
+  - slug: https-tls
+    title: HTTPS / TLS
+    summary: HTTP over TLS; provides encryption, integrity, and authentication for web traffic.
+    difficulty: 2
+    aliases: [https, tls]
+
+  - slug: dns
+    title: DNS
+    summary: Domain Name System — maps human-readable names to IP addresses via a distributed hierarchy.
+    difficulty: 2
+
+  - slug: socket
+    title: Socket
+    summary: Endpoint for network communication, identified by IP address and port.
+    difficulty: 2
+
+  - slug: routing
+    title: Routing
+    summary: Process of selecting paths for packets across a network; protocols include BGP (inter-AS) and OSPF (intra-AS).
+    difficulty: 3
+
+  # Storage and databases
+  - slug: relational-database
+    title: Relational Database
+    summary: Data organized in tables with typed columns and foreign-key relationships; queried with SQL.
+    difficulty: 2
+
+  - slug: sql
+    title: SQL
+    summary: Declarative language for querying and manipulating relational data.
+    difficulty: 2
+
+  - slug: nosql
+    title: NoSQL
+    summary: Umbrella term for non-relational databases (document, key-value, wide-column, graph).
+    difficulty: 2
+
+  - slug: acid-properties
+    title: ACID Properties
+    summary: Atomicity, Consistency, Isolation, Durability — guarantees traditional databases provide on transactions.
+    difficulty: 3
+    aliases: [acid]
+
+  - slug: cap-theorem
+    title: CAP Theorem
+    summary: In a distributed system you can only have two of: Consistency, Availability, Partition tolerance.
+    difficulty: 3
+
+  # Distributed systems
+  - slug: distributed-system
+    title: Distributed System
+    summary: System of independent computers communicating over a network, presenting as a coherent whole.
+    difficulty: 3
+
+  - slug: consensus-algorithm
+    title: Consensus Algorithm
+    summary: Algorithm by which distributed nodes agree on a value despite failures (Paxos, Raft).
+    difficulty: 4
+    aliases: [paxos, raft]
+
+  - slug: replication
+    title: Replication
+    summary: Keeping copies of data across multiple nodes for fault tolerance or read scaling.
+    difficulty: 3
+
+  - slug: sharding
+    title: Sharding
+    summary: Horizontal partitioning of data across multiple databases to scale write throughput.
+    difficulty: 3
+
+  # Infrastructure
+  - slug: cache
+    title: Cache
+    summary: Fast storage layer holding a subset of data to reduce access time; cache invalidation is famously hard.
+    difficulty: 2
+
+  - slug: load-balancer
+    title: Load Balancer
+    summary: Distributes incoming requests across multiple backend servers.
+    difficulty: 2
+
+  - slug: cdn
+    title: Content Delivery Network (CDN)
+    summary: Geographically distributed cache of static content served from edges close to users.
+    difficulty: 2
+
+  - slug: container
+    title: Container
+    summary: Lightweight, isolated process environment sharing the host kernel (Docker, containerd).
+    difficulty: 2
+    aliases: [docker]
+
+  - slug: kubernetes
+    title: Kubernetes
+    summary: Container orchestration platform for deploying, scaling, and managing containerized workloads.
+    difficulty: 3
+
+  - slug: virtual-machine
+    title: Virtual Machine
+    summary: Software emulation of a full computer, running its own kernel atop a hypervisor.
+    difficulty: 2

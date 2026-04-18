@@ -1,0 +1,179 @@
+# Artificial intelligence and machine learning.
+# Source: ACM CCS "Computing methodologies / Machine learning"; standard
+# ML curricula (Bishop, Goodfellow-Bengio-Courville).
+# Conservative canon only — frontier methods belong in mirror/notes/, not here.
+
+area:
+  slug: ai-and-machine-learning
+  title: AI and Machine Learning
+  source: acm-ccs:computing-methodologies
+  parent: 07-technology/computing
+
+leaves:
+  # Learning paradigms
+  - slug: supervised-learning
+    title: Supervised Learning
+    summary: Learning a mapping from labeled input-output pairs; classification and regression.
+    difficulty: 2
+
+  - slug: unsupervised-learning
+    title: Unsupervised Learning
+    summary: Learning structure from unlabeled data — clustering, dimensionality reduction, density estimation.
+    difficulty: 2
+
+  - slug: reinforcement-learning
+    title: Reinforcement Learning
+    summary: Agent learns a policy by interacting with an environment and receiving rewards.
+    difficulty: 3
+
+  - slug: transfer-learning
+    title: Transfer Learning
+    summary: Reuse a model trained on one task as the starting point for a related task.
+    difficulty: 3
+
+  # Core concepts
+  - slug: loss-function
+    title: Loss Function
+    summary: Scalar measure of how wrong a model's predictions are; what optimization minimizes.
+    difficulty: 2
+
+  - slug: gradient-descent
+    title: Gradient Descent
+    summary: Iterative optimization: step in the direction of steepest decrease of the loss function.
+    difficulty: 2
+
+  - slug: backpropagation
+    title: Backpropagation
+    summary: Efficient algorithm for computing gradients in neural networks via the chain rule.
+    difficulty: 3
+
+  - slug: overfitting
+    title: Overfitting
+    summary: Model fits training data too closely and fails to generalize to new data.
+    difficulty: 2
+
+  - slug: regularization
+    title: Regularization
+    summary: Techniques that discourage model complexity to improve generalization (L1, L2, dropout).
+    difficulty: 3
+
+  - slug: cross-validation
+    title: Cross-Validation
+    summary: Estimate generalization performance by training/evaluating on different partitions of the data.
+    difficulty: 2
+
+  - slug: bias-variance-tradeoff
+    title: Bias-Variance Tradeoff
+    summary: Generalization error decomposes into bias (underfitting) and variance (overfitting); reducing one often raises the other.
+    difficulty: 3
+
+  # Neural networks
+  - slug: neural-network
+    title: Neural Network
+    summary: Function composed of layers of weighted sums and nonlinearities; trained by gradient descent.
+    difficulty: 2
+
+  - slug: activation-function
+    title: Activation Function
+    summary: Nonlinearity applied element-wise in a neural network (ReLU, sigmoid, tanh).
+    difficulty: 2
+
+  - slug: convolutional-neural-network
+    title: Convolutional Neural Network (CNN)
+    summary: Neural network using convolutional layers to exploit local spatial structure, dominant in vision.
+    difficulty: 3
+    aliases: [cnn]
+
+  - slug: recurrent-neural-network
+    title: Recurrent Neural Network (RNN)
+    summary: Neural network with connections that form cycles, used for sequential data; largely superseded by transformers.
+    difficulty: 3
+    aliases: [rnn]
+
+  - slug: transformer-architecture
+    title: Transformer Architecture
+    summary: Neural network architecture based on self-attention; foundation of modern LLMs.
+    difficulty: 3
+    aliases: [transformer]
+
+  - slug: attention-mechanism
+    title: Attention Mechanism
+    summary: Computes a weighted sum of values based on learned similarity between queries and keys.
+    difficulty: 3
+
+  - slug: embedding
+    title: Embedding
+    summary: Learned low-dimensional vector representation of a discrete input (word, token, entity).
+    difficulty: 2
+
+  # Classical methods
+  - slug: linear-regression
+    title: Linear Regression
+    summary: Fit a linear function to data by minimizing squared error.
+    difficulty: 1
+
+  - slug: logistic-regression
+    title: Logistic Regression
+    summary: Linear model for binary classification, with sigmoid output interpreted as probability.
+    difficulty: 2
+
+  - slug: decision-tree
+    title: Decision Tree
+    summary: Tree of splits on features, with predictions at the leaves; interpretable but prone to overfitting.
+    difficulty: 2
+
+  - slug: random-forest
+    title: Random Forest
+    summary: Ensemble of decision trees trained on bootstrapped samples and random feature subsets.
+    difficulty: 2
+
+  - slug: gradient-boosting
+    title: Gradient Boosting
+    summary: Ensemble method building trees sequentially, each correcting errors of the previous ensemble.
+    difficulty: 3
+
+  - slug: k-means-clustering
+    title: K-Means Clustering
+    summary: Unsupervised algorithm that partitions data into k clusters by minimizing within-cluster variance.
+    difficulty: 2
+    aliases: [k-means]
+
+  - slug: principal-component-analysis
+    title: Principal Component Analysis (PCA)
+    summary: Linear dimensionality reduction via orthogonal projection onto directions of maximum variance.
+    difficulty: 3
+    aliases: [pca]
+
+  # LLM era
+  - slug: large-language-model
+    title: Large Language Model (LLM)
+    summary: Transformer-based model trained on massive text corpora to predict next tokens; exhibits broad language abilities.
+    difficulty: 2
+    aliases: [llm]
+
+  - slug: tokenization
+    title: Tokenization
+    summary: Splitting text into discrete units (subwords, bytes) for a language model.
+    difficulty: 2
+
+  - slug: fine-tuning
+    title: Fine-Tuning
+    summary: Adapting a pretrained model to a specific task by continued training on task data.
+    difficulty: 2
+
+  - slug: retrieval-augmented-generation
+    title: Retrieval-Augmented Generation (RAG)
+    summary: Condition an LLM's generation on documents retrieved from an external store at inference time.
+    difficulty: 3
+    aliases: [rag]
+
+  # Evaluation
+  - slug: confusion-matrix
+    title: Confusion Matrix
+    summary: Table of predicted vs. actual labels; basis for precision, recall, accuracy, F1.
+    difficulty: 2
+
+  - slug: precision-and-recall
+    title: Precision and Recall
+    summary: Precision = TP/(TP+FP); Recall = TP/(TP+FN). Tradeoff governed by decision threshold.
+    difficulty: 2

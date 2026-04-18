@@ -1,0 +1,154 @@
+# Software engineering.
+# Source: ACM CCS "Software and its engineering"; SWEBOK (IEEE Software
+# Engineering Body of Knowledge).
+
+area:
+  slug: software-engineering
+  title: Software Engineering
+  source: acm-ccs:software-and-its-engineering
+  parent: 07-technology/computing
+
+leaves:
+  # Version control and collaboration
+  - slug: version-control
+    title: Version Control
+    summary: Systematic management of changes to source code over time.
+    difficulty: 1
+
+  - slug: git
+    title: Git
+    summary: Distributed version control system; the de-facto standard.
+    difficulty: 2
+
+  - slug: code-review
+    title: Code Review
+    summary: Peer examination of changes before merge; catches defects and spreads knowledge.
+    difficulty: 1
+
+  # Testing
+  - slug: unit-testing
+    title: Unit Testing
+    summary: Automated tests that exercise the smallest testable parts of a program in isolation.
+    difficulty: 2
+
+  - slug: integration-testing
+    title: Integration Testing
+    summary: Tests verifying that multiple components work together correctly.
+    difficulty: 2
+
+  - slug: end-to-end-testing
+    title: End-to-End Testing
+    summary: Tests exercising the full system from user input to observable output.
+    difficulty: 2
+    aliases: [e2e-testing]
+
+  - slug: test-driven-development
+    title: Test-Driven Development (TDD)
+    summary: Write a failing test, make it pass, refactor — repeat.
+    difficulty: 2
+    aliases: [tdd]
+
+  - slug: continuous-integration
+    title: Continuous Integration (CI)
+    summary: Automated build and test triggered on every change; catches integration issues early.
+    difficulty: 2
+    aliases: [ci]
+
+  - slug: continuous-deployment
+    title: Continuous Deployment (CD)
+    summary: Every change that passes CI is automatically deployed to production.
+    difficulty: 2
+    aliases: [cd]
+
+  # Design principles
+  - slug: solid-principles
+    title: SOLID Principles
+    summary: Single-responsibility, Open-closed, Liskov substitution, Interface segregation, Dependency inversion.
+    difficulty: 3
+
+  - slug: dry-principle
+    title: DRY (Don't Repeat Yourself)
+    summary: Every piece of knowledge should have a single, unambiguous representation in a system.
+    difficulty: 2
+
+  - slug: yagni
+    title: YAGNI (You Aren't Gonna Need It)
+    summary: Don't build functionality until it's actually needed; premature abstraction is costly.
+    difficulty: 2
+
+  - slug: separation-of-concerns
+    title: Separation of Concerns
+    summary: Decompose a system so each part addresses a distinct concern with minimal overlap.
+    difficulty: 2
+
+  # Paradigms
+  - slug: object-oriented-programming
+    title: Object-Oriented Programming (OOP)
+    summary: Paradigm organizing code around objects combining data and behavior.
+    difficulty: 2
+    aliases: [oop]
+
+  - slug: functional-programming
+    title: Functional Programming
+    summary: Paradigm treating computation as evaluation of pure functions, avoiding mutable state.
+    difficulty: 3
+
+  - slug: encapsulation
+    title: Encapsulation
+    summary: Bundle data with methods that operate on it; hide internal state behind an interface.
+    difficulty: 2
+
+  - slug: polymorphism
+    title: Polymorphism
+    summary: Ability for different types to be used through a common interface.
+    difficulty: 2
+
+  - slug: abstraction
+    title: Abstraction
+    summary: Expose only the relevant features of a concept while hiding implementation detail.
+    difficulty: 2
+
+  # Patterns and practices
+  - slug: design-patterns
+    title: Design Patterns
+    summary: Reusable solutions to common design problems, named and cataloged (e.g., Factory, Observer, Strategy).
+    difficulty: 3
+
+  - slug: refactoring
+    title: Refactoring
+    summary: Restructure existing code without changing external behavior, to improve readability or design.
+    difficulty: 2
+
+  - slug: technical-debt
+    title: Technical Debt
+    summary: Future cost incurred by choosing an easy-but-suboptimal solution now; compounds if not repaid.
+    difficulty: 2
+
+  # APIs and architecture
+  - slug: rest-api
+    title: REST API
+    summary: HTTP-based architectural style using stateless requests and standard verbs over resources.
+    difficulty: 2
+    aliases: [rest]
+
+  - slug: api-design
+    title: API Design
+    summary: Discipline of defining interfaces that are clear, consistent, evolvable, and hard to misuse.
+    difficulty: 3
+
+  - slug: software-architecture
+    title: Software Architecture
+    summary: High-level structure of a software system: components, their responsibilities, and their relationships.
+    difficulty: 3
+
+  # Process
+  - slug: agile-methodology
+    title: Agile
+    summary: Iterative, incremental software development emphasizing adaptation, customer collaboration, and working software.
+    difficulty: 1
+    aliases: [agile]
+
+  - slug: code-smell
+    title: Code Smell
+    summary: Surface sign of deeper problems in code (long method, duplicated code, large class, etc.).
+    difficulty: 2

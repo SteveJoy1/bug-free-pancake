@@ -1,0 +1,116 @@
+# Cross-cutting engineering concepts.
+# Scope: methods, principles, and artifacts shared across mechanical, electrical,
+# civil, chemical, and software engineering disciplines.
+# Source: general engineering curricula (ABET core outcomes), IEEE taxonomy.
+
+area:
+  slug: engineering-fundamentals
+  title: Engineering Fundamentals
+  source: abet-core-outcomes
+  parent: 07-technology
+
+leaves:
+  - slug: engineering-design-process
+    title: Engineering Design Process
+    summary: Iterative process — define problem, research, ideate, prototype, test, refine, deliver.
+    difficulty: 1
+
+  - slug: requirements-engineering
+    title: Requirements Engineering
+    summary: Elicitation, analysis, and documentation of what a system must do and constraints it must satisfy.
+    difficulty: 2
+
+  - slug: systems-engineering
+    title: Systems Engineering
+    summary: Discipline of designing and managing complex systems over their life cycle — emphasis on interfaces and emergent behavior.
+    difficulty: 3
+
+  - slug: tradeoff-analysis
+    title: Tradeoff Analysis
+    summary: Structured comparison of design alternatives against weighted criteria (cost, performance, reliability, etc.).
+    difficulty: 2
+
+  - slug: factor-of-safety
+    title: Factor of Safety
+    summary: Ratio of a system's capacity to the expected load; design margin against uncertainty and variability.
+    difficulty: 1
+
+  - slug: stress-and-strain
+    title: Stress and Strain
+    summary: Stress is internal force per unit area; strain is resulting deformation. Hooke's law relates them linearly in the elastic regime.
+    difficulty: 2
+    see_also: [youngs-modulus]
+
+  - slug: youngs-modulus
+    title: Young's Modulus
+    summary: Material's stiffness — ratio of stress to strain in the linear elastic region.
+    difficulty: 2
+
+  - slug: fatigue-materials
+    title: Fatigue (Materials)
+    summary: Weakening and eventual failure of a material under cyclic loading below its static strength.
+    difficulty: 3
+    aliases: [fatigue]
+
+  - slug: heat-transfer
+    title: Heat Transfer
+    summary: Movement of thermal energy via conduction, convection, or radiation; fundamental to thermal design.
+    difficulty: 2
+
+  - slug: fluid-mechanics
+    title: Fluid Mechanics
+    summary: Behavior of liquids and gases at rest and in motion; governed by Navier-Stokes equations.
+    difficulty: 3
+
+  - slug: control-system
+    title: Control System
+    summary: System that regulates an output by comparing it to a desired setpoint and applying corrective input.
+    difficulty: 2
+    see_also: [feedback-loop, pid-controller]
+
+  - slug: feedback-loop
+    title: Feedback Loop
+    summary: Output of a system is measured and fed back to adjust input; negative feedback stabilizes, positive amplifies.
+    difficulty: 2
+
+  - slug: pid-controller
+    title: PID Controller
+    summary: Control loop using proportional, integral, and derivative terms to drive error to zero.
+    difficulty: 3
+
+  - slug: reliability-engineering
+    title: Reliability Engineering
+    summary: Discipline of predicting and improving the probability a system performs without failure over time.
+    difficulty: 3
+    see_also: [failure-modes, mtbf]
+
+  - slug: failure-modes
+    title: Failure Modes
+    summary: Distinct ways a component or system can fail; cataloged via FMEA (Failure Modes and Effects Analysis).
+    difficulty: 3
+
+  - slug: mtbf
+    title: Mean Time Between Failures (MTBF)
+    summary: Average operating time between failures for repairable systems; common reliability metric.
+    difficulty: 2
+
+  - slug: root-cause-analysis
+    title: Root Cause Analysis
+    summary: Investigation method that traces a failure back to its underlying cause, not just the proximate trigger.
+    difficulty: 2
+
+  - slug: tolerance-engineering
+    title: Tolerance (Engineering)
+    summary: Permitted variation in a dimension or property; tolerance stack-up governs manufacturability and fit.
+    difficulty: 2
+    aliases: [tolerance]
+
+  - slug: signal-to-noise-ratio
+    title: Signal-to-Noise Ratio (SNR)
+    summary: Ratio of desired signal power to background noise; governs detectability and quality in measurement and communication.
+    difficulty: 2
+
+  - slug: finite-element-analysis
+    title: Finite Element Analysis (FEA)
+    summary: Numerical method that breaks a continuous domain into small elements to solve differential equations approximately.
+    difficulty: 4

@@ -1,0 +1,135 @@
+# Security and privacy.
+# Source: ACM CCS "Security and privacy"; OWASP Top 10; NIST Cybersecurity
+# Framework.
+
+area:
+  slug: security
+  title: Security and Privacy
+  source: acm-ccs:security-and-privacy
+  parent: 07-technology/computing
+
+leaves:
+  # Foundations
+  - slug: cia-triad
+    title: CIA Triad
+    summary: Confidentiality, Integrity, Availability — the classical security objectives.
+    difficulty: 1
+
+  - slug: threat-model
+    title: Threat Model
+    summary: Systematic enumeration of attackers, assets, and attack surfaces for a given system.
+    difficulty: 3
+
+  - slug: defense-in-depth
+    title: Defense in Depth
+    summary: Layered security controls so no single failure exposes the system.
+    difficulty: 2
+
+  - slug: least-privilege
+    title: Principle of Least Privilege
+    summary: Each user or component should have only the permissions needed for its function.
+    difficulty: 2
+
+  - slug: zero-trust
+    title: Zero Trust
+    summary: Architectural principle: never trust, always verify — no implicit trust based on network location.
+    difficulty: 3
+
+  # Identity and access
+  - slug: authentication
+    title: Authentication
+    summary: Verifying who a user or system is.
+    difficulty: 1
+
+  - slug: authorization
+    title: Authorization
+    summary: Determining what an authenticated identity is allowed to do.
+    difficulty: 1
+
+  - slug: multi-factor-authentication
+    title: Multi-Factor Authentication (MFA)
+    summary: Requires two or more independent factors (something you know/have/are).
+    difficulty: 2
+    aliases: [mfa, 2fa]
+
+  - slug: oauth
+    title: OAuth 2.0
+    summary: Authorization framework allowing a third-party app to act on a user's behalf without getting their password.
+    difficulty: 3
+
+  # Cryptography
+  - slug: symmetric-encryption
+    title: Symmetric Encryption
+    summary: Same key encrypts and decrypts (AES, ChaCha20); fast, but key distribution is the hard problem.
+    difficulty: 2
+
+  - slug: asymmetric-encryption
+    title: Asymmetric Encryption
+    summary: Public/private keypair — anyone can encrypt with the public key, only the holder of the private key can decrypt (RSA, ECC).
+    difficulty: 3
+    aliases: [public-key-cryptography]
+
+  - slug: hashing
+    title: Cryptographic Hashing
+    summary: One-way function mapping input to fixed-size digest (SHA-256); used for integrity and password storage.
+    difficulty: 2
+
+  - slug: digital-signature
+    title: Digital Signature
+    summary: Cryptographic proof that a message was produced by the holder of a private key and hasn't been altered.
+    difficulty: 3
+
+  - slug: password-hashing
+    title: Password Hashing
+    summary: Store passwords as slow, salted hashes (bcrypt, scrypt, argon2) so a database leak doesn't expose plaintext.
+    difficulty: 2
+
+  - slug: salt-cryptography
+    title: Salt (Cryptography)
+    summary: Random data added to a password before hashing to prevent precomputed-table attacks.
+    difficulty: 2
+    aliases: [salt]
+
+  # Web / application attacks
+  - slug: xss
+    title: Cross-Site Scripting (XSS)
+    summary: Attacker injects malicious script into content served to other users.
+    difficulty: 2
+    aliases: [cross-site-scripting]
+
+  - slug: sql-injection
+    title: SQL Injection
+    summary: Attacker crafts input that changes the structure of a SQL query; fixed by parameterized queries.
+    difficulty: 2
+
+  - slug: csrf
+    title: Cross-Site Request Forgery (CSRF)
+    summary: Trick a logged-in user's browser into making an unintended authenticated request.
+    difficulty: 3
+
+  - slug: buffer-overflow
+    title: Buffer Overflow
+    summary: Writing past the end of a buffer corrupts adjacent memory; classical vector for code execution.
+    difficulty: 3
+
+  # Network / infrastructure
+  - slug: man-in-the-middle
+    title: Man-in-the-Middle Attack
+    summary: Attacker relays and potentially alters communication between two parties who think they're talking directly.
+    difficulty: 2
+    aliases: [mitm]
+
+  - slug: phishing
+    title: Phishing
+    summary: Social-engineering attack tricking a user into revealing credentials or running malicious content.
+    difficulty: 1
+
+  - slug: zero-day
+    title: Zero-Day Vulnerability
+    summary: Vulnerability unknown to the vendor and therefore unpatched at the time of exploitation.
+    difficulty: 2
+
+  - slug: certificate-authority
+    title: Certificate Authority (CA)
+    summary: Trusted entity that issues digital certificates binding a public key to an identity.
+    difficulty: 3

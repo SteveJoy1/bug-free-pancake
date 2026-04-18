@@ -1,0 +1,166 @@
+# Algorithms and data structures.
+# Source: ACM CCS "Theory of computation" and "Mathematics of computing";
+# standard undergraduate CS curricula (CLRS, Sedgewick).
+
+area:
+  slug: algorithms-and-data-structures
+  title: Algorithms and Data Structures
+  source: acm-ccs:theory-of-computation
+  parent: 07-technology/computing
+
+leaves:
+  # Complexity
+  - slug: big-o-notation
+    title: Big-O Notation
+    summary: Asymptotic upper bound on growth of a function; standard notation for algorithmic complexity.
+    difficulty: 2
+    see_also: [time-complexity, space-complexity]
+
+  - slug: time-complexity
+    title: Time Complexity
+    summary: How runtime grows with input size, typically expressed in Big-O.
+    difficulty: 2
+
+  - slug: space-complexity
+    title: Space Complexity
+    summary: How memory usage grows with input size.
+    difficulty: 2
+
+  - slug: np-completeness
+    title: NP-Completeness
+    summary: Class of decision problems for which no polynomial-time solution is known, and any one solution would solve all.
+    difficulty: 4
+    aliases: [np-complete]
+
+  # Linear structures
+  - slug: array
+    title: Array
+    summary: Contiguous block of memory holding elements of the same type, indexed by position.
+    difficulty: 1
+
+  - slug: linked-list
+    title: Linked List
+    summary: Linear collection of nodes, each pointing to the next (singly) or both directions (doubly).
+    difficulty: 1
+
+  - slug: stack
+    title: Stack
+    summary: LIFO (last-in-first-out) collection supporting push and pop.
+    difficulty: 1
+
+  - slug: queue
+    title: Queue
+    summary: FIFO (first-in-first-out) collection supporting enqueue and dequeue.
+    difficulty: 1
+
+  # Maps and sets
+  - slug: hash-table
+    title: Hash Table
+    summary: Key-value store with O(1) average lookup via a hash function mapping keys to buckets.
+    difficulty: 2
+    see_also: [hash-function, collision-resolution]
+
+  - slug: hash-function
+    title: Hash Function
+    summary: Function that maps data of arbitrary size to fixed-size values; good ones distribute uniformly.
+    difficulty: 2
+
+  - slug: bloom-filter
+    title: Bloom Filter
+    summary: Probabilistic structure that tests set membership with no false negatives but possible false positives.
+    difficulty: 3
+
+  # Trees
+  - slug: binary-tree
+    title: Binary Tree
+    summary: Tree where every node has at most two children.
+    difficulty: 1
+
+  - slug: binary-search-tree
+    title: Binary Search Tree
+    summary: Binary tree maintaining sorted order: left subtree < node < right subtree.
+    difficulty: 2
+
+  - slug: balanced-tree
+    title: Balanced Tree
+    summary: Self-balancing BST (AVL, Red-Black) that keeps height O(log n) to guarantee fast operations.
+    difficulty: 3
+    aliases: [avl-tree, red-black-tree]
+
+  - slug: heap
+    title: Heap
+    summary: Tree-based structure satisfying the heap property (parent ≥ or ≤ children); backs priority queues.
+    difficulty: 2
+
+  - slug: trie
+    title: Trie
+    summary: Tree storing strings by character path; enables efficient prefix lookup.
+    difficulty: 3
+
+  # Graphs
+  - slug: graph
+    title: Graph
+    summary: Set of vertices connected by edges; directed or undirected, weighted or unweighted.
+    difficulty: 2
+
+  - slug: breadth-first-search
+    title: Breadth-First Search (BFS)
+    summary: Graph traversal that explores all neighbors at the current depth before going deeper; finds shortest paths in unweighted graphs.
+    difficulty: 2
+
+  - slug: depth-first-search
+    title: Depth-First Search (DFS)
+    summary: Graph traversal that explores as deep as possible along each branch before backtracking.
+    difficulty: 2
+
+  - slug: dijkstras-algorithm
+    title: Dijkstra's Algorithm
+    summary: Shortest paths from a source in a graph with non-negative edge weights.
+    difficulty: 3
+
+  - slug: topological-sort
+    title: Topological Sort
+    summary: Linear ordering of DAG vertices such that every edge points forward.
+    difficulty: 3
+
+  # Sorting and searching
+  - slug: binary-search
+    title: Binary Search
+    summary: O(log n) search in a sorted array by repeatedly halving the search interval.
+    difficulty: 1
+
+  - slug: merge-sort
+    title: Merge Sort
+    summary: O(n log n) divide-and-conquer sort; stable, with O(n) auxiliary space.
+    difficulty: 2
+
+  - slug: quick-sort
+    title: Quick Sort
+    summary: O(n log n) average / O(n²) worst-case sort via partitioning around a pivot.
+    difficulty: 2
+
+  # Algorithmic paradigms
+  - slug: divide-and-conquer
+    title: Divide and Conquer
+    summary: Break problem into subproblems, solve recursively, combine results.
+    difficulty: 2
+
+  - slug: dynamic-programming
+    title: Dynamic Programming
+    summary: Solve problems with overlapping subproblems by caching results and building up (memoization or tabulation).
+    difficulty: 3
+
+  - slug: greedy-algorithm
+    title: Greedy Algorithm
+    summary: Make the locally optimal choice at each step; works when the problem has optimal substructure and the greedy property.
+    difficulty: 3
+
+  - slug: backtracking
+    title: Backtracking
+    summary: Build solutions incrementally and abandon a partial solution as soon as it can't lead to a valid answer.
+    difficulty: 3
+
+  - slug: recursion
+    title: Recursion
+    summary: Function that calls itself on a smaller subproblem until a base case is reached.
+    difficulty: 1

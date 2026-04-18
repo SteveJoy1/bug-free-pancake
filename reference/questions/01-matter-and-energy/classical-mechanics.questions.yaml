@@ -1,0 +1,588 @@
+# Question bank for classical mechanics (Propaedia Part 01).
+# Three questions per leaf spanning Bloom levels:
+#   - Q1: recall / definition       (Bloom 1-2)
+#   - Q2: application / fact        (Bloom 3)
+#   - Q3: regime / compare / connect (Bloom 4-5)
+#
+# `rubric` entries are the key points a good answer must cover. A future
+# Claude session uses them to grade exported responses.
+
+area:
+  slug: classical-mechanics
+  title: Classical Mechanics
+  parent: 01-matter-and-energy
+
+questions:
+
+  # --- Newton's Laws of Motion -------------------------------------------
+  - leaf: newtons-laws-of-motion
+    items:
+      - id: newtons-laws-of-motion.q1
+        level: recall
+        prompt: "State Newton's three laws of motion in your own words."
+        rubric:
+          - "First (inertia): an object's velocity stays constant unless a net external force acts on it."
+          - "Second: F = m·a (or more generally, F = dp/dt)."
+          - "Third: for every action there's an equal and opposite reaction — forces come in pairs on different bodies."
+
+      - id: newtons-laws-of-motion.q2
+        level: application
+        prompt: "A 5 kg block sits on a frictionless surface. You push it with a constant horizontal force of 20 N. What is its acceleration, and how far does it travel in 3 seconds starting from rest?"
+        rubric:
+          - "a = F/m = 20/5 = 4 m/s²."
+          - "Distance: x = (1/2)·a·t² = (1/2)·4·9 = 18 m."
+
+      - id: newtons-laws-of-motion.q3
+        level: regime-boundary
+        prompt: "When do Newton's laws stop giving accurate predictions?"
+        rubric:
+          - "At relativistic speeds (v approaching the speed of light) — general and special relativity take over."
+          - "At quantum / atomic scales — quantum mechanics takes over."
+
+  # --- Force -------------------------------------------------------------
+  - leaf: force
+    items:
+      - id: force.q1
+        level: recall
+        prompt: "Define force. Is it a scalar or a vector? What are its SI units?"
+        rubric:
+          - "An influence that changes an object's motion (acceleration)."
+          - "Vector — has magnitude and direction."
+          - "SI unit: newton (N); 1 N = 1 kg·m/s²."
+
+      - id: force.q2
+        level: application
+        prompt: "A 2 kg object has two forces acting on it: 10 N east and 6 N west. What is its acceleration (magnitude and direction)?"
+        rubric:
+          - "Net force = 10 − 6 = 4 N east."
+          - "a = F/m = 4/2 = 2 m/s² east."
+
+      - id: force.q3
+        level: analysis
+        prompt: "Name the four fundamental forces in nature and one everyday phenomenon each is responsible for."
+        rubric:
+          - "Gravitational — objects falling, planetary orbits, weight."
+          - "Electromagnetic — light, chemistry, friction, contact forces, most of everyday experience."
+          - "Strong nuclear — holds atomic nuclei together."
+          - "Weak nuclear — certain types of radioactive decay (beta decay)."
+
+  # --- Mass --------------------------------------------------------------
+  - leaf: mass
+    items:
+      - id: mass.q1
+        level: recall
+        prompt: "What's the difference between mass and weight?"
+        rubric:
+          - "Mass is an intrinsic property — amount of matter / resistance to acceleration."
+          - "Weight is a force — mass times local gravitational acceleration (W = m·g)."
+          - "Mass is the same on Earth and the Moon; weight differs."
+
+      - id: mass.q2
+        level: comprehension
+        prompt: "Explain the distinction between inertial mass and gravitational mass."
+        rubric:
+          - "Inertial mass = resistance to acceleration under a given force (from F = m·a)."
+          - "Gravitational mass = strength of gravitational interaction (from F = G·m₁·m₂/r²)."
+          - "Experimentally they appear equal — this is the equivalence principle."
+
+      - id: mass.q3
+        level: connection
+        prompt: "Why is the equivalence of inertial and gravitational mass considered physically significant?"
+        rubric:
+          - "It's the foundation of Einstein's general relativity — motivates treating gravity as spacetime curvature rather than a force."
+          - "There's no obvious a priori reason the two should be equal; that they are empirically is a non-trivial fact."
+
+  # --- Acceleration ------------------------------------------------------
+  - leaf: acceleration
+    items:
+      - id: acceleration.q1
+        level: recall
+        prompt: "Define acceleration. What are its SI units?"
+        rubric:
+          - "Rate of change of velocity with respect to time: a = dv/dt."
+          - "Vector quantity."
+          - "SI unit: m/s²."
+
+      - id: acceleration.q2
+        level: application
+        prompt: "A car going 25 m/s slams on the brakes and stops in 5 seconds. What is its average acceleration?"
+        rubric:
+          - "a = Δv/Δt = (0 − 25)/5 = −5 m/s²."
+          - "Negative sign indicates deceleration (opposite the direction of motion)."
+
+      - id: acceleration.q3
+        level: comprehension
+        prompt: "Can an object accelerate while moving at constant speed? Explain."
+        rubric:
+          - "Yes — velocity is a vector, so changing direction is acceleration even without changing speed."
+          - "Classic example: uniform circular motion — speed constant, direction continuously changing, so there's a centripetal acceleration."
+
+  # --- Velocity ----------------------------------------------------------
+  - leaf: velocity
+    items:
+      - id: velocity.q1
+        level: recall
+        prompt: "What's the difference between speed and velocity?"
+        rubric:
+          - "Speed is a scalar (magnitude only)."
+          - "Velocity is a vector (magnitude + direction)."
+          - "A car going 60 mph north has velocity; just '60 mph' is speed."
+
+      - id: velocity.q2
+        level: application
+        prompt: "A runner completes a 400 m lap in 50 seconds, returning to the starting point. What is their average speed and average velocity?"
+        rubric:
+          - "Average speed = distance/time = 400/50 = 8 m/s."
+          - "Average velocity = displacement/time = 0/50 = 0 m/s (they ended where they started)."
+
+      - id: velocity.q3
+        level: comprehension
+        prompt: "Why do we distinguish between instantaneous velocity and average velocity?"
+        rubric:
+          - "Average velocity = total displacement / total time; doesn't capture moment-to-moment variation."
+          - "Instantaneous velocity = limit as Δt → 0, i.e. dx/dt; describes motion at a specific instant."
+          - "Matters when motion isn't uniform — a trip at 60 mph average may have included 0 and 80 mph moments."
+
+  # --- Momentum ----------------------------------------------------------
+  - leaf: momentum
+    items:
+      - id: momentum.q1
+        level: recall
+        prompt: "Define momentum. What are its SI units?"
+        rubric:
+          - "Product of mass and velocity: p = m·v."
+          - "Vector quantity (inherits direction from velocity)."
+          - "SI units: kg·m/s."
+
+      - id: momentum.q2
+        level: application
+        prompt: "A 1500 kg car travels at 20 m/s east and collides with a stationary 1000 kg car. They stick together. What's their common velocity after the collision?"
+        rubric:
+          - "Total momentum before: (1500)(20) + (1000)(0) = 30,000 kg·m/s east."
+          - "After: combined mass = 2500 kg; v = 30,000/2500 = 12 m/s east."
+
+      - id: momentum.q3
+        level: connection
+        prompt: "How is Newton's second law written in terms of momentum, and why is that form more general than F = m·a?"
+        rubric:
+          - "F = dp/dt."
+          - "Handles variable mass (e.g., a rocket expelling fuel) — F = m·a assumes mass is constant."
+          - "It's the form that carries over to relativistic mechanics."
+
+  # --- Conservation of Momentum -----------------------------------------
+  - leaf: conservation-of-momentum
+    items:
+      - id: conservation-of-momentum.q1
+        level: recall
+        prompt: "State the law of conservation of momentum."
+        rubric:
+          - "In a closed system (no net external force), total momentum stays constant over time."
+          - "Before any interaction = after any interaction, summed over all bodies."
+
+      - id: conservation-of-momentum.q2
+        level: application
+        prompt: "A 60 kg skater standing still throws a 2 kg ball at 10 m/s. Ignoring friction, what's the skater's recoil velocity?"
+        rubric:
+          - "Initial total momentum = 0."
+          - "After: 2·10 + 60·v = 0, so v = −20/60 ≈ −0.33 m/s (opposite to ball)."
+
+      - id: conservation-of-momentum.q3
+        level: connection
+        prompt: "Conservation of momentum can be derived from which more fundamental principle, and what symmetry does it correspond to?"
+        rubric:
+          - "Follows from Newton's third law (action-reaction pairs cancel internal forces)."
+          - "Via Noether's theorem, it corresponds to spatial-translation symmetry — the laws of physics are the same everywhere."
+
+  # --- Kinetic Energy ---------------------------------------------------
+  - leaf: kinetic-energy
+    items:
+      - id: kinetic-energy.q1
+        level: recall
+        prompt: "Write the formula for non-relativistic kinetic energy. Is it a scalar or a vector?"
+        rubric:
+          - "KE = (1/2)·m·v²."
+          - "Scalar quantity."
+          - "SI unit: joule (J)."
+
+      - id: kinetic-energy.q2
+        level: application
+        prompt: "If you double an object's speed, what happens to its kinetic energy?"
+        rubric:
+          - "KE ∝ v², so doubling v quadruples KE."
+          - "Not a linear relationship — this is why vehicle stopping distance grows faster than speed."
+
+      - id: kinetic-energy.q3
+        level: connection
+        prompt: "State the work-energy theorem."
+        rubric:
+          - "The net work done on an object equals its change in kinetic energy: W_net = ΔKE."
+          - "Provides a direct connection between force × displacement and change in speed."
+
+  # --- Potential Energy -------------------------------------------------
+  - leaf: potential-energy
+    items:
+      - id: potential-energy.q1
+        level: recall
+        prompt: "What is potential energy? Why is it only defined up to an additive constant?"
+        rubric:
+          - "Stored energy associated with an object's position in a conservative force field."
+          - "Only differences are physically meaningful — you can set any reference point as zero."
+
+      - id: potential-energy.q2
+        level: application
+        prompt: "A 2 kg book sits on a shelf 1.5 m above the floor. Using g = 9.8 m/s², what's its gravitational PE relative to the floor?"
+        rubric:
+          - "U = m·g·h = 2 · 9.8 · 1.5 = 29.4 J."
+
+      - id: potential-energy.q3
+        level: analysis
+        prompt: "For what kind of force is potential energy even definable, and why?"
+        rubric:
+          - "Only for conservative forces — where work done depends only on start and end positions, not path taken."
+          - "Gravity, springs, electrostatics: conservative. Friction: not conservative (can't define PE for it)."
+
+  # --- Conservation of Energy -------------------------------------------
+  - leaf: conservation-of-energy
+    items:
+      - id: conservation-of-energy.q1
+        level: recall
+        prompt: "State the principle of conservation of energy."
+        rubric:
+          - "Total energy of an isolated system is constant."
+          - "Energy can transform between forms (KE, PE, heat, etc.) but is neither created nor destroyed."
+
+      - id: conservation-of-energy.q2
+        level: application
+        prompt: "A ball of mass m is dropped from rest at height h. Using conservation of energy, find its speed just before hitting the ground (ignore air resistance)."
+        rubric:
+          - "Initial: KE = 0, PE = m·g·h."
+          - "Final: KE = (1/2)·m·v², PE = 0."
+          - "Equating: m·g·h = (1/2)·m·v² → v = √(2·g·h)."
+
+      - id: conservation-of-energy.q3
+        level: connection
+        prompt: "Via Noether's theorem, which symmetry of physical laws implies conservation of energy?"
+        rubric:
+          - "Time-translation symmetry — laws of physics don't change over time."
+
+  # --- Work (Physics) ---------------------------------------------------
+  - leaf: work-physics
+    items:
+      - id: work-physics.q1
+        level: recall
+        prompt: "How is work defined in physics? When does a force do zero work?"
+        rubric:
+          - "Work = force · displacement along the direction of the force; W = F·d·cos θ."
+          - "Zero work when force is perpendicular to motion (θ = 90°), or when there's no displacement."
+          - "Examples of zero work: carrying a box horizontally, circular motion (centripetal force ⊥ velocity)."
+
+      - id: work-physics.q2
+        level: application
+        prompt: "You push a 20 kg crate 5 m across a floor with a horizontal force of 50 N. How much work do you do?"
+        rubric:
+          - "W = F·d·cos θ = 50 · 5 · cos 0 = 250 J."
+
+      - id: work-physics.q3
+        level: comprehension
+        prompt: "Can work be negative? Give an example."
+        rubric:
+          - "Yes — when the force has a component opposite to the displacement."
+          - "Example: friction on a sliding box does negative work (opposes motion). Gravity on a rising object does negative work."
+
+  # --- Power (Physics) --------------------------------------------------
+  - leaf: power-physics
+    items:
+      - id: power-physics.q1
+        level: recall
+        prompt: "Define power. What are its SI units?"
+        rubric:
+          - "Rate of energy transfer or work done per unit time: P = dW/dt."
+          - "SI unit: watt (W); 1 W = 1 J/s."
+
+      - id: power-physics.q2
+        level: application
+        prompt: "An elevator lifts a 500 kg load 10 m in 20 seconds at constant velocity. Using g = 9.8 m/s², what's the power required?"
+        rubric:
+          - "Work done = m·g·h = 500 · 9.8 · 10 = 49,000 J."
+          - "P = W/t = 49,000/20 = 2,450 W (about 2.45 kW)."
+
+      - id: power-physics.q3
+        level: application
+        prompt: "A car moves at 30 m/s; the engine provides 6,000 N of net forward force. What's the instantaneous power output?"
+        rubric:
+          - "P = F·v = 6,000 · 30 = 180,000 W = 180 kW."
+
+  # --- Friction ---------------------------------------------------------
+  - leaf: friction
+    items:
+      - id: friction.q1
+        level: recall
+        prompt: "What's the difference between static and kinetic friction?"
+        rubric:
+          - "Static friction prevents motion up to some maximum — can take any value from 0 to μ_s·N."
+          - "Kinetic friction acts when surfaces are sliding — roughly constant at μ_k·N."
+          - "Typically μ_s > μ_k, so it takes more force to start sliding than to keep sliding."
+
+      - id: friction.q2
+        level: application
+        prompt: "A 10 kg box sits on a surface with coefficient of kinetic friction 0.3. Using g = 9.8 m/s², what horizontal force is needed to slide it at constant velocity?"
+        rubric:
+          - "Normal force N = m·g = 10 · 9.8 = 98 N."
+          - "Friction force = μ_k · N = 0.3 · 98 = 29.4 N."
+          - "Constant velocity → applied force = friction force = 29.4 N."
+
+      - id: friction.q3
+        level: comprehension
+        prompt: "Why doesn't friction depend much on the apparent contact area between two rigid surfaces?"
+        rubric:
+          - "Real contact happens only at microscopic asperities, not the full nominal area."
+          - "Increasing apparent area spreads the same load over more asperities — the true contact area (and friction) is set by the load."
+
+  # --- Gravitation ------------------------------------------------------
+  - leaf: gravitation
+    items:
+      - id: gravitation.q1
+        level: recall
+        prompt: "State Newton's law of universal gravitation."
+        rubric:
+          - "Every pair of masses attracts along the line joining them."
+          - "F = G·m₁·m₂ / r²."
+          - "G ≈ 6.674 × 10⁻¹¹ N·m²/kg² is the gravitational constant."
+
+      - id: gravitation.q2
+        level: application
+        prompt: "If you doubled the distance between two masses, what happens to the gravitational force between them?"
+        rubric:
+          - "F ∝ 1/r², so doubling r gives F/4 — one-quarter the original force."
+
+      - id: gravitation.q3
+        level: regime-boundary
+        prompt: "In what regimes does Newton's law of gravity fail, and what replaces it?"
+        rubric:
+          - "Strong gravitational fields (near very massive objects, black holes)."
+          - "Very high precision (e.g., Mercury's perihelion precession, gravitational lensing, GPS time corrections)."
+          - "Replaced by Einstein's general relativity."
+
+  # --- Angular Momentum -------------------------------------------------
+  - leaf: angular-momentum
+    items:
+      - id: angular-momentum.q1
+        level: recall
+        prompt: "Write expressions for the angular momentum of (a) a point mass and (b) a rigid body rotating about a fixed axis."
+        rubric:
+          - "Point mass: L = r × p (vector cross product of position and linear momentum)."
+          - "Rigid body: L = I·ω (moment of inertia times angular velocity)."
+
+      - id: angular-momentum.q2
+        level: application
+        prompt: "An ice skater spins with their arms outstretched. When they pull their arms in, they spin faster. Explain why, using conservation of angular momentum."
+        rubric:
+          - "Angular momentum L = I·ω is conserved (no external torque)."
+          - "Pulling arms in reduces moment of inertia I."
+          - "Therefore ω must increase to keep L constant."
+
+      - id: angular-momentum.q3
+        level: connection
+        prompt: "What symmetry, via Noether's theorem, corresponds to conservation of angular momentum?"
+        rubric:
+          - "Rotational symmetry — laws of physics are the same in all directions (isotropy of space)."
+
+  # --- Torque -----------------------------------------------------------
+  - leaf: torque
+    items:
+      - id: torque.q1
+        level: recall
+        prompt: "Define torque. What's its relationship to angular momentum?"
+        rubric:
+          - "Torque = r × F (position vector crossed with force)."
+          - "Rotational analog of force."
+          - "Net torque equals rate of change of angular momentum: τ = dL/dt."
+          - "SI unit: newton-metre (N·m)."
+
+      - id: torque.q2
+        level: application
+        prompt: "You apply a 20 N force at the end of a 0.5 m wrench, perpendicular to the handle. What torque do you apply about the bolt?"
+        rubric:
+          - "τ = r · F · sin θ = 0.5 · 20 · 1 = 10 N·m."
+
+      - id: torque.q3
+        level: comprehension
+        prompt: "Why does applying force at the end of a lever produce more torque than applying the same force near the pivot?"
+        rubric:
+          - "Torque scales with the lever arm (distance from pivot) — τ = r × F."
+          - "Longer r → greater torque for the same applied force."
+
+  # --- Moment of Inertia ------------------------------------------------
+  - leaf: moment-of-inertia
+    items:
+      - id: moment-of-inertia.q1
+        level: recall
+        prompt: "What is moment of inertia, and what's the formula for a system of discrete point masses?"
+        rubric:
+          - "Rotational analog of mass — resistance to angular acceleration."
+          - "I = Σ m_i · r_i² (sum over point masses at distance r_i from the axis)."
+          - "Depends on the axis of rotation chosen."
+
+      - id: moment-of-inertia.q2
+        level: comprehension
+        prompt: "Two cylinders have the same mass and radius — one is solid, the other is a hollow shell. Which has the larger moment of inertia about the central axis, and why?"
+        rubric:
+          - "Hollow shell has larger I."
+          - "All its mass is at radius r (max r²); solid cylinder has much of its mass closer to the axis, so its average r² is smaller."
+
+      - id: moment-of-inertia.q3
+        level: application
+        prompt: "Why does a solid cylinder roll down an incline faster than a hollow cylinder of the same mass and radius?"
+        rubric:
+          - "Hollow cylinder has higher I — more of its gravitational PE goes into rotational KE, less into translational KE."
+          - "So it has lower linear speed at the bottom of the incline, i.e., rolls slower."
+
+  # --- Simple Harmonic Motion -------------------------------------------
+  - leaf: simple-harmonic-motion
+    items:
+      - id: simple-harmonic-motion.q1
+        level: recall
+        prompt: "What defines simple harmonic motion? Give the restoring-force condition and the general solution."
+        rubric:
+          - "Restoring force linearly proportional to displacement: F = −k·x."
+          - "Solution is sinusoidal: x(t) = A·cos(ω·t + φ)."
+          - "Angular frequency ω = √(k/m) for mass on a spring."
+
+      - id: simple-harmonic-motion.q2
+        level: application
+        prompt: "A mass of 0.5 kg on a spring with k = 200 N/m. What's the period of oscillation?"
+        rubric:
+          - "ω = √(k/m) = √(200/0.5) = √400 = 20 rad/s."
+          - "T = 2π/ω = 2π/20 ≈ 0.314 s."
+
+      - id: simple-harmonic-motion.q3
+        level: regime-boundary
+        prompt: "For a real pendulum, under what condition does the motion approximate simple harmonic motion?"
+        rubric:
+          - "Small angles — where sin θ ≈ θ."
+          - "Typically below ~15–20°; beyond that, the motion is still periodic but not strictly sinusoidal and period depends on amplitude."
+
+  # --- Rigid Body Dynamics ----------------------------------------------
+  - leaf: rigid-body-dynamics
+    items:
+      - id: rigid-body-dynamics.q1
+        level: recall
+        prompt: "How many degrees of freedom does a rigid body have in 3D? Name them."
+        rubric:
+          - "Six: three translational (x, y, z) and three rotational (roll, pitch, yaw / rotations about three axes)."
+
+      - id: rigid-body-dynamics.q2
+        level: comprehension
+        prompt: "How does the motion of a rigid body decompose conceptually?"
+        rubric:
+          - "Translation of the center of mass (governed by F_net = M·a_cm)."
+          - "Plus rotation about the center of mass (governed by τ_net = dL/dt)."
+          - "Any general motion of a rigid body can be written as this combination."
+
+      - id: rigid-body-dynamics.q3
+        level: application
+        prompt: "A wrench is thrown spinning through the air (ignore air resistance). Describe the trajectory of its center of mass and the nature of its rotation."
+        rubric:
+          - "Center of mass follows a parabolic trajectory (projectile motion under gravity)."
+          - "Rotation about the center of mass is at constant angular velocity (no external torque on a symmetric body in free fall)."
+
+  # --- Centripetal Force ------------------------------------------------
+  - leaf: centripetal-force
+    items:
+      - id: centripetal-force.q1
+        level: recall
+        prompt: "What is centripetal force? Give the formula for its magnitude."
+        rubric:
+          - "Net inward force required to keep an object moving along a circular path."
+          - "Points toward the center of the circle."
+          - "F = m·v²/r = m·ω²·r."
+
+      - id: centripetal-force.q2
+        level: application
+        prompt: "A 1000 kg car travels at 20 m/s around a curve of radius 50 m. What centripetal force is required, and what physical source provides it?"
+        rubric:
+          - "F = m·v²/r = 1000 · 400 / 50 = 8,000 N."
+          - "Provided by friction between tires and road (or banking of the road)."
+
+      - id: centripetal-force.q3
+        level: comprehension
+        prompt: "Why is 'centrifugal force' not a real force in Newtonian mechanics?"
+        rubric:
+          - "It's a fictitious / pseudo-force that appears only in a rotating (non-inertial) reference frame."
+          - "In an inertial frame, what feels like 'outward push' is just inertia — the object's tendency to move in a straight line — while the centripetal force pulls it inward."
+
+  # --- Lagrangian Mechanics --------------------------------------------
+  - leaf: lagrangian-mechanics
+    items:
+      - id: lagrangian-mechanics.q1
+        level: recall
+        prompt: "What is the Lagrangian, and what equation governs the motion of a system in Lagrangian mechanics?"
+        rubric:
+          - "L = T − V (kinetic energy minus potential energy)."
+          - "Euler-Lagrange equation: d/dt (∂L/∂q̇) − ∂L/∂q = 0 for each generalized coordinate q."
+
+      - id: lagrangian-mechanics.q2
+        level: comprehension
+        prompt: "State the principle of stationary (least) action and explain its role."
+        rubric:
+          - "The physical path taken by a system between two points in time is the one that makes the action S = ∫ L dt stationary (extremum)."
+          - "Equivalent to Newton's laws in classical mechanics, but applies far more generally (relativistic and quantum systems)."
+
+      - id: lagrangian-mechanics.q3
+        level: comprehension
+        prompt: "What's one practical advantage of Lagrangian mechanics over Newtonian mechanics?"
+        rubric:
+          - "Handles constraints naturally via generalized coordinates — no need to explicitly solve for constraint forces."
+          - "Scalar (L is a single scalar function) rather than vector equations — often simpler for complex systems."
+          - "Coordinate-system-agnostic."
+
+  # --- Hamiltonian Mechanics -------------------------------------------
+  - leaf: hamiltonian-mechanics
+    items:
+      - id: hamiltonian-mechanics.q1
+        level: recall
+        prompt: "What is the Hamiltonian of a system, and what are Hamilton's equations of motion?"
+        rubric:
+          - "H = Σ p_i·q̇_i − L; for time-independent systems, H is total energy (T + V)."
+          - "q̇ = ∂H/∂p and ṗ = −∂H/∂q."
+
+      - id: hamiltonian-mechanics.q2
+        level: comprehension
+        prompt: "What's the key conceptual shift from Lagrangian to Hamiltonian mechanics?"
+        rubric:
+          - "Coordinates are (q, p) — positions and momenta — instead of (q, q̇) — positions and velocities."
+          - "Phase space formulation — state is a point in 2N-dim space for N degrees of freedom."
+
+      - id: hamiltonian-mechanics.q3
+        level: connection
+        prompt: "Why is Hamiltonian mechanics the natural starting point for quantum mechanics?"
+        rubric:
+          - "Canonical quantization: classical (q, p) become operators with [q̂, p̂] = iℏ."
+          - "Poisson brackets in classical Hamiltonian mechanics become commutators in quantum mechanics."
+          - "The Hamiltonian operator H generates time evolution (Schrödinger equation: iℏ ∂ψ/∂t = H·ψ)."
+
+  # --- Noether's Theorem -----------------------------------------------
+  - leaf: noethers-theorem
+    items:
+      - id: noethers-theorem.q1
+        level: recall
+        prompt: "State Noether's theorem in plain language."
+        rubric:
+          - "Every continuous symmetry of a physical system's action corresponds to a conservation law."
+          - "And conversely, every conservation law can be traced to an underlying continuous symmetry."
+
+      - id: noethers-theorem.q2
+        level: application
+        prompt: "Match these three conservation laws to their underlying symmetries: (a) energy, (b) linear momentum, (c) angular momentum."
+        rubric:
+          - "Energy ↔ time-translation symmetry (laws invariant over time)."
+          - "Linear momentum ↔ space-translation symmetry (laws invariant over position / homogeneity of space)."
+          - "Angular momentum ↔ rotational symmetry (laws invariant under rotation / isotropy of space)."
+
+      - id: noethers-theorem.q3
+        level: connection
+        prompt: "Why is Noether's theorem considered one of the most important results in theoretical physics?"
+        rubric:
+          - "Unifies symmetries and conservation laws — two seemingly separate concepts — into a single deep principle."
+          - "Applies universally: classical, relativistic, quantum field theory."
+          - "Guides the construction of new theories: identifying symmetries tells you what should be conserved."

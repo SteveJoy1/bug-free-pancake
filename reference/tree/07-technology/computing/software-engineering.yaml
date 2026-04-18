@@ -14,72 +14,154 @@ leaves:
     title: Version Control
     summary: Systematic management of changes to source code over time.
     difficulty: 1
+    facts:
+      - "Tracks every change to every file, who made it, and when."
+      - "Enables parallel work via branches and safe experimentation via the ability to revert."
+      - "Modern tools (Git, Mercurial) are distributed — every clone is a full repository with full history."
+    sources:
+      wikipedia: "Version_control"
 
   - slug: git
     title: Git
     summary: Distributed version control system; the de-facto standard.
     difficulty: 2
+    facts:
+      - "Commits form a directed acyclic graph of snapshots, each identified by a SHA hash."
+      - "Branches are cheap — lightweight pointers to a commit."
+      - "Core operations: add/commit (record changes), push/pull (sync with remote), merge/rebase (integrate branches)."
+    key_dates:
+      - "2005: Created by Linus Torvalds for Linux kernel development."
+    sources:
+      wikipedia: "Git"
 
   - slug: code-review
     title: Code Review
     summary: Peer examination of changes before merge; catches defects and spreads knowledge.
     difficulty: 1
+    facts:
+      - "Benefits: defect detection, knowledge sharing, mentoring, code quality enforcement."
+      - "Small, focused changes get better reviews than large ones — aim for <400 lines per review."
+      - "Effective reviews balance code correctness, design, readability, and test coverage."
+    sources:
+      wikipedia: "Code_review"
 
   # Testing
   - slug: unit-testing
     title: Unit Testing
     summary: Automated tests that exercise the smallest testable parts of a program in isolation.
     difficulty: 2
+    facts:
+      - "Tests individual functions or classes in isolation, typically mocking dependencies."
+      - "Should be fast (milliseconds), deterministic, and independent of each other."
+      - "Test pyramid: many unit tests, fewer integration, fewest e2e — balances speed with coverage."
+    sources:
+      wikipedia: "Unit_testing"
 
   - slug: integration-testing
     title: Integration Testing
     summary: Tests verifying that multiple components work together correctly.
     difficulty: 2
+    facts:
+      - "Catches bugs that unit tests miss — contract mismatches between components."
+      - "Slower than unit tests because of real dependencies (databases, network, etc.)."
+      - "Often tests the boundary between your code and external systems."
+    sources:
+      wikipedia: "Integration_testing"
 
   - slug: end-to-end-testing
     title: End-to-End Testing
     summary: Tests exercising the full system from user input to observable output.
     difficulty: 2
     aliases: [e2e-testing]
+    facts:
+      - "Validates that the system as a whole meets requirements."
+      - "Slowest and most brittle tier — prone to flakiness from real-world dependencies."
+      - "Keep the suite small and focus on critical user journeys."
+    sources:
+      wikipedia: "System_testing"
 
   - slug: test-driven-development
     title: Test-Driven Development (TDD)
     summary: Write a failing test, make it pass, refactor — repeat.
     difficulty: 2
     aliases: [tdd]
+    facts:
+      - "Red-green-refactor cycle: red (failing test), green (minimal code to pass), refactor (clean up without changing behavior)."
+      - "Forces you to define expected behavior before implementation."
+      - "Debated effectiveness; works well for well-understood problems, less well for exploratory work."
+    sources:
+      wikipedia: "Test-driven_development"
 
   - slug: continuous-integration
     title: Continuous Integration (CI)
-    summary: Automated build and test triggered on every change; catches integration issues early.
+    summary: Automated build and test triggered on every change.
     difficulty: 2
     aliases: [ci]
+    facts:
+      - "Every push triggers a build, lint, and test run."
+      - "Catches integration issues early — before they compound."
+      - "Green main branch is the norm; broken builds are fixed or reverted quickly."
+    sources:
+      wikipedia: "Continuous_integration"
 
   - slug: continuous-deployment
     title: Continuous Deployment (CD)
     summary: Every change that passes CI is automatically deployed to production.
     difficulty: 2
     aliases: [cd]
+    facts:
+      - "Distinct from continuous delivery (always deployable, but human triggers)."
+      - "Requires strong automated testing and monitoring — production safety net shifts from pre-deploy QA to post-deploy observability."
+      - "Enables small, frequent releases that are easier to diagnose if anything goes wrong."
+    sources:
+      wikipedia: "Continuous_deployment"
 
   # Design principles
   - slug: solid-principles
     title: SOLID Principles
-    summary: Single-responsibility, Open-closed, Liskov substitution, Interface segregation, Dependency inversion.
+    summary: Five object-oriented design principles coined by Robert C. Martin.
     difficulty: 3
+    facts:
+      - "S: Single-responsibility — a class should have one reason to change."
+      - "O: Open-closed — open for extension, closed for modification."
+      - "L: Liskov substitution — subtypes must be usable wherever their base type is."
+      - "I: Interface segregation — many small, specific interfaces beat one large general one."
+      - "D: Dependency inversion — depend on abstractions, not concretions."
+    sources:
+      wikipedia: "SOLID"
 
   - slug: dry-principle
     title: DRY (Don't Repeat Yourself)
     summary: Every piece of knowledge should have a single, unambiguous representation in a system.
     difficulty: 2
+    facts:
+      - "Originated in 'The Pragmatic Programmer' (Hunt & Thomas, 1999)."
+      - "Applies to knowledge, not just code — duplicated logic, documentation, or configuration all count."
+      - "Overapplying DRY creates tight coupling between unrelated concepts — better-named variant: AHA (Avoid Hasty Abstractions)."
+    sources:
+      wikipedia: "Don%27t_repeat_yourself"
 
   - slug: yagni
     title: YAGNI (You Aren't Gonna Need It)
-    summary: Don't build functionality until it's actually needed; premature abstraction is costly.
+    summary: Don't build functionality until it's actually needed.
     difficulty: 2
+    facts:
+      - "Costs of speculative generality: maintenance, bugs, obscured intent, and most speculations turn out wrong."
+      - "When a real need appears, the constraints are known and the abstraction is grounded."
+      - "Originated in Extreme Programming."
+    sources:
+      wikipedia: "You_aren%27t_gonna_need_it"
 
   - slug: separation-of-concerns
     title: Separation of Concerns
     summary: Decompose a system so each part addresses a distinct concern with minimal overlap.
     difficulty: 2
+    facts:
+      - "Coined by Edsger Dijkstra (1974)."
+      - "Enables local reasoning — you can understand and change one concern without touching others."
+      - "MVC, microservices, and layered architectures are all applications of this principle."
+    sources:
+      wikipedia: "Separation_of_concerns"
 
   # Paradigms
   - slug: object-oriented-programming
@@ -87,42 +169,93 @@ leaves:
     summary: Paradigm organizing code around objects combining data and behavior.
     difficulty: 2
     aliases: [oop]
+    facts:
+      - "Pillars: encapsulation, inheritance, polymorphism, abstraction."
+      - "Objects expose methods (behavior) and hide internal state (encapsulation)."
+      - "Classical OO: inheritance-based (Java, C++). Prototypal: delegation-based (JavaScript)."
+    sources:
+      wikipedia: "Object-oriented_programming"
 
   - slug: functional-programming
     title: Functional Programming
     summary: Paradigm treating computation as evaluation of pure functions, avoiding mutable state.
     difficulty: 3
+    facts:
+      - "Pure functions: output depends only on input, no side effects."
+      - "First-class functions, immutability, and higher-order functions are hallmarks."
+      - "Languages: Haskell (pure), OCaml, F#, Clojure; increasingly adopted in mainstream languages (JS, Python, Java streams)."
+    sources:
+      wikipedia: "Functional_programming"
 
   - slug: encapsulation
     title: Encapsulation
     summary: Bundle data with methods that operate on it; hide internal state behind an interface.
     difficulty: 2
+    facts:
+      - "Private state accessed only through public methods."
+      - "Allows internal representation to change without breaking callers — decoupling."
+      - "Also called 'information hiding' (Parnas, 1972)."
+    sources:
+      wikipedia: "Encapsulation_(computer_programming)"
 
   - slug: polymorphism
     title: Polymorphism
     summary: Ability for different types to be used through a common interface.
     difficulty: 2
+    facts:
+      - "Subtype polymorphism: subclass instances substitutable for base class (classical OO)."
+      - "Parametric polymorphism: code that works for any type — generics, templates."
+      - "Ad-hoc polymorphism: function overloading, operator overloading."
+    sources:
+      wikipedia: "Polymorphism_(computer_science)"
 
   - slug: abstraction
     title: Abstraction
     summary: Expose only the relevant features of a concept while hiding implementation detail.
     difficulty: 2
+    facts:
+      - "Manages complexity by providing the right interface at each layer."
+      - "Leaky abstractions: when implementation details inevitably show through (Joel Spolsky's 'Law of Leaky Abstractions')."
+      - "Good abstractions come from extracting real patterns — not predicted ones."
+    sources:
+      wikipedia: "Abstraction_(computer_science)"
 
   # Patterns and practices
   - slug: design-patterns
     title: Design Patterns
-    summary: Reusable solutions to common design problems, named and cataloged (e.g., Factory, Observer, Strategy).
+    summary: Reusable solutions to common design problems, named and cataloged.
     difficulty: 3
+    facts:
+      - "Gang of Four book (1994) catalogs 23 patterns in three categories: creational, structural, behavioral."
+      - "Common examples: Factory, Singleton, Observer, Strategy, Decorator, Adapter."
+      - "Patterns are vocabulary for design discussions; over-applying them produces bureaucratic code."
+    key_dates:
+      - "1994: 'Design Patterns' (Gamma, Helm, Johnson, Vlissides) published."
+    sources:
+      wikipedia: "Software_design_pattern"
 
   - slug: refactoring
     title: Refactoring
     summary: Restructure existing code without changing external behavior, to improve readability or design.
     difficulty: 2
+    facts:
+      - "Preconditions: a green test suite. Tests verify behavior is preserved."
+      - "Small, safe steps; commit often; never mix refactoring with functional changes."
+      - "Martin Fowler's 'Refactoring' (1999) catalogs named refactorings (Extract Method, Rename, Inline, Move Method, etc.)."
+    sources:
+      wikipedia: "Code_refactoring"
 
   - slug: technical-debt
     title: Technical Debt
-    summary: Future cost incurred by choosing an easy-but-suboptimal solution now; compounds if not repaid.
+    summary: Future cost incurred by choosing an easy-but-suboptimal solution now.
     difficulty: 2
+    facts:
+      - "Metaphor coined by Ward Cunningham."
+      - "Compounds — every new change must work around existing debt, accumulating more."
+      - "Sometimes deliberate (ship fast, clean up later); sometimes accidental (ignorance at the time)."
+      - "Paying it down = refactoring; ignoring it = rising friction until the system becomes unmaintainable."
+    sources:
+      wikipedia: "Technical_debt"
 
   # APIs and architecture
   - slug: rest-api
@@ -130,25 +263,60 @@ leaves:
     summary: HTTP-based architectural style using stateless requests and standard verbs over resources.
     difficulty: 2
     aliases: [rest]
+    facts:
+      - "Six constraints (Roy Fielding, 2000): client-server, stateless, cacheable, uniform interface, layered system, code-on-demand (optional)."
+      - "Standard verbs map to CRUD: GET (read), POST (create), PUT/PATCH (update), DELETE (delete)."
+      - "Resources identified by URLs; representations returned (typically JSON)."
+      - "'RESTful' in practice often means 'HTTP + JSON' — true HATEOAS is rarely implemented."
+    key_dates:
+      - "2000: Roy Fielding's PhD dissertation introduces REST."
+    sources:
+      wikipedia: "Representational_state_transfer"
 
   - slug: api-design
     title: API Design
     summary: Discipline of defining interfaces that are clear, consistent, evolvable, and hard to misuse.
     difficulty: 3
+    facts:
+      - "Key principles: consistency, orthogonality, discoverability, forgiving defaults."
+      - "Backwards compatibility is hard to maintain once the API has consumers — design for evolution from day one."
+      - "'It should be easy to do the right thing and hard to do the wrong thing.' — Scott Meyers"
+    sources:
+      wikipedia: "API"
 
   - slug: software-architecture
     title: Software Architecture
-    summary: High-level structure of a software system: components, their responsibilities, and their relationships.
+    summary: High-level structure of a software system — components, their responsibilities, and their relationships.
     difficulty: 3
+    facts:
+      - "Concerned with decisions that are hard to change later: module boundaries, data flow, deployment topology."
+      - "Common styles: layered, hexagonal, event-driven, microservices, monolith."
+      - "Architecture documents alone don't produce good systems — ongoing curation and enforcement matter."
+    sources:
+      wikipedia: "Software_architecture"
 
   # Process
   - slug: agile-methodology
     title: Agile
-    summary: Iterative, incremental software development emphasizing adaptation, customer collaboration, and working software.
+    summary: Iterative, incremental software development emphasizing adaptation, collaboration, and working software.
     difficulty: 1
     aliases: [agile]
+    facts:
+      - "Agile Manifesto (2001): individuals and interactions, working software, customer collaboration, responding to change."
+      - "Frameworks: Scrum, Kanban, XP. They're prescriptive practices; 'agile' is the value system."
+      - "Often corrupted into waterfall-with-standups — cargo-cult Agile is widespread."
+    key_dates:
+      - "2001: Agile Manifesto signed."
+    sources:
+      wikipedia: "Agile_software_development"
 
   - slug: code-smell
     title: Code Smell
-    summary: Surface sign of deeper problems in code (long method, duplicated code, large class, etc.).
+    summary: Surface sign of deeper problems in code.
     difficulty: 2
+    facts:
+      - "Common smells: long method, duplicated code, large class, long parameter list, feature envy, shotgun surgery."
+      - "Not bugs — they're signals that something may be wrong with the design."
+      - "Term popularized by Kent Beck and Martin Fowler in 'Refactoring' (1999)."
+    sources:
+      wikipedia: "Code_smell"

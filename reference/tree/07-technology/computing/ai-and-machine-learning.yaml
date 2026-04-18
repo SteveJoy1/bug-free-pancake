@@ -13,167 +13,383 @@ leaves:
   # Learning paradigms
   - slug: supervised-learning
     title: Supervised Learning
-    summary: Learning a mapping from labeled input-output pairs; classification and regression.
+    summary: Learning a mapping from labeled input-output pairs.
     difficulty: 2
+    facts:
+      - "Two main tasks: classification (discrete output) and regression (continuous output)."
+      - "Trained on (x, y) pairs; evaluated on held-out data to estimate generalization."
+      - "Requires labeled data — labels are often the bottleneck."
+    sources:
+      wikipedia: "Supervised_learning"
 
   - slug: unsupervised-learning
     title: Unsupervised Learning
-    summary: Learning structure from unlabeled data — clustering, dimensionality reduction, density estimation.
+    summary: Learning structure from unlabeled data.
     difficulty: 2
+    facts:
+      - "Tasks: clustering, dimensionality reduction, density estimation, anomaly detection."
+      - "No ground-truth labels — success metrics are harder to define."
+      - "Self-supervised learning (pretraining on predict-next-token or similar) is now the workhorse for large models."
+    sources:
+      wikipedia: "Unsupervised_learning"
 
   - slug: reinforcement-learning
     title: Reinforcement Learning
     summary: Agent learns a policy by interacting with an environment and receiving rewards.
     difficulty: 3
+    facts:
+      - "Markov Decision Process (MDP) is the standard formalism: states, actions, transition probabilities, rewards."
+      - "Exploration-exploitation tradeoff: try new actions vs. exploit what already works."
+      - "Famous applications: AlphaGo (2016), robotic control, RLHF for aligning LLMs."
+    sources:
+      wikipedia: "Reinforcement_learning"
 
   - slug: transfer-learning
     title: Transfer Learning
     summary: Reuse a model trained on one task as the starting point for a related task.
     difficulty: 3
+    facts:
+      - "Pretrained model captures general features (e.g., ImageNet-trained vision models, web-pretrained LLMs)."
+      - "Fine-tuning adapts the pretrained weights to a target task with far less labeled data than training from scratch."
+      - "Negative transfer: unrelated source task can hurt rather than help."
+    sources:
+      wikipedia: "Transfer_learning"
 
   # Core concepts
   - slug: loss-function
     title: Loss Function
-    summary: Scalar measure of how wrong a model's predictions are; what optimization minimizes.
+    summary: Scalar measure of how wrong a model's predictions are.
     difficulty: 2
+    facts:
+      - "Regression: MSE (mean squared error), MAE (mean absolute error), Huber."
+      - "Classification: cross-entropy, hinge, focal."
+      - "Training = minimizing the loss function over the training data, ideally without overfitting it."
+    sources:
+      wikipedia: "Loss_function"
 
   - slug: gradient-descent
     title: Gradient Descent
-    summary: Iterative optimization: step in the direction of steepest decrease of the loss function.
+    summary: Iterative optimization — step in the direction of steepest decrease of the loss function.
     difficulty: 2
+    facts:
+      - "Update rule: θ ← θ − η·∇L(θ), where η is the learning rate."
+      - "Variants: batch (full dataset), stochastic (one example), mini-batch (standard compromise)."
+      - "Adaptive optimizers (Adam, RMSProp, AdaGrad) adjust per-parameter step sizes."
+      - "Learning rate is the most important hyperparameter — too high diverges, too low crawls."
+    formulas:
+      - "θ_{t+1} = θ_t − η·∇L(θ_t)"
+    sources:
+      wikipedia: "Gradient_descent"
 
   - slug: backpropagation
     title: Backpropagation
     summary: Efficient algorithm for computing gradients in neural networks via the chain rule.
     difficulty: 3
+    facts:
+      - "Forward pass computes output and activations; backward pass propagates gradients from output back to inputs."
+      - "Automatic differentiation generalizes this — modern frameworks (PyTorch, JAX, TF) apply it automatically."
+      - "Published by Rumelhart, Hinton & Williams (1986), though related ideas date back further."
+    key_dates:
+      - "1986: 'Learning representations by back-propagating errors' (Rumelhart, Hinton, Williams)."
+    sources:
+      wikipedia: "Backpropagation"
 
   - slug: overfitting
     title: Overfitting
-    summary: Model fits training data too closely and fails to generalize to new data.
+    summary: Model fits training data too closely and fails to generalize.
     difficulty: 2
+    facts:
+      - "Training loss keeps decreasing while validation loss rises — the signature signal."
+      - "Caused by: too many parameters relative to data, noisy labels, insufficient regularization."
+      - "Mitigations: more data, regularization (L1/L2/dropout), early stopping, data augmentation, simpler models."
+    sources:
+      wikipedia: "Overfitting"
 
   - slug: regularization
     title: Regularization
-    summary: Techniques that discourage model complexity to improve generalization (L1, L2, dropout).
+    summary: Techniques that discourage model complexity to improve generalization.
     difficulty: 3
+    facts:
+      - "L2 (ridge): penalty proportional to sum of squared weights; shrinks all weights."
+      - "L1 (lasso): penalty proportional to sum of absolute weights; produces sparse solutions."
+      - "Dropout: randomly zero out activations during training; prevents co-adaptation."
+      - "Early stopping: halt training when validation loss starts rising."
+    sources:
+      wikipedia: "Regularization_(mathematics)"
 
   - slug: cross-validation
     title: Cross-Validation
     summary: Estimate generalization performance by training/evaluating on different partitions of the data.
     difficulty: 2
+    facts:
+      - "k-fold: split data into k parts, train on k−1, test on the remaining one, rotate. Average the k scores."
+      - "Leave-one-out: extreme case where k = n; expensive, high variance."
+      - "Stratified k-fold preserves class proportions; important for imbalanced classification."
+      - "Not appropriate for time-series — use forward-chained splits instead."
+    sources:
+      wikipedia: "Cross-validation_(statistics)"
 
   - slug: bias-variance-tradeoff
     title: Bias-Variance Tradeoff
-    summary: Generalization error decomposes into bias (underfitting) and variance (overfitting); reducing one often raises the other.
+    summary: Generalization error decomposes into bias (underfitting) and variance (overfitting).
     difficulty: 3
+    facts:
+      - "High bias: model too simple to capture patterns — underfits."
+      - "High variance: model too complex, captures noise — overfits."
+      - "Increasing model capacity typically lowers bias but raises variance."
+      - "'Double descent' phenomenon in modern deep learning complicates the classical picture."
+    sources:
+      wikipedia: "Bias%E2%80%93variance_tradeoff"
 
   # Neural networks
   - slug: neural-network
     title: Neural Network
-    summary: Function composed of layers of weighted sums and nonlinearities; trained by gradient descent.
+    summary: Function composed of layers of weighted sums and nonlinearities.
     difficulty: 2
+    facts:
+      - "Universal approximation theorem: a network with one hidden layer can approximate any continuous function, given enough units."
+      - "Training: forward pass computes predictions, backward pass computes gradients, optimizer updates weights."
+      - "Depth (many layers) beats width in most modern practice — hence 'deep learning'."
+    sources:
+      wikipedia: "Neural_network_(machine_learning)"
 
   - slug: activation-function
     title: Activation Function
-    summary: Nonlinearity applied element-wise in a neural network (ReLU, sigmoid, tanh).
+    summary: Nonlinearity applied element-wise in a neural network.
     difficulty: 2
+    facts:
+      - "Without nonlinearity, stacked linear layers collapse to a single linear transform."
+      - "ReLU (max(0, x)): simple, fast, default choice for hidden layers."
+      - "Sigmoid: saturates at extremes (gradient vanishes); used for binary classification output."
+      - "Softmax: turns logits into a probability distribution over classes; used for multiclass output."
+    sources:
+      wikipedia: "Activation_function"
 
   - slug: convolutional-neural-network
     title: Convolutional Neural Network (CNN)
-    summary: Neural network using convolutional layers to exploit local spatial structure, dominant in vision.
+    summary: Neural network using convolutional layers to exploit local spatial structure.
     difficulty: 3
     aliases: [cnn]
+    facts:
+      - "Convolutional layers share weights across the input — translation invariance and parameter efficiency."
+      - "Typical architecture: conv → activation → pool, repeated, then fully-connected head."
+      - "Dominant for vision tasks until transformers (ViT, 2020) became competitive."
+    key_dates:
+      - "1998: LeNet-5 (LeCun) for digit recognition."
+      - "2012: AlexNet wins ImageNet, sparks deep learning revolution."
+    sources:
+      wikipedia: "Convolutional_neural_network"
 
   - slug: recurrent-neural-network
     title: Recurrent Neural Network (RNN)
-    summary: Neural network with connections that form cycles, used for sequential data; largely superseded by transformers.
+    summary: Neural network with connections forming cycles; used for sequential data.
     difficulty: 3
     aliases: [rnn]
+    facts:
+      - "Processes sequences one element at a time, maintaining a hidden state."
+      - "Vanilla RNNs suffer from vanishing/exploding gradients over long sequences."
+      - "LSTM and GRU use gating to better preserve long-range dependencies."
+      - "Largely superseded by transformers for most sequence tasks."
+    sources:
+      wikipedia: "Recurrent_neural_network"
 
   - slug: transformer-architecture
     title: Transformer Architecture
-    summary: Neural network architecture based on self-attention; foundation of modern LLMs.
+    summary: Neural network architecture based on self-attention.
     difficulty: 3
     aliases: [transformer]
+    facts:
+      - "Introduced in 'Attention Is All You Need' (Vaswani et al., 2017)."
+      - "Core mechanism: self-attention computes weighted interactions between all token pairs."
+      - "Parallelizable across sequence positions — unlike RNNs — enabling scale."
+      - "Foundation for BERT, GPT, T5, and modern LLMs."
+    key_dates:
+      - "2017: 'Attention Is All You Need' published."
+    sources:
+      wikipedia: "Transformer_(machine_learning_model)"
 
   - slug: attention-mechanism
     title: Attention Mechanism
     summary: Computes a weighted sum of values based on learned similarity between queries and keys.
     difficulty: 3
+    facts:
+      - "Q (query), K (key), V (value) projections from inputs."
+      - "Scaled dot-product attention: softmax(Q·Kᵀ / √d_k) · V."
+      - "Multi-head attention runs multiple attention computations in parallel, concatenates outputs."
+    formulas:
+      - "Attention(Q, K, V) = softmax(Q·Kᵀ / √d_k) · V"
+    sources:
+      wikipedia: "Attention_(machine_learning)"
 
   - slug: embedding
     title: Embedding
-    summary: Learned low-dimensional vector representation of a discrete input (word, token, entity).
+    summary: Learned low-dimensional vector representation of a discrete input.
     difficulty: 2
+    facts:
+      - "Similar items end up near each other in embedding space, by some learned similarity metric."
+      - "Word2Vec and GloVe popularized word embeddings (~2013–2014); modern LLMs learn them end-to-end."
+      - "Used for search, recommendation, transfer of learned structure across tasks."
+    sources:
+      wikipedia: "Word_embedding"
 
   # Classical methods
   - slug: linear-regression
     title: Linear Regression
     summary: Fit a linear function to data by minimizing squared error.
     difficulty: 1
+    facts:
+      - "Model: ŷ = w·x + b."
+      - "Closed-form solution exists (normal equations) but gradient descent scales better."
+      - "Assumes linearity, independent errors, homoscedasticity, normality of residuals (for inference)."
+    formulas:
+      - "ŷ = w·x + b"
+      - "w* = (XᵀX)⁻¹Xᵀy (normal equations)"
+    sources:
+      wikipedia: "Linear_regression"
 
   - slug: logistic-regression
     title: Logistic Regression
-    summary: Linear model for binary classification, with sigmoid output interpreted as probability.
+    summary: Linear model for binary classification, with sigmoid output.
     difficulty: 2
+    facts:
+      - "Output: P(y=1|x) = σ(w·x + b), where σ is the sigmoid function."
+      - "Trained by maximizing log-likelihood (equivalently, minimizing cross-entropy)."
+      - "Extends to multiclass via softmax (multinomial logistic regression)."
+    formulas:
+      - "P(y=1|x) = 1 / (1 + exp(−(w·x + b)))"
+    sources:
+      wikipedia: "Logistic_regression"
 
   - slug: decision-tree
     title: Decision Tree
-    summary: Tree of splits on features, with predictions at the leaves; interpretable but prone to overfitting.
+    summary: Tree of splits on features, with predictions at the leaves.
     difficulty: 2
+    facts:
+      - "Splits chosen to maximize information gain (entropy reduction) or minimize Gini impurity."
+      - "Interpretable — each path from root to leaf is a rule."
+      - "Prone to overfitting without pruning or depth limits."
+    sources:
+      wikipedia: "Decision_tree_learning"
 
   - slug: random-forest
     title: Random Forest
     summary: Ensemble of decision trees trained on bootstrapped samples and random feature subsets.
     difficulty: 2
+    facts:
+      - "Bagging (bootstrap aggregation): each tree trained on a random sample with replacement."
+      - "Random feature subset at each split decorrelates trees and reduces variance."
+      - "Strong off-the-shelf performance; little hyperparameter tuning needed."
+    sources:
+      wikipedia: "Random_forest"
 
   - slug: gradient-boosting
     title: Gradient Boosting
     summary: Ensemble method building trees sequentially, each correcting errors of the previous ensemble.
     difficulty: 3
+    facts:
+      - "Each new tree fits the gradient of the loss with respect to the current ensemble's predictions."
+      - "Popular implementations: XGBoost, LightGBM, CatBoost."
+      - "Frequently wins on tabular data — often outperforms deep learning there."
+    sources:
+      wikipedia: "Gradient_boosting"
 
   - slug: k-means-clustering
     title: K-Means Clustering
-    summary: Unsupervised algorithm that partitions data into k clusters by minimizing within-cluster variance.
+    summary: Unsupervised algorithm partitioning data into k clusters by minimizing within-cluster variance.
     difficulty: 2
     aliases: [k-means]
+    facts:
+      - "Alternates between assigning points to nearest centroid and updating centroids to the mean of their points."
+      - "Sensitive to initialization — k-means++ improves initial centroid selection."
+      - "Requires k in advance; elbow method and silhouette score help choose it."
+      - "Assumes clusters are roughly spherical and of similar size — breaks on non-convex or varied-density clusters."
+    sources:
+      wikipedia: "K-means_clustering"
 
   - slug: principal-component-analysis
     title: Principal Component Analysis (PCA)
     summary: Linear dimensionality reduction via orthogonal projection onto directions of maximum variance.
     difficulty: 3
     aliases: [pca]
+    facts:
+      - "Principal components are eigenvectors of the data's covariance matrix."
+      - "Components are ordered by variance explained — keep the top k for dimensionality reduction."
+      - "Requires centered (and often scaled) features; variance-based, so sensitive to feature units."
+    sources:
+      wikipedia: "Principal_component_analysis"
 
   # LLM era
   - slug: large-language-model
     title: Large Language Model (LLM)
-    summary: Transformer-based model trained on massive text corpora to predict next tokens; exhibits broad language abilities.
+    summary: Transformer-based model trained on massive text corpora to predict next tokens.
     difficulty: 2
     aliases: [llm]
+    facts:
+      - "Trained by next-token prediction (autoregressive) on huge web-scale corpora."
+      - "Capabilities emerge with scale — few-shot learning, reasoning, coding, translation."
+      - "Typically followed by instruction tuning and RLHF/DPO for alignment and safety."
+      - "Context window determines how much input they can attend to in a single prompt."
+    sources:
+      wikipedia: "Large_language_model"
 
   - slug: tokenization
     title: Tokenization
-    summary: Splitting text into discrete units (subwords, bytes) for a language model.
+    summary: Splitting text into discrete units for a language model.
     difficulty: 2
+    facts:
+      - "Most modern LLMs use subword tokenization (BPE, WordPiece, SentencePiece)."
+      - "A token is roughly 4 characters or 0.75 English words on average."
+      - "Determines what 'a single unit' means to the model — affects context limits and billing."
+    sources:
+      wikipedia: "Lexical_analysis"
 
   - slug: fine-tuning
     title: Fine-Tuning
     summary: Adapting a pretrained model to a specific task by continued training on task data.
     difficulty: 2
+    facts:
+      - "Full fine-tuning updates all weights; expensive but flexible."
+      - "Parameter-efficient methods (LoRA, adapters) update a small subset and compose cleanly."
+      - "Requires much less data than training from scratch — the pretrained model already knows most of the world."
+    sources:
+      wikipedia: "Fine-tuning_(deep_learning)"
 
   - slug: retrieval-augmented-generation
     title: Retrieval-Augmented Generation (RAG)
     summary: Condition an LLM's generation on documents retrieved from an external store at inference time.
     difficulty: 3
     aliases: [rag]
+    facts:
+      - "Pipeline: query → retrieve relevant docs (typically via vector similarity) → concatenate into prompt → generate."
+      - "Addresses knowledge cutoff, hallucination, and private/specialized data without retraining the model."
+      - "Retrieval quality is often the dominant factor in end-to-end performance."
+    sources:
+      wikipedia: "Retrieval-augmented_generation"
 
   # Evaluation
   - slug: confusion-matrix
     title: Confusion Matrix
-    summary: Table of predicted vs. actual labels; basis for precision, recall, accuracy, F1.
+    summary: Table of predicted vs. actual labels.
     difficulty: 2
+    facts:
+      - "For binary classification: True Positives (TP), True Negatives (TN), False Positives (FP), False Negatives (FN)."
+      - "Derived metrics: accuracy = (TP+TN)/total, precision = TP/(TP+FP), recall = TP/(TP+FN)."
+      - "For imbalanced classes, accuracy is misleading — look at precision, recall, F1 by class."
+    sources:
+      wikipedia: "Confusion_matrix"
 
   - slug: precision-and-recall
     title: Precision and Recall
-    summary: Precision = TP/(TP+FP); Recall = TP/(TP+FN). Tradeoff governed by decision threshold.
+    summary: Complementary metrics for classification performance.
     difficulty: 2
+    facts:
+      - "Precision = TP / (TP + FP): of predicted positives, how many are truly positive."
+      - "Recall = TP / (TP + FN): of actual positives, how many did we catch."
+      - "F1 = harmonic mean of precision and recall — penalizes extreme imbalance."
+      - "Tradeoff governed by decision threshold — precision-recall curve visualizes the spectrum."
+    formulas:
+      - "Precision = TP / (TP + FP)"
+      - "Recall = TP / (TP + FN)"
+      - "F1 = 2·P·R / (P + R)"
+    sources:
+      wikipedia: "Precision_and_recall"

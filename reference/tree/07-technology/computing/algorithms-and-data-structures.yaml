@@ -15,152 +15,335 @@ leaves:
     summary: Asymptotic upper bound on growth of a function; standard notation for algorithmic complexity.
     difficulty: 2
     see_also: [time-complexity, space-complexity]
+    facts:
+      - "f(n) = O(g(n)) means there exist constants c, n₀ such that |f(n)| ≤ c·|g(n)| for all n ≥ n₀."
+      - "Describes worst-case (or upper-bound) growth as input size increases — constants and lower-order terms are ignored."
+      - "Related: Ω (lower bound), Θ (tight bound), o (strictly slower)."
+      - "Common orders: O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ) < O(n!)."
+    sources:
+      wikipedia: "Big_O_notation"
 
   - slug: time-complexity
     title: Time Complexity
     summary: How runtime grows with input size, typically expressed in Big-O.
     difficulty: 2
+    facts:
+      - "Counts elementary operations as a function of input size n — independent of hardware."
+      - "Worst-case is the standard guarantee; average-case and amortized analyses give complementary views."
+      - "Sorting lower bound (comparison-based) is Ω(n log n); hashing lookup is expected O(1) but worst-case O(n)."
+    sources:
+      wikipedia: "Time_complexity"
 
   - slug: space-complexity
     title: Space Complexity
     summary: How memory usage grows with input size.
     difficulty: 2
+    facts:
+      - "Counts auxiliary memory beyond the input itself (sometimes total memory, depending on convention)."
+      - "Recursive algorithms incur O(depth) stack space even if they appear to use O(1) heap."
+      - "In-place algorithms use O(1) auxiliary space; merge sort uses O(n); DFS uses O(depth)."
+    sources:
+      wikipedia: "Space_complexity"
 
   - slug: np-completeness
     title: NP-Completeness
     summary: Class of decision problems for which no polynomial-time solution is known, and any one solution would solve all.
     difficulty: 4
     aliases: [np-complete]
+    facts:
+      - "P = problems solvable in polynomial time; NP = verifiable in polynomial time."
+      - "NP-hard = at least as hard as the hardest problems in NP; NP-complete = NP-hard AND in NP."
+      - "Whether P = NP is an open problem — the most famous in computer science."
+      - "Classic NP-complete problems: SAT, 3-SAT, Travelling Salesman (decision), Subset Sum, Graph Coloring."
+    key_dates:
+      - "1971: Cook proves SAT is NP-complete (Cook-Levin theorem)."
+    sources:
+      wikipedia: "NP-completeness"
 
   # Linear structures
   - slug: array
     title: Array
     summary: Contiguous block of memory holding elements of the same type, indexed by position.
     difficulty: 1
+    facts:
+      - "Access by index: O(1); insert/delete at middle: O(n)."
+      - "Fixed size in low-level languages; dynamic arrays (ArrayList, Vec) amortize growth at O(1) per append."
+      - "Good cache locality — often faster in practice than asymptotically equivalent structures."
+    sources:
+      wikipedia: "Array_data_structure"
 
   - slug: linked-list
     title: Linked List
     summary: Linear collection of nodes, each pointing to the next (singly) or both directions (doubly).
     difficulty: 1
+    facts:
+      - "Insert/delete at a known node: O(1); access by index: O(n)."
+      - "Poor cache locality compared to arrays — often slower in practice despite matching asymptotic complexity."
+      - "Useful when frequent insertion in the middle dominates, and index access is rare."
+    sources:
+      wikipedia: "Linked_list"
 
   - slug: stack
     title: Stack
     summary: LIFO (last-in-first-out) collection supporting push and pop.
     difficulty: 1
+    facts:
+      - "Push and pop are O(1)."
+      - "Used for: function call frames, expression parsing, DFS, undo history, matching brackets."
+    sources:
+      wikipedia: "Stack_(abstract_data_type)"
 
   - slug: queue
     title: Queue
     summary: FIFO (first-in-first-out) collection supporting enqueue and dequeue.
     difficulty: 1
+    facts:
+      - "Enqueue and dequeue are O(1)."
+      - "Used for: BFS, task scheduling, producer-consumer pipelines."
+      - "Variants: deque (double-ended), priority queue (heap-based), circular buffer (bounded)."
+    sources:
+      wikipedia: "Queue_(abstract_data_type)"
 
   # Maps and sets
   - slug: hash-table
     title: Hash Table
     summary: Key-value store with O(1) average lookup via a hash function mapping keys to buckets.
     difficulty: 2
-    see_also: [hash-function, collision-resolution]
+    see_also: [hash-function]
+    facts:
+      - "Operations: insert, lookup, delete — all O(1) average, O(n) worst-case."
+      - "Collision resolution: chaining (list per bucket) or open addressing (probe for next slot)."
+      - "Load factor (n/buckets) should stay bounded — typically resize when above ~0.75."
+      - "Iteration order is generally unspecified; ordered variants (Java LinkedHashMap, Python dict since 3.7) maintain insertion order."
+    sources:
+      wikipedia: "Hash_table"
 
   - slug: hash-function
     title: Hash Function
     summary: Function that maps data of arbitrary size to fixed-size values; good ones distribute uniformly.
     difficulty: 2
+    facts:
+      - "Desirable properties: deterministic, uniform distribution, fast to compute."
+      - "Non-cryptographic hashes (FNV, MurmurHash, xxHash) prioritize speed; cryptographic hashes (SHA-256) add collision resistance."
+      - "The birthday paradox: collisions become likely at √N inputs for a hash with N possible outputs."
+    sources:
+      wikipedia: "Hash_function"
 
   - slug: bloom-filter
     title: Bloom Filter
     summary: Probabilistic structure that tests set membership with no false negatives but possible false positives.
     difficulty: 3
+    facts:
+      - "Uses k independent hash functions and a bit array."
+      - "'Definitely not in set' is reliable; 'probably in set' has a controllable false-positive rate."
+      - "Cannot delete elements (without counting variants); space-efficient — much smaller than storing the set."
+      - "Used for: quick set-membership checks to avoid expensive lookups (e.g., database pre-filters)."
+    sources:
+      wikipedia: "Bloom_filter"
 
   # Trees
   - slug: binary-tree
     title: Binary Tree
     summary: Tree where every node has at most two children.
     difficulty: 1
+    facts:
+      - "Traversal orders: in-order (left-root-right), pre-order (root-left-right), post-order (left-right-root)."
+      - "A tree of n nodes has exactly n−1 edges."
+      - "Height can range from ⌊log₂ n⌋ (perfectly balanced) to n−1 (degenerate / linked list)."
+    sources:
+      wikipedia: "Binary_tree"
 
   - slug: binary-search-tree
     title: Binary Search Tree
     summary: Binary tree maintaining sorted order: left subtree < node < right subtree.
     difficulty: 2
+    facts:
+      - "Search, insert, delete: O(h) where h is tree height."
+      - "In-order traversal yields sorted order."
+      - "Unbalanced insertions degrade to O(n); self-balancing variants (AVL, Red-Black) guarantee O(log n)."
+    sources:
+      wikipedia: "Binary_search_tree"
 
   - slug: balanced-tree
     title: Balanced Tree
     summary: Self-balancing BST (AVL, Red-Black) that keeps height O(log n) to guarantee fast operations.
     difficulty: 3
     aliases: [avl-tree, red-black-tree]
+    facts:
+      - "AVL trees: stricter balance (heights differ by at most 1); faster lookups, slower inserts."
+      - "Red-Black trees: looser balance; standard in many library implementations (C++ std::map, Java TreeMap)."
+      - "B-trees: generalization with many children per node; used in databases and filesystems for disk-friendly access."
+    sources:
+      wikipedia: "Self-balancing_binary_search_tree"
 
   - slug: heap
     title: Heap
     summary: Tree-based structure satisfying the heap property (parent ≥ or ≤ children); backs priority queues.
     difficulty: 2
+    facts:
+      - "Min-heap: parent ≤ children; max-heap: parent ≥ children."
+      - "Binary heap: insert and extract-min/max both O(log n); peek O(1)."
+      - "Typically implemented as an array using index arithmetic (parent at (i−1)/2, children at 2i+1 and 2i+2)."
+      - "Used for: priority queues, Dijkstra's algorithm, heap sort, scheduling."
+    sources:
+      wikipedia: "Heap_(data_structure)"
 
   - slug: trie
     title: Trie
     summary: Tree storing strings by character path; enables efficient prefix lookup.
     difficulty: 3
+    facts:
+      - "Insert and lookup: O(L) where L is string length — independent of number of strings stored."
+      - "Space-efficient for sets with shared prefixes (dictionaries, IP routing tables)."
+      - "Compressed variants (radix tree, Patricia trie) merge chains of single-child nodes."
+    sources:
+      wikipedia: "Trie"
 
   # Graphs
   - slug: graph
     title: Graph
     summary: Set of vertices connected by edges; directed or undirected, weighted or unweighted.
     difficulty: 2
+    facts:
+      - "Representations: adjacency list (space O(V+E), good for sparse graphs), adjacency matrix (space O(V²), O(1) edge lookup)."
+      - "A tree is a connected acyclic undirected graph; a DAG is directed and acyclic."
+      - "Common properties: connectivity, cycles, bipartiteness, planarity."
+    sources:
+      wikipedia: "Graph_(abstract_data_type)"
 
   - slug: breadth-first-search
     title: Breadth-First Search (BFS)
-    summary: Graph traversal that explores all neighbors at the current depth before going deeper; finds shortest paths in unweighted graphs.
+    summary: Graph traversal that explores all neighbors at the current depth before going deeper.
     difficulty: 2
+    facts:
+      - "Uses a queue; time and space O(V + E)."
+      - "Finds shortest paths (by edge count) in unweighted graphs."
+      - "Level-by-level traversal — useful for 'closest' or 'fewest steps' problems."
+    sources:
+      wikipedia: "Breadth-first_search"
 
   - slug: depth-first-search
     title: Depth-First Search (DFS)
     summary: Graph traversal that explores as deep as possible along each branch before backtracking.
     difficulty: 2
+    facts:
+      - "Uses a stack (explicit, or the call stack via recursion); time and space O(V + E)."
+      - "Does not find shortest paths in general."
+      - "Basis for: cycle detection, topological sort, finding strongly connected components, solving mazes."
+    sources:
+      wikipedia: "Depth-first_search"
 
   - slug: dijkstras-algorithm
     title: Dijkstra's Algorithm
     summary: Shortest paths from a source in a graph with non-negative edge weights.
     difficulty: 3
+    facts:
+      - "Greedy algorithm using a priority queue (min-heap)."
+      - "Time complexity: O((V + E) log V) with a binary heap."
+      - "Fails on graphs with negative edge weights — use Bellman-Ford instead."
+    key_dates:
+      - "1956: Edsger Dijkstra designs the algorithm (published 1959)."
+    sources:
+      wikipedia: "Dijkstra%27s_algorithm"
 
   - slug: topological-sort
     title: Topological Sort
     summary: Linear ordering of DAG vertices such that every edge points forward.
     difficulty: 3
+    facts:
+      - "Defined only on directed acyclic graphs (DAGs) — cycles make it impossible."
+      - "Algorithms: Kahn's (repeatedly remove zero-in-degree vertices), DFS-based (reverse post-order)."
+      - "Used for: build systems, task scheduling, dependency resolution."
+    sources:
+      wikipedia: "Topological_sorting"
 
   # Sorting and searching
   - slug: binary-search
     title: Binary Search
     summary: O(log n) search in a sorted array by repeatedly halving the search interval.
     difficulty: 1
+    facts:
+      - "Requires the data to be sorted beforehand."
+      - "Time complexity: O(log n); space: O(1) iterative, O(log n) recursive."
+      - "Classic off-by-one bugs: half-open vs closed intervals, overflow in midpoint calculation (use low + (high−low)/2)."
+    sources:
+      wikipedia: "Binary_search_algorithm"
 
   - slug: merge-sort
     title: Merge Sort
     summary: O(n log n) divide-and-conquer sort; stable, with O(n) auxiliary space.
     difficulty: 2
+    facts:
+      - "Stable: equal elements retain relative order."
+      - "Worst and average case both O(n log n); not in-place (needs O(n) extra space)."
+      - "Good for linked lists and external sorting (data too large for RAM)."
+    sources:
+      wikipedia: "Merge_sort"
 
   - slug: quick-sort
     title: Quick Sort
     summary: O(n log n) average / O(n²) worst-case sort via partitioning around a pivot.
     difficulty: 2
+    facts:
+      - "In-place (O(log n) stack); not stable."
+      - "Performance is very sensitive to pivot choice — random or median-of-three are standard."
+      - "Usually faster in practice than merge sort due to cache locality and smaller constants."
+    sources:
+      wikipedia: "Quicksort"
 
   # Algorithmic paradigms
   - slug: divide-and-conquer
     title: Divide and Conquer
     summary: Break problem into subproblems, solve recursively, combine results.
     difficulty: 2
+    facts:
+      - "Three steps: divide (split problem), conquer (solve subproblems recursively), combine (merge solutions)."
+      - "Recurrence relations analyzed via the Master Theorem."
+      - "Examples: merge sort, quicksort, binary search, Strassen's matrix multiplication, FFT."
+    sources:
+      wikipedia: "Divide-and-conquer_algorithm"
 
   - slug: dynamic-programming
     title: Dynamic Programming
-    summary: Solve problems with overlapping subproblems by caching results and building up (memoization or tabulation).
+    summary: Solve problems with overlapping subproblems by caching results and building up.
     difficulty: 3
+    facts:
+      - "Applicable when the problem has optimal substructure AND overlapping subproblems."
+      - "Top-down (memoization): recursion with a cache."
+      - "Bottom-up (tabulation): iterative fill of a table from base cases up."
+      - "Classic examples: Fibonacci, longest common subsequence, knapsack, edit distance, shortest path."
+    sources:
+      wikipedia: "Dynamic_programming"
 
   - slug: greedy-algorithm
     title: Greedy Algorithm
-    summary: Make the locally optimal choice at each step; works when the problem has optimal substructure and the greedy property.
+    summary: Make the locally optimal choice at each step.
     difficulty: 3
+    facts:
+      - "Works when the problem has optimal substructure AND the greedy choice property (locally optimal → globally optimal)."
+      - "Doesn't always produce optimal solutions; needs proof of correctness per problem."
+      - "Examples: Dijkstra's, Prim's and Kruskal's MST, Huffman coding, interval scheduling."
+    sources:
+      wikipedia: "Greedy_algorithm"
 
   - slug: backtracking
     title: Backtracking
     summary: Build solutions incrementally and abandon a partial solution as soon as it can't lead to a valid answer.
     difficulty: 3
+    facts:
+      - "Systematic search of the solution space with pruning."
+      - "Worst case exponential, but effective pruning can make it practical on real inputs."
+      - "Examples: N-queens, Sudoku solvers, constraint satisfaction, combinatorial enumeration."
+    sources:
+      wikipedia: "Backtracking"
 
   - slug: recursion
     title: Recursion
     summary: Function that calls itself on a smaller subproblem until a base case is reached.
     difficulty: 1
+    facts:
+      - "Requires a base case (to terminate) and a recursive case (smaller subproblem)."
+      - "Each call consumes stack space — deep recursion can cause stack overflow."
+      - "Tail recursion (where the recursive call is the last operation) can be optimized to iteration by some compilers."
+    sources:
+      wikipedia: "Recursion_(computer_science)"

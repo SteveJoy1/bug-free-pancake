@@ -14,103 +14,249 @@ leaves:
     title: Engineering Design Process
     summary: Iterative process — define problem, research, ideate, prototype, test, refine, deliver.
     difficulty: 1
+    facts:
+      - "Typical phases: problem definition, requirements, concept generation, analysis, prototyping, testing, iteration, deployment."
+      - "Iteration is essential — first designs rarely meet all requirements."
+      - "Decisions made early carry the most downstream cost leverage."
+    sources:
+      wikipedia: "Engineering_design_process"
 
   - slug: requirements-engineering
     title: Requirements Engineering
     summary: Elicitation, analysis, and documentation of what a system must do and constraints it must satisfy.
     difficulty: 2
+    facts:
+      - "Functional requirements describe what the system does; non-functional describe qualities (performance, security, usability)."
+      - "Requirements must be verifiable — if you can't test whether they're met, rewrite them."
+      - "Changing requirements late in a project is one of the most expensive forms of rework."
+    sources:
+      wikipedia: "Requirements_engineering"
 
   - slug: systems-engineering
     title: Systems Engineering
     summary: Discipline of designing and managing complex systems over their life cycle — emphasis on interfaces and emergent behavior.
     difficulty: 3
+    facts:
+      - "Focuses on the whole system, not just components — especially interfaces between them."
+      - "Uses V-model: requirements flow down the left, verification/validation flow up the right."
+      - "Emergent behaviors (good or bad) arise from component interactions and are hard to predict from subsystems alone."
+    sources:
+      wikipedia: "Systems_engineering"
 
   - slug: tradeoff-analysis
     title: Tradeoff Analysis
     summary: Structured comparison of design alternatives against weighted criteria (cost, performance, reliability, etc.).
     difficulty: 2
+    facts:
+      - "Pareto frontier: the set of alternatives where improving one criterion requires worsening another."
+      - "Weighted-sum scoring is simple but hides nonlinear preferences — use with caution."
+      - "No dominant solution usually exists; engineering is about choosing the right losses."
+    sources:
+      wikipedia: "Multiple-criteria_decision_analysis"
 
   - slug: factor-of-safety
     title: Factor of Safety
     summary: Ratio of a system's capacity to the expected load; design margin against uncertainty and variability.
     difficulty: 1
+    facts:
+      - "Factor of safety (FoS) = ultimate capacity / expected load."
+      - "Typical values: ~1.5 for aerospace structures, 2–4 for civil, higher for life-safety systems."
+      - "Higher FoS adds mass and cost — it is a tradeoff, not a free virtue."
+    formulas:
+      - "FoS = capacity / expected_load"
+    sources:
+      wikipedia: "Factor_of_safety"
 
   - slug: stress-and-strain
     title: Stress and Strain
-    summary: Stress is internal force per unit area; strain is resulting deformation. Hooke's law relates them linearly in the elastic regime.
+    summary: Stress is internal force per unit area; strain is resulting deformation.
     difficulty: 2
-    see_also: [youngs-modulus]
+    see_also: [youngs-modulus, fatigue-materials]
+    facts:
+      - "Stress σ = F/A; units of pressure (Pa, MPa)."
+      - "Strain ε = ΔL/L; dimensionless."
+      - "In the linear elastic regime, stress and strain are proportional (Hooke's law): σ = E·ε."
+      - "Beyond the elastic limit, materials deform plastically or fracture."
+    formulas:
+      - "σ = F/A"
+      - "ε = ΔL/L₀"
+      - "σ = E·ε (Hooke's law)"
+    sources:
+      wikipedia: "Stress%E2%80%93strain_curve"
 
   - slug: youngs-modulus
     title: Young's Modulus
     summary: Material's stiffness — ratio of stress to strain in the linear elastic region.
     difficulty: 2
+    facts:
+      - "E = σ/ε for uniaxial loading in the elastic regime."
+      - "Steel ≈ 200 GPa, aluminum ≈ 70 GPa, wood ≈ 10 GPa, rubber < 0.1 GPa."
+      - "A material property — independent of part geometry."
+    formulas:
+      - "E = σ/ε"
+    sources:
+      wikipedia: "Young%27s_modulus"
 
   - slug: fatigue-materials
     title: Fatigue (Materials)
     summary: Weakening and eventual failure of a material under cyclic loading below its static strength.
     difficulty: 3
     aliases: [fatigue]
+    facts:
+      - "Most structural failures in service are fatigue-related, not static overload."
+      - "S-N curve (stress vs. cycles to failure) characterizes fatigue behavior."
+      - "Some materials (steel) have an endurance limit below which fatigue life is effectively infinite; aluminum does not."
+      - "Surface finish, notches, and corrosion dramatically reduce fatigue life."
+    sources:
+      wikipedia: "Fatigue_(material)"
 
   - slug: heat-transfer
     title: Heat Transfer
-    summary: Movement of thermal energy via conduction, convection, or radiation; fundamental to thermal design.
+    summary: Movement of thermal energy via conduction, convection, or radiation.
     difficulty: 2
+    facts:
+      - "Three modes: conduction (Fourier's law, contact), convection (bulk fluid motion), radiation (electromagnetic, Stefan-Boltzmann)."
+      - "Conduction: q = −k·∇T, where k is thermal conductivity."
+      - "Radiation: total emitted power per unit area = ε·σ·T⁴ (Stefan-Boltzmann)."
+      - "Often multiple modes act simultaneously — their relative importance depends on scale and materials."
+    formulas:
+      - "q = −k·(dT/dx) (1D conduction)"
+      - "q = ε·σ·T⁴ (radiation)"
+    sources:
+      wikipedia: "Heat_transfer"
 
   - slug: fluid-mechanics
     title: Fluid Mechanics
     summary: Behavior of liquids and gases at rest and in motion; governed by Navier-Stokes equations.
     difficulty: 3
+    facts:
+      - "Split into statics (fluids at rest) and dynamics (fluids in motion)."
+      - "Reynolds number Re = ρ·v·L/μ predicts laminar vs. turbulent flow (≲2,300 laminar, ≳4,000 turbulent in pipes)."
+      - "Bernoulli's equation: along a streamline in steady, inviscid, incompressible flow, P + (1/2)·ρ·v² + ρ·g·h = constant."
+    formulas:
+      - "Re = ρ·v·L / μ"
+      - "P + (1/2)·ρ·v² + ρ·g·h = const. (Bernoulli)"
+    sources:
+      wikipedia: "Fluid_mechanics"
 
   - slug: control-system
     title: Control System
     summary: System that regulates an output by comparing it to a desired setpoint and applying corrective input.
     difficulty: 2
     see_also: [feedback-loop, pid-controller]
+    facts:
+      - "Open-loop: no measurement of output; simple but fragile to disturbance."
+      - "Closed-loop (feedback): output measured and compared to setpoint; correction applied based on error."
+      - "Key stability concepts: gain and phase margins, frequency response, poles and zeros."
+    sources:
+      wikipedia: "Control_system"
 
   - slug: feedback-loop
     title: Feedback Loop
     summary: Output of a system is measured and fed back to adjust input; negative feedback stabilizes, positive amplifies.
     difficulty: 2
+    facts:
+      - "Negative feedback reduces error between output and setpoint — stabilizing."
+      - "Positive feedback amplifies deviations — destabilizing (or used intentionally for switches, oscillators)."
+      - "Feedback introduces dynamics: lag in the loop can cause oscillation or instability."
+    sources:
+      wikipedia: "Feedback"
 
   - slug: pid-controller
     title: PID Controller
     summary: Control loop using proportional, integral, and derivative terms to drive error to zero.
     difficulty: 3
+    facts:
+      - "P term: output ∝ current error — fast response, but leaves steady-state error."
+      - "I term: output ∝ accumulated error — eliminates steady-state error, can cause overshoot or instability."
+      - "D term: output ∝ rate of change of error — dampens overshoot, amplifies noise."
+      - "Tuning balances response speed, overshoot, and stability (Ziegler-Nichols is a classical method)."
+    formulas:
+      - "u(t) = K_p·e(t) + K_i·∫e dt + K_d·(de/dt)"
+    sources:
+      wikipedia: "PID_controller"
 
   - slug: reliability-engineering
     title: Reliability Engineering
     summary: Discipline of predicting and improving the probability a system performs without failure over time.
     difficulty: 3
     see_also: [failure-modes, mtbf]
+    facts:
+      - "Reliability R(t) = probability the system is still functioning at time t."
+      - "Series systems: overall reliability = product of component reliabilities (weakest link)."
+      - "Parallel (redundant) systems: overall unreliability = product of component unreliabilities."
+      - "Bathtub curve describes failure rate over life: high (infant mortality) → low (useful life) → high (wear-out)."
+    sources:
+      wikipedia: "Reliability_engineering"
 
   - slug: failure-modes
     title: Failure Modes
     summary: Distinct ways a component or system can fail; cataloged via FMEA (Failure Modes and Effects Analysis).
     difficulty: 3
+    facts:
+      - "FMEA assigns each failure mode a severity, occurrence, and detectability rating."
+      - "Risk Priority Number (RPN) = severity × occurrence × detectability."
+      - "Higher-criticality modes demand mitigation — redundancy, monitoring, or design change."
+    sources:
+      wikipedia: "Failure_mode_and_effects_analysis"
 
   - slug: mtbf
     title: Mean Time Between Failures (MTBF)
-    summary: Average operating time between failures for repairable systems; common reliability metric.
+    summary: Average operating time between failures for repairable systems.
     difficulty: 2
+    facts:
+      - "Defined only for repairable systems; for non-repairable use MTTF (Mean Time To Failure)."
+      - "Under a constant-failure-rate assumption: MTBF = 1/λ."
+      - "Reported MTBF values often assume specific operating conditions — extrapolating outside them is unreliable."
+    formulas:
+      - "MTBF = total_operating_time / number_of_failures"
+    sources:
+      wikipedia: "Mean_time_between_failures"
 
   - slug: root-cause-analysis
     title: Root Cause Analysis
     summary: Investigation method that traces a failure back to its underlying cause, not just the proximate trigger.
     difficulty: 2
+    facts:
+      - "5 Whys: ask 'why' iteratively to drill past symptoms to cause."
+      - "Fishbone (Ishikawa) diagram organizes potential causes across categories (people, process, equipment, materials, environment)."
+      - "A root cause is one whose fix prevents recurrence; if a proposed fix wouldn't have prevented the failure, it's not the root cause."
+    sources:
+      wikipedia: "Root_cause_analysis"
 
   - slug: tolerance-engineering
     title: Tolerance (Engineering)
     summary: Permitted variation in a dimension or property; tolerance stack-up governs manufacturability and fit.
     difficulty: 2
     aliases: [tolerance]
+    facts:
+      - "Tighter tolerances cost more to manufacture — specify only what function requires."
+      - "Worst-case stack: sum of extreme tolerances; conservative but often over-designs."
+      - "Statistical stack (RSS): assumes variation is random, adds in quadrature; less conservative, often more realistic."
+    sources:
+      wikipedia: "Engineering_tolerance"
 
   - slug: signal-to-noise-ratio
     title: Signal-to-Noise Ratio (SNR)
-    summary: Ratio of desired signal power to background noise; governs detectability and quality in measurement and communication.
+    summary: Ratio of desired signal power to background noise.
     difficulty: 2
+    facts:
+      - "Usually expressed in decibels: SNR_dB = 10·log₁₀(P_signal/P_noise)."
+      - "Governs detection limits — a signal below noise floor cannot reliably be extracted."
+      - "Doubling signal or halving noise yields ≈3 dB improvement."
+    formulas:
+      - "SNR = P_signal / P_noise"
+      - "SNR_dB = 10·log₁₀(SNR)"
+    sources:
+      wikipedia: "Signal-to-noise_ratio"
 
   - slug: finite-element-analysis
     title: Finite Element Analysis (FEA)
     summary: Numerical method that breaks a continuous domain into small elements to solve differential equations approximately.
     difficulty: 4
+    facts:
+      - "Used for stress, thermal, fluid, electromagnetic, and coupled problems."
+      - "Accuracy improves with finer meshes but at computational cost — mesh convergence study is standard practice."
+      - "Results are only as good as boundary conditions, material models, and mesh quality — FEA can produce pretty pictures of wrong answers."
+    sources:
+      wikipedia: "Finite_element_method"

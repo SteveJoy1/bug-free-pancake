@@ -14,81 +14,177 @@ leaves:
     title: CIA Triad
     summary: Confidentiality, Integrity, Availability — the classical security objectives.
     difficulty: 1
+    facts:
+      - "Confidentiality: information is not disclosed to unauthorized parties."
+      - "Integrity: information is not altered by unauthorized parties (or detected if altered)."
+      - "Availability: authorized users can access information when needed."
+      - "Often extended with Authentication, Authorization, Non-repudiation — the 'CIA++' or Parkerian Hexad."
+    sources:
+      wikipedia: "Information_security#Basic_principles"
 
   - slug: threat-model
     title: Threat Model
     summary: Systematic enumeration of attackers, assets, and attack surfaces for a given system.
     difficulty: 3
+    facts:
+      - "STRIDE framework: Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, Elevation of privilege."
+      - "Starts with: what am I protecting? From whom? What can they do? What will I do about it?"
+      - "Threat modeling early catches architectural vulnerabilities that are expensive to fix later."
+    sources:
+      wikipedia: "Threat_model"
 
   - slug: defense-in-depth
     title: Defense in Depth
     summary: Layered security controls so no single failure exposes the system.
     difficulty: 2
+    facts:
+      - "Multiple independent layers — perimeter, network, host, application, data."
+      - "Assumes any single control will eventually fail."
+      - "Originated in military strategy; adopted directly into information security."
+    sources:
+      wikipedia: "Defense_in_depth_(computing)"
 
   - slug: least-privilege
     title: Principle of Least Privilege
     summary: Each user or component should have only the permissions needed for its function.
     difficulty: 2
+    facts:
+      - "Limits blast radius of compromised credentials or buggy code."
+      - "Contrast with ambient authority (access granted by mere presence in the system)."
+      - "Practical implementations: RBAC (role-based), ABAC (attribute-based), capability-based security."
+    sources:
+      wikipedia: "Principle_of_least_privilege"
 
   - slug: zero-trust
     title: Zero Trust
-    summary: Architectural principle: never trust, always verify — no implicit trust based on network location.
+    summary: Architectural principle — never trust, always verify.
     difficulty: 3
+    facts:
+      - "No implicit trust based on network location (being 'inside the corporate network' grants nothing)."
+      - "Every request authenticated, authorized, and encrypted — regardless of origin."
+      - "Popularized by Google's BeyondCorp (2014) and formalized by NIST SP 800-207 (2020)."
+    sources:
+      wikipedia: "Zero_trust_security_model"
 
   # Identity and access
   - slug: authentication
     title: Authentication
     summary: Verifying who a user or system is.
     difficulty: 1
+    facts:
+      - "Three factors: something you know (password), something you have (hardware key), something you are (biometric)."
+      - "Distinct from authorization — auth answers 'who?', authz answers 'what can they do?'."
+      - "Common protocols: Kerberos, SAML, OpenID Connect (built on OAuth)."
+    sources:
+      wikipedia: "Authentication"
 
   - slug: authorization
     title: Authorization
     summary: Determining what an authenticated identity is allowed to do.
     difficulty: 1
+    facts:
+      - "Models: RBAC (roles → permissions), ABAC (attributes on users/resources/environment), ACL (per-resource lists)."
+      - "Authorization should be checked at every access, not just at login."
+      - "OAuth 2.0 is an authorization framework (often confused with an authentication protocol)."
+    sources:
+      wikipedia: "Authorization"
 
   - slug: multi-factor-authentication
     title: Multi-Factor Authentication (MFA)
-    summary: Requires two or more independent factors (something you know/have/are).
+    summary: Requires two or more independent factors.
     difficulty: 2
     aliases: [mfa, 2fa]
+    facts:
+      - "Factors must be independent — two passwords is not MFA."
+      - "Strength ranking: hardware security keys (FIDO2/WebAuthn) > authenticator apps (TOTP) > SMS (phishable, SIM-swap vulnerable)."
+      - "Dramatically reduces account takeover risk — Microsoft and Google both report >99% reduction."
+    sources:
+      wikipedia: "Multi-factor_authentication"
 
   - slug: oauth
     title: OAuth 2.0
-    summary: Authorization framework allowing a third-party app to act on a user's behalf without getting their password.
+    summary: Authorization framework allowing a third-party app to act on a user's behalf.
     difficulty: 3
+    facts:
+      - "Four roles: resource owner (user), client (app), authorization server, resource server."
+      - "Authorization Code flow is the standard for web apps; PKCE extension mandatory for public clients."
+      - "Access tokens are bearer tokens — anyone with the token can use it; keep them secret and short-lived."
+      - "OpenID Connect layers authentication on top of OAuth 2.0."
+    sources:
+      wikipedia: "OAuth"
 
   # Cryptography
   - slug: symmetric-encryption
     title: Symmetric Encryption
-    summary: Same key encrypts and decrypts (AES, ChaCha20); fast, but key distribution is the hard problem.
+    summary: Same key encrypts and decrypts.
     difficulty: 2
+    facts:
+      - "Fast — used for bulk data encryption."
+      - "Key distribution is the classical hard problem; solved in practice via asymmetric key exchange."
+      - "Modern standard: AES (Advanced Encryption Standard), typically AES-256 in GCM mode."
+      - "ChaCha20-Poly1305 is a common alternative, especially on platforms without AES hardware acceleration."
+    sources:
+      wikipedia: "Symmetric-key_algorithm"
 
   - slug: asymmetric-encryption
     title: Asymmetric Encryption
-    summary: Public/private keypair — anyone can encrypt with the public key, only the holder of the private key can decrypt (RSA, ECC).
+    summary: Public/private keypair — anyone can encrypt with the public key, only the private key can decrypt.
     difficulty: 3
     aliases: [public-key-cryptography]
+    facts:
+      - "Slower than symmetric; typically used to exchange a symmetric session key, not bulk data."
+      - "RSA: security based on difficulty of factoring large integers."
+      - "ECC (Elliptic Curve Cryptography): smaller keys for equivalent security — 256-bit ECC ≈ 3072-bit RSA."
+      - "Post-quantum algorithms (Kyber, Dilithium) are being standardized in anticipation of quantum attacks."
+    key_dates:
+      - "1977: RSA algorithm published (Rivest, Shamir, Adleman)."
+    sources:
+      wikipedia: "Public-key_cryptography"
 
   - slug: hashing
     title: Cryptographic Hashing
-    summary: One-way function mapping input to fixed-size digest (SHA-256); used for integrity and password storage.
+    summary: One-way function mapping input to fixed-size digest.
     difficulty: 2
+    facts:
+      - "Properties: preimage resistance, second-preimage resistance, collision resistance."
+      - "SHA-256 (256-bit output) is a current standard; SHA-1 is broken and MD5 is obsolete."
+      - "Used for: integrity checks, digital signatures, password storage (with slow hash + salt), Merkle trees, blockchains."
+    sources:
+      wikipedia: "Cryptographic_hash_function"
 
   - slug: digital-signature
     title: Digital Signature
-    summary: Cryptographic proof that a message was produced by the holder of a private key and hasn't been altered.
+    summary: Cryptographic proof that a message was produced by the holder of a private key.
     difficulty: 3
+    facts:
+      - "Signer hashes the message and encrypts the hash with their private key — verifier decrypts with the public key and compares."
+      - "Provides authentication, integrity, and non-repudiation."
+      - "Algorithms: RSA, ECDSA, Ed25519 (modern preferred)."
+    sources:
+      wikipedia: "Digital_signature"
 
   - slug: password-hashing
     title: Password Hashing
-    summary: Store passwords as slow, salted hashes (bcrypt, scrypt, argon2) so a database leak doesn't expose plaintext.
+    summary: Store passwords as slow, salted hashes.
     difficulty: 2
+    facts:
+      - "Never store plaintext or reversible-encrypted passwords."
+      - "Use slow, memory-hard algorithms designed for passwords: Argon2 (current preference), scrypt, bcrypt."
+      - "General-purpose hashes (SHA-256) are too fast — they enable cheap brute-force attacks."
+    sources:
+      wikipedia: "Cryptographic_hash_function#Password_verification"
 
   - slug: salt-cryptography
     title: Salt (Cryptography)
-    summary: Random data added to a password before hashing to prevent precomputed-table attacks.
+    summary: Random data added to a password before hashing.
     difficulty: 2
     aliases: [salt]
+    facts:
+      - "Unique per password — prevents precomputed attacks (rainbow tables)."
+      - "Doesn't need to be secret; stored alongside the hash."
+      - "Doesn't speed up brute force against a single password — that's what slow hash functions handle."
+    sources:
+      wikipedia: "Salt_(cryptography)"
 
   # Web / application attacks
   - slug: xss
@@ -96,40 +192,93 @@ leaves:
     summary: Attacker injects malicious script into content served to other users.
     difficulty: 2
     aliases: [cross-site-scripting]
+    facts:
+      - "Three types: stored (script persisted on server), reflected (script in URL/request), DOM-based (script-free injection via client-side JS)."
+      - "Core defense: escape/encode untrusted content according to the context (HTML body, attribute, URL, JavaScript)."
+      - "Content Security Policy (CSP) restricts what scripts can run — defense in depth."
+      - "OWASP Top 10 perennial."
+    sources:
+      wikipedia: "Cross-site_scripting"
 
   - slug: sql-injection
     title: SQL Injection
-    summary: Attacker crafts input that changes the structure of a SQL query; fixed by parameterized queries.
+    summary: Attacker crafts input that changes the structure of a SQL query.
     difficulty: 2
+    facts:
+      - "Caused by string-concatenating untrusted input into queries instead of using parameters."
+      - "Fix: parameterized queries / prepared statements — the database treats user input as data, never as SQL."
+      - "Classic: ' OR '1'='1 in a login form."
+      - "OWASP Top 10 since inception."
+    sources:
+      wikipedia: "SQL_injection"
 
   - slug: csrf
     title: Cross-Site Request Forgery (CSRF)
     summary: Trick a logged-in user's browser into making an unintended authenticated request.
     difficulty: 3
+    facts:
+      - "Exploits the browser's automatic inclusion of cookies on cross-origin requests to the authenticating site."
+      - "Defenses: CSRF tokens (synchronizer pattern), SameSite cookie attribute, checking Origin/Referer headers."
+      - "Largely mitigated for new apps by SameSite=Lax becoming the browser default."
+    sources:
+      wikipedia: "Cross-site_request_forgery"
 
   - slug: buffer-overflow
     title: Buffer Overflow
-    summary: Writing past the end of a buffer corrupts adjacent memory; classical vector for code execution.
+    summary: Writing past the end of a buffer corrupts adjacent memory.
     difficulty: 3
+    facts:
+      - "Classic vector for arbitrary code execution — overwrite return address on the stack."
+      - "Memory-safe languages (Rust, Go, Java, Python) eliminate most of this class by design."
+      - "Mitigations in C/C++: stack canaries, ASLR, DEP/NX, safer string APIs, bounds checking."
+    key_dates:
+      - "1988: Morris worm uses a buffer overflow (among other things) to spread."
+    sources:
+      wikipedia: "Buffer_overflow"
 
   # Network / infrastructure
   - slug: man-in-the-middle
     title: Man-in-the-Middle Attack
-    summary: Attacker relays and potentially alters communication between two parties who think they're talking directly.
+    summary: Attacker relays and potentially alters communication between two parties.
     difficulty: 2
     aliases: [mitm]
+    facts:
+      - "Requires the attacker to be on the network path or to spoof the endpoint."
+      - "Defeated by properly implemented TLS with certificate validation."
+      - "Common vectors: ARP spoofing on LANs, rogue Wi-Fi, compromised certificate authorities."
+    sources:
+      wikipedia: "Man-in-the-middle_attack"
 
   - slug: phishing
     title: Phishing
     summary: Social-engineering attack tricking a user into revealing credentials or running malicious content.
     difficulty: 1
+    facts:
+      - "Most common initial access vector in real breaches."
+      - "Variants: spear phishing (targeted), whaling (executives), smishing (SMS), vishing (voice)."
+      - "Defenses: user training, email filtering, DMARC/SPF/DKIM, MFA (especially phishing-resistant MFA like hardware keys)."
+    sources:
+      wikipedia: "Phishing"
 
   - slug: zero-day
     title: Zero-Day Vulnerability
     summary: Vulnerability unknown to the vendor and therefore unpatched at the time of exploitation.
     difficulty: 2
+    facts:
+      - "Name: zero days have elapsed since the vendor learned of it."
+      - "High value in vulnerability markets; weaponized by both criminal and state actors."
+      - "Defense is indirect — defense-in-depth, privilege separation, intrusion detection; you can't patch what you don't know about."
+    sources:
+      wikipedia: "Zero-day_vulnerability"
 
   - slug: certificate-authority
     title: Certificate Authority (CA)
     summary: Trusted entity that issues digital certificates binding a public key to an identity.
     difficulty: 3
+    facts:
+      - "CA's private key signs certificates; browsers and OSes ship with lists of trusted root CAs."
+      - "Compromise of a CA is catastrophic — attackers can impersonate any site."
+      - "Certificate Transparency logs publicly record all issued certificates, aiding detection of misissuance."
+      - "Let's Encrypt (since 2015) made free, automated TLS certificates ubiquitous."
+    sources:
+      wikipedia: "Certificate_authority"

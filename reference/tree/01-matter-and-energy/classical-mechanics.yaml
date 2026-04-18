@@ -1,10 +1,7 @@
 # Classical mechanics — Propaedia Part 01, PhySH concept "Classical Mechanics".
-#
-# Worked example demonstrating the leaf schema. Leaves chosen to cover the
-# standard introductory-through-intermediate mechanics curriculum.
-#
-# Wikidata IDs are intentionally omitted from this first pass — they must be
-# verified against wikidata.org before being added. Add them in a follow-up.
+# Worked example of the extended leaf schema with fact cards (Layer 2).
+# Wikidata IDs omitted pending verification; Wikipedia slugs should also be
+# verified before use.
 
 area:
   slug: classical-mechanics
@@ -18,121 +15,323 @@ leaves:
     summary: Three foundational laws relating force, mass, and motion.
     difficulty: 1
     see_also: [force, mass, acceleration, momentum]
+    facts:
+      - "First (inertia): an object at rest stays at rest, an object in motion stays in motion at constant velocity, unless acted upon by a net external force."
+      - "Second: the net force on an object equals the rate of change of its momentum; for constant mass, F = m·a."
+      - "Third: for every action there is an equal and opposite reaction — forces always come in pairs acting on different bodies."
+    formulas:
+      - "F = m·a (constant mass)"
+      - "F = dp/dt (general form, p = momentum)"
+    valid_regime: "Non-relativistic (v ≪ c) and above atomic scales (where quantum effects are negligible)."
+    key_dates:
+      - "1687: Published in Newton's Principia Mathematica."
+    sources:
+      wikipedia: "Newton%27s_laws_of_motion"
 
   - slug: force
     title: Force
     summary: An influence that changes an object's motion; a vector with magnitude and direction.
     difficulty: 1
+    facts:
+      - "Force is a vector quantity — it has both magnitude and direction."
+      - "SI unit is the newton (N); 1 N = 1 kg·m/s²."
+      - "Net force on an object equals mass times acceleration (F = m·a)."
+      - "Forces come in four fundamental types: gravitational, electromagnetic, strong nuclear, weak nuclear."
+    sources:
+      wikipedia: "Force"
 
   - slug: mass
     title: Mass
     summary: A measure of an object's resistance to acceleration (inertial mass) and its gravitational coupling (gravitational mass).
     difficulty: 1
+    facts:
+      - "Inertial mass measures resistance to acceleration under an applied force."
+      - "Gravitational mass measures the strength of gravitational interaction."
+      - "The equivalence principle asserts these two are the same — a foundation of general relativity."
+      - "SI unit is the kilogram (kg)."
+    sources:
+      wikipedia: "Mass"
 
   - slug: acceleration
     title: Acceleration
     summary: The rate of change of velocity with respect to time.
     difficulty: 1
     see_also: [velocity]
+    facts:
+      - "Acceleration is a vector — it has magnitude and direction."
+      - "SI unit is m/s²."
+      - "An object can accelerate by changing speed, direction, or both (circular motion at constant speed is still accelerating)."
+    formulas:
+      - "a = dv/dt"
+    sources:
+      wikipedia: "Acceleration"
 
   - slug: velocity
     title: Velocity
     summary: Rate of change of position with time; a vector quantity.
     difficulty: 1
+    facts:
+      - "Velocity is a vector; speed is its magnitude (a scalar)."
+      - "SI unit is m/s."
+    formulas:
+      - "v = dx/dt"
+    sources:
+      wikipedia: "Velocity"
 
   - slug: momentum
     title: Momentum
     summary: Product of mass and velocity; conserved in closed systems.
     difficulty: 2
     see_also: [conservation-of-momentum]
+    facts:
+      - "Linear momentum is a vector quantity: p = m·v."
+      - "Total momentum of a closed system is conserved in the absence of external forces."
+      - "SI unit is kg·m/s."
+    formulas:
+      - "p = m·v"
+      - "F = dp/dt"
+    sources:
+      wikipedia: "Momentum"
 
   - slug: conservation-of-momentum
     title: Conservation of Momentum
     summary: The total momentum of an isolated system is constant.
     difficulty: 2
+    facts:
+      - "In an isolated system (no net external force), total momentum before = total momentum after any interaction."
+      - "Follows from Newton's third law: internal force pairs cancel."
+      - "Holds in both classical and relativistic mechanics; in quantum mechanics as well."
+    sources:
+      wikipedia: "Momentum#Conservation"
 
   - slug: kinetic-energy
     title: Kinetic Energy
     summary: Energy of motion; (1/2)mv² in the non-relativistic limit.
     difficulty: 2
+    facts:
+      - "Kinetic energy is a scalar quantity."
+      - "SI unit is the joule (J)."
+      - "Work-energy theorem: net work done on an object equals change in its kinetic energy."
+    formulas:
+      - "KE = (1/2)·m·v² (non-relativistic)"
+      - "KE = (γ − 1)·m·c² (relativistic)"
+    sources:
+      wikipedia: "Kinetic_energy"
 
   - slug: potential-energy
     title: Potential Energy
     summary: Stored energy associated with position in a force field (gravitational, elastic, etc.).
     difficulty: 2
+    facts:
+      - "Only differences in potential energy are physically meaningful; the zero point is arbitrary."
+      - "Defined only for conservative forces (where work done is path-independent)."
+      - "Common forms: gravitational (near Earth: U = m·g·h), elastic (spring: U = (1/2)·k·x²), electric."
+    formulas:
+      - "U_grav = m·g·h (uniform gravity)"
+      - "U_spring = (1/2)·k·x²"
+    sources:
+      wikipedia: "Potential_energy"
 
   - slug: conservation-of-energy
     title: Conservation of Energy
     summary: Total energy in a closed system is constant; energy transforms but is not created or destroyed.
     difficulty: 2
+    facts:
+      - "First law of thermodynamics is the specific case for heat and work."
+      - "In classical mechanics: KE + PE = constant for conservative forces."
+      - "Follows from time-translation symmetry via Noether's theorem."
+    sources:
+      wikipedia: "Conservation_of_energy"
 
   - slug: work-physics
     title: Work (Physics)
     summary: Energy transferred by a force acting through a distance; W = F·d for constant force along displacement.
     difficulty: 2
     aliases: [work]
+    facts:
+      - "Work is a scalar — the dot product of force and displacement."
+      - "SI unit is the joule (J); 1 J = 1 N·m."
+      - "A force perpendicular to motion does zero work (circular motion, normal force on a level surface)."
+    formulas:
+      - "W = F·d·cos θ (constant force)"
+      - "W = ∫ F · dr (variable force)"
+    sources:
+      wikipedia: "Work_(physics)"
 
   - slug: power-physics
     title: Power (Physics)
     summary: Rate of energy transfer or work done per unit time.
     difficulty: 2
     aliases: [power]
+    facts:
+      - "SI unit is the watt (W); 1 W = 1 J/s."
+      - "Mechanical power: P = F·v for a force moving its point of application at velocity v."
+    formulas:
+      - "P = dW/dt"
+      - "P = F·v"
+    sources:
+      wikipedia: "Power_(physics)"
 
   - slug: friction
     title: Friction
     summary: Force opposing relative motion between surfaces in contact.
     difficulty: 1
+    facts:
+      - "Static friction prevents motion up to a maximum; kinetic friction acts during motion."
+      - "Kinetic friction force ≈ μ_k · N, where N is the normal force and μ_k is a coefficient depending on the materials."
+      - "Static friction can take any value from 0 up to μ_s · N."
+      - "Does not depend strongly on apparent contact area for rigid surfaces."
+    formulas:
+      - "F_friction ≤ μ · N"
+    sources:
+      wikipedia: "Friction"
 
   - slug: gravitation
     title: Gravitation
     summary: Mutual attractive force between masses; Newton's law of universal gravitation at non-relativistic scales.
     difficulty: 2
     see_also: [gravitational-potential-energy]
+    facts:
+      - "Every two masses attract along the line connecting their centers, with force proportional to the product of masses and inversely proportional to the square of their separation."
+      - "G ≈ 6.674 × 10⁻¹¹ N·m²/kg² (gravitational constant)."
+      - "Near Earth's surface: g ≈ 9.81 m/s²."
+      - "Superseded by general relativity at strong fields or cosmological scales."
+    formulas:
+      - "F = G·m₁·m₂ / r²"
+    key_dates:
+      - "1687: Newton publishes universal gravitation in Principia."
+      - "1915: Einstein's general relativity supersedes it in strong-field regime."
+    sources:
+      wikipedia: "Newton%27s_law_of_universal_gravitation"
 
   - slug: angular-momentum
     title: Angular Momentum
     summary: Rotational analog of linear momentum; conserved in systems with no external torque.
     difficulty: 3
-    see_also: [torque]
+    see_also: [torque, moment-of-inertia]
+    facts:
+      - "For a point mass: L = r × p."
+      - "For a rigid body rotating about a fixed axis: L = I·ω."
+      - "Conserved when net external torque is zero — basis for ice skater spin-up on pulling arms in."
+    formulas:
+      - "L = r × p (point mass)"
+      - "L = I·ω (rigid body)"
+    sources:
+      wikipedia: "Angular_momentum"
 
   - slug: torque
     title: Torque
     summary: Rotational analog of force; produces angular acceleration.
     difficulty: 2
+    facts:
+      - "τ = r × F — vector cross product of position and force."
+      - "SI unit is the newton-metre (N·m)."
+      - "Net torque equals rate of change of angular momentum: τ = dL/dt."
+    formulas:
+      - "τ = r × F"
+      - "τ = I·α (constant moment of inertia)"
+    sources:
+      wikipedia: "Torque"
 
   - slug: moment-of-inertia
     title: Moment of Inertia
     summary: Rotational analog of mass; depends on mass distribution about the axis of rotation.
     difficulty: 3
+    facts:
+      - "I = Σ m_i · r_i² for discrete masses at distance r_i from the axis."
+      - "Depends on the axis chosen — a given body has different moments about different axes."
+      - "Parallel-axis theorem relates moment about an arbitrary axis to moment about a parallel axis through the center of mass."
+    formulas:
+      - "I = Σ m_i · r_i²"
+      - "I = ∫ r² dm (continuous)"
+    sources:
+      wikipedia: "Moment_of_inertia"
 
   - slug: simple-harmonic-motion
     title: Simple Harmonic Motion
     summary: Oscillation where restoring force is proportional to displacement; pendulums and mass-spring systems are canonical examples.
     difficulty: 2
+    facts:
+      - "Restoring force F = −k·x produces sinusoidal motion."
+      - "Angular frequency ω = √(k/m) for mass on a spring."
+      - "Period T = 2π·√(m/k); independent of amplitude in the ideal case."
+      - "Small-angle pendulum: T = 2π·√(L/g)."
+    formulas:
+      - "x(t) = A·cos(ω·t + φ)"
+      - "ω = √(k/m)"
+    valid_regime: "Small displacements / small angles where force-displacement relation remains linear."
+    sources:
+      wikipedia: "Simple_harmonic_motion"
 
   - slug: rigid-body-dynamics
     title: Rigid Body Dynamics
     summary: Motion of non-deformable bodies including translation and rotation about axes.
     difficulty: 3
+    facts:
+      - "A rigid body has six degrees of freedom in 3D: three translational, three rotational."
+      - "Motion decomposes into translation of the center of mass plus rotation about it."
+      - "Dynamics governed by Newton's second law for translation and τ = dL/dt for rotation."
+    sources:
+      wikipedia: "Rigid_body_dynamics"
 
   - slug: centripetal-force
     title: Centripetal Force
     summary: Net inward force required to keep an object moving along a circular path.
     difficulty: 2
+    facts:
+      - "Points toward the center of the circular path, not away."
+      - "Magnitude: F = m·v²/r = m·ω²·r."
+      - "Not a fundamental force — it's whatever force (tension, gravity, friction, normal) happens to be providing the inward acceleration."
+    formulas:
+      - "F_c = m·v²/r"
+    sources:
+      wikipedia: "Centripetal_force"
 
   - slug: lagrangian-mechanics
     title: Lagrangian Mechanics
     summary: Reformulation of classical mechanics using the Lagrangian (L = T − V) and the principle of stationary action.
     difficulty: 4
-    see_also: [hamiltonian-mechanics]
+    see_also: [hamiltonian-mechanics, noethers-theorem]
+    facts:
+      - "L = T − V (kinetic energy minus potential energy)."
+      - "Physical paths extremize the action S = ∫ L dt (principle of stationary action)."
+      - "Produces the Euler-Lagrange equations, equivalent to Newton's laws but more general."
+      - "Handles constraints elegantly via generalized coordinates."
+    formulas:
+      - "L = T − V"
+      - "d/dt (∂L/∂q̇) − ∂L/∂q = 0 (Euler-Lagrange)"
+    key_dates:
+      - "1788: Lagrange publishes Mécanique analytique."
+    sources:
+      wikipedia: "Lagrangian_mechanics"
 
   - slug: hamiltonian-mechanics
     title: Hamiltonian Mechanics
     summary: Reformulation using the Hamiltonian (total energy) and generalized coordinates/momenta; foundation for quantum mechanics.
     difficulty: 4
+    see_also: [lagrangian-mechanics]
+    facts:
+      - "H = T + V for time-independent systems (total energy)."
+      - "Equations of motion: q̇ = ∂H/∂p, ṗ = −∂H/∂q."
+      - "Natural bridge to quantum mechanics — operators replace functions, Poisson brackets become commutators."
+    formulas:
+      - "H = Σ p_i · q̇_i − L"
+    key_dates:
+      - "1833: Hamilton publishes the formulation."
+    sources:
+      wikipedia: "Hamiltonian_mechanics"
 
   - slug: noethers-theorem
     title: Noether's Theorem
     summary: Every differentiable symmetry of a physical system's action corresponds to a conservation law.
     difficulty: 4
     see_also: [conservation-of-energy, conservation-of-momentum, angular-momentum]
+    facts:
+      - "Time-translation symmetry ⇒ conservation of energy."
+      - "Space-translation symmetry ⇒ conservation of linear momentum."
+      - "Rotational symmetry ⇒ conservation of angular momentum."
+      - "Applies to any action principle — classical, relativistic, field-theoretic."
+    key_dates:
+      - "1918: Emmy Noether publishes the theorem."
+    sources:
+      wikipedia: "Noether%27s_theorem"

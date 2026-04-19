@@ -35,20 +35,32 @@ questions:
           - "Another key point."
 ```
 
-### Level vocabulary
+### Level vocabulary and ladder order
 
-Loose Bloom-taxonomy mapping:
+Questions are asked in the ladder below. **Start at step 0 (recognition) and drill down only on success.** Failure or low confidence stops the ladder and moves to the next leaf.
 
-| level | Bloom | What it tests |
-|-------|-------|---------------|
-| `recall` | 1 | remember the definition, formula, or basic fact |
-| `comprehension` | 2 | explain in your own words |
-| `application` | 3 | use the concept on a new example or problem |
-| `analysis` | 4 | compare, contrast, decompose |
-| `regime-boundary` | 4 | where does the concept stop applying? |
-| `connection` | 5 | link to another concept or deeper principle |
+| level | step | What it tests |
+|-------|-----:|---------------|
+| `recognition` | **0 (ask first)** | *"Does this topic ring a bell? What field does it belong to?"* The gate. |
+| `comprehension` / `connection` / `analysis` / `regime-boundary` | 1 | conceptual understanding — explain, relate, or place the concept |
+| `application` | 2 | use the concept on a new example or problem |
+| `recall` | 3 (ask last) | state the formula/definition cold |
 
-Target mix: 1 question at recall/comprehension, 1 at application, 1 at analysis / regime-boundary / connection. That's the canonical three-question probe per leaf — enough coverage to tell memorization from understanding.
+Recognition is deliberately cheap: a failed recognition question means we learned "user doesn't know this" in one question rather than wasting three. The overall design prioritizes **mapping breadth** (how many leaves do I know something about) over **depth-at-all-costs** (how perfectly do I know each).
+
+Target mix: **four questions per leaf** — one at each step. Order within the YAML file doesn't matter; the quiz engine sorts by `step` at load time.
+
+### Confidence derivation
+
+With four tiers, confidence maps cleanly to tiers passed:
+
+| Tiers passed | Confidence | Means |
+|-:|-:|-|
+| 0 | 1 | Don't recognize it |
+| 1 | 2 | Recognize but can't engage |
+| 2 | 3 | Conceptual grasp |
+| 3 | 4 | Can apply it |
+| 4 | 5 | Full mastery (recall included) |
 
 ### Rubric guidelines
 

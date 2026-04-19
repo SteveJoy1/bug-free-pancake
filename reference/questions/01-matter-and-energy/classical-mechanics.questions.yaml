@@ -1,8 +1,13 @@
 # Question bank for classical mechanics (Propaedia Part 01).
-# Three questions per leaf spanning Bloom levels:
-#   - Q1: recall / definition       (Bloom 1-2)
-#   - Q2: application / fact        (Bloom 3)
-#   - Q3: regime / compare / connect (Bloom 4-5)
+# Four tiers per leaf, asked in this ladder order (drill down ONLY on success):
+#   - Q0: recognition  — "do you even know what this is about?"  (step 0)
+#   - Q1: recall       — state the formula / definition cold     (step 3)
+#   - Q2: application  — use it on a new example                 (step 2)
+#   - Q3: analysis / connection / regime — higher-level          (step 1)
+#
+# The engine sorts by `level` → step at load time, so order within this file
+# doesn't matter for delivery. Existing files still have q1-q3 in original
+# order; q0 is prepended per leaf.
 #
 # `rubric` entries are the key points a good answer must cover. A future
 # Claude session uses them to grade exported responses.
@@ -17,6 +22,13 @@ questions:
   # --- Newton's Laws of Motion -------------------------------------------
   - leaf: newtons-laws-of-motion
     items:
+      - id: newtons-laws-of-motion.q0
+        level: recognition
+        prompt: "What do you know about Newton's Laws of Motion? One sentence is fine — or say 'nothing' if you haven't encountered them."
+        rubric:
+          - "Physics — specifically classical mechanics; about motion, forces, or acceleration."
+          - "Bonus: names Isaac Newton, or mentions F=ma, inertia, or action-reaction."
+
       - id: newtons-laws-of-motion.q1
         level: recall
         prompt: "State Newton's three laws of motion in your own words."
@@ -42,6 +54,13 @@ questions:
   # --- Force -------------------------------------------------------------
   - leaf: force
     items:
+      - id: force.q0
+        level: recognition
+        prompt: "In physics, what do you know about the concept of 'force'? One sentence is fine — or 'nothing.'"
+        rubric:
+          - "Physics / mechanics; a push or pull; causes objects to accelerate."
+          - "Bonus: mentions vectors, units (newtons), or F = m·a."
+
       - id: force.q1
         level: recall
         prompt: "Define force. Is it a scalar or a vector? What are its SI units?"
@@ -69,6 +88,13 @@ questions:
   # --- Mass --------------------------------------------------------------
   - leaf: mass
     items:
+      - id: mass.q0
+        level: recognition
+        prompt: "In physics, what do you know about 'mass'? One sentence is fine — or 'nothing.'"
+        rubric:
+          - "Physics; a measure of matter / resistance to acceleration."
+          - "Bonus: distinguishes mass from weight, or mentions kg / gravitational coupling."
+
       - id: mass.q1
         level: recall
         prompt: "What's the difference between mass and weight?"
@@ -95,6 +121,13 @@ questions:
   # --- Acceleration ------------------------------------------------------
   - leaf: acceleration
     items:
+      - id: acceleration.q0
+        level: recognition
+        prompt: "What do you know about 'acceleration' in physics? One sentence or 'nothing.'"
+        rubric:
+          - "Physics / mechanics; rate of change of velocity or speed."
+          - "Bonus: vector; measured in m/s²."
+
       - id: acceleration.q1
         level: recall
         prompt: "Define acceleration. What are its SI units?"
@@ -120,6 +153,13 @@ questions:
   # --- Velocity ----------------------------------------------------------
   - leaf: velocity
     items:
+      - id: velocity.q0
+        level: recognition
+        prompt: "What do you know about 'velocity' in physics? One sentence or 'nothing.'"
+        rubric:
+          - "Physics; rate of motion / speed with direction."
+          - "Bonus: vector; distinguished from speed (scalar)."
+
       - id: velocity.q1
         level: recall
         prompt: "What's the difference between speed and velocity?"
@@ -146,6 +186,13 @@ questions:
   # --- Momentum ----------------------------------------------------------
   - leaf: momentum
     items:
+      - id: momentum.q0
+        level: recognition
+        prompt: "What do you know about 'momentum' in physics? One sentence or 'nothing.'"
+        rubric:
+          - "Physics; related to mass and motion; comes up in collisions."
+          - "Bonus: mentions p = m·v, or that it's conserved."
+
       - id: momentum.q1
         level: recall
         prompt: "Define momentum. What are its SI units?"
@@ -172,6 +219,13 @@ questions:
   # --- Conservation of Momentum -----------------------------------------
   - leaf: conservation-of-momentum
     items:
+      - id: conservation-of-momentum.q0
+        level: recognition
+        prompt: "What do you know about 'conservation of momentum'? One sentence or 'nothing.'"
+        rubric:
+          - "Physics; total momentum stays constant in a closed system."
+          - "Bonus: applies in collisions; ties to Newton's third law."
+
       - id: conservation-of-momentum.q1
         level: recall
         prompt: "State the law of conservation of momentum."
@@ -196,6 +250,13 @@ questions:
   # --- Kinetic Energy ---------------------------------------------------
   - leaf: kinetic-energy
     items:
+      - id: kinetic-energy.q0
+        level: recognition
+        prompt: "What do you know about 'kinetic energy'? One sentence or 'nothing.'"
+        rubric:
+          - "Physics; the energy of motion."
+          - "Bonus: mentions (1/2)mv² or relates to mass/speed."
+
       - id: kinetic-energy.q1
         level: recall
         prompt: "Write the formula for non-relativistic kinetic energy. Is it a scalar or a vector?"
@@ -221,6 +282,13 @@ questions:
   # --- Potential Energy -------------------------------------------------
   - leaf: potential-energy
     items:
+      - id: potential-energy.q0
+        level: recognition
+        prompt: "What do you know about 'potential energy'? One sentence or 'nothing.'"
+        rubric:
+          - "Physics; stored energy from position (gravity, springs, etc.)."
+          - "Bonus: contrasts with kinetic energy; mentions that zero is arbitrary."
+
       - id: potential-energy.q1
         level: recall
         prompt: "What is potential energy? Why is it only defined up to an additive constant?"
@@ -244,6 +312,13 @@ questions:
   # --- Conservation of Energy -------------------------------------------
   - leaf: conservation-of-energy
     items:
+      - id: conservation-of-energy.q0
+        level: recognition
+        prompt: "What do you know about 'conservation of energy'? One sentence or 'nothing.'"
+        rubric:
+          - "Physics; energy cannot be created or destroyed, only transformed."
+          - "Bonus: applies to closed/isolated systems; ties to first law of thermodynamics."
+
       - id: conservation-of-energy.q1
         level: recall
         prompt: "State the principle of conservation of energy."
@@ -268,6 +343,13 @@ questions:
   # --- Work (Physics) ---------------------------------------------------
   - leaf: work-physics
     items:
+      - id: work-physics.q0
+        level: recognition
+        prompt: "In physics, what does 'work' mean? One sentence or 'nothing' (this is distinct from everyday 'work.')"
+        rubric:
+          - "Physics; force applied over a distance; energy transferred."
+          - "Bonus: W = F·d; measured in joules; distinct from job/labor."
+
       - id: work-physics.q1
         level: recall
         prompt: "How is work defined in physics? When does a force do zero work?"
@@ -292,6 +374,13 @@ questions:
   # --- Power (Physics) --------------------------------------------------
   - leaf: power-physics
     items:
+      - id: power-physics.q0
+        level: recognition
+        prompt: "In physics, what does 'power' mean? One sentence or 'nothing.'"
+        rubric:
+          - "Physics; rate at which work is done or energy is transferred."
+          - "Bonus: measured in watts; P = W/t."
+
       - id: power-physics.q1
         level: recall
         prompt: "Define power. What are its SI units?"
@@ -315,6 +404,13 @@ questions:
   # --- Friction ---------------------------------------------------------
   - leaf: friction
     items:
+      - id: friction.q0
+        level: recognition
+        prompt: "What do you know about 'friction'? One sentence or 'nothing.'"
+        rubric:
+          - "Physics; force opposing relative motion between surfaces in contact."
+          - "Bonus: distinguishes static vs kinetic; mentions it generates heat."
+
       - id: friction.q1
         level: recall
         prompt: "What's the difference between static and kinetic friction?"
@@ -341,6 +437,13 @@ questions:
   # --- Gravitation ------------------------------------------------------
   - leaf: gravitation
     items:
+      - id: gravitation.q0
+        level: recognition
+        prompt: "What do you know about gravity / gravitation? One sentence or 'nothing.'"
+        rubric:
+          - "Physics; attractive force between masses; what keeps us on Earth / planets orbiting."
+          - "Bonus: mentions Newton or Einstein; inverse-square law; gravitational constant."
+
       - id: gravitation.q1
         level: recall
         prompt: "State Newton's law of universal gravitation."
@@ -366,6 +469,13 @@ questions:
   # --- Angular Momentum -------------------------------------------------
   - leaf: angular-momentum
     items:
+      - id: angular-momentum.q0
+        level: recognition
+        prompt: "What do you know about 'angular momentum'? One sentence or 'nothing.'"
+        rubric:
+          - "Physics; rotational analog of momentum; related to spinning objects."
+          - "Bonus: mentions conservation (figure skater pulling arms in); L = I·ω."
+
       - id: angular-momentum.q1
         level: recall
         prompt: "Write expressions for the angular momentum of (a) a point mass and (b) a rigid body rotating about a fixed axis."
@@ -390,6 +500,13 @@ questions:
   # --- Torque -----------------------------------------------------------
   - leaf: torque
     items:
+      - id: torque.q0
+        level: recognition
+        prompt: "What do you know about 'torque'? One sentence or 'nothing.'"
+        rubric:
+          - "Physics/mechanics; twisting / rotational effect of a force."
+          - "Bonus: wrench / lever arm; rotational analog of force; τ = r × F."
+
       - id: torque.q1
         level: recall
         prompt: "Define torque. What's its relationship to angular momentum?"
@@ -415,6 +532,13 @@ questions:
   # --- Moment of Inertia ------------------------------------------------
   - leaf: moment-of-inertia
     items:
+      - id: moment-of-inertia.q0
+        level: recognition
+        prompt: "What do you know about 'moment of inertia'? One sentence or 'nothing.'"
+        rubric:
+          - "Physics; rotational analog of mass — resistance to changing rotation."
+          - "Bonus: depends on mass distribution about the axis."
+
       - id: moment-of-inertia.q1
         level: recall
         prompt: "What is moment of inertia, and what's the formula for a system of discrete point masses?"
@@ -440,6 +564,13 @@ questions:
   # --- Simple Harmonic Motion -------------------------------------------
   - leaf: simple-harmonic-motion
     items:
+      - id: simple-harmonic-motion.q0
+        level: recognition
+        prompt: "What do you know about 'simple harmonic motion'? One sentence or 'nothing.'"
+        rubric:
+          - "Physics; oscillation / back-and-forth motion."
+          - "Bonus: pendulum or mass-on-spring; sinusoidal pattern."
+
       - id: simple-harmonic-motion.q1
         level: recall
         prompt: "What defines simple harmonic motion? Give the restoring-force condition and the general solution."
@@ -465,6 +596,13 @@ questions:
   # --- Rigid Body Dynamics ----------------------------------------------
   - leaf: rigid-body-dynamics
     items:
+      - id: rigid-body-dynamics.q0
+        level: recognition
+        prompt: "What do you know about 'rigid body dynamics'? One sentence or 'nothing.'"
+        rubric:
+          - "Physics / mechanics; motion of non-deformable bodies."
+          - "Bonus: combines translation and rotation; 6 degrees of freedom in 3D."
+
       - id: rigid-body-dynamics.q1
         level: recall
         prompt: "How many degrees of freedom does a rigid body have in 3D? Name them."
@@ -489,6 +627,13 @@ questions:
   # --- Centripetal Force ------------------------------------------------
   - leaf: centripetal-force
     items:
+      - id: centripetal-force.q0
+        level: recognition
+        prompt: "What do you know about 'centripetal force'? One sentence or 'nothing.'"
+        rubric:
+          - "Physics; force required to keep an object moving in a circle."
+          - "Bonus: points INWARD toward the center; not the same as centrifugal."
+
       - id: centripetal-force.q1
         level: recall
         prompt: "What is centripetal force? Give the formula for its magnitude."
@@ -514,6 +659,13 @@ questions:
   # --- Lagrangian Mechanics --------------------------------------------
   - leaf: lagrangian-mechanics
     items:
+      - id: lagrangian-mechanics.q0
+        level: recognition
+        prompt: "What do you know about 'Lagrangian mechanics'? One sentence or 'nothing.'"
+        rubric:
+          - "Physics; advanced reformulation of classical mechanics."
+          - "Bonus: named after Lagrange; uses energy (T − V) rather than forces; principle of stationary action."
+
       - id: lagrangian-mechanics.q1
         level: recall
         prompt: "What is the Lagrangian, and what equation governs the motion of a system in Lagrangian mechanics?"
@@ -539,6 +691,13 @@ questions:
   # --- Hamiltonian Mechanics -------------------------------------------
   - leaf: hamiltonian-mechanics
     items:
+      - id: hamiltonian-mechanics.q0
+        level: recognition
+        prompt: "What do you know about 'Hamiltonian mechanics'? One sentence or 'nothing.'"
+        rubric:
+          - "Physics; advanced reformulation of classical mechanics."
+          - "Bonus: uses positions and momenta; phase space; bridge to quantum mechanics."
+
       - id: hamiltonian-mechanics.q1
         level: recall
         prompt: "What is the Hamiltonian of a system, and what are Hamilton's equations of motion?"
@@ -564,6 +723,13 @@ questions:
   # --- Noether's Theorem -----------------------------------------------
   - leaf: noethers-theorem
     items:
+      - id: noethers-theorem.q0
+        level: recognition
+        prompt: "What do you know about Noether's theorem? One sentence or 'nothing.'"
+        rubric:
+          - "Physics / mathematics; connects symmetries to conservation laws."
+          - "Bonus: named after Emmy Noether; fundamental in theoretical physics."
+
       - id: noethers-theorem.q1
         level: recall
         prompt: "State Noether's theorem in plain language."

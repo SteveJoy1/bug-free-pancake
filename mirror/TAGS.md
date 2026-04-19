@@ -11,6 +11,12 @@ Controlled vocabulary. Add a tag here before using it in a note — this keeps t
 - `meta` — notes about this system itself (conventions, how-tos for using the mirror).
 - `physics` — physics, broadly.
 - `classical-mechanics` — Newtonian/Lagrangian/Hamiltonian mechanics; Propaedia Part 01.
+- `fitness` — resistance training, endurance training, programming, recovery.
+- `nutrition` — protein, carbohydrate, calorie, hydration considerations — usually paired with `fitness`.
+- `endurance` — endurance physiology: glycogen, VO₂max, thresholds, fueling, hydration.
+- `hvac` — HVAC / thermodynamics of air conditioning, dehumidification, and home climate.
+- `personal-tax` — US individual income tax (1040), estimated taxes, property tax, residential specifics.
+- `personal` — idiosyncratic notes tied to my own house/assets/accounts; not broadly applicable.
 
 ## Starter suggestions (uncomment as you adopt them)
 

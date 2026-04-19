@@ -5,3 +5,7 @@ node_modules/
 # Run the script locally to produce these; not committed to avoid diff churn.
 reference/_snapshot.md
 reference/_snapshot.json
+
+# Raw export archives dropped into mirror/ingest/ for processing.
+# Contents can contain personal data; only the .processed filename marker is committed.
+mirror/ingest/*/

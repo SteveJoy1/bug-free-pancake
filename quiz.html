@@ -463,12 +463,49 @@
 
       // --- Topic registry -------------------------------------------------
       // Add entries here as more question banks are populated.
+      //
+      // `source`: 'reference' (canonical, keyed to reference/tree slugs) or
+      // 'mirror' (keyed to mirror/notes slugs — subjective, idiosyncratic OK).
+      // Mirror topics are prefixed "[mirror] " in the dropdown.
+      //
+      // `part`: used for stratified sampling across Propaedia parts. Mirror
+      // topics use 'mirror-<cluster>' so they form their own stratification
+      // buckets and don't get mixed into reference-part buckets.
       const TOPICS = [
         {
           slug: 'classical-mechanics',
           title: 'Classical Mechanics',
           part: '01-matter-and-energy',
+          source: 'reference',
           path: 'reference/questions/01-matter-and-energy/classical-mechanics.questions.yaml'
+        },
+        {
+          slug: 'fitness-and-nutrition',
+          title: 'Fitness & nutrition',
+          part: 'mirror-fitness',
+          source: 'mirror',
+          path: 'mirror/questions/fitness.questions.yaml'
+        },
+        {
+          slug: 'personal-tax',
+          title: 'Personal tax',
+          part: 'mirror-personal-tax',
+          source: 'mirror',
+          path: 'mirror/questions/personal-tax.questions.yaml'
+        },
+        {
+          slug: 'hvac-and-physics',
+          title: 'HVAC & physics',
+          part: 'mirror-hvac-and-physics',
+          source: 'mirror',
+          path: 'mirror/questions/hvac-and-physics.questions.yaml'
+        },
+        {
+          slug: 'personal-infrastructure',
+          title: 'Personal infrastructure',
+          part: 'mirror-personal-infrastructure',
+          source: 'mirror',
+          path: 'mirror/questions/personal-infrastructure.questions.yaml'
         }
       ];
 
@@ -574,10 +611,23 @@
         allOpt.value = '__all__';
         allOpt.textContent = 'All populated topics (stratified)';
         areaSelect.appendChild(allOpt);
+
+        // Aggregate options for every reference topic / every mirror topic.
+        const allRefOpt = document.createElement('option');
+        allRefOpt.value = '__all-reference__';
+        allRefOpt.textContent = 'All reference topics';
+        areaSelect.appendChild(allRefOpt);
+
+        const allMirrorOpt = document.createElement('option');
+        allMirrorOpt.value = '__all-mirror__';
+        allMirrorOpt.textContent = 'All mirror topics';
+        areaSelect.appendChild(allMirrorOpt);
+
         TOPICS.forEach(t => {
           const opt = document.createElement('option');
           opt.value = t.slug;
-          opt.textContent = t.title;
+          const prefix = t.source === 'mirror' ? '[mirror] ' : '[reference] ';
+          opt.textContent = prefix + t.title;
           areaSelect.appendChild(opt);
         });
       }
@@ -639,11 +689,20 @@
       }
 
       async function loadBanks(topicSlug) {
-        // "__all__" → load every topic (stratify across Parts at sampling time).
-        // otherwise → just the selected one.
-        if (topicSlug === '__all__') {
+        // Aggregate selectors load multiple topics and stratify at sampling time.
+        //   __all__           → every registered topic (reference + mirror)
+        //   __all-reference__ → every topic where source === 'reference'
+        //   __all-mirror__    → every topic where source === 'mirror'
+        // Any other value loads just the topic with that slug.
+        const aggregates = {
+          '__all__': TOPICS,
+          '__all-reference__': TOPICS.filter(t => t.source !== 'mirror'),
+          '__all-mirror__': TOPICS.filter(t => t.source === 'mirror')
+        };
+        if (topicSlug in aggregates) {
+          const pool = aggregates[topicSlug];
           const banks = [];
-          for (const t of TOPICS) {
+          for (const t of pool) {
             try { banks.push(await loadBank(t)); }
             catch (e) { console.warn(`Skipping ${t.slug}: ${e.message}`); }
           }

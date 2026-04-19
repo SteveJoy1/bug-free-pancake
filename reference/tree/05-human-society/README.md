@@ -5,6 +5,7 @@ Propaedia Part 5. Social structures — family, economy, politics, law, educatio
 ## Planned areas
 
 - `economics-fundamentals.yaml` — core economic concepts, markets, macro basics. **[populated]**
+- `accounting-and-finance/` — specialist subtree for accounting, GAAP, finance. **[populated]**
 - *(future)* `government-and-law.yaml`
 - *(future)* `sociology-fundamentals.yaml`
 - *(future)* `education-systems.yaml`

@@ -1,0 +1,165 @@
+# US GAAP — Generally Accepted Accounting Principles as codified by FASB.
+# Source: FASB Accounting Standards Codification (https://asc.fasb.org/);
+# AICPA CPA Exam Blueprint (FAR section).
+#
+# ASC references (e.g., ASC 606) are the authoritative citations. Where a
+# topic has been recently recodified or revised, the relevant standard
+# (ASU = Accounting Standards Update) is noted.
+
+area:
+  slug: us-gaap
+  title: US GAAP
+  source: fasb-asc
+  parent: 05-human-society/accounting-and-finance
+
+leaves:
+  - slug: fasb-asc-codification
+    title: FASB Accounting Standards Codification (ASC)
+    summary: The single authoritative source of US GAAP, organized by topic number; effective since 2009.
+    difficulty: 2
+    facts:
+      - "Structure: Topics (e.g., 606 Revenue) → Subtopics → Sections → Subsections → Paragraphs."
+      - "Replaced the pre-2009 multi-document GAAP hierarchy (APB Opinions, SFAS, etc.) — same content, unified structure."
+      - "Changes delivered as Accounting Standards Updates (ASUs), integrated into the Codification."
+      - "Free access at https://asc.fasb.org/ (registration required)."
+    key_dates:
+      - "2009-07-01: ASC becomes the single source of authoritative US GAAP."
+    sources:
+      wikipedia: "Accounting_Standards_Codification"
+
+  - slug: asc-606-revenue-recognition
+    title: ASC 606 — Revenue from Contracts with Customers
+    summary: The current US GAAP standard for revenue recognition; converged with IFRS 15.
+    difficulty: 3
+    facts:
+      - "Five-step model: (1) identify the contract; (2) identify performance obligations; (3) determine transaction price; (4) allocate price to obligations; (5) recognize revenue when obligation is satisfied."
+      - "Effective for public companies for fiscal years starting after Dec 15, 2017; private companies Dec 15, 2018."
+      - "Replaced the patchwork of industry-specific revenue standards (software, real estate, construction, etc.) with a single principles-based model."
+      - "Significant judgment required — variable consideration, performance obligations 'over time' vs 'point in time', principal vs. agent."
+    key_dates:
+      - "2014: ASU 2014-09 issues ASC 606 (FASB and IASB joint project)."
+      - "2018: Effective for public companies."
+    sources:
+      wikipedia: "IFRS_15"
+
+  - slug: asc-842-leases
+    title: ASC 842 — Leases
+    summary: Current US GAAP lease accounting standard; requires most leases to be recognized on the balance sheet.
+    difficulty: 3
+    facts:
+      - "Lessee: Right-of-Use (ROU) asset and lease liability recognized for nearly all leases over 12 months."
+      - "Two classification types for lessees: Finance (like capital lease) and Operating (straight-line expense)."
+      - "Replaced ASC 840, which let operating leases stay off-balance-sheet — the 'off-balance-sheet leasing' loophole is now closed."
+      - "Significantly inflated balance-sheet asset and liability figures for lease-heavy industries (retail, airlines, restaurants)."
+      - "IFRS 16 is the parallel standard; it has only one classification (all leases are finance-like for lessees)."
+    key_dates:
+      - "2016: ASU 2016-02 issued."
+      - "2019: Effective for public companies."
+    sources:
+      wikipedia: "IFRS_16"
+
+  - slug: goodwill-impairment
+    title: Goodwill Impairment
+    summary: Goodwill is not amortized (for public companies) but is tested annually for impairment; write-downs can be large and non-reversible.
+    difficulty: 3
+    facts:
+      - "Goodwill = purchase price − fair value of identifiable net assets acquired."
+      - "Tested at the reporting-unit level, at least annually or upon triggering events."
+      - "Post-2017 simplified test (ASU 2017-04): compare reporting-unit fair value to carrying amount; impairment = the excess, up to goodwill balance."
+      - "Under US GAAP impairments are NOT reversible if conditions improve. IFRS is the same for goodwill (though reversible for some other assets)."
+      - "Private companies can elect to amortize goodwill on a 10-year basis instead (ASU 2014-02)."
+    sources:
+      wikipedia: "Goodwill_(accounting)"
+
+  - slug: deferred-taxes
+    title: Deferred Tax Assets and Liabilities
+    summary: Temporary differences between book and tax accounting create future tax consequences, recorded as DTAs (benefits) or DTLs (obligations).
+    difficulty: 4
+    facts:
+      - "Deferred Tax Asset (DTA): future tax benefit — e.g., net operating loss carryforwards, deferred revenue, warranties."
+      - "Deferred Tax Liability (DTL): future tax expense — e.g., accelerated tax depreciation vs straight-line book depreciation."
+      - "Valuation allowance reduces DTAs when 'more likely than not' they won't be realized."
+      - "Tax-rate changes (e.g., 2017 Tax Cuts and Jobs Act) cause one-time revaluation of DTAs/DTLs in the period of enactment."
+    sources:
+      wikipedia: "Deferred_tax"
+
+  - slug: lifo-reserve
+    title: LIFO Reserve
+    summary: Disclosure reconciling LIFO inventory to what it would be under FIFO; required when a company uses LIFO for reporting.
+    difficulty: 3
+    facts:
+      - "LIFO Reserve = FIFO Inventory − LIFO Inventory."
+      - "In rising-price environments, LIFO Reserve grows, meaning more COGS expense (lower income, lower tax)."
+      - "IRS 'LIFO conformity rule': if LIFO is used for taxes, it must be used for book reporting too."
+      - "Analysts often restate LIFO companies to FIFO for comparability."
+    sources:
+      wikipedia: "LIFO"
+
+  - slug: segment-reporting
+    title: Segment Reporting (ASC 280)
+    summary: Public companies must report financial information disaggregated by operating segment, as viewed by the chief operating decision-maker.
+    difficulty: 3
+    facts:
+      - "'Management approach' — segments mirror how the CEO/CFO reviews performance internally."
+      - "Quantitative thresholds (10% tests): segment revenue, profit/loss, or assets ≥10% of combined totals → separate disclosure."
+      - "At least 75% of total consolidated revenue must be covered by reportable segments."
+      - "Reconciliation from segment totals to consolidated totals is required."
+    sources:
+      wikipedia: "Segment_reporting"
+
+  - slug: earnings-per-share
+    title: Earnings Per Share (EPS)
+    summary: Net income available to common shareholders divided by weighted-average shares outstanding.
+    difficulty: 2
+    facts:
+      - "Basic EPS: uses weighted-average common shares."
+      - "Diluted EPS: assumes conversion of convertible securities, exercise of options/warrants — a hypothetical floor."
+      - "If-converted and treasury stock methods are used to compute dilutive effects."
+      - "Reported on the income statement (required for public companies under ASC 260). Non-GAAP 'adjusted EPS' commonly reported alongside."
+    formulas:
+      - "Basic EPS = (Net Income − Preferred Dividends) / Weighted-Avg Common Shares Outstanding"
+    sources:
+      wikipedia: "Earnings_per_share"
+
+  - slug: comprehensive-income
+    title: Comprehensive Income / OCI
+    summary: Net income plus Other Comprehensive Income (OCI) — a broader measure of period change in equity from non-owner sources.
+    difficulty: 3
+    facts:
+      - "OCI includes: foreign-currency translation, unrealized gains/losses on available-for-sale securities (legacy), pension remeasurement, certain hedging activities."
+      - "Accumulates in Accumulated Other Comprehensive Income (AOCI), a component of equity."
+      - "Recycled to net income (e.g., on sale of AFS security) — creates a 'reclassification adjustment' to avoid double-counting."
+      - "Reported either on the income statement (single-statement approach) or on a separate statement (two-statement approach)."
+    sources:
+      wikipedia: "Comprehensive_income"
+
+  - slug: sox-internal-controls
+    title: SOX / Internal Controls (ICFR)
+    summary: Sarbanes-Oxley Act (2002) requires public-company management and auditors to assess the effectiveness of internal control over financial reporting.
+    difficulty: 3
+    facts:
+      - "Section 302: CEO/CFO personal certification of financial statements and disclosure controls."
+      - "Section 404: management annual assessment of ICFR; external auditor attestation (large filers only)."
+      - "Triggered by Enron (2001), WorldCom (2002), and the Andersen collapse."
+      - "Created the PCAOB to oversee public-company auditors — replacing AICPA self-regulation for public audits."
+    key_dates:
+      - "2002-07-30: Sarbanes-Oxley Act signed into law."
+    sources:
+      wikipedia: "Sarbanes%E2%80%93Oxley_Act"
+
+  - slug: asc-topics-overview
+    title: Major ASC Topic Areas
+    summary: High-level map of where to find things in the Codification — ASC Topics are grouped by area.
+    difficulty: 3
+    facts:
+      - "Area 100s: General Principles (105 GAAP, 205 Presentation)."
+      - "Area 200s: Presentation (balance sheet, income statement, EPS, segment)."
+      - "Area 300s: Assets (inventory, investments, PP&E, intangibles)."
+      - "Area 400s: Liabilities (debt, pensions, leases, income taxes, contingencies)."
+      - "Area 500s: Equity."
+      - "Area 600s: Revenue (606 Revenue)."
+      - "Area 700s: Expenses (stock compensation, R&D)."
+      - "Area 800s: Broad Transactions (business combinations, derivatives, fair value)."
+      - "Area 900s: Industry-specific (entertainment, financial services, healthcare, not-for-profit, etc.)."
+    sources:
+      fasb_asc: "https://asc.fasb.org/"

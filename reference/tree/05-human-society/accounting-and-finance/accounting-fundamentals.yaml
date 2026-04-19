@@ -1,0 +1,283 @@
+# Accounting fundamentals — core concepts that underlie financial reporting
+# across jurisdictions.
+# Source: standard intermediate accounting curricula (Kieso, Weygandt, Warfield);
+# AICPA CPA Exam Blueprint (FAR section).
+
+area:
+  slug: accounting-fundamentals
+  title: Accounting Fundamentals
+  source: kieso-intermediate-accounting
+  parent: 05-human-society/accounting-and-finance
+
+leaves:
+  - slug: double-entry-bookkeeping
+    title: Double-Entry Bookkeeping
+    summary: Every transaction is recorded in at least two accounts with equal debits and credits — the foundation of modern accounting.
+    difficulty: 1
+    facts:
+      - "Luca Pacioli documented the system in 1494 (not its inventor; synthesized Italian merchant practice)."
+      - "Every transaction preserves the accounting equation: Assets = Liabilities + Equity."
+      - "Debits and credits are not 'plus and minus' — their effect depends on account type."
+    sources:
+      wikipedia: "Double-entry_bookkeeping"
+
+  - slug: debits-and-credits
+    title: Debits and Credits
+    summary: The two sides of every accounting entry — debits on the left, credits on the right, which must balance.
+    difficulty: 1
+    facts:
+      - "Asset and expense accounts increase with debits, decrease with credits."
+      - "Liability, equity, and revenue accounts increase with credits, decrease with debits."
+      - "Mnemonic: DEAD CLIC — Debits: Expenses, Assets, Dividends; Credits: Liabilities, Income, Capital."
+    sources:
+      wikipedia: "Debits_and_credits"
+
+  - slug: accounting-equation
+    title: The Accounting Equation
+    summary: Assets = Liabilities + Equity. The fundamental identity that every balance sheet must preserve.
+    difficulty: 1
+    facts:
+      - "Expanded form: Assets = Liabilities + (Paid-in Capital + Retained Earnings + Revenue − Expenses − Dividends)."
+      - "Any transaction that affects one side must have an equal and offsetting effect on the same or the other side."
+      - "A balance sheet that doesn't balance has a recording error."
+    formulas:
+      - "Assets = Liabilities + Equity"
+    sources:
+      wikipedia: "Accounting_equation"
+
+  - slug: balance-sheet
+    title: Balance Sheet (Statement of Financial Position)
+    summary: Snapshot of a company's assets, liabilities, and equity at a point in time.
+    difficulty: 1
+    facts:
+      - "One of the three primary financial statements."
+      - "Assets typically ordered by liquidity (most liquid first under US GAAP)."
+      - "Classified balance sheet separates current (<1 year) from non-current items."
+      - "Sometimes called 'Statement of Financial Position' under IFRS."
+    sources:
+      wikipedia: "Balance_sheet"
+
+  - slug: income-statement
+    title: Income Statement (Profit and Loss)
+    summary: Reports revenues, expenses, and resulting profit or loss over a period of time.
+    difficulty: 1
+    facts:
+      - "Also called P&L, Statement of Operations, or Statement of Earnings."
+      - "Structure: Revenue − Cost of Goods Sold = Gross Profit; minus operating expenses = Operating Income; minus interest/taxes = Net Income."
+      - "Measures performance over a period (month, quarter, year) — unlike the balance sheet's point-in-time view."
+    sources:
+      wikipedia: "Income_statement"
+
+  - slug: cash-flow-statement
+    title: Cash Flow Statement
+    summary: Reports how cash moved in and out of the business across operating, investing, and financing activities.
+    difficulty: 2
+    facts:
+      - "Three sections: Operating (day-to-day), Investing (capex, acquisitions), Financing (debt, equity, dividends)."
+      - "Reconciles accrual-basis net income to the change in cash."
+      - "Indirect method starts with net income and adjusts; direct method lists actual cash receipts and payments. Indirect dominates in practice."
+    sources:
+      wikipedia: "Cash_flow_statement"
+
+  - slug: statement-of-equity
+    title: Statement of Changes in Equity
+    summary: Shows how equity accounts changed over the period — contributions, dividends, net income, other comprehensive income.
+    difficulty: 2
+    facts:
+      - "Links beginning and ending equity on the balance sheet."
+      - "Columns typically: common stock, additional paid-in capital, retained earnings, treasury stock, AOCI."
+      - "Retained earnings roll forward: prior period + net income − dividends."
+    sources:
+      wikipedia: "Statement_of_changes_in_equity"
+
+  - slug: accrual-vs-cash-accounting
+    title: Accrual vs. Cash Accounting
+    summary: Two methods for recognizing revenue and expenses — accrual when earned/incurred, cash when money changes hands.
+    difficulty: 2
+    facts:
+      - "GAAP and IFRS require accrual accounting for most businesses."
+      - "Cash accounting allowed for small businesses and personal finance."
+      - "Accrual provides better matching of revenue with related expenses but can hide cash-flow problems."
+      - "Hybrid methods exist (e.g., modified cash basis)."
+    sources:
+      wikipedia: "Basis_of_accounting"
+
+  - slug: matching-principle
+    title: Matching Principle
+    summary: Expenses are recognized in the same period as the revenues they helped generate.
+    difficulty: 2
+    facts:
+      - "Core to accrual accounting."
+      - "Example: if COGS relate to sales recognized this period, the COGS hit this period's income statement — regardless of when the inventory was bought."
+      - "Has weakened in modern standards — revenue recognition (ASC 606) often drives timing, and matching follows."
+    sources:
+      wikipedia: "Matching_principle"
+
+  - slug: revenue-recognition-principle
+    title: Revenue Recognition
+    summary: Determining when revenue has been 'earned' and can be recorded on the income statement.
+    difficulty: 2
+    facts:
+      - "Historically: revenue recognized when realized or realizable AND earned."
+      - "Modern (post ~2018, ASC 606 / IFRS 15): five-step model — identify contract, performance obligations, transaction price, allocate, recognize as obligations satisfied."
+      - "Aggressive or premature revenue recognition is a leading cause of financial-restatement scandals (Enron, WorldCom fringe)."
+    sources:
+      wikipedia: "Revenue_recognition"
+
+  - slug: depreciation
+    title: Depreciation
+    summary: Systematic allocation of a tangible asset's cost over its useful life.
+    difficulty: 2
+    facts:
+      - "Common methods: straight-line (cost/life), double-declining balance, units-of-production."
+      - "Depreciation is a non-cash expense — it reduces income but doesn't reduce cash in the period."
+      - "Tax depreciation (MACRS in the US) usually differs from book depreciation — creates deferred tax differences."
+      - "Amortization is the analogous concept for intangible assets; depletion for natural resources."
+    formulas:
+      - "Straight-line depreciation = (Cost − Salvage) / Useful life"
+    sources:
+      wikipedia: "Depreciation"
+
+  - slug: cogs
+    title: Cost of Goods Sold (COGS)
+    summary: The direct cost of producing or acquiring the goods a company sold during the period.
+    difficulty: 1
+    facts:
+      - "For retailers: beginning inventory + purchases − ending inventory = COGS."
+      - "Revenue − COGS = Gross Profit."
+      - "Distinct from operating expenses (SG&A, R&D) that aren't directly tied to units sold."
+      - "For services firms, the analog is often called 'cost of revenue' or 'cost of services.'"
+    sources:
+      wikipedia: "Cost_of_goods_sold"
+
+  - slug: inventory-valuation
+    title: Inventory Valuation (FIFO / LIFO / Weighted Avg)
+    summary: Methods for determining which unit costs flow to COGS vs. remain in inventory.
+    difficulty: 2
+    facts:
+      - "FIFO (First-In, First-Out): oldest costs hit COGS first; ending inventory reflects recent costs."
+      - "LIFO (Last-In, First-Out): newest costs hit COGS first; ending inventory reflects old costs. Allowed under US GAAP, PROHIBITED under IFRS."
+      - "Weighted Average: COGS and inventory both use the average unit cost."
+      - "In rising-price environments, LIFO produces lower reported income and lower tax — hence the 'LIFO reserve' disclosure to reconcile."
+    sources:
+      wikipedia: "Inventory_valuation"
+
+  - slug: accounts-receivable
+    title: Accounts Receivable (AR)
+    summary: Amounts owed to a company by its customers for goods/services already delivered on credit.
+    difficulty: 1
+    facts:
+      - "Current asset; turnover ratio = Net Credit Sales / Average AR."
+      - "Allowance for Doubtful Accounts (contra-asset) estimates uncollectable receivables."
+      - "Aging schedule categorizes AR by days outstanding — older receivables have higher default risk."
+    sources:
+      wikipedia: "Accounts_receivable"
+
+  - slug: accounts-payable
+    title: Accounts Payable (AP)
+    summary: Amounts a company owes to its suppliers for goods/services already received on credit.
+    difficulty: 1
+    facts:
+      - "Current liability."
+      - "Turnover ratio = COGS / Average AP; measures how fast the company pays suppliers."
+      - "Stretching AP (slower payment) is a form of short-term financing — but can strain supplier relationships."
+    sources:
+      wikipedia: "Accounts_payable"
+
+  - slug: gross-margin
+    title: Gross Margin
+    summary: Gross profit expressed as a percentage of revenue.
+    difficulty: 1
+    facts:
+      - "Formula: (Revenue − COGS) / Revenue."
+      - "Industry-dependent: software ~70–90%, retail ~20–40%, grocery ~2–5%."
+      - "Tracked over time to spot pricing power erosion or cost inflation."
+    formulas:
+      - "Gross margin = (Revenue − COGS) / Revenue"
+    sources:
+      wikipedia: "Gross_margin"
+
+  - slug: operating-margin
+    title: Operating Margin
+    summary: Operating income as a percentage of revenue — profitability from core operations before interest and taxes.
+    difficulty: 1
+    facts:
+      - "Formula: Operating Income / Revenue, where Operating Income = Gross Profit − Operating Expenses."
+      - "Excludes interest and taxes (those are 'below the line')."
+      - "EBIT (Earnings Before Interest and Taxes) is closely related; sometimes identical."
+    formulas:
+      - "Operating margin = Operating Income / Revenue"
+    sources:
+      wikipedia: "Operating_margin"
+
+  - slug: net-margin
+    title: Net Margin (Profit Margin)
+    summary: Net income as a percentage of revenue — bottom-line profitability after everything.
+    difficulty: 1
+    facts:
+      - "Formula: Net Income / Revenue."
+      - "Most comprehensive margin but noisy — affected by one-time items, tax changes, interest expense."
+      - "Distinguishable from operating margin by everything 'below the line' (interest, taxes, non-recurring items)."
+    formulas:
+      - "Net margin = Net Income / Revenue"
+    sources:
+      wikipedia: "Profit_margin"
+
+  - slug: ebitda
+    title: EBITDA
+    summary: Earnings Before Interest, Taxes, Depreciation, and Amortization — a rough proxy for operating cash flow.
+    difficulty: 2
+    facts:
+      - "Non-GAAP measure — companies compute and report it voluntarily."
+      - "Used in M&A and private-equity valuation as 'earnings power' isolated from financing, tax, and non-cash charges."
+      - "Criticized as 'earnings before all the bad stuff' — Buffett famously dismissive. Can mask the cost of sustaining the asset base."
+    sources:
+      wikipedia: "Earnings_before_interest,_taxes,_depreciation_and_amortization"
+
+  - slug: going-concern
+    title: Going Concern Assumption
+    summary: Financial statements are prepared assuming the entity will continue operating for the foreseeable future.
+    difficulty: 2
+    facts:
+      - "Standard horizon: 12 months from the financial statement date."
+      - "When substantial doubt exists, the entity must disclose it — and auditors must evaluate and possibly modify their opinion."
+      - "If the going concern assumption fails, liquidation-basis accounting applies (assets at expected sale value)."
+    sources:
+      wikipedia: "Going_concern"
+
+  - slug: materiality
+    title: Materiality
+    summary: Information is material if omitting or misstating it could influence the decisions of financial-statement users.
+    difficulty: 2
+    facts:
+      - "No single numerical threshold — judgment-based, often around 5% of pretax income as a rough guide."
+      - "Both quantitative (size) and qualitative (nature, context) factors count."
+      - "Immaterial errors don't require correction or disclosure; material ones do."
+    sources:
+      wikipedia: "Materiality_(auditing)"
+
+  - slug: gaap-vs-ifrs
+    title: GAAP vs. IFRS
+    summary: The two dominant accounting frameworks globally — US GAAP (FASB) and International Financial Reporting Standards (IASB).
+    difficulty: 2
+    facts:
+      - "US GAAP: rules-based, maintained by FASB, used by US public companies."
+      - "IFRS: principles-based, maintained by IASB (IFRS Foundation), used by 140+ countries including EU, UK, Japan (voluntary), Canada."
+      - "Key divergences: LIFO allowed (GAAP only), development cost capitalization (IFRS allows, GAAP generally doesn't), revaluation of PP&E (IFRS allows, GAAP doesn't), impairment reversal (IFRS yes, GAAP no for goodwill)."
+      - "Active convergence project from ~2002–2014; current focus is coordination, not merger."
+    sources:
+      wikipedia: "International_Financial_Reporting_Standards"
+
+  - slug: audit-opinion
+    title: Audit Opinion
+    summary: An external auditor's formal conclusion on whether financial statements are presented fairly in accordance with the applicable framework.
+    difficulty: 2
+    facts:
+      - "Four types: unqualified ('clean'), qualified, adverse, disclaimer."
+      - "Unqualified = fair presentation; qualified = fair except for a specific issue; adverse = materially misstated; disclaimer = couldn't form an opinion."
+      - "In the US, public-company audits follow PCAOB standards; private and non-US often follow AICPA/IAASB standards."
+      - "SOX (2002) created the PCAOB in response to Enron/WorldCom/Arthur Andersen."
+    key_dates:
+      - "2002: Sarbanes-Oxley Act creates PCAOB."
+    sources:
+      wikipedia: "Auditor%27s_report"

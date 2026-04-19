@@ -62,8 +62,8 @@ Target mix: 1 question at recall/comprehension, 1 at application, 1 at analysis 
 2. Questions are served from this bank. User types a free-text answer and self-rates confidence 1–5.
 3. Responses are held in `localStorage` so refresh/close/reopen resumes mid-session.
 4. At the end:
-   - **Preferred**: *Commit to repo* — writes a session JSON directly to `../../mirror/sessions/` on `main` via the GitHub Contents API using a fine-scoped PAT stored in the browser.
-   - **Fallback**: *Download JSON* — for when no token is set, or the API call fails.
+   - **Preferred**: *Commit to repo* — opens GitHub's new-file editor in a new tab with the session JSON pre-filled at `../../mirror/sessions/<timestamp>--<area>.json`. User taps *Commit directly to the main branch* on GitHub. No credentials stored in the browser.
+   - **Fallback**: *Download JSON* — for when the session is too large for a URL or popups are blocked.
 5. A later Claude session reads unprocessed session files, grades answers against the rubric, and creates or updates `../../mirror/notes/<slug>.md`.
 
 ## Session export schema

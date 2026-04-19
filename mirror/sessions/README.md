@@ -19,7 +19,7 @@ Sort-by-filename = sort-by-time.
 
 ## Lifecycle
 
-1. **Created** by `quiz.html` when the user taps *Commit to repo* at the end of a session. The commit is made directly to `main` via the GitHub Contents API using the user's stored fine-scoped PAT.
+1. **Created** by `quiz.html` when the user taps *Commit to repo* at the end of a session. The button opens GitHub's new-file editor in a new tab with the session JSON pre-filled via the `?filename=&value=` query params on `/new/main/mirror/sessions`. The user then taps *Commit directly to the main branch* on GitHub's side. No credentials are stored in the browser — the user is authenticated by their normal github.com login.
 2. **Pending** until graded — a Claude session reads unprocessed files, grades each response against the rubric in `../../reference/questions/`, and updates `../notes/<slug>.md` accordingly.
 3. **Marked processed** by appending the filename to `.processed`. This is the durable "already graded" log — no file moves or renames, so commit history stays clean.
 

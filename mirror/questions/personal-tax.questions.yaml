@@ -1,0 +1,84 @@
+# Question bank for mirror notes in the personal-tax cluster.
+# Keyed to mirror slugs, not reference leaves.
+
+area:
+  slug: personal-tax
+  title: Personal tax
+  parent: mirror
+
+questions:
+
+  # --- Estimated tax safe harbor (Form 2210) ---------------------------------
+  - leaf: estimated-tax-safe-harbor
+    items:
+      - id: estimated-tax-safe-harbor.q0
+        level: recognition
+        prompts:
+          - "'Form 2210', 'safe harbor', 'required annual payment' — what tax area?"
+          - "Why would a US taxpayer care about prepaying 100% (or 110%) of their prior-year tax?"
+          - "What's an 'underpayment of estimated tax' penalty, at a high level?"
+        rubric:
+          - "US individual income tax / 1040 estimated-tax compliance / Form 2210."
+          - "Bonus: frames it as avoiding an IRS penalty distinct from 'owing a balance at filing.'"
+
+      - id: estimated-tax-safe-harbor.q1
+        level: recall
+        prompt: "State the prior-year safe harbor rule for avoiding the underpayment penalty. Include the AGI threshold that changes the multiplier."
+        rubric:
+          - "Pay in (via withholding + timely estimates) at least the smaller of: (a) 90% of current-year total tax, or (b) 100% of prior-year tax."
+          - "If prior-year AGI > $150,000 (or > $75,000 if current-year filing status is MFS), swap 100% → 110% in the prior-year test."
+          - "Bonus: other 'no penalty' outs — <$1,000 owed after withholding; no tax liability last year with full-year residency."
+
+      - id: estimated-tax-safe-harbor.q2
+        level: application
+        prompt: "You installed solar this year. Because of the Residential Clean Energy Credit (Form 5695 → Schedule 3 → 1040 line 20 → reduces line 22), your 1040 line 22 dropped by $15k vs last year. How does this affect your safe-harbor target for the following year, and why?"
+        rubric:
+          - "The prior-year safe harbor leg (Form 2210 Part I line 1) starts from 1040 line 22 'tax after credits,' NOT line 24 'total tax.'"
+          - "Solar is a nonrefundable credit and flows into line 22, so a $15k drop on line 22 → ~$15k drop (times 100% or 110%) in the prior-year safe-harbor target for next year."
+          - "Implication: smaller required pay-in to avoid the penalty. Does NOT avoid owing a balance at filing — safe harbor is about the penalty, not cash flow."
+
+      - id: estimated-tax-safe-harbor.q3
+        level: analysis
+        prompt: "You prepaid $45k through the year but your required annual payment (2210 line 9) was $50k. Your final tax due at filing was $35k. How is the underpayment penalty computed — against the $5k shortfall or the $35k balance due? And why does late-year W-2 withholding true-up cleanly while late estimated payments don't?"
+        rubric:
+          - "Penalty is computed against the $5k shortfall vs required installments (25% of line 9 per quarter), NOT the $35k balance due."
+          - "Penalty accrues per installment period based on whether each quarterly required installment was met by its due date."
+          - "W-2 withholding: treated as paid ratably (¼ each due date) unless Form 2210 Part II box D is checked, so late-year withholding cleans up earlier-quarter shortfalls."
+          - "Estimated tax: credited on actual payment date, so late estimated payments still leave Q1–Q3 shortfalls and associated penalty."
+
+  # --- FL property tax: Save Our Homes portability (Pinellas) ----------------
+  - leaf: fl-property-tax-portability
+    items:
+      - id: fl-property-tax-portability.q0
+        level: recognition
+        prompts:
+          - "'Save Our Homes', 'portability', 'DR-501T' — what state's property-tax system?"
+          - "'Just/Market vs Assessed vs Taxable value' — what's the jurisdictional context?"
+          - "Why would a Florida homeowner care about transferring an 'assessment difference' from an old property to a new one?"
+        rubric:
+          - "Florida residential property tax / homestead exemption / Save Our Homes (SOH) 3%-or-CPI cap on annual assessed value growth."
+          - "Bonus: identifies portability as the transfer of the SOH cap differential to a new homestead (up to statutory limits)."
+
+      - id: fl-property-tax-portability.q1
+        level: recall
+        prompt: "Name the three distinct Florida property-tax value types and describe what each represents on a TRIM notice."
+        rubric:
+          - "Just / Market value — the county's Jan 1 mass-appraisal estimate of market value."
+          - "Assessed value — Just minus the SOH cap (or minus portability transfer if coming from a prior homestead); reset to market on the next Jan 1 after a change of ownership, then subject to the cap going forward."
+          - "Taxable value — Assessed minus exemptions (homestead, veteran, senior, etc.). Multiplied by millage to get the bill."
+
+      - id: fl-property-tax-portability.q2
+        level: application
+        prompt: "You bought a Pinellas home for $920k on a mid-year closing. The following year's Just/Market comes in at $902k. Why isn't Just/Market closer to $920k? And does portability affect that number?"
+        rubric:
+          - "Just/Market is the Jan 1 mass-appraisal snapshot, not the closing price. It can legitimately differ because of valuation-date vs closing-date timing, market movement, comp-set, and sale-specific terms (concessions, personal property)."
+          - "Not a policy 'safety discount' — Florida appraisers are statutorily required to target market value and are subject to state ratio-study oversight."
+          - "Portability does NOT change Just/Market. It reduces the Assessed value by transferring the prior homestead's SOH assessment differential."
+
+      - id: fl-property-tax-portability.q3
+        level: analysis
+        prompt: "You want to argue for a lower 2026 assessment. Rank these arguments by leverage: (a) 'my HOA maintains the roads and electricity'; (b) 'my SF is coded wrong'; (c) 'the house sustained roof damage before Jan 1 that isn't fixed'; (d) 'five comparable sales closed below $902k before Jan 1'. Explain."
+        rubric:
+          - "Highest leverage: (b) record errors — SF / features / quality coded wrong directly change value; (c) property condition as of Jan 1 — damage or deferred maintenance documented with photos/quotes moves Just/Market; (d) pre-Jan-1 comp sales — the classic path, weighted heavily by PCPAO and the VAB."
+          - "Low leverage: (a) HOA private roads/utilities — mass appraisal already prices in location and neighborhood factors indirectly. Only helps if you can show comp sales where similar-HOA homes transact lower than without-HOA homes."
+          - "Residential pre-TRIM engagement is evidence-driven (informal conference with the area appraiser), not relationship-driven. Corporate 'proactive negotiation' has no clean residential analog."

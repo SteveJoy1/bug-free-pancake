@@ -1,0 +1,87 @@
+# Question bank for mirror notes covering HVAC / thermodynamics and physics.
+# Keyed to mirror slugs, not reference leaves.
+
+area:
+  slug: hvac-and-physics
+  title: HVAC & physics
+  parent: mirror
+
+questions:
+
+  # --- Dehumidifier vs AC thermodynamics -------------------------------------
+  - leaf: dehumidifier-ac-thermodynamics
+    items:
+      - id: dehumidifier-ac-thermodynamics.q0
+        level: recognition
+        prompts:
+          - "'Latent vs sensible heat', 'COP', 'dehumidifier in an AC'd room' — what domain?"
+          - "Why would running a portable dehumidifier in a conditioned room cost the central AC anything?"
+          - "'Heat of vaporization,' 'EER,' 'SEER' — what field?"
+        rubric:
+          - "HVAC thermodynamics / home climate control."
+          - "Bonus: sketches the latent/sensible distinction or names COP (coefficient of performance) as AC efficiency."
+
+      - id: dehumidifier-ac-thermodynamics.q1
+        level: recall
+        prompt: "State the approximate heat of vaporization of water, and explain why it matters when a portable dehumidifier runs inside a conditioned room."
+        rubric:
+          - "Water's heat of vaporization is roughly 2.38 MJ/kg (≈ 2,260–2,380 J/g depending on temperature)."
+          - "The dehumidifier condenses water out of the air; that phase change releases latent heat into the room as sensible heat — on top of the motor's electrical input."
+          - "Concrete: 1 kWh into a ~2.2 L/kWh dehumidifier removes ~2.2 kg water → releases ~1.45 kWh latent heat + 1 kWh motor input ≈ 2.45 kWh of room heat."
+
+      - id: dehumidifier-ac-thermodynamics.q2
+        level: application
+        prompt: "A 1 kWh/day portable dehumidifier runs in your AC'd bedroom. The central AC operates near COP 4. Estimate the extra AC electricity the central system needs to compensate — under the clean 'apples-to-apples' comparison where the AC otherwise would have removed that same moisture."
+        rubric:
+          - "Extra AC electricity ≈ dehumidifier kWh / COP = 1 / 4 ≈ 0.25 kWh/day (~25%)."
+          - "Rationale: the dehumidifier converts what would have been an AC *latent* load into an AC *sensible* load — not a new load on top. The latent duty was already in the house's cooling burden."
+          - "A naive 'motor input + latent heat = 2.45 kWh → ÷ 4 = 0.61 kWh/day (~60%)' calculation is wrong because it double-counts: it forgets that the AC no longer has to remove the same moisture itself."
+
+      - id: dehumidifier-ac-thermodynamics.q3
+        level: analysis
+        prompt: "When is a window-shaker AC a defensible substitute for a dedicated dehumidifier in a single room? Walk through the comparison structurally."
+        rubric:
+          - "Defensible only when the room *already* needs cooling: a window AC rejects heat outdoors, while a portable dehumidifier dumps heat back into the same room."
+          - "Use EER (Btu/Wh running), NOT SEER2 (seasonal) or CEER (includes standby), for first-order comparison."
+          - "Net penalty structure: Q_shift × (1/EER_window − 1/EER_central_effective). Also factor duct losses in unconditioned space (can be 25–40%), which makes a nominally-less-efficient window unit competitive."
+          - "Window units for latent-only duty are usually worse: typical ~1.4–3.6 pints/kWh vs ~4.6 pints/kWh for a good dehumidifier. Also, oversized ACs short-cycle — hit temperature setpoint before removing enough moisture."
+
+  # --- Fermi paradox and galactic colonization timescales -------------------
+  - leaf: fermi-paradox-and-colonization
+    items:
+      - id: fermi-paradox-and-colonization.q0
+        level: recognition
+        prompts:
+          - "'Fermi paradox', 'von Neumann probe', 'galactic silence' — what's the paradox?"
+          - "'If aliens exist, why haven't we seen them?' — whose named paradox is that?"
+          - "What field connects drake equation, self-replicating probes, and the age of the universe?"
+        rubric:
+          - "Astrobiology / SETI / philosophy of science. The Fermi paradox: apparent contradiction between high prior probability of extraterrestrial civilizations and the absence of evidence for them."
+          - "Bonus: names von Neumann / self-replicating probes as the mechanism that makes long-duration colonization cheap."
+
+      - id: fermi-paradox-and-colonization.q1
+        level: recall
+        prompt: "Give the rough scale numbers: Milky Way diameter, typical separation between stars. Then estimate how long a galaxy crossing takes at 0.1% of light speed (0.001c)."
+        rubric:
+          - "Milky Way diameter ≈ 100,000 light-years (slightly more including the halo; ~100k is the canonical figure)."
+          - "Typical star separation in our galactic neighborhood ≈ 5 light-years."
+          - "At 0.001c, 100,000 light-years takes 100 million years (100,000 / 0.001). A 5-light-year hop takes ~5,000 years."
+          - "Context: universe is ~13.8 Gyr old, so galactic crossing at 0.1%c is ~1% of the universe's age — trivially short."
+
+      - id: fermi-paradox-and-colonization.q2
+        level: application
+        prompt: "Argue, or argue against, the claim: 'Darwinian selection makes galaxy-filling expansion inevitable for any technological civilization.' What's the strongest counter?"
+        rubric:
+          - "First-order support: range-expansion literature does show selection for higher dispersal at colonization fronts — expansionism is a plausible prior."
+          - "Strongest counter is NOT morality or rarity — it's engineering/control: self-replicating machines are an invasive-species-you-can't-recall problem (mutation, misalignment, conflict between branches, resource overshoot)."
+          - "Additional counters: density-dependent selection / r-K tradeoffs; major evolutionary transitions reorganize selection across levels; cultural evolution decouples capability from biological fertility (modern development correlates with fertility decline)."
+          - "Net: Darwinism makes expansion *plausible*, not *inevitable*. The paradox survives moderate objections because plausibility alone is enough."
+
+      - id: fermi-paradox-and-colonization.q3
+        level: analysis
+        prompt: "Why is 'why isn't Earth bulldozed for parts?' a stronger form of the Fermi paradox than necessary? What's the cleaner framing, and why does it matter?"
+        rubric:
+          - "An efficient harvester would start with asteroids, comets, Kuiper-belt objects, outer-system volatiles, and direct solar energy — all easier to access than deep gravity wells like Earth."
+          - "Cleaner framing: 'Why do we see no clear artifacts, large-scale engineering, or probe presence anywhere in the system?' — i.e., detectable non-natural infrastructure at all."
+          - "Matters because the paradox survives weakening 'bulldozed Earth' → 'any infrastructure, anywhere, of any scale.' Can't dissolve the puzzle by pointing out that Earth is a weird target."
+          - "Bonus: percolation-style colonization models (Landis) formalize how expansion can stall rather than fill the graph — a serious attempt to reconcile plausible expansionism with observed silence."

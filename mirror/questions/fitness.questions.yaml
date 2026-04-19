@@ -1,0 +1,169 @@
+# Question bank for mirror notes in the fitness / nutrition / endurance cluster.
+# Keyed to mirror slugs, not reference leaves. Four tiers per leaf, asked in
+# ladder order:
+#   - Q0: recognition      (step 0; multi-prompt; the gate)
+#   - Q1: recall           (step 3; state cold)
+#   - Q2: application      (step 2; use on new example)
+#   - Q3: analysis/connection/regime-boundary (step 1; higher-level)
+#
+# Questions derived from evidence in the corresponding mirror notes.
+
+area:
+  slug: fitness-and-nutrition
+  title: Fitness & nutrition
+  parent: mirror
+
+questions:
+
+  # --- Hypertrophy: effort (RIR) vs weekly volume ----------------------------
+  - leaf: hypertrophy-rir-and-volume
+    items:
+      - id: hypertrophy-rir-and-volume.q0
+        level: recognition
+        prompts:
+          - "When someone says 'ALMI' and 'RIR' in the same sentence, what field are they in? One line or 'nothing.'"
+          - "What does 'training to 1–2 RIR' refer to?"
+          - "Weekly hard-set volume, progressive overload, and hypertrophy — what area of fitness?"
+        rubric:
+          - "Strength training / resistance exercise / hypertrophy."
+          - "Bonus: identifies ALMI as a lean-mass index and RIR as 'reps in reserve' (effort proxy)."
+
+      - id: hypertrophy-rir-and-volume.q1
+        level: recall
+        prompt: "State the working model of the main hypertrophy drivers in your own words. What's the role of frequency, what's the role of weekly volume, and where does RIR fit in?"
+        rubric:
+          - "Weekly hard-set volume is the main lever (commonly cited ~12–20 hard sets per muscle per week zone)."
+          - "Frequency mostly distributes that volume; not a primary independent driver."
+          - "Effort (proximity to failure) matters but going all the way to 0 RIR is not clearly superior to 1–2 RIR in trained lifters."
+          - "Progressive overload — add load OR add reps — is how the volume translates to growth."
+
+      - id: hypertrophy-rir-and-volume.q2
+        level: application
+        prompt: "You've been midrange ALMI for years with consistent gym sessions and feel stuck. You want to try one change before adding more volume. What's the most defensible first experiment, and why?"
+        rubric:
+          - "Train some sets to true 0 RIR as a calibration probe, because self-estimated RIR is noisy and actual effort may be farther from failure than intended."
+          - "Frame it explicitly as a 'check whether my 1–2 RIR sets are actually 1–2 RIR' — not as a claim that 0 RIR is biologically superior."
+          - "Partial credit: verify weekly hard-set volume is actually in the 12–20 zone; verify progressive overload is real (load or reps going up)."
+
+      - id: hypertrophy-rir-and-volume.q3
+        level: analysis
+        prompt: "Compare two programs for a trained lifter: (A) suboptimal effort but high volume, (B) appropriate effort but suboptimal volume. Which is the safer bet and why?"
+        rubric:
+          - "Option B (appropriate effort, suboptimal volume) is usually safer — hard-enough sets still drive growth with moderately low volume."
+          - "Option A (high volume far from failure) is less reliable — lots of weak sets stay weak sets, especially at lighter loads where high-threshold motor units only recruit late."
+          - "Important qualifier: 'suboptimal' is a spectrum — mildly too-easy sets at high volume can compensate, severely too-easy cannot."
+          - "Volume is the more robust long-run driver; effort determines whether the sets you count are worth much."
+
+  # --- Running: intensity distribution and interval structure ----------------
+  - leaf: running-intensity-distribution
+    items:
+      - id: running-intensity-distribution.q0
+        level: recognition
+        prompts:
+          - "'4×4', 'cruise intervals', 'polarized', 'Zone 2' — what field?"
+          - "Lactate threshold, VO₂max, threshold pace, easy aerobic — what sport training area?"
+          - "What's a '4×4' workout?"
+        rubric:
+          - "Endurance / running training (cycling also counts)."
+          - "Bonus: names 4×4 as four 4-minute hard intervals (Norwegian-style VO₂max protocol) with recovery between."
+
+      - id: running-intensity-distribution.q1
+        level: recall
+        prompt: "State the 80/20 (polarized / pyramidal) intensity-distribution heuristic. What fraction is easy? What fraction is hard? What's the gap it's warning against?"
+        rubric:
+          - "Roughly 80% of training time/sessions at low intensity (below LT1 / first lactate threshold), 20% at high intensity."
+          - "The gap it warns against is the 'moderate middle' — too much time between LT1 and LT2 (threshold) underperforms vs more easy volume + similar hard volume in sub-elite runners."
+          - "Bonus: distinction between 3-zone research framing (Z1<LT1, Z2 between thresholds, Z3>LT2) vs 5-zone consumer framing (where 'Zone 2' means easy aerobic below LT1)."
+
+      - id: running-intensity-distribution.q2
+        level: application
+        prompt: "Your week is 1 HIIT + 2× 40–60 min at 5-zone-model Zone 2 + 1× 2-hour run below Zone 2, ~100 mi/month. Is this aligned with the intensity-distribution literature? What's the single deciding factor?"
+        rubric:
+          - "Yes, structurally aligned with polarized/pyramidal best-supported patterns (~75% low-intensity sessions, ~1 hard)."
+          - "Deciding factor: whether the two 40–60 min Zone 2 runs are truly below LT1 (easy aerobic), or are actually between LT1 and LT2 (the unproductive moderate middle)."
+          - "The 2-hour 'below Zone 2' run is not a red flag — it skews time-in-zone further toward low intensity."
+
+      - id: running-intensity-distribution.q3
+        level: connection
+        prompt: "Your 4×4 rep pace is 6:40/mi but you can't hold 6:50 for a 5K. Why doesn't that contradict training theory? Is there a fixed ratio between 4×4 pace and 5K pace?"
+        rubric:
+          - "No fixed ratio. 4×4 has ~16 min of hard running with recovery; 5K is ~20–30 min continuous with no breaks."
+          - "5K is limited more by threshold / durability / pacing / heat than by VO₂max ceiling, so 4×4 reps can run faster than 5K pace without inconsistency."
+          - "Daniels-style guidance has VO₂max interval pace only modestly faster than 5K pace (~0–15 s/mi) for most runners."
+          - "Bonus: notes that hot/poorly-paced/non-tapered 5K attempts make observed 5K pace slower than current fitness, widening the apparent gap."
+
+  # --- Protein: dose, source kinetics, and MPS -------------------------------
+  - leaf: protein-dose-and-mps
+    items:
+      - id: protein-dose-and-mps.q0
+        level: recognition
+        prompts:
+          - "'Leucine trigger', 'MPS', 'whey vs casein' — what are we talking about?"
+          - "Pre-sleep protein dosing: why does this come up as a fitness question?"
+          - "What does 'MPS' stand for in a nutrition-and-lifting context?"
+        rubric:
+          - "Sports nutrition / protein metabolism / muscle protein synthesis."
+          - "Bonus: identifies MPS = muscle protein synthesis; leucine as the EAA most associated with the anabolic signal."
+
+      - id: protein-dose-and-mps.q1
+        level: recall
+        prompt: "Approximate leucine % by weight for whey vs casein. If a 25 g whey dose delivers roughly 2.7 g leucine, how much casein do you need to match that leucine payload, and what's the practical takeaway?"
+        rubric:
+          - "Whey ≈ 11% leucine; casein ≈ 8% leucine."
+          - "To match 2.7 g leucine: 2.7 / 0.08 ≈ 34 g casein (~35% more grams than whey)."
+          - "Practical: on a leucine-matched basis, casein needs ~35% more grams. That's the source of 'casein needs a bigger dose' heuristics."
+
+      - id: protein-dose-and-mps.q2
+        level: application
+        prompt: "You're a 37 y/o ~200 lb male and want to maximize overnight MPS after evening resistance training. What's the best-evidenced dose and source? Is '25 g' enough?"
+        rubric:
+          - "~30–40 g casein (roughly 0.4 g/kg ≈ 36 g for 91 kg) taken ~30–60 min before sleep."
+          - "Rationale is duration of overnight amino-acid availability (~7–8 h window), not hitting a leucine threshold."
+          - "25 g is below the best-evidenced pre-sleep band; foundational tracer work used 40 g casein, and 40 g outperformed 20 g in older-adult dose comparison."
+
+      - id: protein-dose-and-mps.q3
+        level: analysis
+        prompt: "Is the common '~25 g protein maxes MPS' heuristic specifically about whey? What breaks if you reframe MPS as 'hit a leucine target' instead of 'hit a grams target'?"
+        rubric:
+          - "No — the original ~20 g MPS-max finding was from whole-egg protein tracer work (post-exercise window in young men)."
+          - "If reframed to leucine-matching, sources with lower leucine fraction (casein, plant proteins) need more grams to deliver the same leucine — but this doesn't guarantee more MPS because MPS also shows saturation and kinetics matter."
+          - "The leucine-trigger idea has mixed empirical support: faster/higher leucinemia doesn't always translate to higher MPS. Total substrate + kinetics + context (post-exercise vs pre-sleep) dominate."
+
+  # --- Glycogen-associated water and endurance hydration --------------------
+  - leaf: glycogen-water-in-endurance
+    items:
+      - id: glycogen-water-in-endurance.q0
+        level: recognition
+        prompts:
+          - "'Glycogen-associated water' and dehydration during exercise — what's the connection?"
+          - "Why does depleting glycogen affect body weight and hydration?"
+          - "'Plasma osmolality', 'ICF vs ECF', 'glycogen stores' — what field?"
+        rubric:
+          - "Exercise physiology / endurance hydration / substrate metabolism."
+          - "Bonus: mentions that glycogen is stored with water (~3 g water per g glycogen) and this is invoked in both fasting weight-loss and endurance-hydration contexts."
+
+      - id: glycogen-water-in-endurance.q1
+        level: recall
+        prompt: "Approximately how much water is stored per gram of glycogen? When that glycogen is consumed during exercise, is the associated water a meaningful hydration reserve for sweat? Give the rough magnitude."
+        rubric:
+          - "~3 g water per g glycogen."
+          - "No, not a meaningful reserve for hard exercise. Most glycogen-associated water is ordinary intracellular water behaving normally under osmotic equilibrium — not a protected stash."
+          - "Order of magnitude: modeling work suggests ~55 mL plasma-volume advantage from starting glycogen-replete over a 2 L sweat loss. Small, not zero."
+
+      - id: glycogen-water-in-endurance.q2
+        level: application
+        prompt: "You bonked at mile 9 of a half-marathon attempt. Steady 9:30 pace, mild weather, 17 oz of water over ~85 minutes, no fueling. Rank the most likely causes and say why dehydration probably wasn't the primary limiter."
+        rubric:
+          - "Most likely: carbohydrate limitation / underfueling (85 min is in the 1–3 h window where 30–60 g CHO/h supports performance)."
+          - "Plausible: pacing above sustainable half-marathon intensity even though steady."
+          - "Less likely: dehydration primary in mild weather. 17 oz over 85 min ≈ 0.35 L/h intake; dehydration normally doesn't become the primary limiter until >2% body-mass loss, which typically needs ~1.3–1.4 L/h sweating for a 150–170 lb runner."
+          - "Heat: only a factor if actually warm/humid."
+
+      - id: glycogen-water-in-endurance.q3
+        level: analysis
+        prompt: "If glycogen depletion releases associated water, why doesn't that water materially 'save' hydration during a hard run? What's actually keeping water inside cells if not glycogen?"
+        rubric:
+          - "Glycogen is one intracellular osmotic contributor, not the decisive one. Water distribution is governed by total osmotic gradient, not glycogen content specifically."
+          - "The main intracellular osmoles keeping water in cells are potassium (K⁺), phosphates, proteins, and other small organic osmolytes."
+          - "Active volume regulation via Na⁺/K⁺-ATPase (pumps Na⁺ out, K⁺ in) defends cell volume against Donnan effects from impermeant intracellular molecules."
+          - "Removing glycogen alone doesn't collapse ICF volume because the rest of the cell's osmotic environment is intact — glycogen is 'one sponge in a room full of furniture.'"

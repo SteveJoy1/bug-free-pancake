@@ -1,0 +1,50 @@
+# Question bank for mirror notes covering the user's own infrastructure:
+# utilities, solar, EVs, house systems. Content is idiosyncratic — slugs
+# typically will NOT appear in reference/tree/.
+
+area:
+  slug: personal-infrastructure
+  title: Personal infrastructure
+  parent: mirror
+
+questions:
+
+  # --- Duke Florida solar net metering --------------------------------------
+  - leaf: duke-solar-net-metering
+    items:
+      - id: duke-solar-net-metering.q0
+        level: recognition
+        prompts:
+          - "'Net metering', 'COG-1', '$30 minimum bill', 'billing-cycle settlement' — what domain?"
+          - "Residential solar + a bidirectional meter — why is it not a real-time wallet?"
+          - "'Off-peak EV charging credit' paired with a net-metered solar array — what field?"
+        rubric:
+          - "Residential solar billing / utility net metering — Duke Florida context specifically."
+          - "Bonus: identifies COG-1 as the utility's avoided-cost / wholesale rate used for year-end true-up."
+
+      - id: duke-solar-net-metering.q1
+        level: recall
+        prompt: "State the monthly netting rule for Duke Florida residential solar. What rolls forward, and what happens at year-end?"
+        rubric:
+          - "Net kWh = Imports − Exports over the billing cycle."
+          - "If net import: billed normally. If net export: the excess kWh rolls forward as a credit applied to the next month's consumption (up to 12 months)."
+          - "At year-end: any unused kWh credits are paid out at the COG-1 (wholesale/avoided-cost) rate — typically much lower than retail, so rollover credits are worth avoiding if you can self-consume."
+          - "Bonus: customer charge (~$14.27/month RS-1) and the $30 minimum bill apply regardless of net export."
+
+      - id: duke-solar-net-metering.q2
+        level: application
+        prompt: "Month 1: you use 1,000 kWh and produce 1,000 kWh. 500 kWh is self-consumed in real time. What are the bill-relevant numbers — imports, exports, net, rollover? Does the $30 minimum bill trigger, and does your $7.50 off-peak EV credit help you avoid it?"
+        rubric:
+          - "Imports = 500 kWh (load − self-consumed)."
+          - "Exports = 500 kWh (production − self-consumed)."
+          - "Net = Imports − Exports = 0. No rollover credit (there's no *excess* delivered after netting)."
+          - "The $30 minimum bill can still trigger because customer charge + near-zero energy ≠ $30, and the test is computed EXCLUDING the EV charging credit. So the EV credit does NOT help avoid the minimum — it applies as a separate line after."
+
+      - id: duke-solar-net-metering.q3
+        level: analysis
+        prompt: "You have free charging at work and want to optimize your home EV charging around the Duke system. Should you prefer scheduling home EV charging in sunny months or cloudy months? How do the minimum-bill and COG-1 mechanics affect the answer?"
+        rubric:
+          - "Depends on whether you're a net annual importer or exporter."
+          - "If you expect to OVERPRODUCE annually (would otherwise cash excess at COG-1): prefer home EV charging in sunny / high-production periods to self-consume at retail value instead of banking credits that cash at wholesale."
+          - "If you expect to UNDERPRODUCE annually (EVs make you a net importer): let sunny months build rollover credits, and shift EV charging into lower-solar months to consume those credits before year-end payout."
+          - "Bonus: Duke's off-peak EV window includes Mon–Fri 10am–6pm, which overlaps with solar production — you can stack self-consumption AND off-peak eligibility during midday weekdays."

@@ -9,6 +9,8 @@ Controlled vocabulary. Add a tag here before using it in a note — this keeps t
 ## Current tags
 
 - `meta` — notes about this system itself (conventions, how-tos for using the mirror).
+- `physics` — physics, broadly.
+- `classical-mechanics` — Newtonian/Lagrangian/Hamiltonian mechanics; Propaedia Part 01.
 
 ## Starter suggestions (uncomment as you adopt them)
 

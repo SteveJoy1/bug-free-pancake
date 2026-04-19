@@ -120,7 +120,11 @@ Trigger: user says something like "grade my quiz sessions."
       - Compare against user's `self_rating` — overconfidence and underconfidence are both signals.
    d. For each `slug` touched:
       - Create or update `mirror/notes/<slug>.md`.
-      - Frontmatter: `confidence` (weighted from graded answers + self-rating), `gaps` (uncovered rubric points), `updated` (today).
+      - Frontmatter:
+        - `confidence`: latest reading (derived from tiers passed).
+        - `confidence_history`: **append** a new entry with `date`, `session_id`, `confidence`, `tiers_passed`, `tiers_available`, and `notes` (any detected calibration issues, hints used, etc). Never delete prior entries — the trajectory itself is valuable.
+        - `gaps`: merge — keep unresolved gaps from prior sessions, add new ones, remove any that the current session confirmed resolved.
+        - `updated`: today.
       - Body: user's own words from their answers, lightly cleaned. Keep in their voice; don't rewrite into your own phrasing.
    e. Append the session filename to `mirror/sessions/.processed`.
 3. Commit — one per session or a batch, as appropriate.

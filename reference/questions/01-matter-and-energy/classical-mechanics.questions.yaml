@@ -24,7 +24,11 @@ questions:
     items:
       - id: newtons-laws-of-motion.q0
         level: recognition
-        prompt: "What do you know about Newton's Laws of Motion? One sentence is fine — or say 'nothing' if you haven't encountered them."
+        prompts:
+          - "What do you know about Newton's Laws of Motion? One sentence or 'nothing.'"
+          - "When you hear 'F = ma,' what comes to mind — field, concept, or nothing?"
+          - "The ideas of inertia, force, and equal-and-opposite reactions come from what field?"
+        hint: "Classical mechanics — the three foundational laws about force, mass, and motion, published by Newton in 1687."
         rubric:
           - "Physics — specifically classical mechanics; about motion, forces, or acceleration."
           - "Bonus: names Isaac Newton, or mentions F=ma, inertia, or action-reaction."
@@ -56,7 +60,11 @@ questions:
     items:
       - id: force.q0
         level: recognition
-        prompt: "In physics, what do you know about the concept of 'force'? One sentence is fine — or 'nothing.'"
+        prompts:
+          - "In physics, what does 'force' mean? One sentence or 'nothing.'"
+          - "What concept ties 'push or pull' to acceleration?"
+          - "Newtons are the unit of what physical quantity?"
+        hint: "A push or pull — what produces acceleration per F = m·a. Measured in newtons."
         rubric:
           - "Physics / mechanics; a push or pull; causes objects to accelerate."
           - "Bonus: mentions vectors, units (newtons), or F = m·a."
@@ -90,7 +98,11 @@ questions:
     items:
       - id: mass.q0
         level: recognition
-        prompt: "In physics, what do you know about 'mass'? One sentence is fine — or 'nothing.'"
+        prompts:
+          - "In physics, what does 'mass' mean? One sentence or 'nothing.'"
+          - "What property of an object makes it harder to accelerate?"
+          - "Kilograms are the unit of what fundamental physical quantity?"
+        hint: "The amount of matter in an object — resistance to acceleration — distinct from weight."
         rubric:
           - "Physics; a measure of matter / resistance to acceleration."
           - "Bonus: distinguishes mass from weight, or mentions kg / gravitational coupling."
@@ -123,7 +135,11 @@ questions:
     items:
       - id: acceleration.q0
         level: recognition
-        prompt: "What do you know about 'acceleration' in physics? One sentence or 'nothing.'"
+        prompts:
+          - "What is 'acceleration' in physics? One sentence or 'nothing.'"
+          - "If a car speeds up, which physical quantity changes?"
+          - "What does m/s² measure?"
+        hint: "The rate of change of velocity over time — how fast speed or direction is changing."
         rubric:
           - "Physics / mechanics; rate of change of velocity or speed."
           - "Bonus: vector; measured in m/s²."
@@ -155,7 +171,11 @@ questions:
     items:
       - id: velocity.q0
         level: recognition
-        prompt: "What do you know about 'velocity' in physics? One sentence or 'nothing.'"
+        prompts:
+          - "In physics, what does 'velocity' mean? One sentence or 'nothing.'"
+          - "What's the difference between velocity and speed?"
+          - "When we say something is moving at 60 mph north, what physics quantity are we stating?"
+        hint: "Rate of motion with direction — speed is its magnitude only."
         rubric:
           - "Physics; rate of motion / speed with direction."
           - "Bonus: vector; distinguished from speed (scalar)."
@@ -188,7 +208,11 @@ questions:
     items:
       - id: momentum.q0
         level: recognition
-        prompt: "What do you know about 'momentum' in physics? One sentence or 'nothing.'"
+        prompts:
+          - "In physics, what does 'momentum' mean? One sentence or 'nothing.'"
+          - "What quantity involves mass and velocity, and is conserved in collisions?"
+          - "When two objects collide and stick together, what physical quantity is preserved through the collision?"
+        hint: "Mass times velocity (p = m·v); conserved in closed systems through any collision."
         rubric:
           - "Physics; related to mass and motion; comes up in collisions."
           - "Bonus: mentions p = m·v, or that it's conserved."
@@ -221,7 +245,11 @@ questions:
     items:
       - id: conservation-of-momentum.q0
         level: recognition
-        prompt: "What do you know about 'conservation of momentum'? One sentence or 'nothing.'"
+        prompts:
+          - "What do you know about 'conservation of momentum'? One sentence or 'nothing.'"
+          - "In a collision between two objects, what total quantity remains unchanged?"
+          - "Why does an ice skater speed up when they pull their arms in?"
+        hint: "Total momentum in a closed system never changes — holds before, during, and after any interaction."
         rubric:
           - "Physics; total momentum stays constant in a closed system."
           - "Bonus: applies in collisions; ties to Newton's third law."
@@ -252,7 +280,11 @@ questions:
     items:
       - id: kinetic-energy.q0
         level: recognition
-        prompt: "What do you know about 'kinetic energy'? One sentence or 'nothing.'"
+        prompts:
+          - "What do you know about 'kinetic energy'? One sentence or 'nothing.'"
+          - "What's the name of the energy an object has because it's moving?"
+          - "A moving car carries a form of stored capacity to do damage on impact — what's that called?"
+        hint: "The energy of motion — (1/2)mv² in everyday physics."
         rubric:
           - "Physics; the energy of motion."
           - "Bonus: mentions (1/2)mv² or relates to mass/speed."
@@ -284,7 +316,11 @@ questions:
     items:
       - id: potential-energy.q0
         level: recognition
-        prompt: "What do you know about 'potential energy'? One sentence or 'nothing.'"
+        prompts:
+          - "What do you know about 'potential energy'? One sentence or 'nothing.'"
+          - "A stretched rubber band has what kind of stored energy?"
+          - "What energy does an object high up off the ground have, before it falls?"
+        hint: "Stored energy from position in a force field — gravity, elastic, electrical. Contrasts with kinetic energy."
         rubric:
           - "Physics; stored energy from position (gravity, springs, etc.)."
           - "Bonus: contrasts with kinetic energy; mentions that zero is arbitrary."
@@ -314,7 +350,11 @@ questions:
     items:
       - id: conservation-of-energy.q0
         level: recognition
-        prompt: "What do you know about 'conservation of energy'? One sentence or 'nothing.'"
+        prompts:
+          - "What do you know about 'conservation of energy'? One sentence or 'nothing.'"
+          - "Can energy be created or destroyed — and if not, what happens to it?"
+          - "What physics principle says there's no such thing as a perpetual-motion machine?"
+        hint: "Total energy in a closed system is constant — energy transforms between forms but is neither created nor destroyed."
         rubric:
           - "Physics; energy cannot be created or destroyed, only transformed."
           - "Bonus: applies to closed/isolated systems; ties to first law of thermodynamics."
@@ -345,7 +385,11 @@ questions:
     items:
       - id: work-physics.q0
         level: recognition
-        prompt: "In physics, what does 'work' mean? One sentence or 'nothing' (this is distinct from everyday 'work.')"
+        prompts:
+          - "In physics, what does 'work' mean? One sentence or 'nothing.' (Distinct from everyday 'work.')"
+          - "What physics quantity measured in joules equals force times distance?"
+          - "If you push a box across a floor, what physics quantity have you done on it?"
+        hint: "Force applied over a distance — how energy gets transferred to or from an object. Measured in joules."
         rubric:
           - "Physics; force applied over a distance; energy transferred."
           - "Bonus: W = F·d; measured in joules; distinct from job/labor."
@@ -376,7 +420,11 @@ questions:
     items:
       - id: power-physics.q0
         level: recognition
-        prompt: "In physics, what does 'power' mean? One sentence or 'nothing.'"
+        prompts:
+          - "In physics, what does 'power' mean? One sentence or 'nothing.'"
+          - "What physical quantity is measured in watts?"
+          - "What's the difference between doing 1000 joules of work in 1 second vs. in 10 seconds, in physics terms?"
+        hint: "Rate of doing work or transferring energy — energy per unit time, measured in watts."
         rubric:
           - "Physics; rate at which work is done or energy is transferred."
           - "Bonus: measured in watts; P = W/t."
@@ -406,7 +454,11 @@ questions:
     items:
       - id: friction.q0
         level: recognition
-        prompt: "What do you know about 'friction'? One sentence or 'nothing.'"
+        prompts:
+          - "What do you know about 'friction'? One sentence or 'nothing.'"
+          - "Why does a sliding book eventually come to rest on a table?"
+          - "What opposes motion between two surfaces in contact?"
+        hint: "A force opposing relative motion between surfaces in contact; generates heat."
         rubric:
           - "Physics; force opposing relative motion between surfaces in contact."
           - "Bonus: distinguishes static vs kinetic; mentions it generates heat."
@@ -439,7 +491,11 @@ questions:
     items:
       - id: gravitation.q0
         level: recognition
-        prompt: "What do you know about gravity / gravitation? One sentence or 'nothing.'"
+        prompts:
+          - "What do you know about gravity / gravitation? One sentence or 'nothing.'"
+          - "What keeps the Moon orbiting Earth?"
+          - "What's the force that makes a dropped object fall?"
+        hint: "Mutual attraction between masses — what keeps us on Earth and planets in orbit."
         rubric:
           - "Physics; attractive force between masses; what keeps us on Earth / planets orbiting."
           - "Bonus: mentions Newton or Einstein; inverse-square law; gravitational constant."
@@ -471,7 +527,11 @@ questions:
     items:
       - id: angular-momentum.q0
         level: recognition
-        prompt: "What do you know about 'angular momentum'? One sentence or 'nothing.'"
+        prompts:
+          - "What do you know about 'angular momentum'? One sentence or 'nothing.'"
+          - "A figure skater spins faster when pulling their arms in — what's being conserved?"
+          - "What's the rotational analog of linear momentum?"
+        hint: "The rotational version of momentum — conserved for spinning systems with no external torque."
         rubric:
           - "Physics; rotational analog of momentum; related to spinning objects."
           - "Bonus: mentions conservation (figure skater pulling arms in); L = I·ω."
@@ -502,7 +562,11 @@ questions:
     items:
       - id: torque.q0
         level: recognition
-        prompt: "What do you know about 'torque'? One sentence or 'nothing.'"
+        prompts:
+          - "What do you know about 'torque'? One sentence or 'nothing.'"
+          - "What makes a wrench more effective when you push at the end of the handle?"
+          - "What's the rotational analog of force?"
+        hint: "Twisting effect of a force — produces rotation; measured in newton-metres."
         rubric:
           - "Physics/mechanics; twisting / rotational effect of a force."
           - "Bonus: wrench / lever arm; rotational analog of force; τ = r × F."
@@ -534,7 +598,11 @@ questions:
     items:
       - id: moment-of-inertia.q0
         level: recognition
-        prompt: "What do you know about 'moment of inertia'? One sentence or 'nothing.'"
+        prompts:
+          - "What do you know about 'moment of inertia'? One sentence or 'nothing.'"
+          - "What property of a spinning object determines how hard it is to spin up or slow down?"
+          - "What's the rotational analog of mass?"
+        hint: "Rotational analog of mass — resistance to changes in rotational motion; depends on how mass is distributed around the axis."
         rubric:
           - "Physics; rotational analog of mass — resistance to changing rotation."
           - "Bonus: depends on mass distribution about the axis."
@@ -566,7 +634,11 @@ questions:
     items:
       - id: simple-harmonic-motion.q0
         level: recognition
-        prompt: "What do you know about 'simple harmonic motion'? One sentence or 'nothing.'"
+        prompts:
+          - "What do you know about 'simple harmonic motion'? One sentence or 'nothing.'"
+          - "A pendulum and a mass on a spring share what kind of motion?"
+          - "What physics concept produces sinusoidal oscillations?"
+        hint: "Oscillation where restoring force is proportional to displacement — pendulums, springs, waves."
         rubric:
           - "Physics; oscillation / back-and-forth motion."
           - "Bonus: pendulum or mass-on-spring; sinusoidal pattern."
@@ -598,7 +670,11 @@ questions:
     items:
       - id: rigid-body-dynamics.q0
         level: recognition
-        prompt: "What do you know about 'rigid body dynamics'? One sentence or 'nothing.'"
+        prompts:
+          - "What do you know about 'rigid body dynamics'? One sentence or 'nothing.'"
+          - "What branch of physics studies the motion of non-deformable objects?"
+          - "How do we analyze the motion of a thrown wrench tumbling through space?"
+        hint: "Physics of non-deformable bodies — combines translation and rotation."
         rubric:
           - "Physics / mechanics; motion of non-deformable bodies."
           - "Bonus: combines translation and rotation; 6 degrees of freedom in 3D."
@@ -629,7 +705,11 @@ questions:
     items:
       - id: centripetal-force.q0
         level: recognition
-        prompt: "What do you know about 'centripetal force'? One sentence or 'nothing.'"
+        prompts:
+          - "What do you know about 'centripetal force'? One sentence or 'nothing.'"
+          - "What force keeps an object moving along a circular path?"
+          - "When you swing a bucket on a string in a circle, what keeps the bucket going around?"
+        hint: "Inward force required for circular motion — points toward the center of the circle."
         rubric:
           - "Physics; force required to keep an object moving in a circle."
           - "Bonus: points INWARD toward the center; not the same as centrifugal."
@@ -661,7 +741,11 @@ questions:
     items:
       - id: lagrangian-mechanics.q0
         level: recognition
-        prompt: "What do you know about 'Lagrangian mechanics'? One sentence or 'nothing.'"
+        prompts:
+          - "What do you know about 'Lagrangian mechanics'? One sentence or 'nothing.'"
+          - "Physicists use what alternative to Newton's F = m·a for solving complex systems?"
+          - "What reformulation of mechanics uses the 'principle of least action'?"
+        hint: "An advanced reformulation of classical mechanics using energy (L = T − V) and the principle of stationary action — named after Lagrange."
         rubric:
           - "Physics; advanced reformulation of classical mechanics."
           - "Bonus: named after Lagrange; uses energy (T − V) rather than forces; principle of stationary action."
@@ -693,7 +777,11 @@ questions:
     items:
       - id: hamiltonian-mechanics.q0
         level: recognition
-        prompt: "What do you know about 'Hamiltonian mechanics'? One sentence or 'nothing.'"
+        prompts:
+          - "What do you know about 'Hamiltonian mechanics'? One sentence or 'nothing.'"
+          - "What reformulation of mechanics uses positions and momenta — and underlies quantum mechanics?"
+          - "In physics, what's usually meant by 'H' when H = T + V?"
+        hint: "An advanced reformulation of mechanics using position and momentum (phase space) — the foundation of quantum mechanics."
         rubric:
           - "Physics; advanced reformulation of classical mechanics."
           - "Bonus: uses positions and momenta; phase space; bridge to quantum mechanics."
@@ -725,7 +813,11 @@ questions:
     items:
       - id: noethers-theorem.q0
         level: recognition
-        prompt: "What do you know about Noether's theorem? One sentence or 'nothing.'"
+        prompts:
+          - "What do you know about Noether's theorem? One sentence or 'nothing.'"
+          - "What mathematical result connects symmetries to conservation laws?"
+          - "In physics, why does time-translation symmetry imply conservation of energy?"
+        hint: "Every continuous symmetry of a physical system corresponds to a conservation law — named after Emmy Noether, 1918."
         rubric:
           - "Physics / mathematics; connects symmetries to conservation laws."
           - "Bonus: named after Emmy Noether; fundamental in theoretical physics."

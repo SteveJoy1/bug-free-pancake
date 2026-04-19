@@ -4,6 +4,7 @@ created: YYYY-MM-DD
 updated: YYYY-MM-DD
 tags: []
 confidence: 3
+confidence_history: []
 gaps: []
 sources: []
 ---

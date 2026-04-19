@@ -4,6 +4,14 @@ created: 2026-04-19
 updated: 2026-04-19
 tags: [classical-mechanics, physics]
 confidence: 2
+confidence_history:
+  - date: 2026-04-19
+    session_id: "2026-04-19T01:01:35.936Z"
+    confidence: 2
+    tiers_passed: 0
+    tiers_available: 3
+    schema_version: 1
+    notes: "momentum.q2 (application) answered incorrectly with high self-rating; momentum.q3 (connection) skipped. Conceptual confusion between KE and momentum in inelastic collisions."
 gaps:
   - "Key confusion: applied kinetic-energy conservation to an inelastic collision, where only momentum is conserved."
   - "Inelastic-collision formula: v_final = (m1·v1 + m2·v2) / (m1 + m2), linear in velocities."

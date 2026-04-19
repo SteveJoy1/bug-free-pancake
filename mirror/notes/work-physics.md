@@ -4,6 +4,14 @@ created: 2026-04-19
 updated: 2026-04-19
 tags: [classical-mechanics, physics]
 confidence: 2
+confidence_history:
+  - date: 2026-04-19
+    session_id: "2026-04-19T01:01:35.936Z"
+    confidence: 2
+    tiers_passed: 0
+    tiers_available: 3
+    schema_version: 1
+    notes: "work-physics.q3 (comprehension) answered incorrectly ('Nope' to 'can work be negative'). Self-rated 3 — mild over-confidence."
 gaps:
   - "Work CAN be negative — answered 'Nope.'"
   - "Work is negative when the force has a component opposite to displacement (W = F·d·cos θ with θ > 90°)."

@@ -1,0 +1,200 @@
+# Overview of the world's major religious traditions — core beliefs, key
+# texts, historical anchors, approximate sizes.
+# Source: Pew Research Center religion studies; Oxford Handbook of World
+# Religions; standard academic religious-studies surveys.
+#
+# Academic/outsider framing throughout — claims disputed within a tradition
+# are marked as "held by ..." rather than stated as facts about the religion.
+
+area:
+  slug: world-religions-overview
+  title: World Religions Overview
+  source: pew-research-oxford
+  parent: 08-religion
+
+leaves:
+  - slug: christianity
+    title: Christianity
+    summary: Monotheistic religion centered on the life and teachings of Jesus of Nazareth; largest religion worldwide.
+    difficulty: 1
+    facts:
+      - "~2.4 billion adherents — roughly 31% of the global population (Pew)."
+      - "Central text: the Bible (Old Testament + New Testament)."
+      - "Core claims: Jesus is the Messiah and Son of God; his death and resurrection offer salvation."
+      - "Three major branches: Roman Catholic (~1.3 billion), Protestant (~800 million), Eastern Orthodox (~200 million)."
+      - "Emerged in 1st-century Roman Judea; split Catholic/Orthodox (1054), Protestant Reformation (1517)."
+    key_dates:
+      - "c. 30 CE: traditional date of Jesus's crucifixion."
+      - "1054: Great Schism between Roman Catholic and Eastern Orthodox."
+      - "1517: Luther's 95 Theses triggers the Protestant Reformation."
+    sources:
+      wikipedia: "Christianity"
+
+  - slug: islam
+    title: Islam
+    summary: Monotheistic religion founded in 7th-century Arabia based on revelations believed received by Muhammad.
+    difficulty: 1
+    facts:
+      - "~1.9 billion adherents — roughly 25% of global population (Pew); second-largest religion."
+      - "Central text: the Qur'an (recited revelations to Muhammad); Hadith (reports of Muhammad's sayings/actions) also central."
+      - "Five Pillars: shahada (creed), salat (prayer 5×/day), zakat (alms), sawm (Ramadan fasting), hajj (pilgrimage to Mecca)."
+      - "Two main branches: Sunni (~85–90%), Shia (~10–15%); split over succession after Muhammad's death."
+      - "Founded by Muhammad (c. 570–632 CE); Islamic calendar begins with the Hijra (migration to Medina) in 622 CE."
+    key_dates:
+      - "622 CE: Hijra — year 1 of the Islamic calendar."
+      - "632 CE: Muhammad's death; Sunni-Shia split begins over succession."
+    sources:
+      wikipedia: "Islam"
+
+  - slug: hinduism
+    title: Hinduism
+    summary: Diverse family of religious traditions native to the Indian subcontinent — no single founder, no single creed.
+    difficulty: 2
+    facts:
+      - "~1.2 billion adherents, mostly in India and Nepal — ~15% of global population."
+      - "Often described academically as a family of traditions rather than a single religion."
+      - "Key texts: Vedas (oldest), Upanishads, Bhagavad Gita, Ramayana, Mahabharata."
+      - "Shared concepts (variably emphasized): dharma (duty/order), karma (action and consequence), samsara (cycle of rebirth), moksha (liberation)."
+      - "Major deities commonly revered: Vishnu, Shiva, Devi; many consider these manifestations of a single ultimate reality (Brahman)."
+    sources:
+      wikipedia: "Hinduism"
+
+  - slug: buddhism
+    title: Buddhism
+    summary: Religious and philosophical tradition founded on the teachings of Siddhartha Gautama (the Buddha) in ancient India.
+    difficulty: 2
+    facts:
+      - "~500 million adherents, concentrated in East and Southeast Asia."
+      - "Four Noble Truths: life involves suffering (dukkha); suffering arises from craving; suffering can cease; the Eightfold Path leads to cessation."
+      - "Eightfold Path: right view, intention, speech, action, livelihood, effort, mindfulness, concentration."
+      - "Major branches: Theravada (Sri Lanka, SE Asia), Mahayana (East Asia; includes Zen, Pure Land), Vajrayana (Tibet, Mongolia)."
+      - "Founded by Siddhartha Gautama (c. 563–483 BCE, dates debated)."
+    sources:
+      wikipedia: "Buddhism"
+
+  - slug: judaism
+    title: Judaism
+    summary: Monotheistic religion of the Jewish people — the oldest of the Abrahamic faiths.
+    difficulty: 1
+    facts:
+      - "~15 million adherents — small by world standards but of outsized cultural influence."
+      - "Central text: the Tanakh (Hebrew Bible — same books as the Christian Old Testament, different order)."
+      - "Talmud is a foundational text of rabbinic interpretation."
+      - "Core concept: covenant between God (YHWH) and the Jewish people, instituted through Abraham and elaborated at Sinai."
+      - "Major branches: Orthodox, Conservative, Reform, Reconstructionist, Haredi."
+      - "Shabbat (Sabbath), kashrut (dietary laws), and the Jewish holidays (Passover, Yom Kippur, Rosh Hashanah, etc.) are central practices."
+    sources:
+      wikipedia: "Judaism"
+
+  - slug: sikhism
+    title: Sikhism
+    summary: Monotheistic religion founded in 15th-century Punjab by Guru Nanak.
+    difficulty: 2
+    facts:
+      - "~25–30 million adherents, concentrated in Punjab (India) and the global Sikh diaspora."
+      - "Central scripture: Guru Granth Sahib — regarded as the eternal living Guru."
+      - "Ten human Gurus from Nanak (founder) to Gobind Singh (who vested guruship in the scripture)."
+      - "Five Ks (articles of faith for initiated Sikhs): kesh (uncut hair), kara (bracelet), kanga (comb), kachera (undergarment), kirpan (sword/dagger)."
+      - "Rejects caste distinctions; emphasizes seva (selfless service), sangat (community), langar (free community meal)."
+    key_dates:
+      - "1469: birth of Guru Nanak, traditional founder."
+      - "1708: Guru Gobind Singh vests spiritual authority in the scripture."
+    sources:
+      wikipedia: "Sikhism"
+
+  - slug: religious-nones
+    title: Religiously Unaffiliated ('Nones')
+    summary: People who identify as atheist, agnostic, or 'nothing in particular' — a rapidly growing global category.
+    difficulty: 1
+    facts:
+      - "~1.2 billion globally as of 2010 Pew survey — roughly 16% of world population."
+      - "Concentrated in China, Europe, North America, Japan."
+      - "Not a unified group — ranges from committed atheists to those with spiritual-but-not-religious self-identification."
+      - "Fastest-growing 'religious' category in the US and much of Europe."
+    sources:
+      wikipedia: "Irreligion"
+
+  - slug: taoism
+    title: Taoism (Daoism)
+    summary: Chinese philosophical and religious tradition centered on the Tao ('the Way') — the natural order of the universe.
+    difficulty: 3
+    facts:
+      - "Traditionally traced to Laozi (6th century BCE, semi-legendary) and the Tao Te Ching."
+      - "Zhuangzi (4th century BCE) is the other foundational text."
+      - "Key concepts: wu wei (non-forced action), yin-yang (complementary opposites), qi (vital energy)."
+      - "Distinct philosophical Daoism and religious Daoism (with pantheon, rituals, priesthood) — often blended in practice."
+    sources:
+      wikipedia: "Taoism"
+
+  - slug: confucianism
+    title: Confucianism
+    summary: Chinese ethical and philosophical tradition based on the teachings of Confucius (Kongzi, 551–479 BCE).
+    difficulty: 3
+    facts:
+      - "Focuses on social harmony, proper relationships, moral cultivation, and education."
+      - "Five key relationships: ruler-subject, father-son, husband-wife, elder-younger, friend-friend."
+      - "Core virtues: ren (humaneness), yi (righteousness), li (ritual propriety), zhi (wisdom), xin (trustworthiness)."
+      - "Shaped Chinese imperial civil service for ~2000 years; still culturally influential across East Asia."
+      - "Whether Confucianism is best described as a religion, philosophy, or ethical system is academically contested."
+    sources:
+      wikipedia: "Confucianism"
+
+  - slug: shinto
+    title: Shinto
+    summary: Indigenous religious tradition of Japan — veneration of kami (spirits or deities) in nature and ancestors.
+    difficulty: 3
+    facts:
+      - "No single founder, scripture, or doctrine; rooted in Japanese folk practice."
+      - "Kami inhabit mountains, rivers, trees, exceptional people; honored at shrines (jinja)."
+      - "Coexists with Buddhism in Japan — most Japanese participate in both contextually."
+      - "Was state-sponsored and nationalist from 1868 until post-WWII disestablishment."
+    sources:
+      wikipedia: "Shinto"
+
+  - slug: bahai
+    title: Bahá'í Faith
+    summary: Monotheistic religion founded in 19th-century Persia by Bahá'u'lláh, emphasizing the essential unity of all religions and of humanity.
+    difficulty: 3
+    facts:
+      - "~5–8 million adherents worldwide, most populous Bahá'í community in India."
+      - "Founder: Bahá'u'lláh (1817–1892); preceded by the Báb (1819–1850)."
+      - "Key teachings: unity of God, unity of religion, unity of humanity; rejection of prejudice; progressive revelation."
+      - "Administrative center (Universal House of Justice) in Haifa, Israel."
+      - "Historically persecuted in Iran, where it originated."
+    sources:
+      wikipedia: "Bahá%27í_Faith"
+
+  - slug: abrahamic-religions
+    title: Abrahamic Religions
+    summary: Monotheistic traditions tracing their lineage to the patriarch Abraham — Judaism, Christianity, Islam (sometimes also Bahá'í).
+    difficulty: 2
+    facts:
+      - "Collectively account for over half the world's population."
+      - "Share figures (Abraham, Moses, Noah, Jesus) though with different theological roles."
+      - "All strictly monotheistic in doctrine."
+      - "Historically interrelated — Islam preserved Greek philosophy that fed back into medieval Christian scholarship."
+    sources:
+      wikipedia: "Abrahamic_religions"
+
+  - slug: religious-demographics-global
+    title: Global Religious Demographics
+    summary: Approximate global distribution of religious affiliation as of the 2010s (Pew Research).
+    difficulty: 2
+    facts:
+      - "Christianity: ~31%. Islam: ~25%. Unaffiliated: ~16%. Hinduism: ~15%. Buddhism: ~7%. Folk/traditional: ~6%. Other (inc. Judaism, Sikhism, Bahá'í): <1% each."
+      - "Islam is projected to roughly match Christianity in size by ~2070 (Pew demographic projections)."
+      - "Religious 'nones' are growing fastest in the global North; religious adherents are growing in the global South."
+    sources:
+      pew: "https://www.pewresearch.org/religion/"
+
+  - slug: monotheism-vs-polytheism
+    title: Monotheism vs. Polytheism
+    summary: Monotheism holds that only one God exists; polytheism acknowledges many.
+    difficulty: 2
+    facts:
+      - "Monotheistic traditions: Judaism, Christianity, Islam, Sikhism, Bahá'í, Zoroastrianism."
+      - "Polytheistic traditions (historically or currently): ancient Egyptian, Greek, Norse, most Hindu traditions, many indigenous religions."
+      - "Henotheism: worship of one god while acknowledging others exist."
+      - "Pantheism: identification of God with the universe itself (Spinoza, some Hindu traditions)."
+    sources:
+      wikipedia: "Monotheism"

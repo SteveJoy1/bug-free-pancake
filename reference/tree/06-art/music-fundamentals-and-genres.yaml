@@ -1,0 +1,254 @@
+# Music fundamentals and major 20th–21st century popular-music genres.
+# Source: introductory music theory; Grove Music Online; AllMusic genre
+# encyclopedia; Billboard / Rolling Stone historical lists.
+#
+# Sourcing caution: popular-music canons are contested. Facts here frame
+# claims as "commonly cited" and stick to discrete, verifiable items (release
+# years, band origins) rather than rankings.
+
+area:
+  slug: music-fundamentals-and-genres
+  title: Music Fundamentals and Genres
+  source: grove-music-allmusic
+  parent: 06-art
+
+leaves:
+  # --- Theory fundamentals ------------------------------------------------
+  - slug: pitch-and-frequency
+    title: Pitch and Frequency
+    summary: Pitch is the perceived highness or lowness of a sound, determined by its fundamental frequency.
+    difficulty: 1
+    facts:
+      - "A4 (concert A) is conventionally 440 Hz."
+      - "An octave is a frequency ratio of 2:1."
+      - "Humans hear roughly 20 Hz to 20,000 Hz; high-frequency sensitivity declines with age."
+    sources:
+      wikipedia: "Pitch_(music)"
+
+  - slug: rhythm-and-meter
+    title: Rhythm and Meter
+    summary: Rhythm is the pattern of durations; meter is the grouping of beats into regular cycles.
+    difficulty: 1
+    facts:
+      - "Common time (4/4) is the default in most popular music."
+      - "Other meters: 3/4 (waltz), 6/8 (compound duple), 7/8 (odd meter common in progressive rock)."
+      - "Tempo measured in beats per minute (BPM). Moderate tempos are ~80–120 BPM."
+    sources:
+      wikipedia: "Meter_(music)"
+
+  - slug: melody
+    title: Melody
+    summary: A succession of pitches heard as a unit — typically the 'tune' of a piece.
+    difficulty: 1
+    facts:
+      - "Characterized by contour (shape), range, and intervallic structure."
+      - "Stepwise motion (adjacent pitches) is most common; leaps add drama."
+      - "Most Western melodies live within an octave or two of range."
+    sources:
+      wikipedia: "Melody"
+
+  - slug: harmony-and-chords
+    title: Harmony and Chords
+    summary: Harmony is simultaneous pitches; chords are combinations of three or more.
+    difficulty: 2
+    facts:
+      - "Triad = three notes: root, third, fifth. Major (happy) or minor (sad) depends on the third's quality."
+      - "Seventh chords add a fourth note (e.g., dominant 7th, major 7th, minor 7th); common in jazz and blues."
+      - "Chord progressions (e.g., I-IV-V, ii-V-I) are the grammar of Western music."
+    sources:
+      wikipedia: "Harmony"
+
+  - slug: scales-major-minor
+    title: Major and Minor Scales
+    summary: Western music's two most common diatonic scales, defined by their pattern of whole and half steps.
+    difficulty: 2
+    facts:
+      - "Major scale intervals: W-W-H-W-W-W-H (e.g., C major = C D E F G A B C)."
+      - "Natural minor: W-H-W-W-H-W-W (e.g., A minor = A B C D E F G A)."
+      - "Harmonic minor raises the 7th; melodic minor raises 6th and 7th ascending."
+      - "Each major scale has a 'relative minor' starting on its 6th degree (C major ↔ A minor)."
+    sources:
+      wikipedia: "Major_and_minor"
+
+  - slug: key-signatures
+    title: Key Signatures
+    summary: The set of sharps or flats associated with a given key, shown at the start of a staff.
+    difficulty: 2
+    facts:
+      - "Circle of fifths organizes the 12 major keys by adjacent fifths — each step adds one sharp or removes one flat."
+      - "C major / A minor have no sharps or flats."
+      - "Keys differ in character historically, but on modern equal-temperament instruments the distinction is largely conventional."
+    sources:
+      wikipedia: "Key_signature"
+
+  # --- Genre timeline (20th century+) ------------------------------------
+  - slug: blues
+    title: Blues
+    summary: African-American musical form that emerged in the late-19th-century South, foundation of jazz, R&B, and rock.
+    difficulty: 2
+    facts:
+      - "12-bar blues progression (I-IV-V over 12 bars) is the canonical structure."
+      - "'Blue notes' — flattened 3rd, 5th, 7th — give the style its characteristic sound."
+      - "Canonical figures: Robert Johnson, Muddy Waters, B.B. King, Howlin' Wolf."
+      - "Informs nearly all American popular music that followed."
+    sources:
+      wikipedia: "Blues"
+
+  - slug: jazz
+    title: Jazz
+    summary: American musical tradition originating in early-20th-century New Orleans, characterized by improvisation, syncopation, and complex harmony.
+    difficulty: 2
+    facts:
+      - "Major eras: early/dixieland (1910s–20s), swing / big-band (1930s–40s), bebop (mid-40s onward), cool/modal (50s), free jazz (60s), fusion (70s)."
+      - "Canonical figures: Louis Armstrong, Duke Ellington, Charlie Parker, Miles Davis, John Coltrane, Ella Fitzgerald."
+      - "Miles Davis's *Kind of Blue* (1959) is one of the best-selling jazz albums ever."
+    key_dates:
+      - "1917: first jazz recordings (Original Dixieland Jass Band)."
+      - "1959: Miles Davis releases *Kind of Blue*."
+    sources:
+      wikipedia: "Jazz"
+
+  - slug: rock-and-roll
+    title: Rock and Roll (1950s)
+    summary: American popular-music style emerging in the early 1950s from rhythm and blues, country, and gospel.
+    difficulty: 2
+    facts:
+      - "Commonly cited originators: Chuck Berry, Little Richard, Fats Domino, Bo Diddley; Elvis Presley as the most commercially visible."
+      - "Distinguished from earlier popular music by a backbeat emphasis, electric guitar focus, and rebellious cultural framing."
+      - "'The day the music died': February 3, 1959 — plane crash that killed Buddy Holly, Ritchie Valens, and the Big Bopper."
+    sources:
+      wikipedia: "Rock_and_roll"
+
+  - slug: british-invasion
+    title: British Invasion (1960s)
+    summary: Wave of British rock and pop acts that achieved massive popularity in the US starting in 1964.
+    difficulty: 2
+    facts:
+      - "Triggered by The Beatles' US arrival in February 1964 and appearance on The Ed Sullivan Show."
+      - "Core acts: The Beatles, The Rolling Stones, The Who, The Kinks, The Animals."
+      - "Reshaped American popular music; shifted songwriting toward the artists themselves."
+    key_dates:
+      - "Feb 1964: The Beatles appear on The Ed Sullivan Show."
+    sources:
+      wikipedia: "British_Invasion"
+
+  - slug: psychedelic-and-classic-rock-60s-70s
+    title: Classic / Psychedelic Rock (late 60s–70s)
+    summary: Expansion of rock into longer-form, experimental, concept-album territory in the late 60s and 70s.
+    difficulty: 2
+    facts:
+      - "Canonical acts: The Beatles (late era), Pink Floyd, Led Zeppelin, The Who, The Rolling Stones, Jimi Hendrix, The Doors."
+      - "Woodstock (August 1969) is the genre's iconic event."
+      - "Concept albums (*Sgt. Pepper's* 1967, *Dark Side of the Moon* 1973) redefined the album as artistic unit."
+    key_dates:
+      - "Aug 1969: Woodstock festival."
+    sources:
+      wikipedia: "Psychedelic_rock"
+
+  - slug: punk-rock
+    title: Punk Rock (mid 1970s)
+    summary: Stripped-down, aggressive reaction against the perceived excess of mainstream rock; emerged in NYC and London around 1974–76.
+    difficulty: 2
+    facts:
+      - "Canonical early bands: Ramones, Sex Pistols, The Clash, Television, Patti Smith Group."
+      - "Short songs (~2–3 min), fast tempos, minimal production, DIY ethos."
+      - "Spawned post-punk (Joy Division, Gang of Four), new wave (Talking Heads, Blondie), and hardcore (Black Flag, Minor Threat)."
+    sources:
+      wikipedia: "Punk_rock"
+
+  - slug: hip-hop-origins
+    title: Hip-Hop Origins (1970s–80s)
+    summary: Cultural movement originating in early-1970s Bronx; four elements — MCing, DJing, breakdancing, graffiti.
+    difficulty: 2
+    facts:
+      - "DJ Kool Herc's 1973 Bronx block parties widely cited as the founding moment."
+      - "First commercial rap hit: Sugarhill Gang's 'Rapper's Delight' (1979)."
+      - "Golden-age acts (mid-80s to early 90s): Run-DMC, Public Enemy, N.W.A, De La Soul, A Tribe Called Quest."
+      - "Turntablism and sampling transformed what 'playing' music meant."
+    key_dates:
+      - "1973: DJ Kool Herc's first block parties."
+      - "1979: 'Rapper's Delight' released."
+    sources:
+      wikipedia: "Hip_hop_music"
+
+  - slug: 80s-pop
+    title: 1980s Pop
+    summary: Synthesizer-heavy, MTV-driven mainstream pop of the 1980s.
+    difficulty: 1
+    facts:
+      - "MTV launches August 1, 1981 — first video: 'Video Killed the Radio Star' by The Buggles."
+      - "Dominant figures commonly cited: Michael Jackson, Madonna, Prince, Whitney Houston."
+      - "Jackson's *Thriller* (1982) is one of the best-selling albums ever."
+      - "Synth-pop acts: Duran Duran, Depeche Mode, Tears for Fears, Eurythmics."
+    key_dates:
+      - "1981: MTV launches."
+      - "1982: Michael Jackson's *Thriller* released."
+    sources:
+      wikipedia: "1980s_in_music"
+
+  - slug: grunge
+    title: Grunge (early 1990s)
+    summary: Seattle-based rock subgenre fusing punk aggression with heavy metal textures; brought 'alternative rock' into the mainstream.
+    difficulty: 2
+    facts:
+      - "Canonical bands: Nirvana, Pearl Jam, Soundgarden, Alice in Chains, Stone Temple Pilots."
+      - "Nirvana's *Nevermind* (Sep 1991) is the commercial breakthrough moment."
+      - "Associated label: Sub Pop (Seattle)."
+      - "Kurt Cobain's death (April 1994) often cited as the symbolic end of the movement's peak."
+    key_dates:
+      - "Sep 1991: Nirvana's *Nevermind* released."
+      - "Apr 1994: Kurt Cobain's death."
+    sources:
+      wikipedia: "Grunge"
+
+  - slug: 90s-hip-hop
+    title: 1990s Hip-Hop
+    summary: Commercial peak of hip-hop; emergence of distinct regional scenes (East Coast, West Coast, Southern).
+    difficulty: 2
+    facts:
+      - "East Coast: Nas, Notorious B.I.G., Wu-Tang Clan, Jay-Z."
+      - "West Coast (G-funk): Dr. Dre, Snoop Dogg, 2Pac, Ice Cube."
+      - "Southern/regional emergence: OutKast, Goodie Mob, UGK, Three 6 Mafia, No Limit Records."
+      - "East-West coast rivalry peaked with deaths of 2Pac (1996) and Biggie (1997)."
+    key_dates:
+      - "1996: 2Pac killed."
+      - "1997: Notorious B.I.G. killed."
+    sources:
+      wikipedia: "1990s_in_music#Hip_hop_music"
+
+  - slug: electronic-dance-music
+    title: Electronic Dance Music (EDM)
+    summary: Umbrella for electronically-produced dance styles — house, techno, drum & bass, trance, dubstep, and many more.
+    difficulty: 2
+    facts:
+      - "House: Chicago, early 80s (Frankie Knuckles at The Warehouse)."
+      - "Techno: Detroit, mid 80s (Juan Atkins, Derrick May, Kevin Saunderson)."
+      - "UK rave scene drove explosion in late 80s / early 90s."
+      - "Mainstream 'EDM' as US genre label: ~2010–2015 (Skrillex, Deadmau5, Calvin Harris)."
+    sources:
+      wikipedia: "Electronic_dance_music"
+
+  - slug: 2000s-pop-and-rb
+    title: 2000s Pop and R&B
+    summary: MTV-fueled teen pop and the subsequent R&B-driven charts of the 2000s.
+    difficulty: 1
+    facts:
+      - "Late-90s/early-00s teen pop: Britney Spears, NSYNC, Backstreet Boys, Christina Aguilera."
+      - "R&B chart dominance: Destiny's Child → Beyoncé, Usher, Alicia Keys, Mariah Carey (ongoing)."
+      - "Reality-TV pipeline: American Idol (2002–) reshaped artist-making."
+    sources:
+      wikipedia: "2000s_in_music"
+
+  - slug: streaming-era-music
+    title: Streaming-era Music (2010s–)
+    summary: Shift from ownership (CDs, downloads) to access (Spotify, Apple Music) has reshaped discovery, distribution, and revenue.
+    difficulty: 2
+    facts:
+      - "Spotify launched 2008 (Sweden), US 2011. Apple Music 2015."
+      - "Revenue model: per-stream payouts; artists earn small fractions of a cent per play."
+      - "Genres blurred — playlists often more influential than albums for discovery."
+      - "Hip-hop became the US's most-streamed genre by 2017, overtaking rock."
+    key_dates:
+      - "2008: Spotify launches in Sweden."
+    sources:
+      wikipedia: "Streaming_media"

@@ -1,0 +1,256 @@
+# Economics fundamentals — core concepts at the micro and macro level.
+# Source: introductory economics curricula (Mankiw, Krugman-Wells); JEL
+# classification codes.
+
+area:
+  slug: economics-fundamentals
+  title: Economics Fundamentals
+  source: intro-economics-curricula
+  parent: 05-human-society
+
+leaves:
+  - slug: scarcity
+    title: Scarcity
+    summary: Fundamental economic problem — human wants exceed available resources, forcing tradeoffs.
+    difficulty: 1
+    facts:
+      - "Scarcity implies the necessity of choice."
+      - "Opportunity cost of a choice = value of the next-best alternative foregone."
+      - "Without scarcity there would be no economics — just distribution."
+    sources:
+      wikipedia: "Scarcity"
+
+  - slug: supply-and-demand
+    title: Supply and Demand
+    summary: Foundational model — price and quantity in a market are set by the interaction of consumer demand and producer supply.
+    difficulty: 1
+    facts:
+      - "Demand curve slopes downward: quantity demanded rises as price falls (law of demand, ceteris paribus)."
+      - "Supply curve slopes upward: quantity supplied rises as price rises."
+      - "Equilibrium where curves intersect: clears the market — no shortage or surplus."
+      - "Shifts in demand (tastes, income, related-good prices) or supply (input costs, tech, number of producers) move the equilibrium."
+    sources:
+      wikipedia: "Supply_and_demand"
+
+  - slug: elasticity
+    title: Elasticity
+    summary: Measure of responsiveness of one variable to changes in another — most commonly price elasticity of demand.
+    difficulty: 2
+    facts:
+      - "Price elasticity of demand = % change in quantity demanded / % change in price."
+      - "Elastic (>1): quantity responds strongly (luxuries, goods with many substitutes)."
+      - "Inelastic (<1): quantity barely responds (necessities, addictive goods)."
+      - "Total revenue rises with price if demand is inelastic; falls if elastic."
+    formulas:
+      - "E = (%ΔQ) / (%ΔP)"
+    sources:
+      wikipedia: "Elasticity_(economics)"
+
+  - slug: opportunity-cost
+    title: Opportunity Cost
+    summary: The value of the best alternative given up when a choice is made.
+    difficulty: 1
+    facts:
+      - "Includes implicit costs (time, foregone wages) not just explicit cash costs."
+      - "Rational decisions compare marginal benefits to marginal costs, including opportunity cost."
+      - "Economists call 'sunk costs' irrelevant to future decisions — only opportunity costs are."
+    sources:
+      wikipedia: "Opportunity_cost"
+
+  - slug: gdp
+    title: Gross Domestic Product (GDP)
+    summary: Total market value of all final goods and services produced within a country in a given period.
+    difficulty: 2
+    facts:
+      - "Three equivalent measurement approaches: production, income, expenditure."
+      - "Expenditure: GDP = C + I + G + (X − M) [consumption + investment + government + net exports]."
+      - "Real GDP is inflation-adjusted; nominal GDP is at current prices."
+      - "GDP per capita gives a rough (not complete) measure of living standards."
+    formulas:
+      - "GDP = C + I + G + (X − M)"
+    sources:
+      wikipedia: "Gross_domestic_product"
+
+  - slug: inflation
+    title: Inflation
+    summary: Sustained general rise in price levels, equivalently a fall in purchasing power of money.
+    difficulty: 2
+    facts:
+      - "Measured by price indices: CPI (consumer basket), PPI (producer prices), PCE (US Fed's preferred)."
+      - "Causes: demand-pull (too much money chasing too few goods), cost-push (rising input costs), expectations (self-fulfilling)."
+      - "Deflation (falling prices) is also dangerous — debts grow heavier, spending postpones, can trigger depression."
+      - "Central banks typically target ~2% annual inflation."
+    sources:
+      wikipedia: "Inflation"
+
+  - slug: unemployment
+    title: Unemployment
+    summary: People who are willing and able to work, actively seeking work, but without jobs.
+    difficulty: 2
+    facts:
+      - "Unemployment rate = unemployed / labor force (excludes those not looking)."
+      - "Types: frictional (between jobs), structural (skills mismatch), cyclical (downturns), seasonal."
+      - "Natural rate of unemployment: frictional + structural; persists even at full employment."
+      - "U-6 in US stats includes underemployed and discouraged workers — broader than headline U-3."
+    sources:
+      wikipedia: "Unemployment"
+
+  - slug: monetary-policy
+    title: Monetary Policy
+    summary: Central-bank actions to influence the money supply and interest rates, typically to stabilize inflation and employment.
+    difficulty: 3
+    facts:
+      - "Primary tool: policy interest rate (Fed Funds Rate in US, Bank Rate in UK, etc.)."
+      - "Open market operations: buying/selling government bonds to inject or withdraw reserves."
+      - "Expansionary: lower rates / buy bonds / QE → stimulate. Contractionary: raise rates / sell bonds → cool down."
+      - "Most developed-country central banks are nominally independent of political control."
+    sources:
+      wikipedia: "Monetary_policy"
+
+  - slug: fiscal-policy
+    title: Fiscal Policy
+    summary: Government use of spending and taxation to influence the economy.
+    difficulty: 3
+    facts:
+      - "Expansionary: increase spending / cut taxes → raise aggregate demand, deficit rises."
+      - "Contractionary: cut spending / raise taxes → cool demand, deficit shrinks."
+      - "Multiplier effect: $1 of spending may add more than $1 to GDP depending on propensity to consume."
+      - "Automatic stabilizers (unemployment insurance, progressive taxes) cushion the cycle without discretionary action."
+    sources:
+      wikipedia: "Fiscal_policy"
+
+  - slug: comparative-advantage
+    title: Comparative Advantage
+    summary: A party can gain from trade by specializing in what it produces at lowest opportunity cost, even if another party is absolutely better at everything.
+    difficulty: 3
+    facts:
+      - "Ricardo's key insight (1817) — foundation of trade theory."
+      - "Different from absolute advantage (producing more with fewer inputs)."
+      - "Implication: free trade raises total output; gains can (in principle) compensate losers."
+      - "In practice trade adjustment is painful for displaced workers — assumption of easy reallocation doesn't always hold."
+    key_dates:
+      - "1817: Ricardo publishes Principles of Political Economy and Taxation."
+    sources:
+      wikipedia: "Comparative_advantage"
+
+  - slug: externalities
+    title: Externalities
+    summary: Costs or benefits of an economic activity borne by third parties not involved in the transaction.
+    difficulty: 2
+    facts:
+      - "Negative externality (pollution): social cost exceeds private cost — markets overproduce."
+      - "Positive externality (vaccination, education): social benefit exceeds private benefit — markets underproduce."
+      - "Remedies: taxes (Pigouvian), subsidies, regulation, property-rights assignment (Coase theorem)."
+      - "Climate change is the largest-scale negative externality ever identified."
+    sources:
+      wikipedia: "Externality"
+
+  - slug: public-goods
+    title: Public Goods
+    summary: Goods that are non-rivalrous (one person's use doesn't reduce availability) and non-excludable (can't prevent access).
+    difficulty: 2
+    facts:
+      - "Classic examples: national defense, street lighting, clean air, basic research."
+      - "Free-rider problem: hard to charge for something non-excludable, so markets under-provide."
+      - "Typically funded by taxation and provided by governments."
+    sources:
+      wikipedia: "Public_good_(economics)"
+
+  - slug: market-failure
+    title: Market Failure
+    summary: A situation where markets do not allocate resources efficiently — motivating government intervention.
+    difficulty: 3
+    facts:
+      - "Main sources: externalities, public goods, market power (monopoly), information asymmetry."
+      - "Intervention isn't automatically better — 'government failure' is a real alternative outcome."
+      - "Regulatory economics weighs market-failure costs against intervention costs."
+    sources:
+      wikipedia: "Market_failure"
+
+  - slug: economic-systems
+    title: Economic Systems
+    summary: Broad organizing structures for production, allocation, and distribution — market, command, mixed, traditional.
+    difficulty: 2
+    facts:
+      - "Market economy: decentralized decisions via prices (pure form is a theoretical abstraction)."
+      - "Command economy: central planning of production and prices (historical USSR, Maoist China, modern North Korea)."
+      - "Mixed economy: market base with state provision of public goods, redistribution, regulation — the norm today."
+      - "Capitalism is a mode of production (private ownership, wage labor) — not strictly the same as 'market economy'."
+    sources:
+      wikipedia: "Economic_system"
+
+  - slug: interest-rates
+    title: Interest Rates
+    summary: The price of borrowing money, expressed as a percentage of principal per unit time.
+    difficulty: 2
+    facts:
+      - "Real interest rate ≈ nominal rate − expected inflation (Fisher equation)."
+      - "Central bank sets a short-term policy rate; other rates follow with varying lags."
+      - "Compounds exponentially over long horizons: $1 at 7% real doubles in ~10 years."
+      - "Yield curve (rates by maturity) is widely watched; inversion (short > long) has historically preceded recessions."
+    sources:
+      wikipedia: "Interest_rate"
+
+  - slug: compound-interest
+    title: Compound Interest
+    summary: Interest calculated on both the principal and the accumulated interest from previous periods.
+    difficulty: 2
+    facts:
+      - "Future value: FV = P · (1 + r)ⁿ for principal P, rate r per period, n periods."
+      - "Doubling time (rule of 72): years ≈ 72 / percentage rate."
+      - "The distinction from simple interest (interest on principal only) is enormous over long horizons."
+    formulas:
+      - "FV = P · (1 + r)ⁿ"
+      - "doubling time ≈ 72 / r(%)"
+    sources:
+      wikipedia: "Compound_interest"
+
+  - slug: business-cycle
+    title: Business Cycle
+    summary: Recurring fluctuations in aggregate economic activity — expansion, peak, contraction, trough.
+    difficulty: 3
+    facts:
+      - "Recession: conventionally two consecutive quarters of falling real GDP (US NBER uses broader criteria)."
+      - "Depression: severe, prolonged downturn — no strict technical definition."
+      - "Causes debated: demand shocks (Keynesian), productivity shocks (RBC), credit cycles (Minsky), monetary missteps."
+      - "Expansions in the post-WWII US have averaged ~5 years; recessions ~1 year."
+    sources:
+      wikipedia: "Business_cycle"
+
+  - slug: game-theory
+    title: Game Theory
+    summary: Mathematical study of strategic interaction — decisions that depend on others' decisions.
+    difficulty: 3
+    facts:
+      - "Nash equilibrium: a strategy profile where no player can unilaterally improve by changing strategy."
+      - "Classic examples: Prisoner's Dilemma, Stag Hunt, Ultimatum Game, Chicken."
+      - "Applications span economics, political science, evolutionary biology, computer science."
+      - "Auctions, contract design, antitrust analysis all rely on game-theoretic modeling."
+    key_dates:
+      - "1944: von Neumann & Morgenstern, 'Theory of Games and Economic Behavior.'"
+    sources:
+      wikipedia: "Game_theory"
+
+  - slug: behavioral-economics
+    title: Behavioral Economics
+    summary: Integrates psychological insights into economic models — rejecting the strict homo-economicus rationality assumption.
+    difficulty: 3
+    facts:
+      - "Anchoring, availability heuristic, loss aversion, framing effects, hyperbolic discounting."
+      - "Kahneman & Tversky's Prospect Theory (1979) was foundational; Kahneman won Nobel in 2002."
+      - "Thaler (Nobel 2017) extended into 'nudge' policy design."
+      - "Real humans predictably deviate from expected-utility-maximization."
+    sources:
+      wikipedia: "Behavioral_economics"
+
+  - slug: central-bank
+    title: Central Bank
+    summary: Institution that oversees a country's monetary system — manages currency, banking system, monetary policy.
+    difficulty: 2
+    facts:
+      - "US: Federal Reserve (1913). UK: Bank of England (1694). Eurozone: ECB (1998)."
+      - "Typical mandates: price stability; often also full employment and financial stability."
+      - "Lender of last resort during banking crises — backstop against system-wide runs."
+      - "Independence from political pressure is the norm in developed economies (variably respected)."
+    sources:
+      wikipedia: "Central_bank"

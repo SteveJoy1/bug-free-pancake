@@ -1,0 +1,264 @@
+# Biology fundamentals — cross-cutting concepts at the foundation of the life sciences.
+# Source: standard introductory biology curricula (Campbell, Molecular Biology
+# of the Cell); NCBI.
+
+area:
+  slug: biology-fundamentals
+  title: Biology Fundamentals
+  source: intro-biology-curricula
+  parent: 03-life-on-earth
+
+leaves:
+  - slug: cell
+    title: Cell
+    summary: Fundamental unit of life — a membrane-bounded collection of biomolecules capable of metabolism, growth, and reproduction.
+    difficulty: 1
+    facts:
+      - "Two main kinds: prokaryotic (no nucleus; bacteria, archaea) and eukaryotic (has nucleus + membrane-bound organelles; plants, animals, fungi, protists)."
+      - "Cell theory (~1839, Schleiden & Schwann; Virchow 1855): all organisms composed of cells; all cells come from pre-existing cells."
+      - "Typical eukaryotic cell diameter ~10–100 μm; prokaryotic ~1–10 μm."
+    sources:
+      wikipedia: "Cell_(biology)"
+
+  - slug: dna
+    title: DNA (Deoxyribonucleic Acid)
+    summary: Double-stranded helical molecule that encodes genetic information in sequences of four bases (A, T, G, C).
+    difficulty: 2
+    facts:
+      - "Base pairing: A with T, G with C; two strands held by hydrogen bonds."
+      - "Structure solved by Watson, Crick, Franklin, Wilkins (1953)."
+      - "Human genome ~3 billion base pairs, organized into 23 chromosome pairs; ~20,000 protein-coding genes."
+      - "Most of the genome is non-coding — regulatory, structural, or of unknown function."
+    key_dates:
+      - "1953: Watson & Crick publish the double-helix structure."
+    sources:
+      wikipedia: "DNA"
+
+  - slug: central-dogma
+    title: Central Dogma (of molecular biology)
+    summary: Information flows DNA → RNA → protein. Coined by Crick (1958).
+    difficulty: 2
+    facts:
+      - "Transcription: DNA → mRNA, by RNA polymerase."
+      - "Translation: mRNA → protein, by ribosomes reading codons (3-base units) and matching them to amino acids via tRNA."
+      - "Reverse transcription (RNA → DNA, retroviruses) is an established exception; prions challenge the 'only nucleic acids encode heritable information' assumption."
+    sources:
+      wikipedia: "Central_dogma_of_molecular_biology"
+
+  - slug: gene
+    title: Gene
+    summary: A unit of heredity — a segment of DNA (or RNA, in some viruses) that encodes a functional product (protein or RNA).
+    difficulty: 2
+    facts:
+      - "Structure typically includes promoter, coding region, and terminator."
+      - "Most eukaryotic genes have introns (spliced out) and exons (retained in mRNA)."
+      - "Alleles are variant forms of a gene at a given locus."
+    sources:
+      wikipedia: "Gene"
+
+  - slug: protein
+    title: Protein
+    summary: Chain of amino acids folded into a functional 3D shape; performs most cellular work (catalysis, structure, signaling, transport).
+    difficulty: 2
+    facts:
+      - "20 standard amino acids in eukaryotes."
+      - "Structure levels: primary (sequence), secondary (α-helices, β-sheets), tertiary (3D fold), quaternary (multi-subunit assembly)."
+      - "Misfolded proteins cause many diseases (Alzheimer's, prion diseases)."
+      - "AlphaFold (2020–21) made accurate structure prediction broadly available."
+    sources:
+      wikipedia: "Protein"
+
+  - slug: mitosis
+    title: Mitosis
+    summary: Process by which a eukaryotic cell divides its nucleus into two genetically identical nuclei.
+    difficulty: 2
+    facts:
+      - "Phases: prophase, prometaphase, metaphase, anaphase, telophase — followed by cytokinesis (cytoplasm splits)."
+      - "Produces two daughter cells, each diploid (2n) in animals."
+      - "Basis of growth, tissue repair, and asexual reproduction."
+    sources:
+      wikipedia: "Mitosis"
+
+  - slug: meiosis
+    title: Meiosis
+    summary: Specialized cell division producing four haploid gametes from one diploid germ cell.
+    difficulty: 3
+    facts:
+      - "Two rounds of division (meiosis I and II) with one round of DNA replication."
+      - "Crossing over in prophase I recombines maternal and paternal DNA."
+      - "Independent assortment of chromosomes creates additional combinatorial diversity."
+      - "Errors in meiosis (non-disjunction) cause conditions like Down syndrome."
+    sources:
+      wikipedia: "Meiosis"
+
+  - slug: evolution-by-natural-selection
+    title: Evolution by Natural Selection
+    summary: Heritable variation + differential reproductive success → change in population traits over generations.
+    difficulty: 2
+    facts:
+      - "Core conditions: variation, heritability, differential fitness."
+      - "Darwin & Wallace independently proposed it (1858–59); Darwin's *On the Origin of Species* (1859)."
+      - "Not the only evolutionary mechanism — genetic drift, gene flow, mutation, sexual selection also act."
+      - "Acts on populations, not individuals; individuals don't evolve during their lifetime."
+    key_dates:
+      - "1859: On the Origin of Species published."
+    sources:
+      wikipedia: "Natural_selection"
+
+  - slug: genetic-drift
+    title: Genetic Drift
+    summary: Random change in allele frequencies in a population, especially strong in small populations.
+    difficulty: 3
+    facts:
+      - "Unlike selection, drift is not tied to fitness."
+      - "Bottleneck effect: sharp population reduction randomly skews surviving allele frequencies."
+      - "Founder effect: small sub-population establishes a new group, taking a non-representative sample of alleles."
+      - "Contributed heavily to the neutral theory of molecular evolution (Kimura, 1968)."
+    sources:
+      wikipedia: "Genetic_drift"
+
+  - slug: speciation
+    title: Speciation
+    summary: The evolutionary process by which populations diverge to become distinct species.
+    difficulty: 3
+    facts:
+      - "Biological species concept: groups of interbreeding populations reproductively isolated from other such groups (Mayr)."
+      - "Allopatric (geographic isolation) is the most commonly documented mode."
+      - "Sympatric, peripatric, parapatric modes also occur."
+      - "Reproductive isolation can be prezygotic (habitat, behavioral, mechanical) or postzygotic (hybrid inviability/sterility)."
+    sources:
+      wikipedia: "Speciation"
+
+  - slug: phylogeny
+    title: Phylogeny
+    summary: Evolutionary history and relationships among organisms, depicted as a branching tree.
+    difficulty: 3
+    facts:
+      - "Inferred from morphology, fossils, and — dominantly now — molecular sequence comparison."
+      - "Last Universal Common Ancestor (LUCA) inferred to have existed ~3.5–4 billion years ago."
+      - "Phylogenetic trees are hypotheses, revised as new data arrive."
+    sources:
+      wikipedia: "Phylogenetics"
+
+  - slug: taxonomic-ranks
+    title: Taxonomic Ranks
+    summary: Nested hierarchy used to classify organisms — domain, kingdom, phylum, class, order, family, genus, species.
+    difficulty: 1
+    facts:
+      - "Three domains (Woese, 1990): Bacteria, Archaea, Eukarya."
+      - "Mnemonic: 'Dear King Philip Came Over For Good Soup.'"
+      - "Binomial nomenclature (Linnaeus, 1753): *Genus species*, italicized."
+      - "Modern molecular phylogeny has reshuffled many traditional groupings."
+    sources:
+      wikipedia: "Taxonomic_rank"
+
+  - slug: photosynthesis
+    title: Photosynthesis
+    summary: Process by which plants, algae, and some bacteria convert light energy into chemical energy, releasing O₂ as a byproduct.
+    difficulty: 2
+    facts:
+      - "Overall: 6 CO₂ + 6 H₂O + light → C₆H₁₂O₆ + 6 O₂."
+      - "Two stages: light-dependent reactions (produce ATP and NADPH) and the Calvin cycle (fixes CO₂ into sugars)."
+      - "Occurs in chloroplasts; light is absorbed by chlorophyll."
+      - "Responsible for Earth's O₂-rich atmosphere (Great Oxygenation Event, ~2.4 billion years ago)."
+    formulas:
+      - "6 CO₂ + 6 H₂O + light → C₆H₁₂O₆ + 6 O₂"
+    sources:
+      wikipedia: "Photosynthesis"
+
+  - slug: cellular-respiration
+    title: Cellular Respiration
+    summary: Breakdown of glucose (or other fuels) with oxygen to produce ATP — the cell's energy currency.
+    difficulty: 2
+    facts:
+      - "Overall: C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O + energy (as ATP)."
+      - "Three stages: glycolysis (cytoplasm), citric acid cycle (mitochondrial matrix), oxidative phosphorylation / electron transport chain (inner mitochondrial membrane)."
+      - "Yields ~30–32 ATP per glucose aerobically; only 2 anaerobically (fermentation)."
+    formulas:
+      - "C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O + energy"
+    sources:
+      wikipedia: "Cellular_respiration"
+
+  - slug: ecosystem
+    title: Ecosystem
+    summary: A community of organisms together with their physical environment, interacting as a system.
+    difficulty: 1
+    facts:
+      - "Energy flows one-way (sun → producers → consumers → decomposers); matter cycles."
+      - "Trophic levels: producers (plants), primary consumers (herbivores), secondary consumers (carnivores eating herbivores), tertiary, decomposers."
+      - "Only ~10% of energy transfers between trophic levels — which limits food-chain length."
+    sources:
+      wikipedia: "Ecosystem"
+
+  - slug: food-web
+    title: Food Web
+    summary: Network of who-eats-whom in an ecosystem; more realistic than a linear food chain.
+    difficulty: 2
+    facts:
+      - "Most species occupy multiple trophic positions (omnivores, opportunists)."
+      - "Keystone species have disproportionate impact — their removal reshapes the web (sea otters, wolves, beavers)."
+      - "Trophic cascades: top-down effects ripple through multiple levels."
+    sources:
+      wikipedia: "Food_web"
+
+  - slug: biodiversity
+    title: Biodiversity
+    summary: Variety of life at all levels — genetic, species, ecosystem.
+    difficulty: 1
+    facts:
+      - "~2 million species described; estimates of total (including undescribed) range 5–30 million."
+      - "Hotspots (Myers, 1988): regions with high endemic species under threat; 36 identified globally."
+      - "Current extinction rate estimated 100–1000× background — humans driving the sixth mass extinction."
+    sources:
+      wikipedia: "Biodiversity"
+
+  - slug: genetic-code
+    title: Genetic Code
+    summary: The mapping from nucleotide triplets (codons) in mRNA to the 20 amino acids (or stop signals) they specify.
+    difficulty: 3
+    facts:
+      - "64 possible codons (4³) map to 20 amino acids + 3 stop codons — code is redundant ('degenerate')."
+      - "Nearly universal across life — strong evidence for common ancestry — with minor variations (mitochondria, some microbes)."
+      - "Start codon AUG (also codes for methionine); stop codons UAA, UAG, UGA."
+      - "Deciphered in the 1960s (Nirenberg, Khorana, others)."
+    sources:
+      wikipedia: "Genetic_code"
+
+  - slug: mutation
+    title: Mutation
+    summary: A change in the DNA sequence of an organism — the ultimate source of genetic variation.
+    difficulty: 2
+    facts:
+      - "Types: point (substitution), insertion, deletion, inversion, duplication, larger rearrangements."
+      - "Causes: DNA replication errors, radiation, chemical mutagens, viral insertion, spontaneous chemistry."
+      - "Effects range from silent (no amino-acid change) to harmful to beneficial."
+      - "Germline mutations pass to offspring; somatic mutations don't (but can cause cancer)."
+    sources:
+      wikipedia: "Mutation"
+
+  - slug: crispr
+    title: CRISPR / Cas9
+    summary: Bacterial adaptive-immunity system repurposed into a programmable tool for editing specific DNA sequences.
+    difficulty: 3
+    facts:
+      - "Cas9 is a nuclease guided to a target DNA sequence by a short RNA (sgRNA)."
+      - "Revolutionized genome editing — much cheaper, faster, more precise than prior methods."
+      - "Nobel Prize in Chemistry 2020 to Charpentier and Doudna."
+      - "Ethical controversy over germline editing (He Jiankui's 2018 experiment on human embryos was widely condemned)."
+    key_dates:
+      - "2012: Charpentier, Doudna, and others publish CRISPR-Cas9 as a gene-editing tool."
+      - "2020: Nobel Prize in Chemistry for CRISPR-Cas9."
+    sources:
+      wikipedia: "CRISPR"
+
+  - slug: virus
+    title: Virus
+    summary: Non-cellular entity consisting of genetic material (DNA or RNA) in a protein coat; requires a host cell to replicate.
+    difficulty: 2
+    facts:
+      - "Not universally classified as 'alive' — no metabolism, no cell structure."
+      - "Replicate by hijacking host cell machinery; can be lytic (lyse cell) or lysogenic (integrate into host genome)."
+      - "RNA viruses mutate faster than DNA viruses — notable consequence for influenza and coronavirus evolution."
+      - "Bacteriophages (viruses that infect bacteria) are the most numerous biological entities on Earth."
+    sources:
+      wikipedia: "Virus"

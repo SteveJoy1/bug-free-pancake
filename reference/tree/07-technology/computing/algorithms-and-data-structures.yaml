@@ -155,7 +155,7 @@ leaves:
 
   - slug: binary-search-tree
     title: Binary Search Tree
-    summary: Binary tree maintaining sorted order: left subtree < node < right subtree.
+    summary: "Binary tree maintaining sorted order: left subtree < node < right subtree."
     difficulty: 2
     facts:
       - "Search, insert, delete: O(h) where h is tree height."

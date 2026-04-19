@@ -1,0 +1,301 @@
+# World history — broad periodization with anchor events.
+# Source: standard world-history curricula; periodization varies by region
+# and tradition, noted where it matters. Dates before ~3000 BCE are approximate.
+
+area:
+  slug: world-history-eras
+  title: World History Eras
+  source: world-history-curricula
+  parent: 09-history
+
+leaves:
+  - slug: agricultural-revolution
+    title: Agricultural Revolution (Neolithic)
+    summary: Transition from nomadic hunter-gathering to settled farming, beginning around 12,000 years ago.
+    difficulty: 2
+    facts:
+      - "Independent origins in multiple regions: Fertile Crescent (~10,000 BCE), China (~8,000 BCE), Mesoamerica (~7,000 BCE), others."
+      - "Enabled population growth, cities, social stratification, writing, and eventually civilization."
+      - "Associated tradeoffs: decreased individual nutrition initially, new infectious diseases, coordination costs of complex societies."
+    sources:
+      wikipedia: "Neolithic_Revolution"
+
+  - slug: ancient-mesopotamia
+    title: Ancient Mesopotamia
+    summary: Cradle of the earliest known civilizations in the Tigris-Euphrates river system (modern Iraq).
+    difficulty: 2
+    facts:
+      - "Sumerians (c. 4500–1900 BCE): first cities (Uruk, Ur), cuneiform writing (~3200 BCE), wheel."
+      - "Akkadian Empire (Sargon, c. 2334 BCE): first known empire."
+      - "Babylon (Hammurabi, c. 1792–1750 BCE): Code of Hammurabi, one of earliest legal codes."
+      - "Assyria dominated the region ~900–600 BCE."
+    sources:
+      wikipedia: "Mesopotamia"
+
+  - slug: ancient-egypt
+    title: Ancient Egypt
+    summary: Civilization along the Nile spanning ~3100 BCE to 30 BCE — one of the longest-lived in history.
+    difficulty: 2
+    facts:
+      - "Traditionally divided into Old, Middle, New Kingdoms, with intermediate periods."
+      - "Old Kingdom (~2686–2181 BCE): pyramid age; Great Pyramid of Giza built for Khufu."
+      - "New Kingdom (~1550–1070 BCE): peak of territorial and cultural reach (Hatshepsut, Ramses II, Tutankhamun)."
+      - "Became Roman province after Cleopatra VII's death in 30 BCE."
+    sources:
+      wikipedia: "Ancient_Egypt"
+
+  - slug: classical-greece
+    title: Classical Greece
+    summary: Golden age of Greek civilization, ~5th–4th centuries BCE; foundation of Western philosophy, democracy, drama, and mathematics.
+    difficulty: 2
+    facts:
+      - "Athenian democracy (5th century BCE): first known democracy, though limited (male citizens only)."
+      - "Peloponnesian War (431–404 BCE): Athens vs. Sparta; Sparta victorious, exhausted both."
+      - "Philosophical tradition: Socrates (c. 470–399 BCE), Plato (c. 428–348 BCE), Aristotle (384–322 BCE)."
+      - "Alexander the Great (356–323 BCE) spread Greek culture across the Mediterranean, Middle East, and as far as India."
+    sources:
+      wikipedia: "Classical_Greece"
+
+  - slug: roman-empire
+    title: Roman Empire
+    summary: Empire centered on Rome that dominated the Mediterranean for roughly 500 years in the west and 1,500 in the east.
+    difficulty: 2
+    facts:
+      - "Transitioned from Republic to Empire under Augustus (27 BCE)."
+      - "Peak under the 'Five Good Emperors' (96–180 CE); empire reached its greatest territorial extent under Trajan."
+      - "Fall of Western Roman Empire: 476 CE (deposition of Romulus Augustulus)."
+      - "Eastern (Byzantine) Empire continued until fall of Constantinople in 1453."
+    key_dates:
+      - "27 BCE: Augustus becomes first emperor."
+      - "476 CE: Fall of Western Roman Empire."
+      - "1453: Fall of Constantinople; end of Byzantine Empire."
+    sources:
+      wikipedia: "Roman_Empire"
+
+  - slug: han-dynasty
+    title: Han Dynasty (China)
+    summary: Chinese imperial dynasty (206 BCE–220 CE); widely considered a golden age, roughly contemporary with the Roman Empire.
+    difficulty: 3
+    facts:
+      - "Confucianism institutionalized as state ideology."
+      - "Paper invented (c. 105 CE, traditionally attributed to Cai Lun)."
+      - "Silk Road trade flourished with Rome, Parthia, Central Asia."
+      - "'Han' remains the name for the ethnic majority of China today."
+    sources:
+      wikipedia: "Han_dynasty"
+
+  - slug: islamic-golden-age
+    title: Islamic Golden Age
+    summary: Period of cultural, economic, and scientific flourishing in the Islamic world, roughly 8th–13th centuries.
+    difficulty: 2
+    facts:
+      - "Centers: Baghdad (House of Wisdom), Córdoba, Cairo, Bukhara."
+      - "Preserved and extended Greek philosophy, developed algebra (Al-Khwarizmi), advanced medicine (Ibn Sina / Avicenna), optics (Ibn al-Haytham)."
+      - "Sacked Baghdad by Mongols (1258) often cited as a symbolic end."
+      - "Many modern scientific and mathematical terms (algebra, algorithm, zero, chemistry, cipher) have Arabic roots."
+    sources:
+      wikipedia: "Islamic_Golden_Age"
+
+  - slug: middle-ages
+    title: Middle Ages (Europe)
+    summary: European period between the fall of Rome (c. 476) and the Renaissance (c. 1500).
+    difficulty: 2
+    facts:
+      - "Early (~500–1000): 'Dark Ages' — less centralization, Christianity spreads, Islamic expansion, Viking raids."
+      - "High (~1000–1300): growth of cities, universities (Bologna 1088, Paris ~1150, Oxford ~1167), cathedrals, Crusades."
+      - "Late (~1300–1500): Black Death (1347–51, killed ~30–50% of Europe), Hundred Years' War, papal schism."
+      - "The 'Dark Ages' framing is outdated — significant intellectual and economic developments occurred throughout."
+    key_dates:
+      - "1347–1351: Black Death kills ~30–50% of Europe."
+    sources:
+      wikipedia: "Middle_Ages"
+
+  - slug: mongol-empire
+    title: Mongol Empire
+    summary: Largest contiguous land empire in history; at peak spanned from Korea to Hungary.
+    difficulty: 3
+    facts:
+      - "Founded by Genghis Khan (c. 1162–1227), unifying Mongol tribes in 1206."
+      - "Peak under Kublai Khan (1260–1294); established Yuan Dynasty in China."
+      - "Enabled Pax Mongolica — relatively safe transcontinental trade along the Silk Road."
+      - "Fragmented into successor khanates after Mongke Khan's death (1259)."
+    sources:
+      wikipedia: "Mongol_Empire"
+
+  - slug: renaissance
+    title: Renaissance
+    summary: Cultural, artistic, and intellectual movement originating in 14th-century Italy, reviving classical learning and emphasizing humanism.
+    difficulty: 2
+    facts:
+      - "Began in Italian city-states (Florence, Venice, Rome) ~1300; spread across Europe through ~1600."
+      - "Figures: Leonardo da Vinci (1452–1519), Michelangelo (1475–1564), Raphael, Machiavelli, Galileo."
+      - "Gutenberg's printing press (c. 1440) accelerated the spread of texts."
+      - "Laid groundwork for the Scientific Revolution and modern intellectual culture."
+    sources:
+      wikipedia: "Renaissance"
+
+  - slug: age-of-discovery
+    title: Age of Discovery
+    summary: European exploration and colonization expanding global trade and European empires, roughly 15th–17th centuries.
+    difficulty: 2
+    facts:
+      - "Columbus reaches the Americas (1492)."
+      - "Da Gama rounds Africa to India (1498)."
+      - "Magellan expedition circumnavigates the globe (1519–1522; Magellan himself died in the Philippines)."
+      - "Initiated the Columbian Exchange — intercontinental transfer of plants, animals, diseases, people (including the transatlantic slave trade)."
+      - "Catastrophic for indigenous populations; diseases killed an estimated 80–95% in the Americas."
+    key_dates:
+      - "1492: Columbus reaches the Americas."
+      - "1498: Da Gama reaches India by sea."
+      - "1519–1522: Magellan expedition circumnavigates the globe."
+    sources:
+      wikipedia: "Age_of_Discovery"
+
+  - slug: scientific-revolution
+    title: Scientific Revolution
+    summary: 16th–17th century transformation of natural philosophy into modern science, centered in Europe.
+    difficulty: 2
+    facts:
+      - "Copernicus (1543) publishes heliocentric model; Galileo confirms with telescopic observations; Kepler formulates planetary motion laws."
+      - "Newton (Principia, 1687) synthesizes mechanics and gravitation."
+      - "Scientific method formalized (Bacon, Descartes): empirical observation + systematic reasoning."
+      - "Royal Society (1660) and French Académie des Sciences (1666) institutionalize scientific work."
+    key_dates:
+      - "1543: Copernicus, *De revolutionibus*."
+      - "1687: Newton's *Principia*."
+    sources:
+      wikipedia: "Scientific_Revolution"
+
+  - slug: enlightenment
+    title: The Enlightenment
+    summary: 17th–18th century intellectual movement emphasizing reason, individual rights, skepticism of religious and political authority.
+    difficulty: 2
+    facts:
+      - "Figures: Locke, Hume, Voltaire, Rousseau, Kant, Jefferson, Adam Smith."
+      - "Influenced American Revolution (1776) and French Revolution (1789)."
+      - "Key ideas: natural rights, separation of powers, religious tolerance, progress through reason."
+      - "Adam Smith's *Wealth of Nations* (1776) founded classical economics."
+    sources:
+      wikipedia: "Age_of_Enlightenment"
+
+  - slug: industrial-revolution
+    title: Industrial Revolution
+    summary: Transition to machine-based manufacturing starting in late-18th-century Britain; transformed economies, populations, cities, and labor.
+    difficulty: 2
+    facts:
+      - "First (~1760–1840): water power, steam engine (Watt, 1769), textiles, iron. Centered in Britain."
+      - "Second (~1870–1914): steel, chemicals, electricity, petroleum, internal combustion, mass production. Spread to Germany and US."
+      - "Caused massive urbanization, rise of factory labor, birth of modern economics and labor movements."
+      - "Dramatically raised living standards over generations but at severe short-term human and environmental cost."
+    sources:
+      wikipedia: "Industrial_Revolution"
+
+  - slug: american-revolution
+    title: American Revolution
+    summary: 1775–1783 war in which Britain's 13 North American colonies gained independence.
+    difficulty: 2
+    facts:
+      - "Declaration of Independence: July 4, 1776."
+      - "Key battles: Saratoga (1777 — turning point), Yorktown (1781 — British surrender)."
+      - "Treaty of Paris (1783) formally ended the war."
+      - "US Constitution ratified 1788; George Washington inaugurated 1789."
+    key_dates:
+      - "July 4, 1776: Declaration of Independence."
+      - "1783: Treaty of Paris."
+    sources:
+      wikipedia: "American_Revolution"
+
+  - slug: french-revolution
+    title: French Revolution
+    summary: 1789–1799 upheaval that overthrew the French monarchy and remade European politics.
+    difficulty: 2
+    facts:
+      - "Began with storming of the Bastille (July 14, 1789)."
+      - "Reign of Terror (1793–94): ~17,000 executed, including Louis XVI and Marie Antoinette."
+      - "Ended with Napoleon's 1799 coup."
+      - "Exported revolutionary ideas (liberty, equality, fraternity) across Europe; triggered decades of continental warfare."
+    key_dates:
+      - "July 14, 1789: Storming of the Bastille."
+      - "1793: Louis XVI executed."
+    sources:
+      wikipedia: "French_Revolution"
+
+  - slug: world-war-one
+    title: World War I
+    summary: 1914–1918 global war originating in Europe; ended four empires and reshaped the 20th century.
+    difficulty: 2
+    facts:
+      - "Triggered by the assassination of Archduke Franz Ferdinand (June 28, 1914)."
+      - "Allied Powers: France, Russia (until 1917), Britain, Italy (from 1915), US (from 1917). Central Powers: Germany, Austria-Hungary, Ottoman Empire, Bulgaria."
+      - "Ended with armistice on November 11, 1918."
+      - "Casualties: ~17 million dead (military + civilian)."
+      - "Collapsed the Russian, German, Austro-Hungarian, and Ottoman empires; Treaty of Versailles (1919) set harsh terms on Germany that fed WWII tensions."
+    key_dates:
+      - "June 28, 1914: Franz Ferdinand assassinated."
+      - "November 11, 1918: Armistice."
+      - "1919: Treaty of Versailles."
+    sources:
+      wikipedia: "World_War_I"
+
+  - slug: world-war-two
+    title: World War II
+    summary: 1939–1945 global war — deadliest conflict in history.
+    difficulty: 2
+    facts:
+      - "Allies: UK, France, USSR (from 1941), US (from 1941), China, and many others. Axis: Germany, Italy, Japan."
+      - "Began Sep 1, 1939 (Germany invades Poland); Japan surrenders Sep 2, 1945."
+      - "Casualties: ~70–85 million dead, including the Holocaust (~6 million Jews + millions of other targeted groups)."
+      - "Atomic bombs dropped on Hiroshima (Aug 6, 1945) and Nagasaki (Aug 9, 1945)."
+      - "Produced the UN (1945), the Cold War, decolonization, and the Bretton Woods economic order."
+    key_dates:
+      - "Sep 1, 1939: Germany invades Poland."
+      - "Dec 7, 1941: Pearl Harbor."
+      - "June 6, 1944: D-Day."
+      - "Aug 6 + 9, 1945: Hiroshima and Nagasaki."
+      - "Sep 2, 1945: Japanese surrender."
+    sources:
+      wikipedia: "World_War_II"
+
+  - slug: cold-war
+    title: Cold War
+    summary: 1947–1991 period of geopolitical rivalry between US-led Western bloc and USSR-led Eastern bloc.
+    difficulty: 2
+    facts:
+      - "Defined by ideological competition (capitalism vs. communism), nuclear arms race, and proxy conflicts (Korea, Vietnam, Afghanistan, many in Africa and Latin America)."
+      - "Key events: Berlin Blockade (1948–49), Cuban Missile Crisis (1962), Berlin Wall erected (1961) and fell (1989)."
+      - "USSR dissolved December 26, 1991 — conventional end of the Cold War."
+      - "Produced the nuclear-armed international order and the global institutions we still live with."
+    key_dates:
+      - "1962: Cuban Missile Crisis."
+      - "1989: Berlin Wall falls."
+      - "Dec 26, 1991: Dissolution of the Soviet Union."
+    sources:
+      wikipedia: "Cold_War"
+
+  - slug: decolonization
+    title: Decolonization
+    summary: Mid-20th-century dismantling of European colonial empires — most dramatically in Asia and Africa.
+    difficulty: 2
+    facts:
+      - "India and Pakistan independent (1947); Partition killed ~1–2 million and displaced ~15 million."
+      - "Most African countries gained independence 1956–1968."
+      - "Vietnam: French defeated 1954; American war 1965–1975."
+      - "Reshaped the UN, global trade, and the direction of Cold War competition."
+    sources:
+      wikipedia: "Decolonization"
+
+  - slug: digital-revolution
+    title: Digital Revolution
+    summary: Late-20th-century transition to computing and digital communication — analogous in scale to the Industrial Revolution.
+    difficulty: 2
+    facts:
+      - "Integrated circuit invented 1958–59 (Kilby, Noyce); Moore's Law observed 1965."
+      - "ARPANET 1969; TCP/IP 1983; World Wide Web proposed 1989, public 1993."
+      - "Smartphones become mass-market after iPhone launch (2007)."
+      - "Reshaping of economies, social life, politics, and work comparable to any previous era."
+    key_dates:
+      - "1969: ARPANET."
+      - "1989: World Wide Web proposed by Tim Berners-Lee."
+      - "2007: iPhone launches."
+    sources:
+      wikipedia: "Digital_Revolution"

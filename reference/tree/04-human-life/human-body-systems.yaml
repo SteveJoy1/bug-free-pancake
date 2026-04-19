@@ -1,0 +1,261 @@
+# Human body systems — the major organ systems, what they do, and key facts
+# useful for everyday understanding of the body.
+# Source: standard anatomy and physiology curricula; MeSH.
+
+area:
+  slug: human-body-systems
+  title: Human Body Systems
+  source: anatomy-physiology-curricula
+  parent: 04-human-life
+
+leaves:
+  - slug: cardiovascular-system
+    title: Cardiovascular System
+    summary: Heart, blood vessels, and blood — delivers oxygen and nutrients, removes waste, distributes heat and signals.
+    difficulty: 1
+    facts:
+      - "Heart is a four-chambered muscular pump: two atria (receive), two ventricles (eject)."
+      - "Pulmonary circuit (right side): blood to lungs for oxygenation. Systemic circuit (left side): oxygenated blood to body."
+      - "Average adult resting heart rate: 60–100 bpm; cardiac output ~5 L/min."
+      - "Arteries carry blood away from heart; veins toward. Capillaries are the sites of exchange."
+    sources:
+      wikipedia: "Circulatory_system"
+
+  - slug: respiratory-system
+    title: Respiratory System
+    summary: Nose, trachea, bronchi, lungs — exchanges oxygen and carbon dioxide with the atmosphere.
+    difficulty: 1
+    facts:
+      - "Gas exchange occurs in alveoli — ~300 million per lung, total surface area ~50–75 m²."
+      - "Diaphragm contracts to expand the chest cavity, drawing air in."
+      - "Resting adult breathes ~12–20 times per minute, ~500 mL per breath."
+      - "O₂ binds to hemoglobin in red blood cells; CO₂ mostly transported as bicarbonate."
+    sources:
+      wikipedia: "Respiratory_system"
+
+  - slug: digestive-system
+    title: Digestive System
+    summary: Mouth, esophagus, stomach, small intestine, large intestine — breaks food into absorbable molecules.
+    difficulty: 1
+    facts:
+      - "Mechanical breakdown (teeth, stomach churning) and chemical breakdown (enzymes, acid, bile)."
+      - "Small intestine is where most absorption happens — villi and microvilli give ~250 m² of absorptive surface."
+      - "Large intestine absorbs water and hosts the gut microbiome (~10¹³ microbes)."
+      - "Transit time: ~24–72 hours from ingestion to excretion."
+    sources:
+      wikipedia: "Human_digestive_system"
+
+  - slug: nervous-system
+    title: Nervous System
+    summary: Brain, spinal cord, and peripheral nerves — senses, processes, and responds to information.
+    difficulty: 2
+    facts:
+      - "Divided into central (brain + spinal cord) and peripheral (cranial + spinal nerves)."
+      - "Peripheral further divides into somatic (voluntary) and autonomic (involuntary — sympathetic 'fight or flight' and parasympathetic 'rest and digest')."
+      - "Neurons transmit signals electrically along axons and chemically at synapses (via neurotransmitters)."
+      - "~86 billion neurons in the adult human brain."
+    sources:
+      wikipedia: "Nervous_system"
+
+  - slug: brain-overview
+    title: Brain (Overview)
+    summary: Central organ of the nervous system; cerebrum, cerebellum, and brainstem have distinct primary functions.
+    difficulty: 2
+    facts:
+      - "Cerebrum (largest): cognition, perception, voluntary motor control; divided into four lobes (frontal, parietal, temporal, occipital)."
+      - "Cerebellum: coordination, balance, fine motor control."
+      - "Brainstem: autonomic functions (breathing, heart rate), sleep/wake, conduit for all signals between brain and body."
+      - "Adult brain weighs ~1.3–1.4 kg; uses ~20% of the body's energy at rest despite being ~2% of body mass."
+    sources:
+      wikipedia: "Human_brain"
+
+  - slug: musculoskeletal-system
+    title: Musculoskeletal System
+    summary: Bones, joints, muscles, tendons, ligaments — provides structure, protects organs, enables movement.
+    difficulty: 1
+    facts:
+      - "~206 bones in the adult human skeleton; more in infants before bones fuse."
+      - "Three muscle types: skeletal (voluntary, striated), cardiac (heart, striated but involuntary), smooth (organ walls, involuntary)."
+      - "Joints classified by movement: fibrous (immovable, skull sutures), cartilaginous (slightly movable, spine), synovial (freely movable, knee, elbow)."
+      - "Tendons attach muscle to bone; ligaments attach bone to bone."
+    sources:
+      wikipedia: "Human_musculoskeletal_system"
+
+  - slug: immune-system
+    title: Immune System
+    summary: Network of cells, tissues, and molecules that defend against pathogens and cancer.
+    difficulty: 2
+    facts:
+      - "Innate immunity: fast, non-specific (physical barriers, phagocytes, complement)."
+      - "Adaptive immunity: slower, highly specific, has memory (B cells produce antibodies; T cells kill infected cells or coordinate response)."
+      - "Vaccination trains adaptive immunity without causing disease."
+      - "Autoimmune diseases arise when immune system attacks host tissue (MS, Type 1 diabetes, RA)."
+    sources:
+      wikipedia: "Immune_system"
+
+  - slug: endocrine-system
+    title: Endocrine System
+    summary: Glands that release hormones — chemical messengers — into the bloodstream to regulate body-wide processes.
+    difficulty: 2
+    facts:
+      - "Major glands: hypothalamus, pituitary ('master gland'), thyroid, parathyroid, adrenal, pancreas (endocrine portion), gonads."
+      - "Hormones act at very low concentrations (nanomolar-picomolar) but far from their release site."
+      - "Feedback loops (mostly negative) maintain hormone levels within narrow ranges."
+      - "Slower than the nervous system but longer-lasting."
+    sources:
+      wikipedia: "Endocrine_system"
+
+  - slug: urinary-system
+    title: Urinary System
+    summary: Kidneys, ureters, bladder, urethra — filters blood, regulates water/electrolyte balance, excretes waste.
+    difficulty: 1
+    facts:
+      - "Two kidneys filter ~180 L of blood per day, producing ~1.5 L of urine."
+      - "Functional unit: the nephron (~1 million per kidney) — filters, then selectively reabsorbs what the body needs."
+      - "Regulates blood pressure, pH, electrolyte balance, red blood cell production (via erythropoietin)."
+    sources:
+      wikipedia: "Urinary_system"
+
+  - slug: integumentary-system
+    title: Integumentary System (Skin)
+    summary: Skin, hair, nails — the body's largest organ; barrier, thermoregulation, sensation, vitamin D synthesis.
+    difficulty: 1
+    facts:
+      - "Three layers: epidermis (outer, renewing), dermis (connective tissue, vessels, nerves, glands), hypodermis (fat, insulation)."
+      - "~1.5–2 m² surface area in adults."
+      - "Completely replaces its outer layer ~every 4–6 weeks."
+      - "UV from sunlight triggers vitamin D synthesis in the epidermis."
+    sources:
+      wikipedia: "Human_skin"
+
+  - slug: reproductive-system
+    title: Reproductive System
+    summary: Gonads, accessory organs, and gametes — the machinery of sexual reproduction and associated hormonal cycles.
+    difficulty: 1
+    facts:
+      - "Male: testes produce sperm and testosterone; delivered via vas deferens, urethra."
+      - "Female: ovaries produce eggs and estrogens/progesterone; fallopian tubes, uterus, vagina."
+      - "Menstrual cycle averages ~28 days, regulated by hormonal feedback among hypothalamus, pituitary, ovaries."
+      - "Puberty initiated by hypothalamic release of GnRH; timing varies with genetics, nutrition, environment."
+    sources:
+      wikipedia: "Human_reproductive_system"
+
+  - slug: lymphatic-system
+    title: Lymphatic System
+    summary: Network of vessels and lymphoid tissues — fluid balance, fat absorption, immune surveillance.
+    difficulty: 2
+    facts:
+      - "Collects interstitial fluid (lymph) and returns it to the bloodstream via the thoracic duct."
+      - "Lymph nodes filter lymph; sites of adaptive-immunity activation."
+      - "Spleen filters blood, recycles old red blood cells, hosts lymphocytes."
+      - "Thymus is where T cells mature (most active in childhood)."
+    sources:
+      wikipedia: "Lymphatic_system"
+
+  - slug: homeostasis
+    title: Homeostasis
+    summary: Maintenance of stable internal conditions (temperature, pH, blood glucose, etc.) despite external variation.
+    difficulty: 2
+    facts:
+      - "Achieved primarily by negative feedback loops (deviation triggers correction)."
+      - "Examples: thermoregulation (sweating, shivering), glucose regulation (insulin/glucagon), pH buffering."
+      - "Failure causes disease — diabetes is failed blood-glucose homeostasis; hyperthermia is failed thermoregulation."
+    sources:
+      wikipedia: "Homeostasis"
+
+  - slug: blood
+    title: Blood
+    summary: Connective tissue consisting of plasma (liquid) and cellular elements (RBCs, WBCs, platelets).
+    difficulty: 2
+    facts:
+      - "Adult human: ~5 L blood; ~45% cells, ~55% plasma by volume."
+      - "RBCs (erythrocytes): carry O₂ via hemoglobin; no nucleus in mature form; lifespan ~120 days."
+      - "WBCs (leukocytes): immune defense — neutrophils, lymphocytes, monocytes, etc."
+      - "Platelets (thrombocytes): blood clotting."
+      - "Blood groups ABO + Rh determined by surface antigens on RBCs; matters for transfusion compatibility."
+    sources:
+      wikipedia: "Blood"
+
+  - slug: neuron
+    title: Neuron
+    summary: Electrically excitable cell that is the basic unit of the nervous system.
+    difficulty: 2
+    facts:
+      - "Structure: dendrites (receive), cell body (soma, integrates), axon (transmits), synaptic terminals (output)."
+      - "Signals propagate as action potentials — rapid, all-or-none voltage changes along the axon."
+      - "Myelin sheaths on many axons speed conduction (saltatory conduction) up to ~120 m/s."
+      - "Communicate at synapses via neurotransmitters (glutamate, GABA, dopamine, serotonin, acetylcholine, norepinephrine, etc.)."
+    sources:
+      wikipedia: "Neuron"
+
+  - slug: hormone-insulin
+    title: Insulin
+    summary: Hormone from pancreatic β-cells that lowers blood glucose by promoting uptake into cells.
+    difficulty: 2
+    facts:
+      - "Rises after meals (especially carbs); low between meals."
+      - "Type 1 diabetes: autoimmune destruction of β-cells → no insulin production."
+      - "Type 2 diabetes: cells become resistant to insulin; often associated with obesity and inactivity."
+      - "Synthetic insulin (recombinant DNA, from 1982) replaced animal insulin for diabetes treatment."
+    sources:
+      wikipedia: "Insulin"
+
+  - slug: sleep
+    title: Sleep
+    summary: Recurrent, reversible state of reduced responsiveness; essential for learning, memory, metabolic regulation, immune function.
+    difficulty: 2
+    facts:
+      - "Two main types: NREM (further divided into stages 1–3) and REM."
+      - "REM is when most vivid dreams occur; muscle atonia prevents acting out dreams."
+      - "Regulated by homeostatic pressure (adenosine) and circadian rhythm (master clock in suprachiasmatic nucleus, entrained by light)."
+      - "Chronic sleep deprivation linked to cognitive impairment, cardiovascular disease, weakened immunity."
+    sources:
+      wikipedia: "Sleep"
+
+  - slug: macronutrients
+    title: Macronutrients
+    summary: Classes of nutrients the body needs in large quantities — carbohydrates, proteins, fats.
+    difficulty: 1
+    facts:
+      - "Carbohydrates: ~4 kcal/g; primary energy source; simple (sugars) or complex (starches, fiber)."
+      - "Proteins: ~4 kcal/g; 20 amino acids; 9 are 'essential' (must come from diet)."
+      - "Fats: ~9 kcal/g; energy storage, hormone precursors, cell membranes; essential fatty acids (omega-3, omega-6)."
+      - "Water often included as a fourth; required in quantity but provides no calories."
+    sources:
+      wikipedia: "Nutrient#Macronutrients"
+
+  - slug: micronutrients
+    title: Micronutrients
+    summary: Vitamins and minerals the body needs in small quantities but without which metabolism fails.
+    difficulty: 2
+    facts:
+      - "Fat-soluble vitamins: A, D, E, K (stored in fat; excess can accumulate to toxic levels)."
+      - "Water-soluble vitamins: B-complex and C (not stored; excess excreted; need regular intake)."
+      - "Major minerals: calcium, phosphorus, potassium, sodium, magnesium, chloride, sulfur."
+      - "Trace minerals: iron, zinc, iodine, selenium, copper, manganese, fluoride, chromium, molybdenum."
+    sources:
+      wikipedia: "Micronutrient"
+
+  - slug: microbiome
+    title: Human Microbiome
+    summary: Trillions of microorganisms (mostly bacteria) living on and in the human body — especially the gut.
+    difficulty: 3
+    facts:
+      - "~10¹³–10¹⁴ microbial cells in the gut, roughly on par with the number of human cells."
+      - "Affects digestion, immune regulation, vitamin synthesis (K, some B vitamins), and mood (gut-brain axis)."
+      - "Altered ('dysbiotic') microbiome linked to inflammatory bowel disease, obesity, diabetes, depression — causality still active research."
+      - "Heavily shaped by diet, antibiotics, birth mode, early-life environment."
+    sources:
+      wikipedia: "Human_microbiome"
+
+  - slug: body-temperature-regulation
+    title: Body Temperature Regulation
+    summary: Keeping core body temperature near ~37 °C (98.6 °F) through physiological and behavioral mechanisms.
+    difficulty: 2
+    facts:
+      - "Hypothalamus acts as the thermostat, sensing blood temperature and triggering responses."
+      - "Heat loss: sweating (evaporative cooling), vasodilation (bring blood to skin), behavioral (remove clothing, seek shade)."
+      - "Heat conservation: vasoconstriction, shivering (involuntary muscle contractions generate heat), behavioral (cover up, seek warmth)."
+      - "Core >40 °C (104 °F) or <35 °C (95 °F) is a medical emergency."
+    sources:
+      wikipedia: "Thermoregulation"

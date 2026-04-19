@@ -1,0 +1,247 @@
+# Earth systems overview — the coupled systems that make Earth habitable.
+# Source: USGS, NOAA, NASA Earth Observatory; general earth-science curricula.
+
+area:
+  slug: earth-systems
+  title: Earth Systems
+  source: usgs-noaa
+  parent: 02-earth
+
+leaves:
+  - slug: earth-structure
+    title: Structure of the Earth
+    summary: Earth is layered — crust, mantle, outer core, inner core — distinguished by composition and physical state.
+    difficulty: 1
+    facts:
+      - "Crust: thin (5–70 km), solid silicate rock. Oceanic crust is denser than continental."
+      - "Mantle: ~2,900 km thick; mostly solid silicate, slowly convecting over geologic timescales."
+      - "Outer core: liquid iron-nickel alloy; its convection generates Earth's magnetic field."
+      - "Inner core: solid iron-nickel, ~1,220 km radius; hot (~5,400 °C) but solid due to immense pressure."
+    sources:
+      wikipedia: "Structure_of_Earth"
+
+  - slug: atmosphere-layers
+    title: Atmosphere (layers)
+    summary: Earth's atmosphere is layered by temperature gradient — troposphere, stratosphere, mesosphere, thermosphere, exosphere.
+    difficulty: 1
+    facts:
+      - "Troposphere (0–12 km): where weather happens; temperature drops with altitude."
+      - "Stratosphere (12–50 km): contains the ozone layer; temperature rises with altitude."
+      - "Mesosphere (50–85 km): coldest layer; meteors burn up here."
+      - "Thermosphere (85–600 km): very thin, very hot; aurora form here; ISS orbits here."
+      - "Composition by volume near surface: ~78% N₂, ~21% O₂, ~1% Ar, ~0.04% CO₂, variable H₂O."
+    sources:
+      wikipedia: "Atmosphere_of_Earth"
+
+  - slug: ozone-layer
+    title: Ozone Layer
+    summary: Region of the stratosphere (~15–35 km) with high O₃ concentration that absorbs most of the Sun's UV-B radiation.
+    difficulty: 2
+    facts:
+      - "Ozone (O₃) forms when UV splits O₂; the chain of creation and destruction shields the surface."
+      - "CFCs release chlorine that catalytically destroys ozone — cause of the Antarctic 'ozone hole'."
+      - "Montreal Protocol (1987) phased out CFCs; ozone layer is slowly recovering."
+    key_dates:
+      - "1985: Antarctic ozone hole reported."
+      - "1987: Montreal Protocol signed."
+    sources:
+      wikipedia: "Ozone_layer"
+
+  - slug: greenhouse-effect
+    title: Greenhouse Effect
+    summary: Atmospheric gases trap infrared radiation emitted by Earth's surface, warming the planet above its bare-rock equilibrium temperature.
+    difficulty: 2
+    facts:
+      - "Without greenhouse gases, Earth's average surface temperature would be roughly −18 °C (0 °F)."
+      - "Natural greenhouse effect brings it to ~15 °C (59 °F)."
+      - "Main greenhouse gases: water vapor (dominant but short-lived), CO₂, CH₄, N₂O, O₃."
+      - "Human activity (mostly fossil-fuel combustion) has raised CO₂ from ~280 ppm (pre-industrial) to >420 ppm (2020s)."
+    sources:
+      wikipedia: "Greenhouse_effect"
+
+  - slug: water-cycle
+    title: Water Cycle
+    summary: Continuous movement of water through evaporation, condensation, precipitation, and runoff/infiltration.
+    difficulty: 1
+    facts:
+      - "Driven by solar energy (evaporation) and gravity (precipitation, runoff)."
+      - "Oceans hold ~97% of Earth's water; ice caps and glaciers ~2%; freshwater lakes/rivers/groundwater <1%."
+      - "A water molecule spends on average ~9 days in the atmosphere, decades–millennia in oceans, centuries in ice sheets."
+    sources:
+      wikipedia: "Water_cycle"
+
+  - slug: carbon-cycle
+    title: Carbon Cycle
+    summary: Exchange of carbon between atmosphere, biosphere, oceans, soils, and geologic reservoirs.
+    difficulty: 2
+    facts:
+      - "Fast cycle: photosynthesis, respiration, decay — years to decades."
+      - "Slow cycle: weathering of rocks, sediment burial, volcanism — tens of thousands to millions of years."
+      - "Oceans are the largest active carbon sink, absorbing ~25% of anthropogenic CO₂ emissions."
+      - "Imbalance between fast-cycle fluxes is the core of modern climate change."
+    sources:
+      wikipedia: "Carbon_cycle"
+
+  - slug: plate-tectonics
+    title: Plate Tectonics
+    summary: Earth's lithosphere is broken into plates that move over the ductile asthenosphere, driving earthquakes, volcanoes, and mountain-building.
+    difficulty: 2
+    facts:
+      - "Three boundary types: divergent (plates move apart, seafloor spreading), convergent (plates collide, subduction or orogeny), transform (plates slide past, e.g. San Andreas)."
+      - "Driven by mantle convection plus slab-pull at subduction zones."
+      - "Continental drift proposed by Wegener (1912); unified theory with seafloor spreading evidence ~1960s."
+      - "Typical plate speeds: 2–15 cm/year."
+    key_dates:
+      - "1912: Wegener publishes continental drift hypothesis."
+      - "1960s: seafloor spreading evidence leads to modern plate tectonic theory."
+    sources:
+      wikipedia: "Plate_tectonics"
+
+  - slug: earthquakes
+    title: Earthquakes
+    summary: Sudden release of accumulated strain in Earth's crust, radiating as seismic waves.
+    difficulty: 2
+    facts:
+      - "Most occur at plate boundaries (convergent, transform) but intraplate quakes happen."
+      - "Magnitude measured on moment-magnitude scale (Mw); logarithmic — +1 unit = ~32× more energy."
+      - "Focus = point of origin; epicenter = point on surface directly above."
+      - "Primary wave types: P-waves (compressional, fastest, through solids and liquids), S-waves (shear, through solids only), surface waves (slowest, most damaging)."
+    sources:
+      wikipedia: "Earthquake"
+
+  - slug: volcanoes
+    title: Volcanoes
+    summary: Ruptures in Earth's crust where magma, ash, and gases erupt onto the surface.
+    difficulty: 2
+    facts:
+      - "Most occur at convergent boundaries (Ring of Fire) or hotspots (Hawaii, Yellowstone)."
+      - "Types: shield (basaltic, gentle slopes, non-explosive), stratovolcano (andesitic, steep, explosive), caldera (large collapse structures)."
+      - "Volcanic Explosivity Index (VEI) 0–8 logarithmic scale; Krakatoa 1883 ≈ VEI 6; Tambora 1815 ≈ VEI 7."
+    sources:
+      wikipedia: "Volcano"
+
+  - slug: rock-cycle
+    title: Rock Cycle
+    summary: Transformation of rocks among igneous, sedimentary, and metamorphic forms over geologic time.
+    difficulty: 2
+    facts:
+      - "Igneous: cooled from magma (granite, basalt). Sedimentary: compacted sediments (sandstone, limestone). Metamorphic: altered by heat/pressure (marble, gneiss)."
+      - "Any rock type can become any other — e.g., sedimentary shale → metamorphic slate → metamorphic schist → melted to magma → igneous."
+      - "Weathering breaks rocks down; deposition builds sediments; burial causes metamorphism; melting closes the loop."
+    sources:
+      wikipedia: "Rock_cycle"
+
+  - slug: oceans
+    title: Oceans (Global)
+    summary: Interconnected body of salt water covering ~71% of Earth's surface; dominant heat and carbon sink.
+    difficulty: 1
+    facts:
+      - "Average depth ~3,700 m; deepest point Mariana Trench ~11,000 m."
+      - "Salinity ~35 g/kg (3.5% by mass), mostly NaCl."
+      - "Five conventional ocean basins: Pacific, Atlantic, Indian, Southern, Arctic."
+      - "Absorb ~90% of the excess heat from greenhouse warming."
+    sources:
+      wikipedia: "Ocean"
+
+  - slug: ocean-currents
+    title: Ocean Currents
+    summary: Large-scale flow of seawater driven by wind, temperature, salinity, and Earth's rotation.
+    difficulty: 3
+    facts:
+      - "Surface currents: wind-driven; classic gyres in each major basin."
+      - "Thermohaline circulation: deep, slow 'conveyor belt' driven by density differences from temperature and salinity; ~1000-year overturning timescale."
+      - "Gulf Stream transports warm water from Gulf of Mexico toward Europe — keeps NW Europe warmer than its latitude would predict."
+      - "Coriolis effect deflects currents right in northern hemisphere, left in southern."
+    sources:
+      wikipedia: "Ocean_current"
+
+  - slug: weather-vs-climate
+    title: Weather vs. Climate
+    summary: Weather is the state of the atmosphere over hours to days; climate is the long-term statistical distribution of weather.
+    difficulty: 1
+    facts:
+      - "'Climate is what you expect, weather is what you get.'"
+      - "Climate averages are typically computed over 30-year periods (WMO standard)."
+      - "A single cold snap is weather; a decade of warming trend is climate."
+    sources:
+      wikipedia: "Climate"
+
+  - slug: climate-zones
+    title: Climate Zones
+    summary: Broad regions of similar long-term weather patterns, commonly categorized via the Köppen classification.
+    difficulty: 2
+    facts:
+      - "Köppen major groups: tropical (A), arid (B), temperate (C), continental (D), polar (E)."
+      - "Determined by latitude, elevation, proximity to oceans, and prevailing wind/current patterns."
+      - "Climate zones are shifting poleward with global warming."
+    sources:
+      wikipedia: "Köppen_climate_classification"
+
+  - slug: biomes
+    title: Biomes
+    summary: Major ecological communities defined by climate and dominant vegetation — e.g., tundra, boreal forest, temperate forest, grassland, desert, tropical rainforest.
+    difficulty: 1
+    facts:
+      - "Terrestrial biomes organized roughly by latitude and elevation."
+      - "Tropical rainforest has the highest biodiversity; ~50% of land species in ~7% of land area."
+      - "Aquatic biomes: freshwater (rivers, lakes, wetlands) and marine (ocean, coral reef, estuary)."
+    sources:
+      wikipedia: "Biome"
+
+  - slug: biogeochemical-cycles
+    title: Biogeochemical Cycles
+    summary: Cycles of chemical elements (C, N, P, S, H₂O) through living organisms and the physical environment.
+    difficulty: 3
+    facts:
+      - "Nitrogen: atmospheric N₂ is fixed by bacteria/lightning into forms plants can use; returned by denitrification."
+      - "Phosphorus: no gas phase under normal conditions; cycled via rock weathering and ocean sediments."
+      - "Human activities (fertilizers, fossil fuels) have doubled reactive nitrogen flux and disrupted phosphorus and sulfur cycles."
+    sources:
+      wikipedia: "Biogeochemical_cycle"
+
+  - slug: geologic-time
+    title: Geologic Time Scale
+    summary: Hierarchical system — eons, eras, periods, epochs — organizing Earth's 4.54-billion-year history.
+    difficulty: 2
+    facts:
+      - "Four eons: Hadean, Archean, Proterozoic, Phanerozoic."
+      - "Phanerozoic (past 541 million years) divides into Paleozoic, Mesozoic, Cenozoic eras — defined by fossil assemblages."
+      - "Major boundaries often mark mass extinctions (e.g., end-Permian, end-Cretaceous K-Pg)."
+      - "We are in the Holocene epoch; many geologists propose 'Anthropocene' for the human-dominated interval."
+    sources:
+      wikipedia: "Geologic_time_scale"
+
+  - slug: glaciers-and-ice-sheets
+    title: Glaciers and Ice Sheets
+    summary: Large masses of land ice formed from compacted snow; flow under their own weight.
+    difficulty: 2
+    facts:
+      - "Two continental ice sheets today: Greenland and Antarctica — together ~99% of freshwater ice."
+      - "If all land ice melted, sea level would rise ~70 m."
+      - "Current rate of sea-level rise (early 2020s): ~3.4 mm/year, accelerating."
+      - "Ice cores from Greenland and Antarctica preserve atmosphere-composition records >800,000 years old."
+    sources:
+      wikipedia: "Glacier"
+
+  - slug: magnetic-field
+    title: Earth's Magnetic Field
+    summary: Generated by convection in the liquid iron outer core (the 'geodynamo'); shields the surface from solar-wind charged particles.
+    difficulty: 3
+    facts:
+      - "Dipole-dominated at the surface, ~25–65 μT."
+      - "Geomagnetic poles are not the same as geographic poles; they drift."
+      - "Field reverses polarity irregularly (every ~200,000–300,000 years on average); last full reversal was ~780,000 years ago (Brunhes-Matuyama)."
+      - "Records of past reversals preserved in magnetic minerals in sedimentary and volcanic rock — key evidence for seafloor spreading."
+    sources:
+      wikipedia: "Earth%27s_magnetic_field"
+
+  - slug: seasons
+    title: Seasons
+    summary: Annual climate variation caused by Earth's axial tilt (~23.5°) relative to its orbital plane around the Sun.
+    difficulty: 1
+    facts:
+      - "Tilt, not distance, drives seasons — Earth is actually slightly closer to the Sun in January (Northern Hemisphere winter)."
+      - "Solstices (longest/shortest days) and equinoxes (equal day/night) mark astronomical season boundaries."
+      - "Hemispheres experience opposite seasons simultaneously."
+    sources:
+      wikipedia: "Season"

@@ -1,0 +1,61 @@
+{
+  "session_id": "2026-04-19T01:01:35.936Z",
+  "area": "classical-mechanics",
+  "area_title": "Classical Mechanics",
+  "part": "01-matter-and-energy",
+  "started_at": "2026-04-19T01:01:35.936Z",
+  "completed_at": "2026-04-19T01:03:14.319Z",
+  "response_count": 5,
+  "responses": [
+    {
+      "question_id": "force.q2",
+      "slug": "force",
+      "level": "application",
+      "prompt": "A 2 kg object has two forces acting on it: 10 N east and 6 N west. What is its acceleration (magnitude and direction)?",
+      "answer": null,
+      "self_rating": null,
+      "skipped": true,
+      "timestamp": "2026-04-19T01:01:46.864Z"
+    },
+    {
+      "question_id": "noethers-theorem.q1",
+      "slug": "noethers-theorem",
+      "level": "recall",
+      "prompt": "State Noether's theorem in plain language.",
+      "answer": null,
+      "self_rating": null,
+      "skipped": true,
+      "timestamp": "2026-04-19T01:01:51.238Z"
+    },
+    {
+      "question_id": "momentum.q2",
+      "slug": "momentum",
+      "level": "application",
+      "prompt": "A 1500 kg car travels at 20 m/s east and collides with a stationary 1000 kg car. They stick together. What's their common velocity after the collision?",
+      "answer": "Sq rt of ( 400 x 1500 / 2500)",
+      "self_rating": 4,
+      "skipped": false,
+      "timestamp": "2026-04-19T01:02:34.358Z"
+    },
+    {
+      "question_id": "momentum.q3",
+      "slug": "momentum",
+      "level": "connection",
+      "prompt": "How is Newton's second law written in terms of momentum, and why is that form more general than F = m·a?",
+      "answer": null,
+      "self_rating": null,
+      "skipped": true,
+      "timestamp": "2026-04-19T01:02:41.753Z"
+    },
+    {
+      "question_id": "work-physics.q3",
+      "slug": "work-physics",
+      "level": "comprehension",
+      "prompt": "Can work be negative? Give an example.",
+      "answer": "Nope.",
+      "self_rating": 3,
+      "skipped": false,
+      "timestamp": "2026-04-19T01:03:14.318Z"
+    }
+  ]
+}

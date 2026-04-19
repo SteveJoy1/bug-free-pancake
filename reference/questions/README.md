@@ -122,7 +122,7 @@ Trigger: user says something like "grade my quiz sessions."
       - Create or update `mirror/notes/<slug>.md`.
       - Frontmatter:
         - `confidence`: latest reading (derived from tiers passed).
-        - `confidence_history`: **append** a new entry with `date`, `session_id`, `confidence`, `tiers_passed`, `tiers_available`, and `notes` (any detected calibration issues, hints used, etc). Never delete prior entries — the trajectory itself is valuable.
+        - `confidence_history`: **append** a new entry with `date`, `session_id`, `confidence`, `tiers_passed`, `tiers_available`, and `notes` (any detected calibration issues, e.g., wrong answer with high self-rating). Never delete prior entries — the trajectory itself is valuable.
         - `gaps`: merge — keep unresolved gaps from prior sessions, add new ones, remove any that the current session confirmed resolved.
         - `updated`: today.
       - Body: user's own words from their answers, lightly cleaned. Keep in their voice; don't rewrite into your own phrasing.

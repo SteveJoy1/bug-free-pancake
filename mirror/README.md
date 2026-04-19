@@ -15,7 +15,7 @@ A personal knowledge base — organized, searchable, expandable. Notes about thi
 - `created` / `updated` — ISO dates (YYYY-MM-DD).
 - `tags` — list; each tag must appear in `TAGS.md`.
 - `confidence` — 1 (just encountered) to 5 (could teach it). Always the **latest** reading.
-- `confidence_history` — append-only list of prior readings, each with `date`, `confidence`, `tiers_passed`/`tiers_available`, `session_id`, and optionally `needed_hint`. Never deleted; this is the durable trajectory.
+- `confidence_history` — append-only list of prior readings, each with `date`, `confidence`, `tiers_passed`/`tiers_available`, `session_id`, and an optional `notes` string. Never deleted; this is the durable trajectory.
 - `status` — optional; `opted_out` if the user chose "Don't need this" on the leaf. Excludes from future sampling.
 - `gaps` — list of open questions or things not yet understood.
 - `sources` — where this came from (URL, book, person, conversation).

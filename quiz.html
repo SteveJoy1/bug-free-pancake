@@ -392,7 +392,6 @@
             </div>
 
             <div class="question-prompt" id="prompt-text"></div>
-            <div class="status pending hidden" id="hint-box"></div>
 
             <label for="answer-text">Your answer</label>
             <textarea id="answer-text" placeholder="Answer in your own words. 'I don't know' is a valid answer — skip records it as such."></textarea>
@@ -591,7 +590,7 @@
       // ascending by `step` (recognition first, recall last).
       //
       // For multi-prompt questions (q0 with `prompts: [...]`), pick one prompt
-      // at random per leaf at group time. Preserves all `hint` and `rubric`.
+      // at random per leaf at group time. Rubric is preserved as-is.
       function pickPrompt(item) {
         if (Array.isArray(item.prompts) && item.prompts.length > 0) {
           const idx = Math.floor(Math.random() * item.prompts.length);
@@ -610,7 +609,6 @@
               level: item.level,
               prompt,
               prompt_variant,
-              hint: item.hint || null,
               rubric: item.rubric || [],
               step: LEVEL_STEP[item.level] ?? 1
             };
@@ -790,10 +788,6 @@
         return session && session.leaves[session.index];
       }
 
-      function isRecognitionTier(tier) {
-        return tier && tier.level === 'recognition';
-      }
-
       function renderQuestion() {
         if (!session || session.index >= session.leaves.length) {
           endSession();
@@ -813,38 +807,8 @@
         promptText.textContent = tier.prompt;
         answerText.value = '';
         document.querySelectorAll('input[name="confidence"]').forEach(r => r.checked = false);
-        // Reset hint UI for each new question.
-        const hintBox = $('hint-box');
-        hintBox.classList.add('hidden');
-        hintBox.innerHTML = '';
-        leaf.hint_shown_for_current_tier = false;
         answerText.focus();
         show(questionPanel);
-      }
-
-      // Show the hint for the current tier and enable a retry. Returns true
-      // if a hint was shown (caller should NOT advance), false otherwise.
-      function offerHintIfAvailable() {
-        const leaf = currentLeaf();
-        if (!leaf) return false;
-        const tier = leaf.tiers[leaf.current_tier];
-        if (!tier) return false;
-        // Only offer at step 0 (recognition), and only once per tier.
-        if (!isRecognitionTier(tier)) return false;
-        if (leaf.hint_shown_for_current_tier) return false;
-        if (!tier.hint) return false;
-        leaf.hint_shown_for_current_tier = true;
-        const hintBox = $('hint-box');
-        hintBox.classList.remove('hidden');
-        hintBox.innerHTML =
-          `<strong>Hint:</strong> ${escapeHtml(tier.hint)}<br>` +
-          `<span style="color:#8b949e;">Try again if this rings a bell — otherwise skip.</span>`;
-        // Reset inputs but keep the tier in place.
-        answerText.value = '';
-        document.querySelectorAll('input[name="confidence"]').forEach(r => r.checked = false);
-        answerText.focus();
-        saveSession();
-        return true;
       }
 
       function recordTierResponse({ answer, self_rating, skipped }) {
@@ -856,7 +820,6 @@
           level: tier.level,
           prompt: tier.prompt,
           prompt_variant: tier.prompt_variant,
-          needed_hint: !!leaf.hint_shown_for_current_tier,
           tier_step: tier.step,
           tier_index: leaf.current_tier,
           answer,
@@ -916,19 +879,13 @@
           showError('Rate your confidence (1–5) before submitting.');
           return;
         }
-        const passed = conf >= 4;
-        // q0 failure gets a single hint-and-retry chance before closing the leaf.
-        if (!passed && offerHintIfAvailable()) {
-          return;
-        }
         recordTierResponse({ answer, self_rating: conf, skipped: false });
-        advanceOrComplete(passed);
+        // Self-rating >= 4 = pass, drill to next tier. Lower stops drilling.
+        advanceOrComplete(conf >= 4);
       }
 
       function onSkip() {
         clearError();
-        // q0 skip also triggers hint-and-retry if available.
-        if (offerHintIfAvailable()) return;
         recordTierResponse({ answer: null, self_rating: null, skipped: true });
         advanceOrComplete(false);
       }
